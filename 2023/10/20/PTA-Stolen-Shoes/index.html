@@ -16,15 +16,15 @@
   <meta name="author" content="nanyan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="日历是用于表述时间的系统，从小时到分钟，从月到日，最后从年份到世纪。术语小时、日、月、年、世纪都是日历系统表述时间的单位。按照目前国内使用的阳历，闰年被定义为能被4整除的年份，但是能被100整除而不能被400整除的年是例外，它们不是闰年。例如：1700, 1800, 1900 和 2100 不是闰年，而 1600, 2000 和 2400是闰年。 给定公元2000年1月1日后的天数，请您计算这一天">
+    <meta name="description" content="恒太足球俱乐部有n名球员，每名球员编号1∼n。今天早上，更衣室管理员发现一部分球员柜的球鞋被盗。这导致今天的比赛有一部分球员因为没有球鞋而无法出场，幸运的是，有一部分球员还有备用球鞋，但是拥有备用球鞋的球员只会借给和自己号码相邻的球员，比如：5号队员只会借给4号和6号。假如5号球员的球鞋也被盗了，他拥有的备用球鞋则不会借给相邻的队员。 现在，给出上述信息，请你求出，今天的比赛，不能上场参赛的最小人">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PTA | Calendar">
-<meta property="og:url" content="http://acm.nanyan.cc/2023/10/19/PTA-Calendar/index.html">
+<meta property="og:title" content="PTA | Stolen Shoes">
+<meta property="og:url" content="http://acm.nanyan.cc/2023/10/20/PTA-Stolen-Shoes/index.html">
 <meta property="og:site_name" content="ACM笔记">
-<meta property="og:description" content="日历是用于表述时间的系统，从小时到分钟，从月到日，最后从年份到世纪。术语小时、日、月、年、世纪都是日历系统表述时间的单位。按照目前国内使用的阳历，闰年被定义为能被4整除的年份，但是能被100整除而不能被400整除的年是例外，它们不是闰年。例如：1700, 1800, 1900 和 2100 不是闰年，而 1600, 2000 和 2400是闰年。 给定公元2000年1月1日后的天数，请您计算这一天">
+<meta property="og:description" content="恒太足球俱乐部有n名球员，每名球员编号1∼n。今天早上，更衣室管理员发现一部分球员柜的球鞋被盗。这导致今天的比赛有一部分球员因为没有球鞋而无法出场，幸运的是，有一部分球员还有备用球鞋，但是拥有备用球鞋的球员只会借给和自己号码相邻的球员，比如：5号队员只会借给4号和6号。假如5号球员的球鞋也被盗了，他拥有的备用球鞋则不会借给相邻的队员。 现在，给出上述信息，请你求出，今天的比赛，不能上场参赛的最小人">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-18T22:35:28.000Z">
-<meta property="article:modified_time" content="2023-10-18T22:49:10.453Z">
+<meta property="article:published_time" content="2023-10-20T06:59:47.000Z">
+<meta property="article:modified_time" content="2023-10-20T07:03:46.473Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -32,7 +32,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>PTA | Calendar - ACM笔记</title>
+  <title>PTA | Stolen Shoes - ACM笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -176,7 +176,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="PTA | Calendar"></span>
+            <span id="subtitle" data-typed-text="PTA | Stolen Shoes"></span>
           
         </div>
 
@@ -187,8 +187,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-19 09:35" pubdate>
-          2023年10月19日 上午
+        <time datetime="2023-10-20 17:59" pubdate>
+          2023年10月20日 下午
         </time>
       </span>
     
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.1k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          12 分钟
+          9 分钟
         
       </span>
     
@@ -247,75 +247,78 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">PTA | Calendar</h1>
+            <h1 id="seo-header">PTA | Stolen Shoes</h1>
             
             
               <div class="markdown-body">
                 
-                <p>日历是用于表述时间的系统，从小时到分钟，从月到日，最后从年份到世纪。术语小时、日、月、年、世纪都是日历系统表述时间的单位。<br>按照目前国内使用的阳历，闰年被定义为能被4整除的年份，但是能被100整除而不能被400整除的年是例外，它们不是闰年。例如：1700, 1800, 1900 和 2100 不是闰年，而 1600, 2000 和 2400是闰年。 给定公元2000年1月1日后的天数，请您计算这一天是哪年哪月哪日星期几。</p>
-<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h1><p>输入包含若干行，每行包含一个正整数，表示2000年1月1日后的天数。输入最后一行是−1, 程序不必处理。可以假设输出的年份不会超过9999。</p>
-<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h1><p>对每个测试用例，输出一行，该行给出对应的日期和星期几。格式为“YYYY-MM-DD DayOfWeek”, 其中 “DayOfWeek”必须是下面中的一个：“Sunday”，“Monday”，“Tuesday”，“Wednesday”，“Thursday”，“Friday”或“Saturday”。</p>
-<h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1730
-1740
-1750
-1751
--1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2004-09-26 Sunday
-2004-10-06 Wednesday
-2004-10-16 Saturday
-2004-10-17 Sunday<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+                <p>恒太足球俱乐部有n名球员，每名球员编号1∼n。今天早上，更衣室管理员发现一部分球员柜的球鞋被盗。这导致今天的比赛有一部分球员因为没有球鞋而无法出场，幸运的是，有一部分球员还有备用球鞋，但是拥有备用球鞋的球员只会借给和自己号码相邻的球员，比如：5号队员只会借给4号和6号。假如5号球员的球鞋也被盗了，他拥有的备用球鞋则不会借给相邻的队员。</p>
+<p>现在，给出上述信息，请你求出，今天的比赛，不能上场参赛的最小人数。</p>
+<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h1><p>输入的第一行给出三个整数n——表示总人数；m——表示球鞋坏掉的人数；x表示拥有备用球鞋的人数。</p>
+<p>输入的第二行给出m个整数a[i]——表示球鞋坏掉的人的编号。</p>
+<p>输入的第三行给出x个整数a[i]——表示有备用球鞋的人的编号。</p>
+<p>2≤n≤10</p>
+<p>2≤m≤n</p>
+<p>2≤x≤n</p>
+<p>2≤a[i]≤n</p>
+<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h1><p>输出一个整数——表示不能上场参赛的最小人数。</p>
+<h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5 2 3
+2 4
+1 3 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <h1 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h1><figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
-<span class="token keyword">int</span> <span class="token function">isleapyear</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span><span class="token number">400</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span><span class="token number">100</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span><span class="token number">4</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> y<span class="token punctuation">,</span>m<span class="token punctuation">,</span>d<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> days1<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> days2<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-    <span class="token keyword">char</span> day<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"Monday"</span><span class="token punctuation">,</span> <span class="token string">"Tuesday"</span><span class="token punctuation">,</span> <span class="token string">"Wednesday"</span><span class="token punctuation">,</span> <span class="token string">"Thursday"</span><span class="token punctuation">,</span> <span class="token string">"Friday"</span><span class="token punctuation">,</span> <span class="token string">"Saturday"</span><span class="token punctuation">,</span> <span class="token string">"Sunday"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        N<span class="token operator">=</span>n<span class="token punctuation">;</span>
-        y<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">;</span>
-        m<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-        d<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-        n<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token comment">//printf("*%d\n",isleapyear(y)?days2[m]:days1[m]);</span>
-            <span class="token comment">//printf("n=%d\n",n);</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;=</span><span class="token punctuation">(</span><span class="token function">isleapyear</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token operator">?</span>days2<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token operator">:</span>days1<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                d<span class="token operator">+=</span>n<span class="token punctuation">;</span>
-                n<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-            <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-                n<span class="token operator">-=</span><span class="token punctuation">(</span><span class="token function">isleapyear</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token operator">?</span>days2<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token operator">:</span>days1<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                
-                m<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token operator">></span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                    m<span class="token operator">-=</span><span class="token number">12</span><span class="token punctuation">;</span>
-                    y<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-            
-        <span class="token punctuation">&#125;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d-%02d-%02d %s\n"</span><span class="token punctuation">,</span>y<span class="token punctuation">,</span>m<span class="token punctuation">,</span>d<span class="token punctuation">,</span>day<span class="token punctuation">[</span><span class="token punctuation">(</span>N<span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>  <span class="token comment">//总人数</span>
+    <span class="token keyword">int</span> m<span class="token punctuation">;</span>  <span class="token comment">//被盗人数</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">;</span>  <span class="token comment">//备用人数</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span><span class="token operator">&amp;</span>m<span class="token punctuation">,</span><span class="token operator">&amp;</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> nn<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> mm<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> xx<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num<span class="token punctuation">;</span>
+
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> 
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>mm<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>x<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>xx<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//初始化每个人都有鞋子</span>
+        nn<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//有人鞋子被偷了</span>
+        nn<span class="token punctuation">[</span>mm<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>x<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>nn<span class="token punctuation">[</span>xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            nn<span class="token punctuation">[</span>xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> nn<span class="token punctuation">[</span>xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                nn<span class="token punctuation">[</span>xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>n <span class="token operator">&amp;&amp;</span> nn<span class="token punctuation">[</span>xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                nn<span class="token punctuation">[</span>xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    num<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>nn<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            num<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
                 
               </div>
             
@@ -332,8 +335,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>PTA | Calendar</div>
-      <div>http://acm.nanyan.cc/2023/10/19/PTA-Calendar/</div>
+      <div>PTA | Stolen Shoes</div>
+      <div>http://acm.nanyan.cc/2023/10/20/PTA-Stolen-Shoes/</div>
     </div>
     <div class="license-meta">
       
@@ -345,7 +348,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月19日</div>
+          <div>2023年10月20日</div>
         </div>
       
       
@@ -377,18 +380,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/20/PTA-Stolen-Shoes/" title="PTA | Stolen Shoes">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">PTA | Stolen Shoes</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/17/ACM-Doing-Homework-again/" title="ACM | Doing Homework again">
-                        <span class="hidden-mobile">ACM | Doing Homework again</span>
+                      <a href="/2023/10/19/PTA-Calendar/" title="PTA | Calendar">
+                        <span class="hidden-mobile">PTA | Calendar</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
