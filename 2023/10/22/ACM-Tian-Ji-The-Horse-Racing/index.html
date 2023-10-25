@@ -16,15 +16,15 @@
   <meta name="author" content="nanyan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="有N个人围成一圈（编号为1～N），从第1号开始进行1、2、3报数，凡报3者就退出，下一个人又从1开始报数……直到最后只剩下一个人时为止。请问此人原来的编号是多少? 输入格式:在一行中给出1个不超过100的正整数N。 输出格式:在一行中输出最后剩下那个人的编号。 输入样例:10 输出样例:4  示例代码：#include&lt;stdio.h&gt; #include&lt;stdlib.h&gt; struc">
+    <meta name="description" content="Here is a famous story in Chinese history. “That was about 2300 years ago. General Tian Ji was a high official in the country Qi. He likes to play horse racing with the king and others.” “Both of Tian">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PTA | Joseph Ring">
-<meta property="og:url" content="http://acm.nanyan.cc/2023/10/20/PTA-Joseph-Ring/index.html">
+<meta property="og:title" content="ACM | Tian Ji -- The Horse Racing">
+<meta property="og:url" content="http://acm.nanyan.cc/2023/10/22/ACM-Tian-Ji-The-Horse-Racing/index.html">
 <meta property="og:site_name" content="ACM笔记">
-<meta property="og:description" content="有N个人围成一圈（编号为1～N），从第1号开始进行1、2、3报数，凡报3者就退出，下一个人又从1开始报数……直到最后只剩下一个人时为止。请问此人原来的编号是多少? 输入格式:在一行中给出1个不超过100的正整数N。 输出格式:在一行中输出最后剩下那个人的编号。 输入样例:10 输出样例:4  示例代码：#include&lt;stdio.h&gt; #include&lt;stdlib.h&gt; struc">
+<meta property="og:description" content="Here is a famous story in Chinese history. “That was about 2300 years ago. General Tian Ji was a high official in the country Qi. He likes to play horse racing with the king and others.” “Both of Tian">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-20T07:39:12.000Z">
-<meta property="article:modified_time" content="2023-10-20T07:40:07.439Z">
+<meta property="article:published_time" content="2023-10-21T23:44:28.000Z">
+<meta property="article:modified_time" content="2023-10-21T20:46:16.939Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -32,7 +32,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>PTA | Joseph Ring - ACM笔记</title>
+  <title>ACM | Tian Ji -- The Horse Racing - ACM笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -176,7 +176,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="PTA | Joseph Ring"></span>
+            <span id="subtitle" data-typed-text="ACM | Tian Ji -- The Horse Racing"></span>
           
         </div>
 
@@ -187,8 +187,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-20 15:39" pubdate>
-          2023年10月20日 下午
+        <time datetime="2023-10-22 07:44" pubdate>
+          2023年10月22日 早上
         </time>
       </span>
     
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          720 字
+          3.2k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          7 分钟
+          27 分钟
         
       </span>
     
@@ -247,53 +247,46 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">PTA | Joseph Ring</h1>
+            <h1 id="seo-header">ACM | Tian Ji -- The Horse Racing</h1>
             
             
               <div class="markdown-body">
                 
-                <p>有N个人围成一圈（编号为1～N），从第1号开始进行1、2、3报数，凡报3者就退出，下一个人又从1开始报数……直到最后只剩下一个人时为止。请问此人原来的编号是多少?</p>
-<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h1><p>在一行中给出1个不超过100的正整数N。</p>
-<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h1><p>在一行中输出最后剩下那个人的编号。</p>
-<h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+                <p>Here is a famous story in Chinese history.</p>
+<p>“That was about 2300 years ago. General Tian Ji was a high official in the country Qi. He likes to play horse racing with the king and others.”</p>
+<p>“Both of Tian and the king have three horses in different classes, namely, regular, plus, and super. The rule is to have three rounds in a match; each of the horses must be used in one round. The winner of a single round takes two hundred silver dollars from the loser.”</p>
+<p>“Being the most powerful man in the country, the king has so nice horses that in each class his horse is better than Tian’s. As a result, each time the king takes six hundred silver dollars from Tian.”</p>
+<p>“Tian Ji was not happy about that, until he met Sun Bin, one of the most famous generals in Chinese history. Using a little trick due to Sun, Tian Ji brought home two hundred silver dollars and such a grace in the next match.”</p>
+<p>“It was a rather simple trick. Using his regular class horse race against the super class from the king, they will certainly lose that round. But then his plus beat the king’s regular, and his super beat the king’s plus. What a simple trick. And how do you think of Tian Ji, the high ranked official in China?”</p>
+<p>Were Tian Ji lives in nowadays, he will certainly laugh at himself. Even more, were he sitting in the ACM contest right now, he may discover that the horse racing problem can be simply viewed as finding the maximum matching in a bipartite graph. Draw Tian’s horses on one side, and the king’s horses on the other. Whenever one of Tian’s horses can beat one from the king, we draw an edge between them, meaning we wish to establish this pair. Then, the problem of winning as many rounds as possible is just to find the maximum matching in this graph. If there are ties, the problem becomes more complicated, he needs to assign weights 0, 1, or -1 to all the possible edges, and find a maximum weighted perfect matching…</p>
+<p>However, the horse racing problem is a very special case of bipartite matching. The graph is decided by the speed of the horses — a vertex of higher speed always beat a vertex of lower speed. In this case, the weighted bipartite matching algorithm is a too advanced tool to deal with the problem.</p>
+<p>In this problem, you are asked to write a program to solve this special case of matching problem.</p>
+<p>这里有一个中国历史上著名的故事。</p>
+<p>“那是大约2300年前的事了，田忌将军是齐国的一位大官，他喜欢和国王等人赛马。”</p>
+<p>“田和王各有三匹不同级别的马，分别是普通级、高级级、超级级。规则是一场比赛进行三轮，每匹马必须用完一轮。单场获胜者 败者得两百银元。”</p>
+<p>“国王是全国最有权势的人，他的马非常好，每一级他的马都比田的好。因此，国王每次从田那里拿走六百银子。”</p>
+<p>“田忌对此并不高兴，直到他遇到了中国历史上最著名的将军之一孙膑。田忌利用了孙膑的一个小伎俩，在接下来的比赛中带回了两百银元，并获得了如此大的恩惠。 ”</p>
+<p>“这是一个相当简单的技巧，用他的普通级赛马与国王的超级赛马，他们肯定会输掉这一轮。但随后他的+击败了国王的普通级，他的超级击败了国王的+。多么简单的技巧 ……那么，您对田忌这个中国的高官有什么看法呢？</p>
+<p>如果田忌生活在现在，他一定会嘲笑自己。 更重要的是，如果他现在参加ACM比赛，他可能会发现赛马问题可以简单地看作是在二部图中寻找最大匹配。 一侧画田的马，另一侧画国王的马。 每当田的一匹马能够击败国王的一匹马时，我们就在它们之间划一条边，这意味着我们希望建立这一对。 那么，赢得尽可能多的回合的问题就是找到这个图中的最大匹配。 如果存在平局，问题就变得更加复杂，他需要给所有可能的边分配权重0、1或-1，并找到一个最大加权完美匹配……</p>
+<p>然而，赛马问题是二分匹配的一个非常特殊的例子。 该图由马的速度决定——速度较高的顶点总是击败速度较低的顶点。 在这种情况下，加权二分匹配算法对于处理该问题来说是一个过于先进的工具。</p>
+<p>在此问题中，要求您编写一个程序来解决匹配问题的这种特殊情况。</p>
+<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h1><p>The input consists of up to 50 test cases. Each case starts with a positive integer n (n &lt;&#x3D; 1000) on the first line, which is the number of horses on each side. The next n integers on the second line are the speeds of Tian’s horses. Then the next n integers on the third line are the speeds of the king’s horses. The input ends with a line that has a single 0 after the last test case.<br>输入最多包含 50 个测试用例。 每个案例的第一行都以正整数 n (n &lt;&#x3D; 1000) 开头，它是每边的马匹数量。 第二行接下来的 n 个整数是田的马的速度。 那么第三行接下来的n个整数就是国王马匹的速度。 输入以最后一个测试用例后面有一个 0 的行结束。</p>
+<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h1><p>For each input case, output a line containing a single number, which is the maximum money Tian Ji will get, in silver dollars.<br>对于每个输入情况，输出一行包含一个数字，这是田忌将获得的最大银元金额。</p>
+<h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h1><figure><div class="code-wrapper"><pre><code class="3">92 83 71
+95 87 74
+2
+20 20
+20 20
+2
+20 19
+22 18
+0```
+# 输出样例:
+```200
+0
+0```
+</code></pre></div></figure>
 
-<h1 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h1><figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
-<span class="token keyword">struct</span> <span class="token class-name">circle</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> num<span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> <span class="token class-name">circle</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> <span class="token class-name">circle</span> <span class="token operator">*</span> head<span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> <span class="token class-name">circle</span> <span class="token operator">*</span> cur<span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> <span class="token class-name">circle</span> <span class="token operator">*</span> pre<span class="token punctuation">;</span>
-    head<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">circle</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">circle</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cur<span class="token operator">=</span>head<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        cur<span class="token operator">-></span>num<span class="token operator">=</span>i<span class="token punctuation">;</span>
-        pre<span class="token operator">=</span>cur<span class="token punctuation">;</span>
-        cur<span class="token operator">-></span>next<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">circle</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">circle</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        cur<span class="token operator">=</span>cur<span class="token operator">-></span>next<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    pre<span class="token operator">-></span>next<span class="token operator">=</span>head<span class="token punctuation">;</span>
-    cur<span class="token operator">=</span>head<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>next<span class="token operator">!=</span>cur<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        count<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>count<span class="token operator">==</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token comment">//printf("%d",cur->num);</span>
-            pre<span class="token operator">-></span>next<span class="token operator">=</span>cur<span class="token operator">-></span>next<span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        pre<span class="token operator">=</span>cur<span class="token punctuation">;</span>
-        cur<span class="token operator">=</span>cur<span class="token operator">-></span>next<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>cur<span class="token operator">-></span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
                 
               </div>
             
@@ -310,8 +303,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>PTA | Joseph Ring</div>
-      <div>http://acm.nanyan.cc/2023/10/20/PTA-Joseph-Ring/</div>
+      <div>ACM | Tian Ji -- The Horse Racing</div>
+      <div>http://acm.nanyan.cc/2023/10/22/ACM-Tian-Ji-The-Horse-Racing/</div>
     </div>
     <div class="license-meta">
       
@@ -323,7 +316,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月20日</div>
+          <div>2023年10月22日</div>
         </div>
       
       
@@ -355,9 +348,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/22/ACM-Summer-Without-AC/" title="ACM | Summer Without  AC">
+                      <a href="/2023/10/25/PTA-Select-Int/" title="PTA | Select Int">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ACM | Summer Without  AC</span>
+                        <span class="hidden-mobile">PTA | Select Int</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -365,8 +358,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/20/PTA-Stolen-Shoes/" title="PTA | Stolen Shoes">
-                        <span class="hidden-mobile">PTA | Stolen Shoes</span>
+                      <a href="/2023/10/22/ACM-Summer-Without-AC/" title="ACM | Summer Without  AC">
+                        <span class="hidden-mobile">ACM | Summer Without  AC</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
