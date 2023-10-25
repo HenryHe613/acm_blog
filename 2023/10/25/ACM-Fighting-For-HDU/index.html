@@ -24,7 +24,7 @@
 <meta property="og:description" content="在上一回，我们让你猜测海东集团用地的形状，你猜对了吗？不管结果如何，都没关系，下面我继续向大家讲解海东集团的发展情况：在最初的两年里，HDU发展非常迅速，综合各种ACM算法生成的老鼠药效果奇好，据说该药专对老鼠有效，如果被人误食了，没有任何副作用，甚至有传闻说还有健胃的效果，不过这倒没有得到临床验证。所以，公司的销量逐年递增，利润也是节节攀升，作为股东之一的公主负责财务，最近半年，她实在辛苦，多次">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-25T14:01:39.000Z">
-<meta property="article:modified_time" content="2023-10-25T14:02:09.912Z">
+<meta property="article:modified_time" content="2023-10-25T14:24:01.515Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          782 字
+          1.4k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          7 分钟
+          12 分钟
         
       </span>
     
@@ -265,6 +265,43 @@
 1 3 4
 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">6 vs 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+
+<h1 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h1><figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span>a <span class="token operator">-</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> china<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> japan<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> score_china<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> score_japan<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        score_china<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        score_japan<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>china<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>japan<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">qsort</span><span class="token punctuation">(</span>china<span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">,</span> compare<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">qsort</span><span class="token punctuation">(</span>japan<span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">,</span> compare<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>china<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>japan<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                score_china<span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>china<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>japan<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                score_japan<span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                score_china<span class="token operator">++</span><span class="token punctuation">;</span>
+                score_japan<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d vs %d\n"</span><span class="token punctuation">,</span>score_china<span class="token punctuation">,</span>score_japan<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
                 
               </div>
             
