@@ -24,7 +24,7 @@
 <meta property="og:description" content="Wang Haiyang is a strong and optimistic Chinese youngster. Although born and brought up in the northern inland city Harbin, he has deep love and yearns for the boundless oceans. After graduation, he c">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-25T22:56:21.000Z">
-<meta property="article:modified_time" content="2023-10-25T22:58:03.745Z">
+<meta property="article:modified_time" content="2023-10-26T00:16:56.633Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3k 字
+          3.9k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          26 分钟
+          33 分钟
         
       </span>
     
@@ -264,13 +264,59 @@
 <p>王海洋看着图想，如果排列一下，图G所有节点的度数可以组成这样一个序列：4,4,3,3,2,2，称为图的度序列。 当然，任何简单图的度序列（根据图论，没有任何平行边或环的图就是简单图）是非负整数序列吗？</p>
 <p>王海洋是一个有思想的人，凡是他感兴趣的科学问题都会深入思考。 所以像往常一样，他也对这个问题进行了进一步的思考，我们知道，任何一个简单的图总是对应着一个非负整数序列。 但非负整数序列是否总是对应于简单图的度序列呢？ 也就是说，如果给定一个非负整数序列，我们确定可以根据它画出一个简单的图吗？</p>
 <p>我们提出这样一个定义：如果一个非负整数序列是一个没有任何平行边或环的图的度序列，即一个简单的图，则该序列是可绘制的，否则是不可绘制的 。 现在王海洋面临的问题是如何测试一个非负整数序列是否可以抽奖。 由于王海洋没有学过算法设计课程，所以他很难解决这样的问题。 你能帮助他吗？</p>
+<blockquote>
+<p>ChatGPT给出的参考：<br>图论中的”简单图”是指一种特殊类型的图，具有以下特点：<br>无重复边：简单图中不存在重复的边，即每两个顶点之间最多有一条边。<br>无自环：简单图中不存在自环，即没有一条连接一个顶点到自己的边。<br>无向图：简单图是无向图，其中的边没有方向，即边的两个端点之间没有箭头或方向。<br>无权图：简单图通常是无权图，也就是说，边没有与之相关联的权重或数值。</p>
+</blockquote>
 <h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h1><p>The first line of input contains an integer T, indicates the number of test cases. In each case, there are n+1 numbers; first is an integer n (n&lt;1000), which indicates there are n integers in the sequence; then follow n integers, which indicate the numbers of the degree sequence.<br>输入的第一行包含一个整数T，表示测试用例的数量。 在每种情况下，都有 n+1 个数字； 第一个是整数n（n&lt;1000），表示序列中有n个整数； 接下来是n个整数，表示度数序列的个数。</p>
-<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h1><p>For each case, the answer should be “yes”or “no” indicating this case is “draw-possible” or “non-draw-possible”<br>对于每种情况，答案应该是“是”或“否”，表明这种情况是“可能抽奖”或“不可能抽奖”</p>
+<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h1><p>For each case, the answer should be “yes”or “no” indicating this case is “draw-possible” or “non-draw-possible”<br>对于每种情况，答案应该是“yes”或“no”，表明这种情况是“可以绘画”或“不可以绘画”</p>
 <h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2
 6 4 4 3 3 2 2
 4 2 1 1 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
 <h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">yes
 no<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+
+<h1 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h1><figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>a<span class="token punctuation">,</span><span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span>a <span class="token operator">-</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> T<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>T<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> N<span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> degree<span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>N<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>degree<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">int</span> flag<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token function">qsort</span><span class="token punctuation">(</span>degree<span class="token punctuation">,</span>N<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">,</span>compare<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>degree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> flag<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>degree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">&lt;</span><span class="token number">0</span> <span class="token operator">||</span> degree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">></span>N<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"no\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                flag<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>degree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"yes\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                flag<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>degree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                degree<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            degree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token function">qsort</span><span class="token punctuation">(</span>degree<span class="token punctuation">,</span>N<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">,</span>compare<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>degree<span class="token punctuation">[</span>N<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"no\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                flag<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"yes\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
                 
               </div>
             
