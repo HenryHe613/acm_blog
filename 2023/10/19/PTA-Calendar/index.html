@@ -16,14 +16,14 @@
   <meta name="author" content="nanyan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="日历是用于表述时间的系统，从小时到分钟，从月到日，最后从年份到世纪。术语小时、日、月、年、世纪都是日历系统表述时间的单位。按照目前国内使用的阳历，闰年被定义为能被4整除的年份，但是能被100整除而不能被400整除的年是例外，它们不是闰年。例如：1700, 1800, 1900 和 2100 不是闰年，而 1600, 2000 和 2400是闰年。 给定公元2000年1月1日后的天数，请您计算这一天">
+    <meta name="description" content="日历是用于表述时间的系统，从小时到分钟，从月到日，最后从年份到世纪。术语小时、日、月、年、世纪都是日历系统表述时间的单位。 按照目前国内使用的阳历，闰年被定义为能被4整除的年份，但是能被100整除而不能被400整除的年是例外，它们不是闰年。例如：1700, 1800, 1900 和 2100 不是闰年，而 1600, 2000 和 2400是闰年。 给定公元2000年1月1日后的天数，请您计算这一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PTA | Calendar">
 <meta property="og:url" content="http://acm.nanyan.cc/2023/10/19/PTA-Calendar/index.html">
 <meta property="og:site_name" content="ACM笔记">
-<meta property="og:description" content="日历是用于表述时间的系统，从小时到分钟，从月到日，最后从年份到世纪。术语小时、日、月、年、世纪都是日历系统表述时间的单位。按照目前国内使用的阳历，闰年被定义为能被4整除的年份，但是能被100整除而不能被400整除的年是例外，它们不是闰年。例如：1700, 1800, 1900 和 2100 不是闰年，而 1600, 2000 和 2400是闰年。 给定公元2000年1月1日后的天数，请您计算这一天">
+<meta property="og:description" content="日历是用于表述时间的系统，从小时到分钟，从月到日，最后从年份到世纪。术语小时、日、月、年、世纪都是日历系统表述时间的单位。 按照目前国内使用的阳历，闰年被定义为能被4整除的年份，但是能被100整除而不能被400整除的年是例外，它们不是闰年。例如：1700, 1800, 1900 和 2100 不是闰年，而 1600, 2000 和 2400是闰年。 给定公元2000年1月1日后的天数，请您计算这一">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-18T22:35:28.000Z">
+<meta property="article:published_time" content="2023-10-19T01:35:28.000Z">
 <meta property="article:modified_time" content="2023-10-18T22:49:10.453Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
@@ -187,8 +187,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-19 06:35" pubdate>
-          2023年10月19日 早上
+        <time datetime="2023-10-19 09:35" pubdate>
+          2023年10月19日 上午
         </time>
       </span>
     
@@ -252,20 +252,30 @@
             
               <div class="markdown-body">
                 
-                <p>日历是用于表述时间的系统，从小时到分钟，从月到日，最后从年份到世纪。术语小时、日、月、年、世纪都是日历系统表述时间的单位。<br>按照目前国内使用的阳历，闰年被定义为能被4整除的年份，但是能被100整除而不能被400整除的年是例外，它们不是闰年。例如：1700, 1800, 1900 和 2100 不是闰年，而 1600, 2000 和 2400是闰年。 给定公元2000年1月1日后的天数，请您计算这一天是哪年哪月哪日星期几。</p>
-<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h1><p>输入包含若干行，每行包含一个正整数，表示2000年1月1日后的天数。输入最后一行是−1, 程序不必处理。可以假设输出的年份不会超过9999。</p>
-<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h1><p>对每个测试用例，输出一行，该行给出对应的日期和星期几。格式为“YYYY-MM-DD DayOfWeek”, 其中 “DayOfWeek”必须是下面中的一个：“Sunday”，“Monday”，“Tuesday”，“Wednesday”，“Thursday”，“Friday”或“Saturday”。</p>
-<h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1730
+                <p>日历是用于表述时间的系统，从小时到分钟，从月到日，最后从年份到世纪。术语小时、日、月、年、世纪都是日历系统表述时间的单位。
+按照目前国内使用的阳历，闰年被定义为能被4整除的年份，但是能被100整除而不能被400整除的年是例外，它们不是闰年。例如：1700,
+1800, 1900 和 2100 不是闰年，而 1600, 2000 和 2400是闰年。
+给定公元2000年1月1日后的天数，请您计算这一天是哪年哪月哪日星期几。 #
+输入格式:
+输入包含若干行，每行包含一个正整数，表示2000年1月1日后的天数。输入最后一行是−1,
+程序不必处理。可以假设输出的年份不会超过9999。</p>
+<h1 id="输出格式">输出格式:</h1>
+<p>对每个测试用例，输出一行，该行给出对应的日期和星期几。格式为“YYYY-MM-DD
+DayOfWeek”, 其中
+“DayOfWeek”必须是下面中的一个：“Sunday”，“Monday”，“Tuesday”，“Wednesday”，“Thursday”，“Friday”或“Saturday”。</p>
+<h1 id="输入样例">输入样例:</h1>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1730
 1740
 1750
 1751
 -1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h1><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2004-09-26 Sunday
+<h1 id="输出样例">输出样例:</h1>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2004-09-26 Sunday
 2004-10-06 Wednesday
 2004-10-16 Saturday
 2004-10-17 Sunday<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-
-<h1 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h1><figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<h1 id="代码示例">代码示例：</h1>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 <span class="token keyword">int</span> <span class="token function">isleapyear</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span><span class="token number">400</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -316,6 +326,7 @@
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+
                 
               </div>
             
@@ -445,6 +456,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -664,6 +681,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
