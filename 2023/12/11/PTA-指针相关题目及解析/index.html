@@ -24,7 +24,7 @@
 <meta property="og:description" content="1-1 若有定义：int *p[3]; 则以下叙述中正确的是（ ）。 A.定义了一个基类型为 int 的指针变量 p，该变量具有3个指针 B.定义了一个指针数组 p，该数组含有3个元素，每个元素都是基类型为 int 的指针 C.定义了一个名为 *p 的整型数组，该数组含有3个 int 类型元素 D.定义了一个可指向一维数组的指针变量 p ，所指一维数组应具有3个 int 类型元素 GPT 在 C">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-11T02:45:34.000Z">
-<meta property="article:modified_time" content="2023-12-11T11:02:37.332Z">
+<meta property="article:modified_time" content="2023-12-11T13:29:20.188Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.4k 字
+          13k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          79 分钟
+          111 分钟
         
       </span>
     
@@ -835,6 +835,237 @@ from和to都是用户传入的参数，分别存放数组部分数据的起始�
     <span class="token operator">*</span>p2 <span class="token operator">=</span> <span class="token char">'\0'</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="挑选整数">6-1 挑选整数</h1>
+<p>输入一个字符串，内有数字和非数字字符，例如：<code>a123x67 222y35i088 09x8 c</code>，请编写程序，将其中连续的数字作为一个整数，依次存放到一维数组<code>a</code>中。例如前面的字符串，应将<code>123</code>存放到<code>a[0]</code>中，<code>67</code>存放到<code>a[1]</code>中……，最后输出整数的个数以及各个整数的值。</p>
+<h2 id="输入格式">输入格式:</h2>
+<p>长度不超过100的一个字符串，其中包含整数字符和非整数字符。</p>
+<h2 id="输出格式">输出格式:</h2>
+<p>第一行输出整数的个数</p>
+<p>第2行输出各个整数的值，以空格间隔，最后一个整数后面没有空格。</p>
+<h2 id="输入样例-4">输入样例:</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">a123x67 222y35i088 09x8 c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h2 id="输出样例-4">输出样例:</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">7
+123 67 222 35 88 9 8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<h2 id="code-5">Code</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">fgets</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>p<span class="token operator">=</span>str<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> res<span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> total<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> temp<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> flag<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token operator">!=</span><span class="token char">'\0'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token operator">>=</span><span class="token char">'0'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">*</span>p<span class="token operator">&lt;=</span><span class="token char">'9'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            temp<span class="token operator">*=</span><span class="token number">10</span><span class="token punctuation">;</span>
+            temp<span class="token operator">+=</span><span class="token operator">*</span>p<span class="token operator">-</span><span class="token char">'0'</span><span class="token punctuation">;</span>
+            flag<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                res<span class="token punctuation">[</span>total<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+                temp<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+                flag<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        p<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
+        res<span class="token punctuation">[</span>total<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>total<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>total<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>total<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %d"</span><span class="token punctuation">,</span>res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="滤字符">6-2 滤字符</h1>
+<p>以指针的方式，将某个字符串中出现的特定字符删去，然后输出新的字符串。</p>
+<h2 id="输入格式-1">输入格式:</h2>
+<p>首先输入一个正整数T，表示测试数据的组数，然后是T组测试数据。
+每组测试数据输入一个字符串s和一个非空格字符t。其中s的长度不超过100，且只包含英文字母。</p>
+<h2 id="输出格式-1">输出格式:</h2>
+<p>对于每组测试，将删掉t后新得到的字串输出。如果串被删空，则输出NULL。</p>
+<h2 id="输入样例-5">输入样例:</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2
+eeidliecielpvu i
+ecdssnepffnofdoenci e<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="输出样例-5">输出样例:</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">eedlecelpvu
+cdssnpffnofdonci<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<h2 id="code-6">Code</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">char</span> c<span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span><span class="token punctuation">,</span>target<span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s %c"</span><span class="token punctuation">,</span>c<span class="token punctuation">,</span><span class="token operator">&amp;</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">char</span> <span class="token operator">*</span>p1<span class="token operator">=</span>c<span class="token punctuation">,</span><span class="token operator">*</span>p2<span class="token operator">=</span>c<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">*</span>p1<span class="token operator">!=</span><span class="token char">'\0'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>p1<span class="token operator">!=</span>target<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token operator">*</span>p2<span class="token operator">=</span><span class="token operator">*</span>p1<span class="token punctuation">;</span>
+                p2<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            p1<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token operator">*</span>p2<span class="token operator">=</span><span class="token char">'\0'</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>c<span class="token operator">==</span><span class="token char">'\0'</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"NULL\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="放置最值元素">6-3 放置最值元素</h1>
+<p>要求将一个n×n矩阵中的最大元素放在中心，4个角分别放4个最小的元素（按从左到右、从上到下的顺序依次从小到大存放）。若有多个同一类元素，则优先选择行号小的，若行号相同则优先选择列号小的。注意，放置元素时通过交换操作实现，具体参看样例。</p>
+<h2 id="输入格式-2">输入格式:</h2>
+<p>测试数据有多组，处理到文件尾。每组测试的第一行输入自然数n（n为奇数且3≤n≤11），第二行开始的n行每行输入n个不超过2位的整数。</p>
+<h2 id="输出格式-2">输出格式:</h2>
+<p>对于每组测试，输出将矩阵中的最大元素和4个最小元素放到指定的位置后的矩阵。每行的各个数据之间留一个空格。</p>
+<h2 id="输入样例-6">输入样例:</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5
+96 69 0 56 50
+21 54 87 46 40
+56 38 24 98 51
+0 2 88 43 55
+65 60 26 73 88
+9
+67 4 98 87 17 97 16 15 14
+27 73 20 55 81 14 48 41 7
+95 77 10 61 40 81 73 64 57
+22 27 21 55 50 80 94 57 14
+16 42 89 45 85 41 72 32 36
+84 73 91 89 2 4 50 76 87
+86 73 37 12 78 57 60 7 56
+28 37 44 17 87 18 16 58 78
+11 56 66 67 53 62 40 19 74<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="输出样例-6">输出样例:</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">0 69 96 56 0
+88 54 87 46 40
+56 38 98 24 51
+50 65 88 43 55
+2 60 26 73 21
+2 14 85 87 17 97 16 15 4
+27 73 20 55 81 14 48 41 74
+95 77 10 61 40 81 73 64 57
+22 27 21 55 50 80 94 57 14
+16 42 89 45 98 41 72 32 36
+84 73 91 89 67 11 50 76 87
+86 73 37 12 78 57 60 7 56
+28 37 44 17 87 18 16 58 78
+4 56 66 67 53 62 40 19 7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="code-7">Code</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> matrix<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                cin<span class="token operator">>></span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// int min[4];</span>
+        <span class="token comment">// memset(min,matrix[0][0],sizeof(min));</span>
+        <span class="token keyword">int</span> x<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> y<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> max_i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>max_j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;</span>matrix<span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    <span class="token keyword">int</span> k<span class="token punctuation">;</span>
+                    <span class="token keyword">for</span><span class="token punctuation">(</span>k<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>k<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                        <span class="token keyword">if</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">></span>matrix<span class="token punctuation">[</span>x<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                            <span class="token keyword">break</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span>matrix<span class="token punctuation">[</span>x<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                            <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">></span>x<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span>x<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> j<span class="token operator">></span>y<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">&#125;</span>
+                        <span class="token punctuation">&#125;</span>
+                    <span class="token punctuation">&#125;</span>
+                    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>l<span class="token operator">></span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>l<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                        x<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">=</span>x<span class="token punctuation">[</span>l<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                        y<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">=</span>y<span class="token punctuation">[</span>l<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">&#125;</span>
+                    x<span class="token punctuation">[</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
+                    y<span class="token punctuation">[</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>j<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">></span>matrix<span class="token punctuation">[</span>max_i<span class="token punctuation">]</span><span class="token punctuation">[</span>max_j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    max_i<span class="token operator">=</span>i<span class="token punctuation">;</span>
+                    max_j<span class="token operator">=</span>j<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// for(int i=0;i&lt;4;i++)&#123;</span>
+        <span class="token comment">//     cout&lt;&lt;x[i]&lt;&lt;" "&lt;&lt;y[i]&lt;&lt;endl;</span>
+        <span class="token comment">// &#125;</span>
+        <span class="token keyword">int</span> xx<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> yy<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">swap</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>matrix<span class="token punctuation">[</span>xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>yy<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>max_i<span class="token punctuation">]</span><span class="token punctuation">[</span>max_j<span class="token punctuation">]</span><span class="token punctuation">,</span>matrix<span class="token punctuation">[</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                cout<span class="token operator">&lt;&lt;</span><span class="token char">' '</span><span class="token operator">&lt;&lt;</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="sdut-c语言实验-虎子的难题">6-4 sdut-C语言实验-虎子的难题</h1>
+<p>稷下英才实验班有个同学叫虎子，有一天虎子刷到了一道编程题：给<span
+class="math inline">\(M（M&lt;=100）\)</span>组数据，每组数据有<span
+class="math inline">\(N\)</span>个正整数<span
+class="math inline">\(（N&lt;=100）\)</span>，要求把每组的<span
+class="math inline">\(N\)</span>个数按升序排成一行。虎子觉得应该用指针和函数实现比较高效，但总是调试不出来，你能帮帮他吗？</p>
+<h2 id="输入格式-3">输入格式:</h2>
+<p>输入包括<span
+class="math inline">\(M+1\)</span>行，第一行是两个正整数<span
+class="math inline">\(M、N\)</span>；<span
+class="math inline">\(M\)</span>表示总共多少组数据，下面<span
+class="math inline">\(M\)</span>行每行包含<span
+class="math inline">\(N\)</span>个正整数。（输入数据之间会用空格隔开）</p>
+<h2 id="输出格式-3">输出格式:</h2>
+<p>输出包括<span
+class="math inline">\(M\)</span>行，每行分别对应输入中<span
+class="math inline">\(M\)</span>组数据的升序序列，数与数之间用一个空格隔开。</p>
+<h2 id="输入样例-7">输入样例:</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2 3
+1 3 2
+4 2 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="输出样例-7">输出样例:</h2>
+<p>在这里给出相应的输出。例如： <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1 2 3
+2 4 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure></p>
+<h2 id="code-8">Code</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> m<span class="token punctuation">,</span>n<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>m<span class="token operator">>></span>n<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> array<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cin<span class="token operator">>></span>array<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span>array<span class="token operator">+</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span>array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token char">' '</span><span class="token operator">&lt;&lt;</span>array<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
                 
               </div>
