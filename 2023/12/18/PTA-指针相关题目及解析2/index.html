@@ -1,0 +1,1068 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="nanyan">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1-1 设有下列语句，则（ ）是对a数组元素的不正确引用，其中0≤i&lt;10,int a[10]&#x3D;&amp;#123;0,1,2,3,4,5,6,7,8,9&amp;#125;, * p&#x3D;a; A.p[i] B.p&#x3D;a[2] C.*(p+3) D.*(a+i) ChatGPT 在这个问题中，我们需要识别哪个选项是对数组 a 的元素进行了不正确的引用。首先，让我们逐一分析每个选项： A. p[i] - 这是正确">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PTA | 指针相关题目及解析2">
+<meta property="og:url" content="http://acm.nanyan.cc/2023/12/18/PTA-%E6%8C%87%E9%92%88%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%8F%8A%E8%A7%A3%E6%9E%902/index.html">
+<meta property="og:site_name" content="ACM笔记">
+<meta property="og:description" content="1-1 设有下列语句，则（ ）是对a数组元素的不正确引用，其中0≤i&lt;10,int a[10]&#x3D;&amp;#123;0,1,2,3,4,5,6,7,8,9&amp;#125;, * p&#x3D;a; A.p[i] B.p&#x3D;a[2] C.*(p+3) D.*(a+i) ChatGPT 在这个问题中，我们需要识别哪个选项是对数组 a 的元素进行了不正确的引用。首先，让我们逐一分析每个选项： A. p[i] - 这是正确">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-18T01:26:58.000Z">
+<meta property="article:modified_time" content="2023-12-18T01:38:17.807Z">
+<meta property="article:author" content="nanyan">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>PTA | 指针相关题目及解析2 - ACM笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"acm.nanyan.cc","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ACM笔记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://pic.imgdb.cn/item/656313adc458853aefa7e147.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="PTA | 指针相关题目及解析2"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-18 09:26" pubdate>
+          2023年12月18日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          52 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">PTA | 指针相关题目及解析2</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="section">1-1</h1>
+<p>设有下列语句，则（
+）是对a数组元素的不正确引用，其中<code>0≤i&lt;10</code>,<code>int a[10]=&#123;0,1,2,3,4,5,6,7,8,9&#125;, * p=a</code>;</p>
+<p>A.<code>p[i]</code></p>
+<p>B.<code>p=a[2]</code></p>
+<p>C.<code>*(p+3)</code></p>
+<p>D.<code>*(a+i)</code></p>
+<h2 id="chatgpt">ChatGPT</h2>
+<p>在这个问题中，我们需要识别哪个选项是对数组 <code>a</code>
+的元素进行了不正确的引用。首先，让我们逐一分析每个选项：</p>
+<p>A. <code>p[i]</code> - 这是正确的。因为 <code>p</code> 是指向
+<code>a</code> 的指针，<code>p[i]</code> 相当于 <code>a[i]</code>。</p>
+<p>B. <code>p = a[2]</code> - 这是不正确的。这里尝试将 <code>p</code>
+赋值为 <code>a[2]</code> 的值，而不是 <code>a[2]</code>
+的地址。<code>p</code> 应该指向数组中的一个地址，而 <code>a[2]</code>
+是一个 <code>int</code> 值。</p>
+<p>C. <code>*(p+3)</code> - 这是正确的。<code>p+3</code> 是指向
+<code>a[3]</code> 的指针，<code>*(p+3)</code> 是访问该位置的值，即
+<code>a[3]</code>。</p>
+<p>D. <code>*(a+i)</code> - 这也是正确的。这是数组 <code>a</code>
+的另一种标准引用方式，等价于 <code>a[i]</code>。</p>
+<p>因此，选项（B）是对 <code>a</code> 数组元素的不正确引用。</p>
+<h1 id="section-1">1-2</h1>
+<p>若有说明：<code>int n=2,*p=&amp;n,*q=p</code>,则以下非法的赋值语句是:
+（ ）。</p>
+<ol type="A">
+<li><p><code>p=q</code></p></li>
+<li><p><code>*p=*q</code></p></li>
+<li><p><code>n=*q</code></p></li>
+<li><p><code>p=n</code></p></li>
+</ol>
+<h2 id="chatgpt-1">ChatGPT</h2>
+<p>在这个问题中，我们需要找出哪个赋值语句是非法的。首先，让我们分析每个选项：</p>
+<p>A. <code>p=q</code> - 这是合法的。因为 <code>p</code> 和
+<code>q</code> 都是指向 <code>int</code> 类型的指针，所以可以把
+<code>q</code> 的值（即指向的地址）赋给 <code>p</code>。</p>
+<p>B. <code>*p=*q</code> - 这也是合法的。<code>*p</code> 和
+<code>*q</code> 都解引用为 <code>n</code> 的值，这个语句相当于将
+<code>n</code> 的值赋给自己。</p>
+<p>C. <code>n=*q</code> - 这是合法的。<code>*q</code> 解引用为
+<code>n</code> 的值，这个语句是将 <code>n</code> 的值赋给 <code>n</code>
+自己。</p>
+<p>D. <code>p=n</code> - 这是非法的。这里尝试将
+<code>n</code>（一个整数值）赋给
+<code>p</code>（一个指向整数的指针）。整数值不能直接赋给指针，因为它们是不兼容的类型。</p>
+<p>因此，选项（D）是非法的赋值语句。</p>
+<h1 id="section-2">1-3</h1>
+<p>若有语句<code>int a[3][4];</code>，则与<code>*(a+1)+2</code>等价的是
+( )。</p>
+<ol type="A">
+<li><p><code>a[1][2]</code></p></li>
+<li><p><code>*a+3</code></p></li>
+<li><p><code>&amp;a[1][2]</code></p></li>
+<li><p><code>&amp;a[1]+2</code></p></li>
+</ol>
+<h2 id="chatgpt-2">ChatGPT</h2>
+<p>为了理解这个问题，我们需要分析表达式 <code>*(a+1)+2</code>
+并找出与之等价的表达式。<code>a</code> 是一个 3x4
+的二维数组，<code>int a[3][4]</code>。</p>
+<ul>
+<li><code>*(a+1)</code>:
+<ul>
+<li><code>a</code>
+是一个指向数组首元素的指针，在这里，数组的首元素是一个含有4个整数的一维数组。因此，<code>a</code>
+可以被视作指向 <code>int[4]</code> 类型的指针。</li>
+<li><code>a+1</code> 移动到下一个 <code>int[4]</code> 数组，即
+<code>a</code> 数组的第二行。</li>
+<li><code>*(a+1)</code> 解引用这个指针，得到第二行的首地址。</li>
+</ul></li>
+<li><code>*(a+1)+2</code>:
+<ul>
+<li>加2意味着从第二行的首地址向前移动2个 <code>int</code> 元素。</li>
+<li>因此，这个表达式指的是第二行（即
+<code>a[1]</code>）中的第三个元素（即 <code>[2]</code>）。</li>
+</ul></li>
+</ul>
+<p>所以，<code>*(a+1)+2</code> 等价于访问
+<code>a[1][2]</code>。这是因为二维数组在内存中是连续存放的，且
+<code>a[1][2]</code> 正是第二行第三个元素的位置。</p>
+<p>因此，答案是：</p>
+<p>A. <code>a[1][2]</code></p>
+<h1 id="section-3">1-4</h1>
+<p>若有定义<code>int (*p)[4]</code>; 则标识符<code>p（ ）</code>。</p>
+<ol type="A">
+<li><p>是一个指向整型变量的指针</p></li>
+<li><p>是一个指针数组名</p></li>
+<li><p>是一个指针，它指向一个含有四个整型元素的一维数组</p></li>
+<li><p>定义不合法</p></li>
+</ol>
+<h2 id="chatgpt-3">ChatGPT</h2>
+<p>在这个问题中，我们要分析 <code>int (*p)[4];</code>
+这个声明的含义。让我们来逐一解读每个选项：</p>
+<ul>
+<li>A. 是一个指向整型变量的指针
+<ul>
+<li>这不正确。虽然 <code>p</code>
+是一个指针，但它不是指向单个整型变量的。而是指向一个整型数组的。</li>
+</ul></li>
+<li>B. 是一个指针数组名
+<ul>
+<li>这也不正确。<code>p</code>
+不是一个指针数组，而是单个指针。指针数组会有形式如
+<code>int* arr[10];</code>，表明 <code>arr</code> 是一个包含10个指向
+<code>int</code> 的指针的数组。</li>
+</ul></li>
+<li>C. 是一个指针，它指向一个含有四个整型元素的一维数组
+<ul>
+<li>这是正确的。<code>int (*p)[4];</code> 表示 <code>p</code>
+是一个指针，指向一个具有四个整数的数组。这里的括号非常重要，它指出
+<code>p</code>
+是指向一个整个数组的指针，而不是指向一个单独整数的指针。</li>
+</ul></li>
+<li>D. 定义不合法
+<ul>
+<li>这不正确。<code>int (*p)[4];</code> 是完全合法且有意义的声明。</li>
+</ul></li>
+</ul>
+<p>因此，正确答案是 C.
+是一个指针，它指向一个含有四个整型元素的一维数组。</p>
+<h1 id="section-4">1-5</h1>
+<p>若有定义<code>int n=0,*p=&amp;n,**q=&amp;p;</code>则以下选项中，正确的赋值语句是（
+）。</p>
+<ol type="A">
+<li><p><code>p=1;</code></p></li>
+<li><p><code>*q=2;</code></p></li>
+<li><p><code>q=p;</code></p></li>
+<li><p><code>*p=5;</code></p></li>
+</ol>
+<h2 id="chatgpt-4">ChatGPT</h2>
+<p>为了找出正确的赋值语句，我们首先需要理解变量
+<code>n</code>、<code>p</code> 和 <code>q</code> 的定义。</p>
+<ul>
+<li><code>n</code> 是一个整型变量，初始化为 <code>0</code>。</li>
+<li><code>p</code> 是一个指向整型的指针，初始化为指向
+<code>n</code>。</li>
+<li><code>q</code> 是一个指向指针的指针（双重指针），初始化为指向
+<code>p</code>。</li>
+</ul>
+<p>现在，让我们逐个分析每个选项：</p>
+<p>A. <code>p=1;</code> - 这是不正确的。<code>p</code>
+是一个指针，不能直接赋值为整数。应该赋值为指向整型的地址。</p>
+<p>B. <code>*q=2;</code> - 这也是不正确的。<code>q</code> 是指向
+<code>p</code> 的指针，所以 <code>*q</code> 是
+<code>p</code>。<code>p</code> 作为一个指针不能直接赋值为整数
+<code>2</code>。如果是 <code>**q = 2;</code> 则是正确的，因为它相当于
+<code>*p = 2;</code>，即改变 <code>n</code> 的值。</p>
+<p>C. <code>q=p;</code> - 这也是不正确的。<code>q</code>
+是一个指向指针的指针，而 <code>p</code>
+是一个指向整数的指针。二者类型不匹配，不能直接赋值。</p>
+<p>D. <code>*p=5;</code> - 这是正确的。<code>*p</code> 是解引用
+<code>p</code>，也就是 <code>n</code> 的别名。这个语句将 <code>5</code>
+赋值给 <code>n</code>。</p>
+<p>因此，正确的赋值语句是 D. <code>*p=5;</code>。</p>
+<h1 id="section-5">1-6</h1>
+<p>设有如下定义<code>char * aa[2]=&#123;"abcd", "ABCD"&#125;;</code>,
+则以下说法中正确的是()。</p>
+<ol type="A">
+<li><p>aa数组的元素的值分别是字符串" abcd"和"ABCD"的内容</p></li>
+<li><p>aa是指针变量, 它指向含有两个数组元素的字符型一维数组</p></li>
+<li><p>aa数组的两个元素分别存放的是字符串的首地址</p></li>
+<li><p>aa数组的两个元素中各自存放了字符"a"和"A"</p></li>
+</ol>
+<h2 id="chatgpt-5">ChatGPT</h2>
+<p>为了理解这个声明
+<code>char * aa[2] = &#123;"abcd", "ABCD"&#125;;</code>，我们需要分析每个选项：</p>
+<p>A. aa数组的元素的值分别是字符串 "abcd" 和 "ABCD" 的内容 -
+这是不正确的。<code>aa</code> 数组的元素实际上是指针，它们指向字符串常量
+"abcd" 和 "ABCD" 的首地址，而不是直接存储这些字符串的内容。</p>
+<p>B. aa是指针变量，它指向含有两个数组元素的字符型一维数组 -
+这也是不正确的。<code>aa</code>
+不是单个指针变量，而是一个数组，它包含了两个指针。每个指针分别指向一个字符数组（字符串）。</p>
+<p>C. aa数组的两个元素分别存放的是字符串的首地址 -
+这是正确的。<code>aa</code> 是一个指针数组，其两个元素
+<code>aa[0]</code> 和 <code>aa[1]</code> 分别存储了两个字符串 "abcd" 和
+"ABCD" 的首地址。</p>
+<p>D. aa数组的两个元素中各自存放了字符 "a" 和 "A" -
+这是不正确的。如前所述，<code>aa</code>
+数组存放的是指向字符串的指针，而不是单个字符。</p>
+<p>因此，正确的答案是 C.
+aa数组的两个元素分别存放的是字符串的首地址。</p>
+<h1 id="section-6">1-7</h1>
+<p>若有下面的程序片段, 则以下选项中对数组元素的错误引用的是()。
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token operator">*</span> p<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token operator">*</span> pp<span class="token punctuation">,</span> i<span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">[</span>i<span class="token operator">*</span><span class="token number">4</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> pp <span class="token operator">=</span>p<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure></p>
+<ol type="A">
+<li><p><code>pp[0][1]</code></p></li>
+<li><p><code>a[10]</code></p></li>
+<li><p><code>p[3][1]</code></p></li>
+<li><p><code>((p+2)+2)</code></p></li>
+</ol>
+<h2 id="chatgpt-6">ChatGPT</h2>
+<p>为了找出对数组元素的错误引用，我们需要先理解这段代码的含义和各个变量的作用。</p>
+<ol type="1">
+<li><code>int a[12] =&#123;0&#125;</code>:
+这是一个大小为12的整型数组，所有元素初始化为0。</li>
+<li><code>*p[3]</code>: 这是一个大小为3的指针数组，每个元素是指向
+<code>int</code> 的指针。</li>
+<li><code>**pp</code>: 这是一个指向指针的指针。</li>
+<li><code>for(i = 0; i &lt; 3; i++) p[i] = &amp;a[i*4];</code>:
+这个循环将 <code>p</code> 数组的每个元素指向 <code>a</code>
+数组中每4个元素的起始地址。即 <code>p[0]</code> 指向
+<code>a[0]</code>，<code>p[1]</code> 指向
+<code>a[4]</code>，<code>p[2]</code> 指向 <code>a[8]</code>。</li>
+<li><code>pp = p;</code>: 这将 <code>pp</code> 指向 <code>p</code>
+数组的首地址。</li>
+</ol>
+<p>现在，让我们检查每个选项：</p>
+<p>A. <code>pp[0][1]</code> - 这是合法的。<code>pp[0]</code> 相当于
+<code>p[0]</code>，指向 <code>a[0]</code>。<code>pp[0][1]</code> 相当于
+<code>a[1]</code>。</p>
+<p>B. <code>a[10]</code> - 这是合法的。<code>a</code>
+是一个有12个元素的数组，<code>a[10]</code> 是第11个元素。</p>
+<p>C. <code>p[3][1]</code> - 这是非法的。<code>p</code>
+是一个有3个元素的指针数组，有效索引范围是0到2。<code>p[3]</code>
+超出了其界限，是未定义的。</p>
+<p>D. <code>((p+2)+2)</code> - 这是不合法的。首先，<code>p+2</code>
+是合法的，指向 <code>p[2]</code>。但 <code>((p+2)+2)</code>
+试图再次偏移这个指针，结果是一个指向 <code>p</code>
+数组之外的位置，这在这个上下文中没有意义。</p>
+<p>因此，正确答案是 C. <code>p[3][1]</code>。</p>
+<h1 id="section-7">1-8</h1>
+<p>下列程序段的输出是____。 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> c<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>k<span class="token operator">=</span>c<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token operator">++</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<ol type="A">
+<li><p>3</p></li>
+<li><p>4</p></li>
+<li><p>5</p></li>
+<li><p>6</p></li>
+</ol>
+<h1 id="section-8">1-9</h1>
+<p>对于如下说明，语法和语义都正确的赋值是_____。</p>
+<p><code>int c, *s, a[]=&#123;1, 3, 5&#125;;</code></p>
+<ol type="A">
+<li><p><code>c=*s;</code></p></li>
+<li><p><code>s[0]=a[0];</code></p></li>
+<li><p><code>s=&amp;a[1];</code></p></li>
+<li><p><code>c=a;</code></p></li>
+</ol>
+<h2 id="chatgpt-7">ChatGPT</h2>
+<p>为了确定哪个赋值语句是在给定的上下文中既语法上正确又语义上正确，我们需要分析每个选项：</p>
+<ol type="1">
+<li><code>c=*s;</code>
+<ul>
+<li>这个语句在语法上是正确的，但在语义上可能不正确。因为 <code>s</code>
+是一个指针，但在这个代码片段中，我们没有看到 <code>s</code>
+被初始化或指向某个具体的地址。如果 <code>s</code>
+没有初始化，那么尝试解引用它 (<code>*s</code>) 将导致未定义的行为。</li>
+</ul></li>
+<li><code>s[0]=a[0];</code>
+<ul>
+<li>这个语句在语法上是正确的，但在语义上同样可能不正确。这里假设
+<code>s</code> 是指向某个整数的指针，因此 <code>s[0]</code>
+是合法的。但是，因为 <code>s</code>
+没有被初始化指向一个具体的地址，这可能导致错误。</li>
+</ul></li>
+<li><code>s=&amp;a[1];</code>
+<ul>
+<li>这是语法和语义上都正确的。这里 <code>s</code> 被赋值为指向数组
+<code>a</code> 的第二个元素的地址。在 C
+语言中，数组元素的地址可以赋给指针，所以这个语句是有效的。</li>
+</ul></li>
+<li><code>c=a;</code>
+<ul>
+<li>这在语法上是错误的。<code>a</code>
+是一个数组名，它在大多数上下文中表示数组的首地址，而 <code>c</code>
+是一个整数。不能将数组地址赋值给一个整数变量。</li>
+</ul></li>
+</ol>
+<p>综上所述，正确的选项是 C.
+<code>s=&amp;a[1];</code>。这是唯一一个在给定上下文中既语法上正确又语义上正确的赋值语句。</p>
+<h1 id="section-9">1-10</h1>
+<p>函数调用程序如下： <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span> <span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span>n<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">;</span>
+    <span class="token function">f</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<p>相关说法错误的是：</p>
+<ol type="A">
+<li><p>f函数头改为<code>int f(int *a, int n)</code>，无需其它改变，效果完全一样。</p></li>
+<li><p>main函数中增加 <code>int *p=a;</code> 将
+<code>f(a,n);改为f(p,n);</code>，效果完全一样。</p></li>
+<li><p>用数组名作f()的参数，则main()中的数组与f()中的数组是同一数组。</p></li>
+<li><p>用数组名作f()的参数，实现了实参与形参双向的值传递。</p></li>
+</ol>
+<h2 id="chatgpt-8">ChatGPT</h2>
+<p>为了评估这些关于函数调用的说法，我们需要仔细分析每一个选项：</p>
+<p>A. f函数头改为int f(int *a, int n)，无需其它改变，效果完全一样。 -
+这是正确的。在 C
+语言中，当数组作为参数传递给函数时，它实际上是以指针的形式传递的。因此，不管是使用
+<code>int a[]</code> 还是
+<code>int *a</code>，效果是一样的，因为在这个上下文中，它们都是指向数组首元素的指针。</p>
+<p>B. main函数中增加 int *p=a; 将 f(a,n); 改为 f(p,n);，效果完全一样。 -
+这也是正确的。由于 <code>p</code> 是指向 <code>a</code>
+的首元素的指针，传递 <code>p</code> 给 <code>f</code> 函数与直接传递数组
+<code>a</code> 是等效的。</p>
+<p>C. 用数组名作 f() 的参数，则 main() 中的数组与 f()
+中的数组是同一数组。 - 这是正确的。在 C
+语言中，数组参数是通过指针传递的，所以在 <code>f</code>
+函数中对数组的修改会反映在 <code>main</code> 函数中的同一个数组上。</p>
+<p>D. 用数组名作 f() 的参数，实现了实参与形参双向的值传递。 -
+这是错误的。虽然数组的修改在函数间是可见的，这是由于数组名作为参数传递的是地址，而不是值的副本。因此，这不是双向的值传递。实际上，这是通过引用（或地址）传递实现的，其中形参指向实参的同一内存地址。</p>
+<p>因此，错误的说法是 D. 用数组名作 f()
+的参数，实现了实参与形参双向的值传递。</p>
+<h1 id="section-10">2-1</h1>
+<p>在主函数中输入N个字符串，调用func()函数用选择排序算法对他们进行升序排序，然后输出已经排好序的字符串。
+要求使用指针数组进行处理。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">5</span></span></span>
+<span class="token keyword">void</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> s<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">*</span>pStr<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">gets</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pStr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">func</span><span class="token punctuation">(</span>pStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//输出排序后的结果</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span>pStr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>str<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>   
+    <span class="token keyword">char</span> <span class="token operator">*</span>temp<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>min<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>N<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>   
+        min<span class="token operator">=</span>i<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>N<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">,</span>str<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span>  
+            min<span class="token operator">=</span>j<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>min<span class="token operator">!=</span>i<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span> 
+            temp<span class="token operator">=</span>str<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            str<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token operator">=</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="求定积分通用函数">2-2 求定积分通用函数</h1>
+<p>下述程序用于求解上述定积分。 【问题分析】
+根据数学知识，求定积分的问题实际上就是求函数f(x)当x在区间[a,b]时由x=a、x=b、y=0和y=f(x)围成的曲边四边形的面积。使用计算机解决这类问题的常用方法有矩形法、梯形法、辛普生法等。以梯形法为例，求定积分有如下几个步骤，如图1所示。</p>
+<ul>
+<li><ol type="1">
+<li>将区间[a,b]划分为若干等分，等分数取决于要求的精度；</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>计算出所有等分点的函数值f(xi)；</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>连接相邻两个等分点的函数值，将所求曲边四边形区域用若干个小的梯形代替。此时相邻两等分点函数值之间的曲线和连接的直线之间的区域即为误差；</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>按平面几何公式求出所有小梯形的面积，然后求和得到曲边四边形面积的近似值。当积分区间的等分数趋近于无穷等分时，梯形面积之和无限趋近于真实的积分值。注意用计算机求解时只能求出满足精度要求的近似值。</li>
+</ol></li>
+</ul>
+<p>请将下述程序补充完整，使其可以正常运行。
+提示：<code>integrate()</code>的第1个参数应为函数指针，代表了被积分的函数；<code>a,b</code>分别为积分下界及上界，<code>N</code>为细分数。
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">double</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token operator">+</span>x<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">double</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token number">1.0</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">*</span>x<span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">double</span> <span class="token function">integrate</span><span class="token punctuation">(</span><span class="token keyword">double</span> <span class="token punctuation">(</span><span class="token operator">*</span>f<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">double</span> a<span class="token punctuation">,</span> <span class="token keyword">double</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> N<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">double</span> h <span class="token operator">=</span> <span class="token punctuation">(</span>b<span class="token operator">-</span>a<span class="token punctuation">)</span><span class="token operator">/</span>N<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> area <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>N<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        area <span class="token operator">+=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span>a<span class="token operator">+</span>i<span class="token operator">*</span>h<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>a<span class="token operator">+</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span>h<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">*</span>h<span class="token operator">/</span><span class="token number">2.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> area<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"integrate(f1,0,2,100)=%.2f\n"</span><span class="token punctuation">,</span><span class="token function">integrate</span><span class="token punctuation">(</span>f1<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"integrate(f2,-1,1,100)=%.2f\n"</span><span class="token punctuation">,</span><span class="token function">integrate</span><span class="token punctuation">(</span>f2<span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<p>【提示】 程序的执行结果应为：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">integrate(f1,0,2,100)&#x3D;4.00
+integrate(f2,-1,1,100)&#x3D;1.11<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>PTA | 指针相关题目及解析2</div>
+      <div>http://acm.nanyan.cc/2023/12/18/PTA-指针相关题目及解析2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>nanyan</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月18日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/12/17/ACM-Inner-PK-7/" title="ACM | Inner PK 7">
+                        <span class="hidden-mobile">ACM | Inner PK 7</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
