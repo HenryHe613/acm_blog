@@ -1,0 +1,957 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="nanyan">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1001 Problem Description jjy 每天都有很多课要上，但是回寝室玩游戏同样是一件非常重要的事。如果 jjy 当天的课程数超过 \(5\) 节，他将感到非常疲惫，以至于没有精力启动任何游戏。 jjy 今天有 \(n\) 节课要上，同时想玩一款名为 \(s\) 的游戏。如果 jjy 今晚能启动该游戏，请输出游戏的名称，否则输出 sleep。 Input 测试点包含多组数据。第一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM | “华为杯”杭州电子科技大学2023新生编程大赛">
+<meta property="og:url" content="http://acm.nanyan.cc/2023/12/30/ACM-%E2%80%9C%E5%8D%8E%E4%B8%BA%E6%9D%AF%E2%80%9D%E6%9D%AD%E5%B7%9E%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A62023%E6%96%B0%E7%94%9F%E7%BC%96%E7%A8%8B%E5%A4%A7%E8%B5%9B/index.html">
+<meta property="og:site_name" content="ACM笔记">
+<meta property="og:description" content="1001 Problem Description jjy 每天都有很多课要上，但是回寝室玩游戏同样是一件非常重要的事。如果 jjy 当天的课程数超过 \(5\) 节，他将感到非常疲惫，以至于没有精力启动任何游戏。 jjy 今天有 \(n\) 节课要上，同时想玩一款名为 \(s\) 的游戏。如果 jjy 今晚能启动该游戏，请输出游戏的名称，否则输出 sleep。 Input 测试点包含多组数据。第一">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-30T07:16:19.000Z">
+<meta property="article:modified_time" content="2024-01-04T15:13:43.584Z">
+<meta property="article:author" content="nanyan">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>ACM | “华为杯”杭州电子科技大学2023新生编程大赛 - ACM笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"acm.nanyan.cc","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ACM笔记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://pic.imgdb.cn/item/656313adc458853aefa7e147.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="ACM | “华为杯”杭州电子科技大学2023新生编程大赛"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-30 15:16" pubdate>
+          2023年12月30日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          36 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">ACM | “华为杯”杭州电子科技大学2023新生编程大赛</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="section">1001</h1>
+<h2 id="problem-description">Problem Description</h2>
+<p>jjy 每天都有很多课要上，但是回寝室玩游戏同样是一件非常重要的事。如果
+jjy 当天的课程数超过 <span class="math inline">\(5\)</span>
+节，他将感到非常疲惫，以至于没有精力启动任何游戏。</p>
+<p>jjy 今天有 <span class="math inline">\(n\)</span>
+节课要上，同时想玩一款名为 <span class="math inline">\(s\)</span>
+的游戏。如果 jjy 今晚能启动该游戏，请输出游戏的名称，否则输出
+<code>sleep</code>。</p>
+<h2 id="input">Input</h2>
+<p>测试点包含多组数据。第一行包含一个整数 <span
+class="math inline">\(T(1&lt;=T&lt;=100)\)</span> ，表示数据组数。</p>
+<p>每组数据仅有一行，包含一个整数 <span class="math inline">\(n\)</span>
+和一个字符串 <span class="math inline">\(s (1≤n≤10，1≤∣s∣≤20)\)</span>
+，分别表示 jjy 今天的课程数和今晚想玩的游戏的名称。</p>
+<h2 id="output">Output</h2>
+<p>每组数据包含一个字符串，如果 jjy
+今晚能启动他想玩的游戏，输出游戏名称，否则输出 <code>sleep</code>。</p>
+<h2 id="sample-input">Sample Input</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2
+6 genshinimpact
+5 codeforces<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="sample-output">Sample Output</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">sleep
+codeforces<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<h2 id="hint">Hint</h2>
+<p>样例共有两组数据：</p>
+<p>第一组数据，jjy 的课程数超过了 <span class="math inline">\(5\)</span>
+节，因此他不能启动 <code>genshinimpact</code>。</p>
+<p>第二组数据，jjy 的课程数不超过 <span class="math inline">\(5\)</span>
+节，因此他可以启动 <code>codeforces</code>。</p>
+<h1 id="section-1">1002</h1>
+<p>Problem Description 如果一个字符串可以表示成 <span
+class="math inline">\(SS^RS\)</span> 的形式，那么称其是完美的。其中，
+<span class="math inline">\(S^R\)</span>表示字符串 <span
+class="math inline">\(S\)</span> 翻转后的结果，具体来说，如果 <span
+class="math inline">\(S\)</span> 为 <span
+class="math inline">\(S_1S_2...S_{|S|}\)</span> ，那么 <span
+class="math inline">\(S^R\)</span> 为 <span
+class="math inline">\(S_{|S|}S_{|S|-1}...S_1\)</span> （∣S∣ 表示字符串
+<span class="math inline">\(S\)</span> 的长度）。</p>
+<p>给定一个由小写字母组成的字符串 <span class="math inline">\(L\)</span>
+，求 <span class="math inline">\(L\)</span> 的最长的完美子串的长度，如果
+<span class="math inline">\(L\)</span> 没有完美子串，请输出 <span
+class="math inline">\(0\)</span> 。字符串 <span
+class="math inline">\(S\)</span> 是字符串 <span
+class="math inline">\(T\)</span> 的子串当且仅当存在两个整数 <span
+class="math inline">\(i\)</span> 和 <span
+class="math inline">\(j（1≤i≤j≤∣T∣）\)</span> ，使 <span
+class="math inline">\(T_iT_{i+1}...T_j\)</span> 和 <span
+class="math inline">\(S\)</span> 相同。</p>
+<h2 id="input-1">Input</h2>
+<p>测试点包含多组数据。第一行包含一个整数 <span
+class="math inline">\(T（1≤T≤5）\)</span> ，表示数据组数。</p>
+<p>每组数据包含一个由小写字母组成的字符串 <span
+class="math inline">\(L（1≤∣L∣≤2×10^5）\)</span></p>
+<h2 id="output-1">Output</h2>
+<p>每组数据包含一行，表示最长的完美子串的长度。如果没有完美子串，则输出
+<span class="math inline">\(0\)</span> 。</p>
+<h2 id="sample-input-1">Sample Input</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5
+abccbbc
+aabbaab
+abc
+abcaacbbcaabbaab
+aaaaaaaaa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="sample-output-1">Sample Output</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">6
+6
+0
+9
+9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="hint-1">Hint</h2>
+<p>样例共有五组数据：</p>
+<p>第一组数据，最长的完美子串可以是 <span
+class="math inline">\(bccbbc\)</span> ，长度为 <span
+class="math inline">\(6\)</span> 。</p>
+<p>第二组数据，最长的完美子串可以是 <span
+class="math inline">\(abbaab\)</span>，长度为 <span
+class="math inline">\(6\)</span> 。</p>
+<p>第三组数据，<span class="math inline">\(s\)</span>
+没有完美子串，因此答案为 <span class="math inline">\(0\)</span>。</p>
+<p>第四组数据，最长的完美子串可以是 <span
+class="math inline">\(bcaacbbca\)</span> ，长度为 <span
+class="math inline">\(9\)</span> 。</p>
+<p>第五组数据，最长的完美子串为 <span class="math inline">\(s\)</span>
+本身，长度为 <span class="math inline">\(9\)</span> 。</p>
+<p>可以证明，每组数据都不存在更长的完美子串。</p>
+<h1 id="section-2">1003</h1>
+<h2 id="problem-description-1">Problem Description</h2>
+<p>L 来到了一座罪恶之国。罪恶之国由 <span
+class="math inline">\(n\)</span> 个城市和 <span
+class="math inline">\(m\)</span>
+条单向道路组成，其中没有一条路径能经过一个城市两次，并且任何两个城市之间最多只有一条直接连接的道路。</p>
+<p>罪恶之国的每个城市都有一个罪恶值 <span
+class="math inline">\(a_i\)</span> 。L 希望离开这里，不幸的是，当 L
+的罪恶值超过 <span class="math inline">\(k\)</span> 时，L
+将永远留在这个国家。L
+可以选择从任何城市出发，并且他初始的罪恶值为出发城市的罪恶值 <span
+class="math inline">\(a_i\)</span> 。之后每当 L 到达一座城市时，L
+的罪恶值将会乘上该城市的罪恶值 <span class="math inline">\(a_i\)</span>
+。</p>
+<p>L 因为天天“云顶，启动！”，所以已经不想动脑了。于是 L
+来问你，一共有多少条不同的路径，使得 L 的罪恶值最后不超过 <span
+class="math inline">\(k\)</span>
+。两条路径不同当且仅当其对应的城市序列不同，且允许存在起点和终点相同的路径。</p>
+<p>请输出答案对 <span class="math inline">\(998244353\)</span>
+取模后的结果。</p>
+<h2 id="input-2">Input</h2>
+<p>测试点包含多组数据。第一行包含一个整数 <span
+class="math inline">\(T（1≤T≤5）\)</span>
+，表示数据组数。每组数据输入格式如下：</p>
+<p>第一行包含三个整数 <span class="math inline">\(n,m\)</span> 和 <span
+class="math inline">\(k（1≤n,m≤1000，1≤k≤10^9）\)</span>，分别表示城市的数量、道路的数量和罪恶值的上限。</p>
+<p>第二行包含 <span class="math inline">\(n\)</span> 个整数 <span
+class="math inline">\(a_1,a_2,...,a_n（1≤a_i≤10^9）\)</span>，分别表示每个城市的罪恶值。</p>
+<p>接下来 <span class="math inline">\(m\)</span>
+行，每行包含两个不同的整数 <span class="math inline">\(u\)</span> 和
+<span class="math inline">\(v（1≤u,v≤n）\)</span>，表示存在一条 <span
+class="math inline">\(u\)</span> 到 <span
+class="math inline">\(v\)</span>
+的单向道路，保证没有一条路径能经过一个城市两次，并且任何两个城市之间最多只有一条直接连接的道路。</p>
+<h2 id="output-2">Output</h2>
+<p>每组数据包含一个整数，表示路径数量对 <span
+class="math inline">\(998244353\)</span> 取模后的结果。</p>
+<h2 id="sample-input-2">Sample Input</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1
+4 6 99999999  
+100 100 100 100  
+1 2  
+1 3  
+2 3  
+3 4  
+2 4  
+1 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="sample-output-2">Sample Output</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">14<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h2 id="hint-2">Hint</h2>
+<p>样例中，共有 <span class="math inline">\(14\)</span>
+条合法路径，分别是
+[1,2,3]、[1,2,4]、[1,3,4]、[2,3,4]、[1,2]、[1,3]、[1,4]、[2,3]、[2,4]、[3,4]、[1]、[2]、[3]
+和 [4]。只有路径 [1,2,3,4] 不符合条件。</p>
+<h1 id="section-3">1004</h1>
+<h2 id="problem-description-2">Problem Description</h2>
+<p>jjy
+最近对智能车很感兴趣，于是他去实验室借了一辆玩。不幸的是，他发现智能车没有装配电池。</p>
+<p>于是 jjy 购买了 <span class="math inline">\(n\)</span> 个电池，其中第
+<span class="math inline">\(i\)</span> 个电池能够提供 <span
+class="math inline">\(p_i\)</span> 的电力，智能车需要恰好 <span
+class="math inline">\(C\)</span>
+的电力才能正常启动。另外，如果同时装配了两枚电力差距过大的电池，智能车可能会变得不稳定。</p>
+<p>jjy
+需要选择一些电池来启动智能车，并使装配的电池中电力的最大值和最小值相差最小，请你告诉他最小的差值。如果没有任何一种启动智能车的方案，请输出
+<span class="math inline">\(-1\)</span> 。</p>
+<h2 id="input-3">Input</h2>
+<p>测试点包含多组数据。第一行包含一个整数 <span
+class="math inline">\(T（1≤T≤10）\)</span>
+，表示数据组数。每组数据输入格式如下：</p>
+<p>第一行包含两个整数 <span class="math inline">\(n\)</span> 和 <span
+class="math inline">\(C（1≤n≤5×10^4，1≤C≤500）\)</span>，分别表示电池的数量和启动智能车需要的电力。</p>
+<p>第二行包含 <span class="math inline">\(n\)</span> 个整数 <span
+class="math inline">\(p_1,p_2,...,p_n(1≤p_i≤C)\)</span>
+，分别表示每个电池提供的电力。</p>
+<h2 id="output-3">Output</h2>
+<p>每组数据包含一个整数，表示最小差值。如果没有任何一种启动智能车的方案，输出
+<span class="math inline">\(-1\)</span> 。</p>
+<h2 id="sample-input-3">Sample Input</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1
+4 10
+3 7 2 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="sample-output-3">Sample Output</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h2 id="hint-3">Hint</h2>
+<p>样例中，一种可行的方案是 [3,2,5]，差值为 <span
+class="math inline">\(3\)</span> 。可以证明不存在差值更小的方案。</p>
+<h1 id="section-4">1005</h1>
+<h2 id="problem-description-3">Problem Description</h2>
+<p>给定一棵包含 <span class="math inline">\(n\)</span>
+个节点的带边权的树，树是一个无环的无向联通图。定义 <span
+class="math inline">\(xordist(u,v)\)</span> 为节点 <span
+class="math inline">\(u\)</span> 到 <span
+class="math inline">\(v\)</span> 的简单路径上所有边权值的异或和。</p>
+<p>有 <span class="math inline">\(q\)</span> 次询问，每次给出
+<code>l r x</code>，求 <span
+class="math inline">\(\sum_{i=l}^{r}{xordist(i,x)}\)</span> 的值。</p>
+<h2 id="input-4">Input</h2>
+<p>测试点包含多组数据。第一行包含一个整数 <span
+class="math inline">\(T(1≤T≤10）\)</span>，表示数据组数。每组数据的输入格式如下：</p>
+<p>第一行包含一个整数 <span
+class="math inline">\(n(1≤n≤10^5)\)</span>，表示节点的个数。</p>
+<p>接下来 <span class="math inline">\(n−1\)</span> 行，每行包含三个整数
+<span class="math inline">\(u,v\)</span> 和 <span
+class="math inline">\(w(1≤u,v≤n,0≤w&lt;2^{30})\)</span> ，表示 <span
+class="math inline">\(u\)</span> 和 <span
+class="math inline">\(v\)</span> 之间存在一条权值为 <span
+class="math inline">\(w\)</span> 的无向边。保证输入是一棵树。</p>
+<p>接下来一行，包含一个整数 <span
+class="math inline">\(q(1≤q≤10^5)\)</span>，表示询问的次数。</p>
+<p>接下来 <span class="math inline">\(q\)</span> 行，每行包含三个整数
+<span class="math inline">\(l,r\)</span> 和
+$x(1≤l≤r≤n,1≤x≤n)，分别表示每次询问的信息，其含义已在上文说明。</p>
+<h2 id="output-4">Output</h2>
+<p>每组数据包含 <span class="math inline">\(q\)</span>
+行，每行一个整数，表示每次询问的答案。</p>
+<h2 id="sample-input-4">Sample Input</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1
+4
+1 2 1
+1 3 2
+3 4 4
+2
+1 4 3
+1 2 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="sample-output-4">Sample Output</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">9
+13<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<h2 id="hint-4">Hint</h2>
+<p>本题输入数据较多，建议大家使用关闭同步流后的 <code>cin</code>和
+<code>cout</code> 输入输出。具体代码如下：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    ios<span class="token operator">::</span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span>false<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span>nullptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+    <span class="token comment">// you code</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>样例中的树如下图所示：</p>
+<p>对于第一个询问，答案为 <span
+class="math inline">\(2+1⨁2+4=2+3+4=9\)</span> 。 对于第二个询问，答案为
+<span class="math inline">\(2⨁4+1⨁2⨁4=6+7=13\)</span> 。</p>
+<h1 id="section-5">1006</h1>
+<h2 id="problem-description-4">Problem Description</h2>
+<p>最近，M 迷上了打台球，他前几天被 <span
+class="math inline">\(L\)</span>
+爆杀了，现在正在苦练翻袋，他认为空心翻袋才是最牛的。</p>
+<p>台球桌是一个 <span class="math inline">\(n×m\)</span> 的矩形（保证
+<span class="math inline">\(n\)</span> 是偶数），其左上角位于坐标 <span
+class="math inline">\((0,0)\)</span> 处，右下角位于坐标 <span
+class="math inline">\((n,m)\)</span>
+处。台球桌边缘有六个袋口，分别位于坐标 <span
+class="math inline">\((0,0)、(0,m)、(\frac{n}{2},0)、(\frac{n}{2},m)、(n,0)\)</span>
+和 <span class="math inline">\((n,m)\)</span> 处。</p>
+<p>此刻，台面上仅剩下一颗白球和一颗黑球，白球位于坐标 <span
+class="math inline">\((x_1,y_1)\)</span> 的位置，黑球位于坐标 <span
+class="math inline">\((x_2,y_2)\)</span>
+的位置，保证白球和黑球位置不同且都不位于台球桌边缘。M
+觉得这是个绝佳的机会，他用尽全力将白球对心击向黑球，此后黑球会沿连线方向运动（后续白球的运动情况忽略）。台球和袋口的体积忽略不计，一旦台球和袋口坐标重合将会直接入袋。台球碰到台球桌边缘将会沿镜面反射方向继续运动。</p>
+<p>由于这是一次全力以赴的击打，黑球进入袋口前将不会停下，M
+想知道黑球最终会经过几次反弹后进入哪个袋口，请输出反弹次数和入袋坐标。如果黑球永远无法入袋，请输出
+<span class="math inline">\(-1\)</span> 。</p>
+<h2 id="input-5">Input</h2>
+<p>测试点包含多组数据。第一行包含一个整数 <span
+class="math inline">\(T(1≤T≤5×10^4)\)</span>
+，表示数据组数。每组数据输入格式如下：</p>
+<p>第一行包含两个整数 <span class="math inline">\(n\)</span> 和 <span
+class="math inline">\(m(20≤n,m≤10^6,保证 n 是偶数)\)</span>
+，分别表示台球桌的长和宽。</p>
+<p>第二行包含两个整数 <span class="math inline">\(x_1\)</span> 和 <span
+class="math inline">\(y_1(0&lt; x_1 &lt; n, 0&lt; y_1 &lt; m)\)</span>
+表示白球的位置。</p>
+<p>第三行包含两个整数 <span class="math inline">\(x_2\)</span> 和 <span
+class="math inline">\(y_2(0&lt; x_2 &lt; n, 0&lt; y_2 &lt; m)\)</span>
+表示黑球的位置。</p>
+<p>保证白球和黑球位置不同。</p>
+<h2 id="output-5">Output</h2>
+<p>每组数据包含一行，如果黑球能入袋，输出三个整数，表示反弹次数和入袋坐标，否则输出
+<span class="math inline">\(-1\)</span> 。</p>
+<h2 id="sample-input-5">Sample Input</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2
+60 30
+50 20
+40 10
+58 41
+5 29
+38 29<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="sample-output-5">Sample Output</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">0 30 0
+-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<h2 id="hint-5">Hint</h2>
+<p>样例共有两组数据：</p>
+<p>第一组数据，黑球会直接进入位于 <span
+class="math inline">\((30,0)\)</span> 的袋口。</p>
+<p>第二组数据，可以证明黑球永远无法入袋。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>ACM | “华为杯”杭州电子科技大学2023新生编程大赛</div>
+      <div>http://acm.nanyan.cc/2023/12/30/ACM-“华为杯”杭州电子科技大学2023新生编程大赛/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>nanyan</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月30日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/01/01/TOP-Happy-New-Year/" title="TOP | Happy New Year!!!">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">TOP | Happy New Year!!!</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/12/28/ACM-ACM-Test-231228/" title="ACM | ACM Test 231228">
+                        <span class="hidden-mobile">ACM | ACM Test 231228</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
