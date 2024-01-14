@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://acm.nanyan.cc/img/0e6678dd.png">
 <meta property="article:published_time" content="2024-01-14T07:15:51.000Z">
-<meta property="article:modified_time" content="2024-01-14T12:24:03.603Z">
+<meta property="article:modified_time" content="2024-01-14T12:42:19.433Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://acm.nanyan.cc/img/0e6678dd.png">
@@ -212,7 +212,7 @@
         
         
         
-          110 分钟
+          112 分钟
         
       </span>
     
@@ -1532,6 +1532,57 @@ class="math inline">\(n\)</span> 是用户传入的数组和数组长度。
         <span class="token operator">*</span>pmin<span class="token operator">=</span><span class="token punctuation">(</span><span class="token operator">*</span>pmin<span class="token operator">&lt;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token operator">*</span>pmin<span class="token operator">:</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="链表-节点最大值">6-15 链表-节点最大值</h2>
+<blockquote>
+<p>分数 1 作者 叶青 单位 长春理工大学</p>
+</blockquote>
+<p>本题要求实现一个函数，遍历一个不带头节点的链表，求链表节点数据的最大值</p>
+<h3 id="节点类型定义">节点类型定义：</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> ch<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="函数接口定义-14">函数接口定义：</h3>
+<p>在这里描述函数接口。例如： <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">max_node</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></p>
+<p><span
+class="math inline">\(p\)</span>是链表头指针,返回链表上最大的<span
+class="math inline">\(ch\)</span>属性值。</p>
+<h3 id="裁判测试程序样例-14">裁判测试程序样例：</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> ch<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token operator">*</span> next<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token operator">*</span> <span class="token function">setlink</span><span class="token punctuation">(</span><span class="token keyword">int</span> N<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//建立链表函数，已经定义</span>
+<span class="token keyword">int</span> <span class="token function">max_node</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token operator">*</span> head<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//需要定义这个函数</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token operator">*</span> head<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    head<span class="token operator">=</span><span class="token function">setlink</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token function">max_node</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="输入样例-14">输入样例：</h3>
+<p>在这里给出一组输入。例如： <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">6
+7 8 9 1 2 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure></p>
+<h3 id="输出样例-14">输出样例：</h3>
+<p>在这里给出相应的输出。例如： <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">9<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></p>
+<blockquote>
+<p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
+</blockquote>
+<h3 id="code-14">Code</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">max_node</span><span class="token punctuation">(</span> <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>head<span class="token operator">=</span>p<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>now<span class="token operator">=</span>head<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> max<span class="token operator">=</span>head<span class="token operator">-></span>ch<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>now<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        max<span class="token operator">=</span><span class="token punctuation">(</span>now<span class="token operator">-></span>ch<span class="token operator">></span>max<span class="token punctuation">)</span><span class="token operator">?</span>now<span class="token operator">-></span>ch<span class="token operator">:</span>max<span class="token punctuation">;</span>
+        now<span class="token operator">=</span>now<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <h2 id="综合3-3输出本周的工资收入">7-1 综合3-3：输出本周的工资收入</h2>
 <blockquote>
 <p>分数 10 作者 章理登 单位 浙江工贸职业技术学院</p>
@@ -1547,14 +1598,14 @@ class="math inline">\(80\)</span>小时，不输出工资收入，提示用户�
 <p>一个整数，表示每周工作的小时数，和一个浮点数，表示时薪，以空格分隔。</p>
 <h3 id="输出格式">输出格式:</h3>
 <p>一个浮点数，表示本周的工资收入，或者输出字符串，表示注意身体。</p>
-<h3 id="输入样例-14">输入样例:</h3>
+<h3 id="输入样例-15">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">35 15.5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-14">输出样例:</h3>
+<h3 id="输出样例-15">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">542.50<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-14">Code</h3>
+<h3 id="code-15">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">int</span> hour<span class="token punctuation">;</span>
@@ -1594,14 +1645,14 @@ class="math inline">\(200\)</span>元。</li>
 <p>在一行输入停车时间（整数，单位：小时）。</p>
 <h3 id="输出格式-1">输出格式:</h3>
 <p>在一行输出应支付的停车费用（整数，单位：元）</p>
-<h3 id="输入样例-15">输入样例:</h3>
+<h3 id="输入样例-16">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-15">输出样例:</h3>
+<h3 id="输出样例-16">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">110<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-15">Code</h3>
+<h3 id="code-16">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">int</span> hour<span class="token punctuation">,</span>fee<span class="token punctuation">;</span>
@@ -1628,14 +1679,14 @@ C程序设计教程与实训-循环结构-求π的近似值</h2>
 <h3 id="输出格式-2">输出格式:</h3>
 <p>输出用公式求得的 <span class="math inline">\(\pi\)</span>
 的近似值，小数点后保留<span class="math inline">\(7\)</span>位。</p>
-<h3 id="输入样例-16">输入样例:</h3>
+<h3 id="输入样例-17">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">10000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-16">输出样例:</h3>
+<h3 id="输出样例-17">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3.1415141<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-16">Code</h3>
+<h3 id="code-17">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">int</span> n<span class="token punctuation">;</span>
@@ -1666,16 +1717,16 @@ class="math inline">\(n\)</span> 。</p>
 <p>请在这里描述输出格式。例如：输出前<span
 class="math inline">\(n\)</span> 项的和，格式为
 <code>sum = ***</code>。</p>
-<h3 id="输入样例-17">输入样例:</h3>
+<h3 id="输入样例-18">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-17">输出样例:</h3>
+<h3 id="输出样例-18">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">sum &#x3D; 2.666667<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-17">Code</h3>
+<h3 id="code-18">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">int</span> n<span class="token punctuation">;</span>
@@ -1702,16 +1753,16 @@ class="math inline">\(n（1\leq m &lt; n \leq 500）\)</span>。</p>
 <h3 id="输出格式-4">输出格式:</h3>
 <p>输出<span class="math inline">\(m\)</span>和<span
 class="math inline">\(n\)</span>之间的素数个数以及这些素数的和。</p>
-<h3 id="输入样例-18">输入样例:</h3>
+<h3 id="输入样例-19">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1 10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-18">输出样例:</h3>
+<h3 id="输出样例-19">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1和10之间有4个素数，这些素数的和是17。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-18">Code</h3>
+<h3 id="code-19">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;math.h></span></span>
 
@@ -1745,9 +1796,9 @@ class="math inline">\(n\)</span>之间的素数个数以及这些素数的和。
 <p>用户从键盘输入一段英文(不超过 <span
 class="math inline">\(1000\)</span> 字符，以换行符 <code>'\n'</code>
 结束)，请统计其中字母、数字、空白字符、其它标点符号的数量，以及总字符数量。</p>
-<h3 id="输入样例-19">输入样例</h3>
+<h3 id="输入样例-20">输入样例</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">There are 3 apples and 2 pears on the plate.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-19">输出样例</h3>
+<h3 id="输出样例-20">输出样例</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Alpha:  32
 Digit:   2
 Space:   9
@@ -1756,7 +1807,7 @@ Total:  44<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-19">Code</h3>
+<h3 id="code-20">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;ctype.h></span></span>
 
@@ -1791,14 +1842,14 @@ class="math inline">\(\pi\)</span>的近似值，要求直到发现某一项的�
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%le"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>epsilon<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></p>
 <h3 id="输出格式-5">输出格式:</h3>
 <p>PI=近似值</p>
-<h3 id="输入样例-20">输入样例:</h3>
+<h3 id="输入样例-21">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1.0e-6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-20">输出样例:</h3>
+<h3 id="输出样例-21">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">PI&#x3D;3.141591<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-20">Code</h3>
+<h3 id="code-21">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">double</span> pi<span class="token operator">=</span><span class="token number">0.0</span><span class="token punctuation">;</span>
@@ -1825,13 +1876,13 @@ class="math inline">\(\pi\)</span>的近似值，要求直到发现某一项的�
 class="math inline">\(100\)</span>，以<code>#</code>结束。</p>
 <h3 id="输出格式-6">输出格式:</h3>
 <p>输出包含的最大正整数值，如果没有包含整数，输出<code>none</code>。</p>
-<h3 id="输入样例-21">输入样例:</h3>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">er23**345df f2#<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-21">输出样例:</h3>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">345<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <h3 id="输入样例-22">输入样例:</h3>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">er***&amp;&amp;&amp;dff#<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">er23**345df f2#<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <h3 id="输出样例-22">输出样例:</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">345<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h3 id="输入样例-23">输入样例:</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">er***&amp;&amp;&amp;dff#<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h3 id="输出样例-23">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">none<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
@@ -1913,11 +1964,11 @@ class="math inline">\(100\)</span>，以<code>#</code>结束。</p>
 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 <h3 id="输出格式-7">输出格式:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">I like china. PAD PAD<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-23">输入样例:</h3>
+<h3 id="输入样例-24">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">I like china.
 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-23">输出样例:</h3>
+<h3 id="输出样例-24">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">I like china. PAD PAD<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
@@ -1995,16 +2046,16 @@ class="math inline">\(100\)</span>，以<code>#</code>结束。</p>
 如：<code>this is a test program</code></p>
 <h3 id="输出格式-8">输出格式:</h3>
 <p>输出最长单词及其长度，输出完成换行 格式如下： <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">max&#x3D;program,lenght&#x3D;7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></p>
-<h3 id="输入样例-24">输入样例:</h3>
+<h3 id="输入样例-25">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">this is a test program<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-24">输出样例:</h3>
+<h3 id="输出样例-25">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">max&#x3D;program,lenght&#x3D;7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-21">Code</h3>
+<h3 id="code-22">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 
@@ -2032,17 +2083,17 @@ class="math inline">\(6\)</span>个学生成绩存入一维数组中，请输出
 <h3 id="输出格式-9">输出格式:</h3>
 <p>按顺序以每个数据占据<span
 class="math inline">\(5\)</span>列的形式输出及格的成绩，另起一行输出及格人数。</p>
-<h3 id="输入样例-25">输入样例:</h3>
+<h3 id="输入样例-26">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">90 88 78 97 56 54<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-25">输出样例:</h3>
+<h3 id="输出样例-26">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">   90   88   78   97
 count&#x3D;4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-22">Code</h3>
+<h3 id="code-23">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -2086,14 +2137,14 @@ class="math inline">\(i\)</span>行的数<span
 class="math inline">\(k\)</span>表示排第<span
 class="math inline">\(i\)</span>名的学生前面有<span
 class="math inline">\(k\)</span>个学生排名比他（她）高，且年级比他（她）低。</p>
-<h3 id="输入样例-26">输入样例:</h3>
+<h3 id="输入样例-27">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5
 300 5
 200 6
 350 4
 400 6
 250 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-26">输出样例:</h3>
+<h3 id="输出样例-27">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">0
 0
 1
@@ -2102,7 +2153,7 @@ class="math inline">\(k\)</span>个学生排名比他（她）高，且年级比
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-23">Code</h3>
+<h3 id="code-24">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
 
@@ -2167,7 +2218,7 @@ g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-24">Code</h3>
+<h3 id="code-25">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 
@@ -2304,7 +2355,7 @@ F(2)=1
 F(n)=F(n-1)+F(n-2)（n ≥ 3）
 \]</span> 请完成程序，用递归方法计算斐波那契数列第<span
 class="math inline">\(n\)</span>项的值，并统计所需的递归调用次数 。</p>
-<h3 id="函数接口定义-14">函数接口定义：</h3>
+<h3 id="函数接口定义-15">函数接口定义：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">long</span> <span class="token function">Fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <p>函数返回斐波那契数列第<span
 class="math inline">\(n\)</span>项的值。</p>
@@ -2327,14 +2378,14 @@ class="math inline">\(n\)</span>项的值。</p>
 <h3 id="输出格式-13">输出格式:</h3>
 <p>输出斐波那契数列第<span
 class="math inline">\(n\)</span>项的值，及所需的递归调用次数，中间以逗号分隔。</p>
-<h3 id="输入样例-27">输入样例:</h3>
+<h3 id="输入样例-28">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-27">输出样例:</h3>
+<h3 id="输出样例-28">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Fib(6)&#x3D;8, count&#x3D;15<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-25">Code</h3>
+<h3 id="code-26">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">long</span> <span class="token function">Fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
@@ -2369,19 +2420,19 @@ class="math inline">\(a (1 &lt; a &lt; 32768)\)</span>。</p>
 <h3 id="输出格式-14">输出格式:</h3>
 <p><span
 class="math inline">\(n\)</span>行，每行输出对应一个输入。输出应是一个正整数，指明满足要求的分解的种数。</p>
-<h3 id="输入样例-28">输入样例:</h3>
+<h3 id="输入样例-29">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2
 2
 20<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-28">输出样例:</h3>
+<h3 id="输出样例-29">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1
 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-26">Code</h3>
+<h3 id="code-27">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
@@ -2436,19 +2487,19 @@ class="math inline">\(-1\)</span>
 <h3 id="输出格式-15">输出格式:</h3>
 <p>对于每组测试数据，输出链表中各节点的数据域。每个数据后有一个空格。每组测试数据的输出占<span
 class="math inline">\(1\)</span>行。</p>
-<h3 id="输入样例-29">输入样例:</h3>
+<h3 id="输入样例-30">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3
 1 2 3 4 5 -1 
 30 20 10 -1 
 4 2 2 1 1 2 0 2 -1 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-29">输出样例:</h3>
+<h3 id="输出样例-30">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5 4 3 2 1 
 10 20 30 
 2 0 2 1 1 2 2 4 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
 <p>注意：对每组测试数据，创建链表，遍历链表输出之后，一定要删除链表，否则会出现“内存超限”。
 &gt; 代码长度限制 16 KB 时间限制 2000 ms 内存限制 128 MB</p>
-<h3 id="code-27">Code</h3>
+<h3 id="code-28">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">Node</span> <span class="token expression"><span class="token keyword">struct</span> <span class="token class-name">node</span></span></span>
 Node<span class="token punctuation">&#123;</span>
@@ -2503,7 +2554,7 @@ Node<span class="token punctuation">&#123;</span>
 class="math inline">\(-1\)</span>作为输入的结束。</p>
 <h3 id="输出格式-16">输出格式:</h3>
 <p>每个学生信息占一行，姓名和成绩之间以空格分隔，成绩保留一位小数。</p>
-<h3 id="输入样例-30">输入样例:</h3>
+<h3 id="输入样例-31">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Cai 61.2
 Cai 64.6
@@ -2514,7 +2565,7 @@ Liu 90.4
 Xiao 92.6
 Cai 96.8
 xx -1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-30">输出样例:</h3>
+<h3 id="输出样例-31">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Cai 61.2
 Cai 64.6
@@ -2527,7 +2578,7 @@ Cai 96.8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-28">Code</h3>
+<h3 id="code-29">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
@@ -2585,16 +2636,16 @@ learning algorithms.</p>
 <p>则输出：4 1 1 1 1 1 1 1 1 0 0 0 0 0 0</p>
 <p>输入：3</p>
 <p>则输出：4 1 1</p>
-<h3 id="输入样例-31">输入样例：</h3>
+<h3 id="输入样例-32">输入样例：</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">15<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-31">输出样例:</h3>
+<h3 id="输出样例-32">输出样例:</h3>
 <p>在这里给出相应的输出。注意输出格式，最后有一个空格。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">4 1 1 1 1 1 1 1 1 0 0 0 0 0 0 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-29">Code</h3>
+<h3 id="code-30">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// #include&lt;stdio.h></span>
 <span class="token comment">// #include&lt;string.h></span>
 <span class="token comment">// #include&lt;ctype.h></span>
@@ -2647,7 +2698,7 @@ class="math inline">\(0\)</span> 时重新开始计时。</p>
 <h3 id="输出格式-17">输出格式：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"time: %d:%d:%d\n"</span><span class="token punctuation">,</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <p>输入输出示例：括号内为说明，无需输入输出</p>
-<h3 id="输入样例-32">输入样例:</h3>
+<h3 id="输入样例-33">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3	   (repeat&#x3D;3)
 0:0:1
 59	   (秒数n&#x3D;59)
@@ -2655,14 +2706,14 @@ class="math inline">\(0\)</span> 时重新开始计时。</p>
 30	   (秒数n&#x3D;30)
 23:59:40   
 301	   (秒数n&#x3D;301)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-32">输出样例:</h3>
+<h3 id="输出样例-33">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">time: 0:1:0	   (0:0:01加上59秒的新时间)   
 time: 12:0:10	   (11:59:40加上30秒的新时间)
 time: 0:4:41	   (23:59:40加上301秒的新时间)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
 </blockquote>
-<h3 id="code-30">Code</h3>
+<h3 id="code-31">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">int</span> c<span class="token punctuation">;</span>
