@@ -16,15 +16,15 @@
   <meta name="author" content="nanyan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="L1-064 估值一亿的AI核心代码  分数 20 作者 陈越 单位 浙江大学  以上图片来自新浪微博。 本题要求你实现一个稍微更值钱一点的 AI 英文问答程序，规则是：  无论用户说什么，首先把对方说的话在一行中原样打印出来； 消除原文中多余空格：把相邻单词间的多个空格换成 \(1\) 个空格，把行首尾的空格全部删掉，把标点符号前面的空格删掉； 把原文中所有大写英文字母变成小写，除了 I； 把原">
+    <meta name="description" content="L1-064 估值一亿的AI核心代码  分数 20 作者 陈越 单位 浙江大学  以上图片来自新浪微博。 本题要求你实现一个稍微更值钱一点的 AI 英文问答程序，规则是：  无论用户说什么，首先把对方说的话在一行中原样打印出来； 消除原文中多余空格：把相邻单词间的多个空格换成 111 个空格，把行首尾的空格全部删掉，把标点符号前面的空格删掉； 把原文中所有大写英文字母变成小写，除了 I； 把原文中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PTA | 团体天梯赛">
 <meta property="og:url" content="http://acm.nanyan.cc/2024/01/17/PTA-%E5%9B%A2%E4%BD%93%E5%A4%A9%E6%A2%AF%E8%B5%9B/index.html">
 <meta property="og:site_name" content="ACM笔记">
-<meta property="og:description" content="L1-064 估值一亿的AI核心代码  分数 20 作者 陈越 单位 浙江大学  以上图片来自新浪微博。 本题要求你实现一个稍微更值钱一点的 AI 英文问答程序，规则是：  无论用户说什么，首先把对方说的话在一行中原样打印出来； 消除原文中多余空格：把相邻单词间的多个空格换成 \(1\) 个空格，把行首尾的空格全部删掉，把标点符号前面的空格删掉； 把原文中所有大写英文字母变成小写，除了 I； 把原">
+<meta property="og:description" content="L1-064 估值一亿的AI核心代码  分数 20 作者 陈越 单位 浙江大学  以上图片来自新浪微博。 本题要求你实现一个稍微更值钱一点的 AI 英文问答程序，规则是：  无论用户说什么，首先把对方说的话在一行中原样打印出来； 消除原文中多余空格：把相邻单词间的多个空格换成 111 个空格，把行首尾的空格全部删掉，把标点符号前面的空格删掉； 把原文中所有大写英文字母变成小写，除了 I； 把原文中">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-17T06:12:39.000Z">
-<meta property="article:modified_time" content="2024-01-19T14:47:48.026Z">
+<meta property="article:modified_time" content="2024-01-20T02:35:21.080Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.6k 字
+          6.7k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          47 分钟
+          56 分钟
         
       </span>
     
@@ -252,35 +252,28 @@
             
               <div class="markdown-body">
                 
-                <h2 id="l1-064-估值一亿的ai核心代码">L1-064 估值一亿的AI核心代码</h2>
+                <h2 id="L1-064-估值一亿的AI核心代码">L1-064 估值一亿的AI核心代码</h2>
 <blockquote>
-<p>分数 20 作者 陈越 单位 浙江大学</p>
+<p>分数 20<br>
+作者 陈越<br>
+单位 浙江大学</p>
 </blockquote>
 <p>以上图片来自新浪微博。</p>
 <p>本题要求你实现一个稍微更值钱一点的 AI 英文问答程序，规则是：</p>
 <ul>
 <li>无论用户说什么，首先把对方说的话在一行中原样打印出来；</li>
-<li>消除原文中多余空格：把相邻单词间的多个空格换成 <span
-class="math inline">\(1\)</span>
-个空格，把行首尾的空格全部删掉，把标点符号前面的空格删掉；</li>
+<li>消除原文中多余空格：把相邻单词间的多个空格换成 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个空格，把行首尾的空格全部删掉，把标点符号前面的空格删掉；</li>
 <li>把原文中所有大写英文字母变成小写，除了 <code>I</code>；</li>
-<li>把原文中所有独立的 <code>can you</code>、<code>could you</code>
-对应地换成 <code>I can</code>、<code>I could</code>——
-这里“独立”是指被空格或标点符号分隔开的单词；</li>
+<li>把原文中所有独立的 <code>can you</code>、<code>could you</code> 对应地换成 <code>I can</code>、<code>I could</code>—— 这里“独立”是指被空格或标点符号分隔开的单词；</li>
 <li>把原文中所有独立的 <code>I</code> 和 me 换成 <code>you</code>；</li>
 <li>把原文中所有的问号 <code>?</code> 换成惊叹号 <code>!</code>；</li>
 <li>在一行中输出替换后的句子作为 AI 的回答。</li>
 </ul>
-<h3 id="输入格式">输入格式：</h3>
-<p>输入首先在第一行给出不超过 <span class="math inline">\(10\)</span>
-的正整数 <span class="math inline">\(N\)</span>，随后 <span
-class="math inline">\(N\)</span> 行，每行给出一句不超过 <span
-class="math inline">\(1000\)</span>
-个字符的、以回车结尾的用户的对话，对话为非空字符串，仅包括字母、数字、空格、可见的半角标点符号。</p>
-<h3 id="输出格式">输出格式：</h3>
-<p>按题面要求输出，每个 AI 的回答前要加上 <code>AI:</code>
-和一个空格。</p>
-<h3 id="输入样例">输入样例：</h3>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入首先在第一行给出不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span> 的正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>，随后 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 行，每行给出一句不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1000</mn></mrow><annotation encoding="application/x-tex">1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span></span></span></span> 个字符的、以回车结尾的用户的对话，对话为非空字符串，仅包括字母、数字、空格、可见的半角标点符号。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>按题面要求输出，每个 AI 的回答前要加上 <code>AI:</code> 和一个空格。</p>
+<h3 id="输入样例：">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">6
 Hello ?
  Good to chat   with you
@@ -288,7 +281,7 @@ can   you speak Chinese?
 Really?
 Could you show me 5
 What Is this prime? I,don &#39;t know<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例">输出样例：</h3>
+<h3 id="输出样例：">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Hello ?
 AI: hello!
  Good to chat   with you
@@ -302,9 +295,14 @@ AI: I could show you 5
 What Is this prime? I,don &#39;t know
 AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <blockquote>
-<p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
+<p>代码长度限制<br>
+16 KB<br>
+时间限制<br>
+400 ms<br>
+内存限制<br>
+64 MB</p>
 </blockquote>
-<h3 id="code1">Code1</h3>
+<h3 id="Code1">Code1</h3>
 <p>现在编译错误。。。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -376,10 +374,10 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code2">Code2</h3>
+<h3 id="Code2">Code2</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>测试点</th>
 <th>提示</th>
 <th>内存(KB)</th>
@@ -389,7 +387,7 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td></td>
 <td>452</td>
@@ -397,7 +395,7 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
 <td>5</td>
 <td>答案正确</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td></td>
 <td>444</td>
@@ -405,7 +403,7 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
 <td>答案错误</td>
 <td>0 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td></td>
 <td>440</td>
@@ -413,7 +411,7 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
 <td>答案正确</td>
 <td>1 / 1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td></td>
 <td>452</td>
@@ -421,7 +419,7 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td></td>
 <td>384</td>
@@ -429,7 +427,7 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
 <td>答案错误</td>
 <td>0 / 2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>5</td>
 <td></td>
 <td>404</td>
@@ -517,13 +515,13 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code3">Code3</h3>
+<h3 id="Code3">Code3</h3>
 <blockquote>
 <p>230117 14</p>
 </blockquote>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>测试点</th>
 <th>内存(KB)</th>
 <th>用时(ms)</th>
@@ -532,42 +530,42 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td>452</td>
 <td>5</td>
 <td>答案正确</td>
 <td>10 / 10</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td>444</td>
 <td>3</td>
 <td>答案错误</td>
 <td>0 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td>440</td>
 <td>3</td>
 <td>答案正确</td>
 <td>1 / 1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td>452</td>
 <td>4</td>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td>384</td>
 <td>4</td>
 <td>答案错误</td>
 <td>0 / 2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>5</td>
 <td>404</td>
 <td>3</td>
@@ -576,8 +574,7 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
 </tr>
 </tbody>
 </table>
-<p>这个方法比较好，避免了把 <code>can you</code> 替换后的 <code>I</code>
-再次替换回去。但是依然不好解决<code>独立字符串</code>的定义。
+<p>这个方法比较好，避免了把 <code>can you</code> 替换后的 <code>I</code> 再次替换回去。但是依然不好解决<code>独立字符串</code>的定义。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
@@ -659,10 +656,10 @@ AI: what Is this prime! you,don&#39;t know<span aria-hidden="true" class="line-n
         cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
-<h3 id="code-from-liuchuo"><a
-target="_blank" rel="noopener" href="https://www.liuchuo.net/archives/8741">Code From Liuchuo</a></h3>
-<p>有点太猛了，直接用正则表达式。我还不会。 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="Code-From-Liuchuo"><a target="_blank" rel="noopener" href="https://www.liuchuo.net/archives/8741">Code From Liuchuo</a></h3>
+<p>有点太猛了，直接用正则表达式。我还不会。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 string s<span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -680,15 +677,15 @@ string s<span class="token punctuation">;</span>
         cout <span class="token operator">&lt;&lt;</span> s <span class="token operator">&lt;&lt;</span> <span class="token char">'\n'</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
-<h3 id="code4">Code4</h3>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="Code4">Code4</h3>
 <blockquote>
 <p>230117 14</p>
 </blockquote>
 <p>把<code>ispunct()</code>改成了<code>!isalnum()</code>还是A不了剩下的两个点。</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>测试点</th>
 <th>内存(KB)</th>
 <th>用时(ms)</th>
@@ -697,42 +694,42 @@ string s<span class="token punctuation">;</span>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td>316</td>
 <td>3</td>
 <td>答案正确</td>
 <td>10 / 10</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td>444</td>
 <td>3</td>
 <td>答案错误</td>
 <td>0 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td>328</td>
 <td>3</td>
 <td>答案正确</td>
 <td>1 / 1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td>456</td>
 <td>4</td>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td>452</td>
 <td>4</td>
 <td>答案错误</td>
 <td>0 / 2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>5</td>
 <td>452</td>
 <td>3</td>
@@ -813,14 +810,12 @@ string s<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code5">Code5</h3>
+<h3 id="Code5">Code5</h3>
 <blockquote>
 <p>230117 14</p>
 </blockquote>
 <p>AC代码</p>
-<p>先把 <code>can you</code> 替换为 <code>$ can</code>，最后在替换
-<code>$</code> 符号为
-<code>I</code>。<del>这个方法也太刁钻了。</del></p>
+<p>先把 <code>can you</code> 替换为 <code>$ can</code>，最后在替换 <code>$</code> 符号为 <code>I</code>。<s>这个方法也太刁钻了。</s></p>
 <p>猜测：我先替换<code>I</code>或者<code>me</code>会导致新出现的<code>you</code>与<code>can</code>或<code>could</code>组队，导致错误。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -898,9 +893,11 @@ string s<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="l2-004-这是二叉搜索树吗">L2-004 这是二叉搜索树吗？</h2>
+<h2 id="L2-004-这是二叉搜索树吗？">L2-004 这是二叉搜索树吗？</h2>
 <blockquote>
-<p>分数 25 作者 陈越 单位 浙江大学</p>
+<p>分数 25<br>
+作者 陈越<br>
+单位 浙江大学</p>
 </blockquote>
 <p>一棵二叉搜索树可被递归地定义为具有下列性质的二叉树：对于任一结点，</p>
 <ul>
@@ -910,40 +907,39 @@ string s<span class="token punctuation">;</span>
 </ul>
 <p>所谓二叉搜索树的“镜像”，即将所有结点的左右子树对换位置后所得到的树。</p>
 <p>给定一个整数键值序列，现请你编写程序，判断这是否是对一棵二叉搜索树或其镜像进行前序遍历的结果。</p>
-<h3 id="输入格式-1">输入格式：</h3>
-<p>输入的第一行给出正整数 <span
-class="math inline">\(N（≤1000）\)</span>。随后一行给出 <span
-class="math inline">\(N\)</span> 个整数键值，其间以空格分隔。</p>
-<h3 id="输出格式-1">输出格式：</h3>
-<p>如果输入序列是对一棵二叉搜索树或其镜像进行前序遍历的结果，则首先在一行中输出
-<code>YES</code> ，然后在下一行输出该树后序遍历的结果。数字间有 <span
-class="math inline">\(1\)</span>
-个空格，一行的首尾不得有多余空格。若答案是否，则输出
-<code>NO</code>。</p>
-<h3 id="输入样例-1">输入样例 1：</h3>
+<h3 id="输入格式：-2">输入格式：</h3>
+<p>输入的第一行给出正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>1000</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤1000）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">1000</span><span class="mord cjk_fallback">）</span></span></span></span>。随后一行给出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个整数键值，其间以空格分隔。</p>
+<h3 id="输出格式：-2">输出格式：</h3>
+<p>如果输入序列是对一棵二叉搜索树或其镜像进行前序遍历的结果，则首先在一行中输出 <code>YES</code> ，然后在下一行输出该树后序遍历的结果。数字间有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个空格，一行的首尾不得有多余空格。若答案是否，则输出 <code>NO</code>。</p>
+<h3 id="输入样例-1：">输入样例 1：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">7
 8 6 5 7 10 8 11<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-1">输出样例 1：</h3>
+<h3 id="输出样例-1：">输出样例 1：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">YES
 5 7 6 8 11 10 8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-2">输入样例 2：</h3>
+<h3 id="输入样例-2：">输入样例 2：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">7
 8 10 11 8 6 7 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-2">输出样例 2：</h3>
+<h3 id="输出样例-2：">输出样例 2：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">YES
 11 8 10 7 5 6 8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-3">输入样例 3：</h3>
+<h3 id="输入样例-3：">输入样例 3：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">7
 8 6 8 5 10 9 11<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-3">输出样例 3：</h3>
+<h3 id="输出样例-3：">输出样例 3：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">NO<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
-<p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
+<p>代码长度限制<br>
+16 KB<br>
+时间限制<br>
+400 ms<br>
+内存限制<br>
+64 MB</p>
 </blockquote>
-<h3 id="code1-1">Code1</h3>
+<h3 id="Code1-2">Code1</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>测试点</th>
 <th>提示</th>
 <th>内存(KB)</th>
@@ -953,7 +949,7 @@ class="math inline">\(1\)</span>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td></td>
 <td>452</td>
@@ -961,7 +957,7 @@ class="math inline">\(1\)</span>
 <td>答案正确</td>
 <td>6 / 6</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td></td>
 <td>440</td>
@@ -969,7 +965,7 @@ class="math inline">\(1\)</span>
 <td>答案错误</td>
 <td>0 / 6</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td></td>
 <td>316</td>
@@ -977,7 +973,7 @@ class="math inline">\(1\)</span>
 <td>答案正确</td>
 <td>2 / 2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td></td>
 <td>476</td>
@@ -985,7 +981,7 @@ class="math inline">\(1\)</span>
 <td>运行时错误</td>
 <td>0 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td></td>
 <td>452</td>
@@ -993,7 +989,7 @@ class="math inline">\(1\)</span>
 <td>答案错误</td>
 <td>0 / 3</td>
 </tr>
-<tr class="even">
+<tr>
 <td>5</td>
 <td></td>
 <td>4544</td>
@@ -1001,7 +997,7 @@ class="math inline">\(1\)</span>
 <td>答案正确</td>
 <td>2 / 2</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>6</td>
 <td></td>
 <td>444</td>
@@ -1009,7 +1005,7 @@ class="math inline">\(1\)</span>
 <td>答案正确</td>
 <td>2 / 2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>7</td>
 <td></td>
 <td>324</td>
@@ -1120,10 +1116,10 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code2-1">Code2</h3>
+<h3 id="Code2-2">Code2</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>测试点</th>
 <th>提示</th>
 <th>内存(KB)</th>
@@ -1133,7 +1129,7 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td></td>
 <td>476</td>
@@ -1141,7 +1137,7 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
 <td>答案正确</td>
 <td>6 / 6</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td></td>
 <td>436</td>
@@ -1149,7 +1145,7 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
 <td>答案正确</td>
 <td>6 / 6</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td></td>
 <td>460</td>
@@ -1157,7 +1153,7 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
 <td>答案正确</td>
 <td>2 / 2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td></td>
 <td>384</td>
@@ -1165,7 +1161,7 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td></td>
 <td>416</td>
@@ -1173,7 +1169,7 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="even">
+<tr>
 <td>5</td>
 <td></td>
 <td>4532</td>
@@ -1181,7 +1177,7 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
 <td>答案正确</td>
 <td>2 / 2</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>6</td>
 <td></td>
 <td>396</td>
@@ -1189,7 +1185,7 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
 <td>答案正确</td>
 <td>2 / 2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>7</td>
 <td></td>
 <td>440</td>
@@ -1368,32 +1364,19 @@ Node<span class="token operator">*</span> <span class="token function">create_tr
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="l2-005-集合相似度">L2-005 集合相似度</h2>
+<h2 id="L2-005-集合相似度">L2-005 集合相似度</h2>
 <blockquote>
-<p>分数 25 作者 陈越 单位 浙江大学</p>
+<p>分数 25<br>
+作者 陈越<br>
+单位 浙江大学</p>
 </blockquote>
-<p>给定两个整数集合，它们的相似度定义为：<span class="math inline">\(N_c
-\times N_t \times 100%\)</span>。其中 <span
-class="math inline">\(N_c\)</span>
-是两个集合都有的不相等整数的个数，<span
-class="math inline">\(N_t\)</span>
-是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。</p>
-<h3 id="输入格式-2">输入格式：</h3>
-<p>输入第一行给出一个正整数<span
-class="math inline">\(N（≤50）\)</span>，是集合的个数。随后<span
-class="math inline">\(N\)</span>行，每行对应一个集合。每个集合首先给出一个正整数
-<span class="math inline">\(M(\leq 10^4)\)</span>
-，是集合中元素的个数；然后跟<span class="math inline">\(M\)</span>个
-<span class="math inline">\([0,10^9]\)</span> 区间内的整数。</p>
-<p>之后一行给出一个正整数<span
-class="math inline">\(K（≤2000）\)</span>，随后<span
-class="math inline">\(K\)</span>行，每行对应一对需要计算相似度的集合的编号（集合从<span
-class="math inline">\(1\)</span>到<span
-class="math inline">\(N\)</span>编号）。数字间以空格分隔。</p>
-<h3 id="输出格式-2">输出格式：</h3>
-<p>对每一对需要计算的集合，在一行中输出它们的相似度，为保留小数点后<span
-class="math inline">\(2\)</span>位的百分比数字。</p>
-<h3 id="输入样例-4">输入样例：</h3>
+<p>给定两个整数集合，它们的相似度定义为：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>c</mi></msub><mo>×</mo><msub><mi>N</mi><mi>t</mi></msub><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">N_c \times N_t \times 100%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">100</span></span></span></span>。其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">N_c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是两个集合都有的不相等整数的个数，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">N_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。</p>
+<h3 id="输入格式：-3">输入格式：</h3>
+<p>输入第一行给出一个正整数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>50</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤50）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">50</span><span class="mord cjk_fallback">）</span></span></span></span>，是集合的个数。随后<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>行，每行对应一个集合。每个集合首先给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo stretchy="false">(</mo><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">M(\leq 10^4)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mopen">(</span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> ，是集合中元素的个数；然后跟<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0,10^9]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span> 区间内的整数。</p>
+<p>之后一行给出一个正整数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mtext>（</mtext><mo>≤</mo><mn>2000</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">K（≤2000）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">2000</span><span class="mord cjk_fallback">）</span></span></span></span>，随后<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span>行，每行对应一对需要计算相似度的集合的编号（集合从<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>到<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>编号）。数字间以空格分隔。</p>
+<h3 id="输出格式：-3">输出格式：</h3>
+<p>对每一对需要计算的集合，在一行中输出它们的相似度，为保留小数点后<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>位的百分比数字。</p>
+<h3 id="输入样例：-2">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3
 3 99 87 101
 4 87 101 5 87
@@ -1401,16 +1384,21 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 2
 1 2
 1 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-4">输出样例：</h3>
+<h3 id="输出样例：-2">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">50.00%
 33.33%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 <blockquote>
-<p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
+<p>代码长度限制<br>
+16 KB<br>
+时间限制<br>
+400 ms<br>
+内存限制<br>
+64 MB</p>
 </blockquote>
-<h3 id="code">Code</h3>
+<h3 id="Code">Code</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>测试点</th>
 <th>提示</th>
 <th>内存(KB)</th>
@@ -1420,7 +1408,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td></td>
 <td>448</td>
@@ -1428,7 +1416,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>12 / 12</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td></td>
 <td>384</td>
@@ -1436,7 +1424,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td></td>
 <td>484</td>
@@ -1444,7 +1432,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td></td>
 <td>576</td>
@@ -1452,7 +1440,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td></td>
 <td>696</td>
@@ -1525,12 +1513,11 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">100.0</span><span class="token operator">*</span>nc<span class="token operator">/</span>nt<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code2-2">Code2</h3>
-<p>测试得知 <code>unordered_map</code> 会比 <code>map</code> 多
-<code>40ms</code> （测试点3）</p>
+<h3 id="Code2-3">Code2</h3>
+<p>测试得知 <code>unordered_map</code> 会比 <code>map</code> 多 <code>40ms</code> （测试点3）</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>测试点</th>
 <th>提示</th>
 <th>内存(KB)</th>
@@ -1540,7 +1527,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td></td>
 <td>452</td>
@@ -1548,7 +1535,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>12 / 12</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td></td>
 <td>444</td>
@@ -1556,7 +1543,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td></td>
 <td>316</td>
@@ -1564,7 +1551,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td></td>
 <td>576</td>
@@ -1572,7 +1559,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td></td>
 <td>732</td>
@@ -1632,7 +1619,8 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<p>即便改写了用定数组也超时 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<p>即便改写了用定数组也超时</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;vector></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
@@ -1680,12 +1668,12 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%.2lf%%\n"</span><span class="token punctuation">,</span><span class="token number">100.0</span><span class="token operator">*</span>nc<span class="token operator">/</span>nt<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
-<h3 id="code3-1">Code3</h3>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="Code3-2">Code3</h3>
 <p>根据liuchuo代码的提示，使用了<code>set</code>，就能AC了</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>测试点</th>
 <th>提示</th>
 <th>内存(KB)</th>
@@ -1695,7 +1683,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td></td>
 <td>440</td>
@@ -1703,7 +1691,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>12 / 12</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td></td>
 <td>436</td>
@@ -1711,7 +1699,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td></td>
 <td>460</td>
@@ -1719,7 +1707,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td></td>
 <td>460</td>
@@ -1727,7 +1715,7 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
 <td>答案正确</td>
 <td>3 / 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td></td>
 <td>2860</td>
@@ -1775,25 +1763,30 @@ class="math inline">\(2\)</span>位的百分比数字。</p>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="l2-008-最长对称子串">L2-008 最长对称子串</h2>
+<h2 id="L2-008-最长对称子串">L2-008 最长对称子串</h2>
 <blockquote>
-<p>分数 25 作者 陈越 单位 浙江大学</p>
+<p>分数 25<br>
+作者 陈越<br>
+单位 浙江大学</p>
 </blockquote>
-<p>对给定的字符串，本题要求你输出最长对称子串的长度。例如，给定<code>Is PAT&amp;TAP symmetric?</code>，最长对称子串为<code>s PAT&amp;TAP s</code>，于是你应该输出<span
-class="math inline">\(11\)</span>。</p>
-<h3 id="输入格式-3">输入格式：</h3>
-<p>输入在一行中给出长度不超过<span
-class="math inline">\(1000\)</span>的非空字符串。</p>
-<h3 id="输出格式-3">输出格式：</h3>
+<p>对给定的字符串，本题要求你输出最长对称子串的长度。例如，给定<code>Is PAT&amp;TAP symmetric?</code>，最长对称子串为<code>s PAT&amp;TAP s</code>，于是你应该输出<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>11</mn></mrow><annotation encoding="application/x-tex">11</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">11</span></span></span></span>。</p>
+<h3 id="输入格式：-4">输入格式：</h3>
+<p>输入在一行中给出长度不超过<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1000</mn></mrow><annotation encoding="application/x-tex">1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span></span></span></span>的非空字符串。</p>
+<h3 id="输出格式：-4">输出格式：</h3>
 <p>在一行中输出最长对称子串的长度。</p>
-<h3 id="输入样例-5">输入样例：</h3>
+<h3 id="输入样例：-3">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Is PAT&amp;TAP symmetric?<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-5">输出样例：</h3>
+<h3 id="输出样例：-3">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">11<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
-<p>代码长度限制 16 KB 时间限制 200 ms 内存限制 64 MB</p>
+<p>代码长度限制<br>
+16 KB<br>
+时间限制<br>
+200 ms<br>
+内存限制<br>
+64 MB</p>
 </blockquote>
-<h3 id="code-1">Code</h3>
+<h3 id="Code-2">Code</h3>
 <blockquote>
 <p>240119</p>
 </blockquote>
@@ -1820,28 +1813,21 @@ class="math inline">\(1000\)</span>的非空字符串。</p>
     cout<span class="token operator">&lt;&lt;</span>max<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="l2-009-抢红包">L2-009 抢红包</h2>
+<h2 id="L2-009-抢红包">L2-009 抢红包</h2>
 <blockquote>
-<p>分数 25 作者 陈越 单位 浙江大学</p>
+<p>分数 25<br>
+作者 陈越<br>
+单位 浙江大学</p>
 </blockquote>
-<p>没有人没抢过红包吧…… 这里给出<span
-class="math inline">\(N\)</span>个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。</p>
-<h3 id="输入格式-4">输入格式：</h3>
-<p>输入第一行给出一个正整数<span
-class="math inline">\(N（≤10^4）\)</span>，即参与发红包和抢红包的总人数，则这些人从1到N编号。随后N行，第i行给出编号为i的人发红包的记录，格式如下：</p>
-<p><span class="math display">\[
-K , N_1 , P_1 , \cdots , N_K , P_K
-\]</span></p>
-<p>其中<span
-class="math inline">\(K（0≤K≤20）\)</span>是发出去的红包个数，<span
-class="math inline">\(N_i\)</span> 是抢到红包的人的编号，<span
-class="math inline">\(P_i（&gt;0）\)</span>是其抢到的红包金额（以分为单位）。注意：对于同一个人发出的红包，每人最多只能抢<span
-class="math inline">\(1\)</span>次，不能重复抢。</p>
-<h3 id="输出格式-4">输出格式：</h3>
-<p>按照收入金额从高到低的递减顺序输出每个人的编号和收入金额（以元为单位，输出小数点后<span
-class="math inline">\(2\)</span>位）。每个人的信息占一行，两数字间有<span
-class="math inline">\(1\)</span>个空格。如果收入金额有并列，则按抢到红包的个数递减输出；如果还有并列，则按个人编号递增输出。</p>
-<h3 id="输入样例-6">输入样例：</h3>
+<p>没有人没抢过红包吧…… 这里给出<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。</p>
+<h3 id="输入格式：-5">输入格式：</h3>
+<p>输入第一行给出一个正整数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤10^4）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mord cjk_fallback">）</span></span></span></span>，即参与发红包和抢红包的总人数，则这些人从1到N编号。随后N行，第i行给出编号为i的人发红包的记录，格式如下：</p>
+<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>K</mi><mo separator="true">,</mo><msub><mi>N</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>P</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><msub><mi>N</mi><mi>K</mi></msub><mo separator="true">,</mo><msub><mi>P</mi><mi>K</mi></msub></mrow><annotation encoding="application/x-tex">K , N_1 , P_1 , \cdots , N_K , P_K
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">K</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">K</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>其中<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mtext>（</mtext><mn>0</mn><mo>≤</mo><mi>K</mi><mo>≤</mo><mn>20</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">K（0≤K≤20）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mord cjk_fallback">（</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">20</span><span class="mord cjk_fallback">）</span></span></span></span>是发出去的红包个数，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">N_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是抢到红包的人的编号，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub><mtext>（</mtext><mo>&gt;</mo><mn>0</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">P_i（&gt;0）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">0</span><span class="mord cjk_fallback">）</span></span></span></span>是其抢到的红包金额（以分为单位）。注意：对于同一个人发出的红包，每人最多只能抢<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>次，不能重复抢。</p>
+<h3 id="输出格式：-5">输出格式：</h3>
+<p>按照收入金额从高到低的递减顺序输出每个人的编号和收入金额（以元为单位，输出小数点后<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>位）。每个人的信息占一行，两数字间有<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>个空格。如果收入金额有并列，则按抢到红包的个数递减输出；如果还有并列，则按个人编号递增输出。</p>
+<h3 id="输入样例：-4">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">10
 3 2 22 10 58 8 125
 5 1 345 3 211 5 233 7 13 8 101
@@ -1853,7 +1839,7 @@ class="math inline">\(1\)</span>个空格。如果收入金额有并列，则按
 2 1 23 2 123
 1 8 250
 4 2 121 4 516 7 112 9 10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-6">输出样例：</h3>
+<h3 id="输出样例：-4">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1 11.63
 2 3.63
 8 3.63
@@ -1865,9 +1851,14 @@ class="math inline">\(1\)</span>个空格。如果收入金额有并列，则按
 5 -3.26
 4 -12.32<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <blockquote>
-<p>代码长度限制 16 KB 时间限制 300 ms 内存限制 64 MB</p>
+<p>代码长度限制<br>
+16 KB<br>
+时间限制<br>
+300 ms<br>
+内存限制<br>
+64 MB</p>
 </blockquote>
-<h3 id="code-2">Code</h3>
+<h3 id="Code-3">Code</h3>
 <blockquote>
 <p>240119</p>
 </blockquote>
@@ -1914,7 +1905,269 @@ class="math inline">\(1\)</span>个空格。如果收入金额有并列，则按
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="L2-010-排座位">L2-010 排座位</h2>
+<blockquote>
+<p>分数 25<br>
+作者 陈越<br>
+单位 浙江大学</p>
+</blockquote>
+<p>布置宴席最微妙的事情，就是给前来参宴的各位宾客安排座位。无论如何，总不能把两个死对头排到同一张宴会桌旁！这个艰巨任务现在就交给你，对任何一对客人，请编写程序告诉主人他们是否能被安排同席。</p>
+<h3 id="输入格式：-6">输入格式：</h3>
+<p>输入第一行给出<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span>个正整数：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>100</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤100）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">100</span><span class="mord cjk_fallback">）</span></span></span></span>，即前来参宴的宾客总人数，则这些人从<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>到<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>编号；<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>为已知两两宾客之间的关系数；<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span>为查询的条数。随后M行，每行给出一对宾客之间的关系，格式为：宾客<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 宾客<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 关系，其中关系为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>表示是朋友，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>表示是死对头。注意两个人不可能既是朋友又是敌人。最后<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span>行，每行给出一对需要查询的宾客编号。</p>
+<p>这里假设朋友的朋友也是朋友。但敌人的敌人并不一定就是朋友，朋友的敌人也不一定是敌人。只有单纯直接的敌对关系才是绝对不能同席的。</p>
+<h3 id="输出格式：-6">输出格式：</h3>
+<p>对每个查询输出一行结果：如果两位宾客之间是朋友，且没有敌对关系，则输出<code>No problem</code>；如果他们之间并不是朋友，但也不敌对，则输出<code>OK</code>；如果他们之间有敌对，然而也有共同的朋友，则输出<code>OK but...</code>；如果他们之间只有敌对关系，则输出<code>No way</code>。</p>
+<h3 id="输入样例：-5">输入样例：</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">7 8 4
+5 6 1
+2 7 -1
+1 3 1
+3 4 1
+6 7 -1
+1 2 1
+1 4 1
+2 3 -1
+3 4
+5 7
+2 3
+7 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="输出样例：-5">输出样例：</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">No problem
+OK
+OK but...
+No way<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<blockquote>
+<p>代码长度限制<br>
+16 KB<br>
+时间限制<br>
+150 ms<br>
+内存限制<br>
+64 MB</p>
+</blockquote>
+<h3 id="Code1-3">Code1</h3>
+<table>
+<thead>
+<tr>
+<th>测试点</th>
+<th>提示</th>
+<th>内存(KB)</th>
+<th>用时(ms)</th>
+<th>结果</th>
+<th>得分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td></td>
+<td>432</td>
+<td>3</td>
+<td>答案正确</td>
+<td>18 / 18</td>
+</tr>
+<tr>
+<td>1</td>
+<td></td>
+<td>436</td>
+<td>13</td>
+<td>答案错误</td>
+<td>0 / 3</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>456</td>
+<td>10</td>
+<td>答案正确</td>
+<td>3 / 3</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>324</td>
+<td>3</td>
+<td>答案正确</td>
+<td>1 / 1</td>
+</tr>
+</tbody>
+</table>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> v<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>v<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+size_t <span class="token function">findfa</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> v<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token operator">==</span>a<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+        v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> v<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        v<span class="token punctuation">[</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">=</span>v<span class="token punctuation">[</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>k<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>n<span class="token operator">>></span>m<span class="token operator">>></span>k<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">fri</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">enemy</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// init</span>
+    <span class="token function">init</span><span class="token punctuation">(</span>fri<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">init</span><span class="token punctuation">(</span>enemy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>op<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        cin<span class="token operator">>></span>a<span class="token operator">>></span>b<span class="token operator">>></span>op<span class="token punctuation">;</span>
+        a<span class="token operator">--</span><span class="token punctuation">;</span>
+        b<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">merge</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">merge</span><span class="token punctuation">(</span>enemy<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        cin<span class="token operator">>></span>a<span class="token operator">>></span>b<span class="token punctuation">;</span>
+        a<span class="token operator">--</span><span class="token punctuation">;</span>
+        b<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">==</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">findfa</span><span class="token punctuation">(</span>enemy<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">findfa</span><span class="token punctuation">(</span>enemy<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"No problem"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">findfa</span><span class="token punctuation">(</span>enemy<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">findfa</span><span class="token punctuation">(</span>enemy<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"OK"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">==</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">findfa</span><span class="token punctuation">(</span>enemy<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">==</span><span class="token function">findfa</span><span class="token punctuation">(</span>enemy<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"OK but..."</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">findfa</span><span class="token punctuation">(</span>enemy<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">==</span><span class="token function">findfa</span><span class="token punctuation">(</span>enemy<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"No way"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="Code2-4">Code2</h3>
+<blockquote>
+<p>240120</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>测试点</th>
+<th>提示</th>
+<th>内存(KB)</th>
+<th>用时(ms)</th>
+<th>结果</th>
+<th>得分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td></td>
+<td>436</td>
+<td>3</td>
+<td>答案正确</td>
+<td>18 / 18</td>
+</tr>
+<tr>
+<td>1</td>
+<td></td>
+<td>584</td>
+<td>32</td>
+<td>答案正确</td>
+<td>3 / 3</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>464</td>
+<td>11</td>
+<td>答案正确</td>
+<td>3 / 3</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>436</td>
+<td>3</td>
+<td>答案正确</td>
+<td>1 / 1</td>
+</tr>
+</tbody>
+</table>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> v<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>v<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+size_t <span class="token function">findfa</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> v<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token operator">==</span>a<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+        v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> v<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        v<span class="token punctuation">[</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">=</span>v<span class="token punctuation">[</span><span class="token function">findfa</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>k<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>n<span class="token operator">>></span>m<span class="token operator">>></span>k<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">fri</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">>></span> enemy<span class="token punctuation">;</span>
+
+    <span class="token comment">// init</span>
+    <span class="token function">init</span><span class="token punctuation">(</span>fri<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>op<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        cin<span class="token operator">>></span>a<span class="token operator">>></span>b<span class="token operator">>></span>op<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">>=</span>b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">swap</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        a<span class="token operator">--</span><span class="token punctuation">;</span>
+        b<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">merge</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            enemy<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        cin<span class="token operator">>></span>a<span class="token operator">>></span>b<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">>=</span>b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">swap</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        a<span class="token operator">--</span><span class="token punctuation">;</span>
+        b<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">==</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">find</span><span class="token punctuation">(</span>enemy<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>enemy<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">make_pair</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">==</span>enemy<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"No problem"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">find</span><span class="token punctuation">(</span>enemy<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>enemy<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">make_pair</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">==</span>enemy<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"OK"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">==</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">find</span><span class="token punctuation">(</span>enemy<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>enemy<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">make_pair</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span>enemy<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"OK but..."</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">findfa</span><span class="token punctuation">(</span>fri<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">find</span><span class="token punctuation">(</span>enemy<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>enemy<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">make_pair</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span>enemy<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"No way"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
                 
               </div>
             
