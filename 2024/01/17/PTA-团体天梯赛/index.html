@@ -24,7 +24,7 @@
 <meta property="og:description" content="L1-064 估值一亿的AI核心代码  分数 20 作者 陈越 单位 浙江大学  以上图片来自新浪微博。 本题要求你实现一个稍微更值钱一点的 AI 英文问答程序，规则是：  无论用户说什么，首先把对方说的话在一行中原样打印出来； 消除原文中多余空格：把相邻单词间的多个空格换成 \(1\) 个空格，把行首尾的空格全部删掉，把标点符号前面的空格删掉； 把原文中所有大写英文字母变成小写，除了 I； 把原">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-17T06:12:39.000Z">
-<meta property="article:modified_time" content="2024-01-21T07:50:52.243Z">
+<meta property="article:modified_time" content="2024-01-21T08:00:13.415Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.5k 字
+          9.3k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          71 分钟
+          78 分钟
         
       </span>
     
@@ -2782,6 +2782,60 @@ tree<span class="token operator">*</span> <span class="token function">create</s
     cout<span class="token operator">&lt;&lt;</span>top<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<hr />
+<h3 id="lower_bound函数"><strong>lower_bound函数</strong></h3>
+<p><code>lower_bound</code>
+是一个在标准模板库（STL）中常用的函数，通常用于在一个已排序的范围内进行二分查找。它的目的是找到在范围内第一个<strong>不小于</strong>（即大于或等于）给定值的元素的位置。</p>
+<p>下面是 <code>lower_bound</code> 函数内部逻辑的一个简化描述：</p>
+<ol type="1">
+<li><p><strong>初始化指针或迭代器</strong>：函数开始时，设置两个指针或迭代器，分别指向要搜索的范围的起始和结束位置。</p></li>
+<li><p><strong>二分搜索</strong>：在搜索过程中，函数会不断将查找范围分为两半，选择其中一半继续搜索：</p>
+<ul>
+<li>计算中间位置：首先，找到当前查找范围的中间位置。</li>
+<li>比较中间元素与目标值：
+<ul>
+<li>如果中间元素<strong>小于</strong>目标值，搜索继续在中间元素之后的部分进行，因为我们正在寻找的是第一个<strong>不小于</strong>目标值的元素。</li>
+<li>如果中间元素<strong>大于或等于</strong>目标值，搜索继续在中间元素以及之前的部分进行。</li>
+</ul></li>
+</ul></li>
+<li><p><strong>结束条件</strong>：当查找范围的开始位置超过或等于结束位置时，搜索结束。此时的开始位置就是第一个不小于目标值的元素的位置。如果所有元素都小于目标值，则该位置会是数组的末端。</p></li>
+<li><p><strong>返回结果</strong>：最终返回找到的位置的迭代器。</p></li>
+</ol>
+<p>这种算法的时间复杂度是 ( O(n) )，其中 ( n )
+是搜索范围内的元素数量。由于它采用的是二分查找策略，因此在使用之前，必须确保范围内的元素是已排序的。</p>
+<h3 id="qa">QA</h3>
+<h4 id="q">Q</h4>
+<p>但是元素事实上并没有排序，可以使用lower_bound吗？</p>
+<h4 id="a">A</h4>
+<p>当使用 <code>lower_bound</code>
+函数时，确实需要保证元素是按非降序排列的，也就是说，序列应该是排序的。在您的代码中，尽管原始输入数据可能未排序，但通过逐步构建的
+<code>top</code>
+向量实际上维护了一个有序序列。这个有序序列代表了目前为止找到的最长递增子序列的末端元素。</p>
+<p>在这个过程中，每次当你使用 <code>lower_bound</code> 来查找
+<code>temp</code> 的位置时，你其实是在查找在当前递增子序列中第一个不小于
+<code>temp</code> 的位置。这允许你用 <code>temp</code>
+替换找到的位置（如果有的话），从而维持这个递增序列的最小可能末端值。这个方法有效是因为它保留了递增序列的长度，同时使得后续有更大机会扩展这个序列。</p>
+<p>因此，尽管原始输入可能未排序，你的算法通过维护 <code>top</code>
+向量，保证了在每个时刻用于 <code>lower_bound</code>
+搜索的序列都是有序的。这是最长递增子序列问题中常用的一种巧妙技术。</p>
+<h4 id="thought">Thought</h4>
+<p>确实如此，如果我加入如下代码在循环中：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>i<span class="token operator">:</span>top<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    cout<span class="token operator">&lt;&lt;</span>i<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>输出内容确实是这样的：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">8 
+4 
+2 
+2 5 
+2 3 
+2 3 9 
+1 3 9 
+1 3 6 
+1 3 6 7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>是一个递增的子序列。</p>
+<p>真的好神奇</p>
 
                 
               </div>
