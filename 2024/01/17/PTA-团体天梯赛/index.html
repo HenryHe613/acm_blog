@@ -24,7 +24,7 @@
 <meta property="og:description" content="L1-064 估值一亿的AI核心代码  分数 20 作者 陈越 单位 浙江大学  以上图片来自新浪微博。 本题要求你实现一个稍微更值钱一点的 AI 英文问答程序，规则是：  无论用户说什么，首先把对方说的话在一行中原样打印出来； 消除原文中多余空格：把相邻单词间的多个空格换成 \(1\) 个空格，把行首尾的空格全部删掉，把标点符号前面的空格删掉； 把原文中所有大写英文字母变成小写，除了 I； 把原">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-17T06:12:39.000Z">
-<meta property="article:modified_time" content="2024-01-27T04:15:48.271Z">
+<meta property="article:modified_time" content="2024-01-27T13:49:41.163Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          17k 字
+          19k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          145 分钟
+          156 分钟
         
       </span>
     
@@ -5278,6 +5278,420 @@ vector<span class="token operator">&lt;</span>pair<span class="token operator">&
     <span class="token comment">// &#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="l2-030-冰岛人">L2-030 冰岛人</h2>
+<blockquote>
+<p>分数 25 作者 陈越 单位 浙江大学</p>
+</blockquote>
+<p>2018年世界杯，冰岛队因1:1平了强大的阿根廷队而一战成名。好事者发现冰岛人的名字后面似乎都有个“松”（son），于是有网友科普如下：</p>
+<p>冰岛人沿用的是维京人古老的父系姓制，孩子的姓等于父亲的名加后缀，如果是儿子就加
+<code>sson</code>，女儿则加
+<code>sdottir</code>。因为冰岛人口较少，为避免近亲繁衍，本地人交往前先用个
+App 查一下两人祖宗若干代有无联系。本题就请你实现这个 App 的功能。</p>
+<h3 id="输入格式-18">输入格式：</h3>
+<p>输入首先在第一行给出一个正整数 <span
+class="math inline">\(N（1&lt;N≤10^5）\)</span>，为当地人口数。随后
+<span class="math inline">\(N\)</span>
+行，每行给出一个人名，格式为：<code>名 姓（带性别后缀）</code>，两个字符串均由不超过
+<span class="math inline">\(20\)</span>
+个小写的英文字母组成。维京人后裔是可以通过姓的后缀判断其性别的，其他人则是在姓的后面加
+<span class="math inline">\(m\)</span> 表示男性、<span
+class="math inline">\(f\)</span>
+表示女性。题目保证给出的每个维京家族的起源人都是男性。</p>
+<p>随后一行给出正整数 <span
+class="math inline">\(M\)</span>，为查询数量。随后 <span
+class="math inline">\(M\)</span>
+行，每行给出一对人名，格式为：<code>名1 姓1 名2 姓2</code>。注意：这里的姓是不带后缀的。四个字符串均由不超过
+<span class="math inline">\(20\)</span> 个小写的英文字母组成。</p>
+<p>题目保证不存在两个人是同名的。</p>
+<h3 id="输出格式-18">输出格式：</h3>
+<p>对每一个查询，根据结果在一行内显示以下信息：</p>
+<ul>
+<li>若两人为异性，且五代以内无公共祖先，则输出 <code>Yes</code>；</li>
+<li>若两人为异性，但五代以内（不包括第五代）有公共祖先，则输出
+<code>No</code>；</li>
+<li>若两人为同性，则输出 <code>Whatever</code>；</li>
+<li>若有一人不在名单内，则输出 <code>NA</code>。</li>
+</ul>
+<p>所谓“五代以内无公共祖先”是指两人的公共祖先（如果存在的话）必须比任何一方的曾祖父辈分高。</p>
+<h3 id="输入样例-19">输入样例：</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">15
+chris smithm
+adam smithm
+bob adamsson
+jack chrissson
+bill chrissson
+mike jacksson
+steve billsson
+tim mikesson
+april mikesdottir
+eric stevesson
+tracy timsdottir
+james ericsson
+patrick jacksson
+robin patricksson
+will robinsson
+6
+tracy tim james eric
+will robin tracy tim
+april mike steve bill
+bob adam eric steve
+tracy tim tracy tim
+x man april mikes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="输出样例-19">输出样例：</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Yes
+No
+No
+Whatever
+Whatever
+NA<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<blockquote>
+<p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
+</blockquote>
+<h3 id="code1-7">Code1</h3>
+<blockquote>
+<p>240127</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>测试点</th>
+<th>提示</th>
+<th>内存(KB)</th>
+<th>用时(ms)</th>
+<th>结果</th>
+<th>得分</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td></td>
+<td>440</td>
+<td>4</td>
+<td>答案正确</td>
+<td>12 / 12</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td></td>
+<td>328</td>
+<td>3</td>
+<td>答案正确</td>
+<td>2 / 2</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td></td>
+<td>388</td>
+<td>3</td>
+<td>答案正确</td>
+<td>2 / 2</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td></td>
+<td>448</td>
+<td>3</td>
+<td>答案错误</td>
+<td>0 / 2</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td></td>
+<td>316</td>
+<td>3</td>
+<td>答案错误</td>
+<td>0 / 1</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td></td>
+<td>14384</td>
+<td>75</td>
+<td>答案正确</td>
+<td>3 / 3</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td></td>
+<td>14396</td>
+<td>84</td>
+<td>答案错误</td>
+<td>0 / 3</td>
+</tr>
+</tbody>
+</table>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;vector></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;map></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;set></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">people</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">bool</span> gender<span class="token punctuation">;</span> <span class="token comment">// true->male</span>
+    <span class="token keyword">bool</span> isviking<span class="token punctuation">;</span> <span class="token comment">// true->yes</span>
+    string firstname<span class="token punctuation">;</span>
+    string lastname<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+    map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span>people<span class="token operator">></span> m<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        people peo<span class="token punctuation">;</span>
+        string firstname<span class="token punctuation">,</span>lastname<span class="token punctuation">;</span>
+        <span class="token keyword">bool</span> gender<span class="token punctuation">,</span>isviking<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>firstname<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>lastname<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token char">'m'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            isviking<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+            gender<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+            lastname<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            lastname<span class="token operator">=</span>lastname<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token char">'f'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            isviking<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+            gender<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+            lastname<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            lastname<span class="token operator">=</span>lastname<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">rfind</span><span class="token punctuation">(</span><span class="token string">"sdottir"</span><span class="token punctuation">)</span><span class="token operator">!=</span>string<span class="token double-colon punctuation">::</span>npos<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            lastname<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"sdottir"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">strlen</span><span class="token punctuation">(</span><span class="token string">"sdottir"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            isviking<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+            gender<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+            lastname<span class="token operator">=</span>lastname<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            lastname<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"sson"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">strlen</span><span class="token punctuation">(</span><span class="token string">"sson"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            isviking<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+            gender<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+            lastname<span class="token operator">=</span>lastname<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        peo<span class="token punctuation">.</span>firstname<span class="token operator">=</span>firstname<span class="token punctuation">;</span>
+        peo<span class="token punctuation">.</span>lastname<span class="token operator">=</span>lastname<span class="token punctuation">;</span>
+        peo<span class="token punctuation">.</span>gender<span class="token operator">=</span>gender<span class="token punctuation">;</span>
+        peo<span class="token punctuation">.</span>isviking<span class="token operator">=</span>isviking<span class="token punctuation">;</span>
+        m<span class="token punctuation">[</span>firstname<span class="token punctuation">]</span><span class="token operator">=</span>peo<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">int</span> c<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>c<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>c<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        string f1<span class="token punctuation">,</span>l1<span class="token punctuation">,</span>f2<span class="token punctuation">,</span>l2<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>f1<span class="token operator">>></span>l1<span class="token operator">>></span>f2<span class="token operator">>></span>l2<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>f1<span class="token punctuation">)</span><span class="token operator">!=</span>m<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> m<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>f2<span class="token punctuation">)</span><span class="token operator">!=</span>m<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">[</span>f1<span class="token punctuation">]</span><span class="token punctuation">.</span>gender<span class="token operator">!=</span>m<span class="token punctuation">[</span>f2<span class="token punctuation">]</span><span class="token punctuation">.</span>gender<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">bool</span> marryable<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+                set<span class="token operator">&lt;</span>string<span class="token operator">></span> ance1<span class="token punctuation">;</span>
+                string fa<span class="token operator">=</span>f1<span class="token punctuation">;</span>
+                <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>fa<span class="token punctuation">)</span><span class="token operator">!=</span>m<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                        fa<span class="token operator">=</span>m<span class="token punctuation">[</span>fa<span class="token punctuation">]</span><span class="token punctuation">.</span>lastname<span class="token punctuation">;</span>
+                        ance1<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>fa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">&#125;</span>
+                <span class="token punctuation">&#125;</span>
+                set<span class="token operator">&lt;</span>string<span class="token operator">></span> ance2<span class="token punctuation">;</span>
+                fa<span class="token operator">=</span>f2<span class="token punctuation">;</span>
+                <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>fa<span class="token punctuation">)</span><span class="token operator">!=</span>m<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                        fa<span class="token operator">=</span>m<span class="token punctuation">[</span>fa<span class="token punctuation">]</span><span class="token punctuation">.</span>lastname<span class="token punctuation">;</span>
+                        <span class="token keyword">if</span><span class="token punctuation">(</span>ance1<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>fa<span class="token punctuation">)</span><span class="token operator">!=</span>ance1<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                            marryable<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+                            <span class="token keyword">break</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">&#125;</span>
+                    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">&#125;</span>
+                <span class="token punctuation">&#125;</span>
+
+                <span class="token comment">// cout&lt;&lt;"&amp;"&lt;&lt;endl;</span>
+                <span class="token comment">// for(auto &amp;k:ance1)&#123;</span>
+                <span class="token comment">//     cout&lt;&lt;k&lt;&lt;" ";</span>
+                <span class="token comment">// &#125;cout&lt;&lt;endl;</span>
+                <span class="token comment">// for(auto &amp;k:ance2)&#123;</span>
+                <span class="token comment">//     cout&lt;&lt;k&lt;&lt;" ";</span>
+                <span class="token comment">// &#125;cout&lt;&lt;endl;</span>
+
+                <span class="token comment">// for(auto &amp;k:ance1)&#123;</span>
+                <span class="token comment">//     if(ance2.find(k)!=ance2.end())&#123;</span>
+                <span class="token comment">//         marryable=false;</span>
+                <span class="token comment">//         break;</span>
+                <span class="token comment">//     &#125;</span>
+                <span class="token comment">// &#125;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>marryable<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    cout<span class="token operator">&lt;&lt;</span><span class="token string">"Yes"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                    cout<span class="token operator">&lt;&lt;</span><span class="token string">"No"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                cout<span class="token operator">&lt;&lt;</span><span class="token string">"Whatever"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"NA"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="code2-10">Code2</h3>
+<blockquote>
+<p>240127</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>测试点</th>
+<th>提示</th>
+<th>内存(KB)</th>
+<th>用时(ms)</th>
+<th>结果</th>
+<th>得分</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td></td>
+<td>456</td>
+<td>3</td>
+<td>答案正确</td>
+<td>12 / 12</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td></td>
+<td>460</td>
+<td>3</td>
+<td>答案正确</td>
+<td>2 / 2</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td></td>
+<td>448</td>
+<td>3</td>
+<td>答案正确</td>
+<td>2 / 2</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td></td>
+<td>312</td>
+<td>3</td>
+<td>答案正确</td>
+<td>2 / 2</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td></td>
+<td>328</td>
+<td>3</td>
+<td>答案正确</td>
+<td>1 / 1</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td></td>
+<td>11332</td>
+<td>68</td>
+<td>答案正确</td>
+<td>3 / 3</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td></td>
+<td>11360</td>
+<td>269</td>
+<td>答案正确</td>
+<td>3 / 3</td>
+</tr>
+</tbody>
+</table>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;vector></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;map></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;set></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span>pair<span class="token operator">&lt;</span><span class="token keyword">bool</span><span class="token punctuation">,</span>string<span class="token operator">>></span> m<span class="token punctuation">;</span>
+set<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token function">getAnce</span><span class="token punctuation">(</span>string name<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    set<span class="token operator">&lt;</span>string<span class="token operator">></span> ance<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        ance<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>m<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        name<span class="token operator">=</span>m<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>name<span class="token operator">==</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> ance<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+string <span class="token function">check</span><span class="token punctuation">(</span>string name1<span class="token punctuation">,</span>string name2<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> cnt1<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>cnt2<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>name1<span class="token operator">!=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        cnt2<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        string name<span class="token operator">=</span>name2<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>name<span class="token operator">!=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>name<span class="token operator">==</span>name1 <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>cnt1<span class="token operator">&lt;</span><span class="token number">4</span> <span class="token operator">||</span> cnt2<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">"No"</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>cnt1<span class="token operator">>=</span><span class="token number">4</span> <span class="token operator">&amp;&amp;</span> cnt2<span class="token operator">>=</span><span class="token number">4</span><span class="token punctuation">)</span>  <span class="token keyword">return</span> <span class="token string">"Yes"</span><span class="token punctuation">;</span>
+            name<span class="token operator">=</span>m<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token punctuation">;</span>
+            cnt2<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        cnt1<span class="token operator">++</span><span class="token punctuation">;</span>
+        name1<span class="token operator">=</span>m<span class="token punctuation">[</span>name1<span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token string">"Yes"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        string firstname<span class="token punctuation">,</span>lastname<span class="token punctuation">;</span>
+        <span class="token keyword">bool</span> gender<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>firstname<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>lastname<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token char">'m'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            m<span class="token punctuation">[</span>firstname<span class="token punctuation">]</span><span class="token punctuation">.</span>first<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token char">'f'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            m<span class="token punctuation">[</span>firstname<span class="token punctuation">]</span><span class="token punctuation">.</span>first<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token char">'r'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            m<span class="token punctuation">[</span>firstname<span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token operator">=</span>lastname<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">rfind</span><span class="token punctuation">(</span><span class="token string">"sdottir"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            m<span class="token punctuation">[</span>firstname<span class="token punctuation">]</span><span class="token punctuation">.</span>first<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            m<span class="token punctuation">[</span>firstname<span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token operator">=</span>lastname<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>lastname<span class="token punctuation">.</span><span class="token function">rfind</span><span class="token punctuation">(</span><span class="token string">"sson"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            m<span class="token punctuation">[</span>firstname<span class="token punctuation">]</span><span class="token punctuation">.</span>first<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">int</span> c<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>c<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>c<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        string f1<span class="token punctuation">,</span>l1<span class="token punctuation">,</span>f2<span class="token punctuation">,</span>l2<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>f1<span class="token operator">>></span>l1<span class="token operator">>></span>f2<span class="token operator">>></span>l2<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>f1<span class="token punctuation">)</span><span class="token operator">==</span>m<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> m<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>f2<span class="token punctuation">)</span><span class="token operator">==</span>m<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"NA"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">[</span>f1<span class="token punctuation">]</span><span class="token punctuation">.</span>first<span class="token operator">==</span>m<span class="token punctuation">[</span>f2<span class="token punctuation">]</span><span class="token punctuation">.</span>first<span class="token punctuation">)</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"Whatever"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token function">check</span><span class="token punctuation">(</span>f1<span class="token punctuation">,</span>f2<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            <span class="token comment">// bool marryable=true;</span>
+            <span class="token comment">// set&lt;string> ance1=getAnce(f1);</span>
+            <span class="token comment">// set&lt;string> ance2=getAnce(f2);</span>
+            <span class="token comment">// for(auto &amp;k:ance2)&#123;</span>
+            <span class="token comment">//     if(ance1.find(k)!=ance1.end())&#123;</span>
+            <span class="token comment">//         marryable=false;</span>
+            <span class="token comment">//         break;</span>
+            <span class="token comment">//     &#125;</span>
+            <span class="token comment">// &#125;</span>
+            <span class="token comment">// if(marryable)&#123;</span>
+            <span class="token comment">//     cout&lt;&lt;"Yes"&lt;&lt;endl;</span>
+            <span class="token comment">// &#125;else&#123;</span>
+            <span class="token comment">//     cout&lt;&lt;"No"&lt;&lt;endl;</span>
+            <span class="token comment">// &#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
                 
               </div>
