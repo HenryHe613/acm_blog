@@ -1,0 +1,1415 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="nanyan">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="2-1 在C语言中，读写操作时会进行自动转换的文件是 A.二进制文件和文本文件都不需要转换 B.二进制文件 C.文本文件 D.二进制文件和文本文件都需要转换 GPT 在C语言中，涉及到文件读写时的自动转换主要发生在操作文本文件时。当你在C语言中使用标准的文件操作函数（如 fopen, fread, fwrite, fprintf, fscanf 等）来操作文本文件时，会进行某些自动转换。最常见的是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PTA | C文件操作相关题目">
+<meta property="og:url" content="http://acm.nanyan.cc/posts/ecf5.html">
+<meta property="og:site_name" content="ACM笔记">
+<meta property="og:description" content="2-1 在C语言中，读写操作时会进行自动转换的文件是 A.二进制文件和文本文件都不需要转换 B.二进制文件 C.文本文件 D.二进制文件和文本文件都需要转换 GPT 在C语言中，涉及到文件读写时的自动转换主要发生在操作文本文件时。当你在C语言中使用标准的文件操作函数（如 fopen, fread, fwrite, fprintf, fscanf 等）来操作文本文件时，会进行某些自动转换。最常见的是">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-27T10:50:01.000Z">
+<meta property="article:modified_time" content="2023-12-28T14:16:13.645Z">
+<meta property="article:author" content="nanyan">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>PTA | C文件操作相关题目 - ACM笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"acm.nanyan.cc","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ACM笔记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://pic.imgdb.cn/item/656313adc458853aefa7e147.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="PTA | C文件操作相关题目"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-27 18:50" pubdate>
+          2023年12月27日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          54 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">PTA | C文件操作相关题目</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="section">2-1</h1>
+<p>在C语言中，读写操作时会进行自动转换的文件是</p>
+<p>A.二进制文件和文本文件都不需要转换</p>
+<p>B.二进制文件</p>
+<p>C.文本文件</p>
+<p>D.二进制文件和文本文件都需要转换</p>
+<h2 id="gpt">GPT</h2>
+<p>在C语言中，涉及到文件读写时的自动转换主要发生在操作文本文件时。当你在C语言中使用标准的文件操作函数（如
+<code>fopen</code>, <code>fread</code>, <code>fwrite</code>,
+<code>fprintf</code>, <code>fscanf</code>
+等）来操作文本文件时，会进行某些自动转换。最常见的是换行符的转换：在Windows系统中，文本模式下的换行符通常会从
+"" 转换为
+""，而在写入时则会发生相反的转换。这是为了适应不同操作系统中的换行符表示差异。</p>
+<p>相比之下，二进制文件的读写不涉及这类自动转换，因为二进制文件中的数据被视为原始字节流。</p>
+<p>所以，正确答案是 C. 文本文件。</p>
+<h1 id="section-1">2-2</h1>
+<p>下面说法正确的是（ ）。</p>
+<p>A.若文件不存在，则无法将其打开</p>
+<p>B.文件打开后，初始读写位置总是在文件开头处</p>
+<p>C.必须有文件指针指向已打开的文件，否则，即使打开也无法对其操作</p>
+<p>D.一个文件关闭后，不能再次将其打开</p>
+<h2 id="gpt-1">GPT</h2>
+<p>下面对各选项进行分析：</p>
+<p>A. 若文件不存在，则无法将其打开 - 这个说法不完全正确。在C语言中，使用
+<code>fopen()</code> 函数打开文件时，如果文件不存在且模式是写入（例如
+"w", "w+", "a", "a+"），则会创建新文件。如果是读模式（例如 "r" 或
+"r+"），且文件不存在，则无法打开文件。</p>
+<p>B. 文件打开后，初始读写位置总是在文件开头处 -
+这个说法通常是正确的。在标准的C文件操作中，当使用 <code>fopen()</code>
+函数打开文件时，初始的读写位置通常是在文件的开头，除非指定的模式会改变位置（例如追加模式
+"a" 或 "a+"，初始位置会设在文件末尾）。</p>
+<p>C. 必须有文件指针指向已打开的文件，否则，即使打开也无法对其操作 -
+这个说法是正确的。在C语言中，操作文件都需要通过文件指针进行，无论是读取、写入还是其他操作。如果没有有效的文件指针，就无法对文件进行操作。</p>
+<p>D. 一个文件关闭后，不能再次将其打开 -
+这个说法不正确。文件关闭后可以再次打开，只需再次使用
+<code>fopen()</code> 函数即可。</p>
+<p>综上所述，正确答案是 C.
+必须有文件指针指向已打开的文件，否则，即使打开也无法对其操作。</p>
+<h1 id="section-2">2-3</h1>
+<p>如果要打开文件fileA: - （1）若fileA不存在，则创建一个新文件； -
+（2）若fileA存在，打开后将文件读写指针定位于文件尾； -
+（3）打开后，可以读也可以写。 则打开方式应为（ ）。</p>
+<p>A."r+"</p>
+<p>B."w+"</p>
+<p>C."a+"</p>
+<p>D."ab"</p>
+<h2 id="gpt-2">GPT</h2>
+<p>根据提供的条件，我们可以确定合适的文件打开模式：</p>
+<ol type="1">
+<li>若 <code>fileA</code> 不存在，则创建一个新文件；</li>
+<li>若 <code>fileA</code> 存在，打开后将文件读写指针定位于文件尾；</li>
+<li>打开后，可以读也可以写。</li>
+</ol>
+<p>这些条件最符合 "a+" 模式。在 "a+"
+模式中，如果文件不存在，会创建一个新文件；如果文件已存在，打开文件并将读写指针定位在文件末尾。此外，"a+"
+模式支持读和写操作。</p>
+<p>选项分析：</p>
+<ul>
+<li>A.
+"r+"：打开用于更新的文件，文件必须存在。但它不满足条件（1），即不会创建不存在的文件。</li>
+<li>B.
+"w+"：打开用于读写的空文件，如果文件存在则长度截为零。这不满足条件（2），因为它会清空现有文件。</li>
+<li>C. "a+"：满足上述所有条件。</li>
+<li>D.
+"ab"：以二进制追加模式打开文件，仅支持写操作，不满足条件（3），即不支持读操作。</li>
+</ul>
+<p>因此，正确答案是 C. "a+"。</p>
+<h1 id="section-3">2-4</h1>
+<p>若要打开C盘上user子目录下名为my. txt的文本文件进行读、写操作,
+下面符合此要求的函数调用是()。</p>
+<p>A.fopen("c:/user/my.txt","r+")</p>
+<p>B.fopen("c:.txt","r+")</p>
+<p>C.fopen("c:\user\my.txt","r+")</p>
+<p>D.fopen("c://user//my.txt","r+")</p>
+<h2 id="gpt-3">GPT</h2>
+<p>在C语言中，文件路径中的反斜杠（）是一个特殊字符，它被用作转义字符的前缀。因此，如果你想在字符串中使用反斜杠，你需要使用两个反斜杠（\）来表示一个普通的反斜杠字符。这是因为单个反斜杠开始的组合（比如
+或 可能被解释为特殊的转义序列。</p>
+<p>根据这个规则，我们来分析给定的选项：</p>
+<p>A. fopen("c:/user/my.txt","r+") -
+这个选项使用正斜杠（/），这在许多系统中是有效的，并且在Windows中通常也能正确工作。</p>
+<p>B. fopen("c:.txt","r+") -
+这个路径使用了单个反斜杠，这可能会导致问题，因为 " 和 ""
+可能会被解释为特殊的转义字符。</p>
+<p>C. fopen("c:\user\my.txt","r+") -
+这是正确的格式，在C语言中使用双反斜杠来表示文件路径。</p>
+<p>D. fopen("c://user//my.txt","r+") -
+这个选项使用了两个正斜杠，虽然这可能在某些情况下工作，但它不是标准的路径表示方式。</p>
+<p>综上所述，正确的函数调用是 C.
+fopen("c:\user\my.txt","r+")。这是因为它正确地使用了双反斜杠来避免转义字符的问题，并且
+"r+" 模式允许对文件进行读写操作。</p>
+<h1 id="section-4">2-5</h1>
+<p>在C语言中，下面关于文件操作正确的叙述是（ ）。</p>
+<p>A.对文件操作时需要先关闭文件</p>
+<p>B.对文件操作时打开和关闭文件的顺序没有要求</p>
+<p>C.对文件操作时，必须先检查文件是否存在，然后再打开文件</p>
+<p>D.对文件操作时需要先打开文件</p>
+<h2 id="gpt-4">GPT</h2>
+<p>在C语言中，文件操作的正确顺序和必要步骤是至关重要的。根据提供的选项，我们来分析哪个叙述是正确的：</p>
+<p>A. 对文件操作时需要先关闭文件 -
+这个叙述是不正确的。实际上，你必须先打开文件，然后才能进行操作，最后才关闭文件。</p>
+<p>B. 对文件操作时打开和关闭文件的顺序没有要求 -
+这个叙述也是错误的。有明确的顺序要求：首先打开文件，进行所需的操作，然后关闭文件。</p>
+<p>C. 对文件操作时，必须先检查文件是否存在，然后再打开文件 -
+这个叙述不一定正确。虽然在某些情况下你可能想要先检查文件是否存在（例如，使用
+<code>fopen</code> 之前），但这不是必须的步骤。C语言的文件操作函数（如
+<code>fopen</code>）本身会处理文件不存在的情况。例如，如果以读模式打开一个不存在的文件，<code>fopen</code>
+将返回 <code>NULL</code>。</p>
+<p>D. 对文件操作时需要先打开文件 -
+这个叙述是正确的。在C语言中，对文件进行任何操作之前，必须先使用诸如
+<code>fopen</code>
+之类的函数打开文件。打开文件后，你可以读取、写入或修改文件，然后必须关闭文件以释放资源。</p>
+<p>因此，正确答案是 D. 对文件操作时需要先打开文件。</p>
+<h1 id="section-5">2-6</h1>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c">FILE <span class="token operator">*</span>fp<span class="token punctuation">;</span>
+<span class="token keyword">int</span> x<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">;</span>
+fp<span class="token operator">=</span><span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"my.txt"</span><span class="token punctuation">,</span><span class="token string">"wb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fwrite</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>x<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>下面说法正确的是（ ）</p>
+<p>A.<code>my.txt</code>保存的文件为文本文件，能够直接打开查看，文件内容为32。</p>
+<p>B.<code>fwrite</code>是写文件，因此不用加&amp;</p>
+<p>C.<code>my.txt</code>虽然是文件文件，但内容是以二进制形式存储，不能直接打开查看。</p>
+<p>D.<code>fwrite</code>是用于二进制的写操作，因为存储为txt文本文件，因此会转换成文本"32"，作为文本文件存储。</p>
+<h2 id="gpt-5">GPT</h2>
+<p>根据提供的代码片段，我们可以分析每个选项的正确性：</p>
+<p>A. my.txt保存的文件为文本文件，能够直接打开查看，文件内容为32。 -
+这个说法不正确。虽然文件扩展名是 <code>.txt</code>，但由于使用了
+"wb"（写入二进制）模式，文件内容是以二进制形式存储的。32这个整数被以二进制的形式写入，而不是以可读的文本形式。</p>
+<p>B. fwrite是写文件，因此不用加&amp; -
+这个说法也不正确。<code>fwrite</code>
+函数需要一个指向数据的指针作为参数。在这个例子中，<code>&amp;x</code>
+表示取 <code>x</code> 的地址，即指向 <code>x</code> 的指针。</p>
+<p>C. my.txt虽然是文件文件，但内容是以二进制形式存储，不能直接打开查看。
+- 这个说法是正确的。文件虽然有 <code>.txt</code>
+扩展名，但由于使用了二进制写入模式，其内容是二进制形式的，不是普通的文本格式，因此不能直接以文本编辑器打开查看。</p>
+<p>D.
+fwrite是用于二进制的写操作，因为存储为txt文本文件，因此会转换成文本"32"，作为文本文件存储。
+- 这个说法不正确。<code>fwrite</code>
+在这里是以二进制模式写入数据，不会将整数32转换为文本形式。文件的扩展名（如
+<code>.txt</code>）对于文件内容的解释没有影响；它是以二进制格式存储的。</p>
+<p>因此，正确答案是 C.
+my.txt虽然是文件文件，但内容是以二进制形式存储，不能直接打开查看。</p>
+<h1 id="section-6">2-7</h1>
+<p>下列语句中，把变量fp定义为一个文件指针的是__________。</p>
+<p>A.<code>FILE *fp;</code></p>
+<p>B.<code>FILE fp;</code></p>
+<p>C.<code>file *fp;</code></p>
+<p>D.<code>file fp;</code></p>
+<h2 id="gpt-6">GPT</h2>
+<p>在C语言中，文件指针是通过 <code>FILE</code>
+类型定义的，这是标准库中定义的用于文件操作的类型。文件指针用于存储与打开文件相关的信息，包括文件位置和状态信息。</p>
+<p>根据这一点，我们来分析各个选项：</p>
+<p>A. FILE *fp; - 这个选项正确地定义了一个类型为 <code>FILE</code>
+的指针。<code>FILE</code>
+是标准I/O库中定义的类型，用于文件操作，<code>*</code> 表明
+<code>fp</code> 是一个指针。</p>
+<p>B. FILE fp; - 这个选项定义了一个 <code>FILE</code>
+类型的变量，而不是指针。它用于直接存储文件信息，而不是存储指向该信息的指针。</p>
+<p>C. file *fp; - 这个选项使用了小写的
+<code>file</code>，而在C语言中，<code>FILE</code>
+是正确的类型名称，且是区分大小写的。因此，这不是一个正确的文件指针定义。</p>
+<p>D. file fp; - 与选项C类似，这里使用了错误的类型名称（小写的
+<code>file</code>），而且没有使用指针。</p>
+<p>因此，正确答案是 A. FILE *fp;，它正确地定义了一个文件指针。</p>
+<h1 id="section-7">2-8</h1>
+<p>进行文件操作时，“写文件”的一般含义是__________。</p>
+<p>A.将磁盘中的信息存入计算机内存</p>
+<p>B.将计算机内存中的信息存入磁盘</p>
+<p>C.将计算机CPU中的信息存入磁盘</p>
+<p>D.将磁盘中的信息存入计算机CPU</p>
+<h2 id="gpt-7">GPT</h2>
+<p>在计算机术语中，"写文件"通常指的是：</p>
+<p>B. 将计算机内存中的信息存入磁盘</p>
+<p>解释如下：</p>
+<ul>
+<li>当我们说"写文件"时，这通常意味着将数据从计算机的内存（也就是程序运行时使用的临时存储空间）转移到一个更永久的存储介质上，如硬盘或SSD等。这个过程涉及到将内存中的数据复制到文件系统中，创建或修改磁盘上的文件。</li>
+</ul>
+<p>其他选项的含义是：</p>
+<p>A. 将磁盘中的信息存入计算机内存 -
+这实际上描述的是"读文件"的过程，即从磁盘读取数据到内存中。</p>
+<p>C. 将计算机CPU中的信息存入磁盘 -
+这个描述不准确。CPU处理的信息通常是来自于或者存储在内存中，而不是直接与磁盘交互。</p>
+<p>D. 将磁盘中的信息存入计算机CPU -
+这同样不是写文件的过程。这更像是读取数据的描述，且实际上数据是从磁盘读入内存，而不是直接进入CPU。</p>
+<p>因此，"写文件"的一般含义是将内存中的数据写入（存储）到磁盘上。</p>
+<h1 id="section-8">2-9</h1>
+<p>以读方式打开一个已有的文本文件<code>“file1”</code>，以下<code>fopen()</code>函数正确的调用方式是__________。</p>
+<p>A.<code>fp=fopen("file1","r");</code></p>
+<p>B.<code>fp=fopen("file1","wb");</code></p>
+<p>C.<code>fp=fopen("file1", "rb");</code></p>
+<p>D.<code>fp=fopen("file1","w");</code></p>
+<h2 id="gpt-8">GPT</h2>
+<p>要以读方式打开一个已有的文本文件，需要使用正确的模式字符串作为
+<code>fopen</code> 函数的参数。下面是对各个选项的解释：</p>
+<p>A. fp=fopen("file1","r"); - 这个选项是正确的。"r"
+模式用于以读方式打开一个文本文件。如果文件存在，它可以被打开用于读取。</p>
+<p>B. fp=fopen("file1","wb"); - 这个选项不正确。"wb"
+模式用于以写方式打开一个二进制文件，并且如果文件存在，会将其内容清空。</p>
+<p>C. fp=fopen("file1", "rb"); - 这个选项不正确。虽然 "rb"
+模式用于以读方式打开一个文件，但它是针对二进制文件，而不是文本文件。</p>
+<p>D. fp=fopen("file1","w"); - 这个选项不正确。"w"
+模式用于以写方式打开一个文本文件，并且如果文件存在，也会将其内容清空。</p>
+<p>因此，正确的调用方式，以读方式打开一个已有的文本文件“file1”，是 A.
+fp=fopen("file1","r");。</p>
+<h1 id="section-9">2-10</h1>
+<p>以下语句将输出 （）。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d  %d  %d"</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token char">'\0'</span><span class="token punctuation">,</span> <span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<p>A.<code>0 0 1</code></p>
+<p>B.<code>0 0 -1</code></p>
+<p>C.<code>NULL EOF</code></p>
+<p>D.<code>1 0 EOF</code></p>
+<h2 id="gpt-9">GPT</h2>
+<p>为了确定这段代码的输出，我们需要理解每个输出项的含义：</p>
+<ol type="1">
+<li><p><code>NULL</code> 在C语言中通常被定义为指针常量，通常是
+<code>(void *)0</code>。在使用 <code>%d</code>
+格式化输出时，它通常会被视为整数 <code>0</code>。</p></li>
+<li><p><code>'\0'</code> 是一个空字符，它在C语言中的数值也是
+<code>0</code>。</p></li>
+<li><p><code>EOF</code>
+是一个在stdio.h中定义的宏，通常用于表示文件结束。它的具体值是
+<code>-1</code>。</p></li>
+</ol>
+<p>所以，这个printf语句的输出将是：</p>
+<p><code>0  0  -1</code></p>
+<p>因此，正确答案是 B. <code>0  0  -1</code>。</p>
+<h1 id="section-10">4-1</h1>
+<p>程序功能：先从键盘输入10个整数对a,b，并将其写到文本文件中；</p>
+<p>然后，从文件中将其读出，显示在屏幕上。</p>
+<p>存在文本文件中数据形式如下：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">(2:3)
+(3:4)
+...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>注意：在下面空中填写代码时，不允许出现空格字符</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    FILE <span class="token operator">*</span>fp<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> i<span class="token punctuation">,</span> k<span class="token punctuation">;</span>
+    fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"file1.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"打开文件失败\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d,%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">fprintf</span><span class="token punctuation">(</span>fp<span class="token punctuation">,</span> <span class="token string">"(%d:%d)\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"file1.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"打开文件失败\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    k <span class="token operator">=</span> <span class="token function">fscanf</span><span class="token punctuation">(</span>fp<span class="token punctuation">,</span> <span class="token string">"(%d:%d)"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d,%d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        k <span class="token operator">=</span> <span class="token function">fscanf</span><span class="token punctuation">(</span>fp<span class="token punctuation">,</span> <span class="token string">"(%d:%d)"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="section-11">4-2</h1>
+<p>程序功能：从键盘依次输入学生的信息到结构体变量<code>s_data</code>中，再将<code>s_data</code>数据写到<code>"stu.dat"</code>文件中（<code>stu.dat</code>格式为二进制文件），</p>
+<p>最后从<code>"stu.dat"</code>文件中读取所有学生的信息并显示。</p>
+<p>注意：在下面空中填写代码时，不允许出现空格字符</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">struct</span> <span class="token class-name">student</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> score<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> s_data<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    FILE <span class="token operator">*</span>fp<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+
+    fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"stu.dat"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 以二进制打开文件供写</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"File can not be opened \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s %f"</span><span class="token punctuation">,</span> s_data<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>s_data<span class="token punctuation">.</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">fwrite</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s_data<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">student</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"stu.dat"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                        <span class="token comment">// 以只读的方式打开二进制文件</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">fread</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s_data<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>s_data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> fp<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// 成功读取一个结构体变量的数据，则循环</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"姓名：%s,成绩：%6.2f：\n"</span><span class="token punctuation">,</span> s_data<span class="token punctuation">.</span>name<span class="token punctuation">,</span> s_data<span class="token punctuation">.</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出结构体变量中的数据</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="section-12">4-3</h1>
+<p>下面程序的功能是将一个磁盘中的二进制文件复制到另一个磁盘中，两个文件名随命令行一起输入，输入时原有文件的文件名在前，新复制文件的文件名在后。请填空补全。(注意：填写时不要加额外空格)
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    FILE <span class="token operator">*</span>old<span class="token punctuation">,</span> <span class="token operator">*</span>new<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> ch<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"You forgot to enter a filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>old <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"cannot open infile\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>new <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"cannot open outfile\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">feof</span><span class="token punctuation">(</span>old<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token function">fputc</span><span class="token punctuation">(</span><span class="token function">fgetc</span><span class="token punctuation">(</span>old<span class="token punctuation">)</span><span class="token punctuation">,</span> new<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fclose</span><span class="token punctuation">(</span>old<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fclose</span><span class="token punctuation">(</span>new<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure> 因为题目是填空题，所以有一定限制。更优化的代码如下：
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span> <span class="token comment">// 包含 exit 函数所需的头文件</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    FILE <span class="token operator">*</span>old<span class="token punctuation">,</span> <span class="token operator">*</span>new<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> ch<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"You forgot to enter filenames\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 一般情况下，非零退出码表示错误</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>old <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Cannot open infile\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>new <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 应该使用 "wb" 模式</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Cannot open outfile\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">fclose</span><span class="token punctuation">(</span>old<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 关闭已经打开的文件</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>ch <span class="token operator">=</span> <span class="token function">fgetc</span><span class="token punctuation">(</span>old<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">EOF</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 正确读取文件内容</span>
+        <span class="token function">fputc</span><span class="token punctuation">(</span>ch<span class="token punctuation">,</span> new<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">fclose</span><span class="token punctuation">(</span>old<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fclose</span><span class="token punctuation">(</span>new<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure> 使用了 <code>feof(old)</code>
+来检查文件结束，会在某些情况下可能导致最后一个字符被错误地读取或写入两次。</p>
+<p><code>feof()</code>
+函数只有在尝试读取超出文件末尾之后才会返回真（非零值）。这意味着，如果文件读取循环在到达文件末尾之前不退出，<code>feof()</code>
+在最后一个有效字符读取后将不会立即返回真。因此，循环可能会再执行一次，并且
+<code>fgetc(old)</code> 会返回 <code>EOF</code>，但因为
+<code>feof(old)</code> 还没有返回真，<code>EOF</code> 也会被写入
+<code>new</code> 文件。</p>
+<p>更好的做法是直接在循环中检查 fgetc(old) 的返回值。</p>
+<h1 id="section-13">4-4</h1>
+<p>定义了一个存储课程信息的结构体数组，从键盘输入<span
+class="math inline">\(n(n≤10)\)</span>们课程信息，并将其逐个写到一个文件中去。阅读下面程序，在留空的地方填入合适的信息，使程序功能完整。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">_Course</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> cNo<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> cName<span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> COURSE<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">,</span> n<span class="token punctuation">;</span>
+    FILE <span class="token operator">*</span>fp<span class="token punctuation">;</span>
+    COURSE cArr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"course.dat"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Can not open the file!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d %s"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>cArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>cNo<span class="token punctuation">,</span> cArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>cName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">fwrite</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>cArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>COURSE<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="显示汉字点阵图形高级">6-1 显示汉字点阵图形(高级)</h1>
+<p>每个汉字的图形都由 16×16 的点阵组成，如汉字“福”的点阵图形如下：</p>
+<p>题图.jpg</p>
+<p>每个像素用 1 个二进制位来表示：1 表示像素是亮的，0
+表示像素是不亮的。每个汉字由 16×16 = 256 个二进制位，即 32
+个字节组成。</p>
+<p>HZK16.DAT 是汉字点阵图形文件，其中包括 GB2312-80
+的全部汉字图形，按汉字的区位码顺序存储。</p>
+<p>请点击链接 <a
+target="_blank" rel="noopener" href="https://pan.baidu.com/s/1sbn7SDwZJormPteZiObbbg">HZK16.DAT</a>
+下载该文件。</p>
+<p>请编写函数，显示汉字的图形。</p>
+<h2 id="函数原型">函数原型</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ShowImage2</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span> high<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> low<span class="token punctuation">,</span> FILE <span class="token operator">*</span>in<span class="token punctuation">,</span> <span class="token keyword">int</span> bold<span class="token punctuation">,</span> <span class="token keyword">int</span> italic<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<p>说明：参数 <code>high</code> 和 <code>low</code>
+分别为汉字内码的高字节和低字节，in 是指示汉字图形库文件的指针。若参数
+<code>bold</code> 为 1 (真)，则加粗，否则不加粗。若参数
+<code>italic</code> 为 1
+(真)，则倾斜，否则不倾斜。函数用<code>“■”</code>表示汉字点阵中点亮的像素，用<code>“□”</code>表示不亮的像素。</p>
+<h2 id="裁判程序">裁判程序</h2>
+<p>下面的程序输入汉字，输出该汉字的点阵图形。 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+
+<span class="token keyword">void</span> <span class="token function">ShowImage2</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span> high<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> low<span class="token punctuation">,</span> FILE <span class="token operator">*</span>f<span class="token punctuation">,</span> <span class="token keyword">int</span> bold<span class="token punctuation">,</span> <span class="token keyword">int</span> italic<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> high<span class="token punctuation">,</span> low<span class="token punctuation">,</span> bold<span class="token punctuation">,</span> italic<span class="token punctuation">;</span>
+    FILE <span class="token operator">*</span>in<span class="token punctuation">;</span>
+
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">" %c%c %c %c"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>high<span class="token punctuation">,</span> <span class="token operator">&amp;</span>low<span class="token punctuation">,</span> <span class="token operator">&amp;</span>bold<span class="token punctuation">,</span> <span class="token operator">&amp;</span>italic<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    in <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"HZK16.DAT"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>in<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"File can not open!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">ShowImage2</span><span class="token punctuation">(</span>high<span class="token punctuation">,</span> low<span class="token punctuation">,</span> f<span class="token punctuation">,</span> bold <span class="token operator">==</span> <span class="token char">'Y'</span><span class="token punctuation">,</span> italic <span class="token operator">==</span> <span class="token char">'Y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">fclose</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"File can not close!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">/* 你提交的代码将被嵌在这里 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<h2 id="输入格式">输入格式</h2>
+<p>汉字 粗体(Y/N) 斜体(Y/N)</p>
+<h2 id="输出格式">输出格式</h2>
+<p>指定格式的汉字</p>
+<h2 id="输入样例1">输入样例1</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">福 N N<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h2 id="输出样例1">输出样例1</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">□□■□□□□□□□□□■□□□
+□□□■□■■■■■■■■■□□
+□□□■□□□□□□□□□□□□
+□□□□□□■■■■■■■□□□
+■■■■■□■□□□□□■□□□
+□□□□■□■□□□□□■□□□
+□□□■□□■■■■■■■□□□
+□□■■■□□□□□□□□■□□
+□■□■□■■■■■■■■■■□
+■□□■□■□□□■□□□■□□
+□□□■□■□□□■□□□■□□
+□□□■□■■■■■■■■■□□
+□□□■□■□□□■□□□■□□
+□□□■□■□□□■□□□■□□
+□□□■□■■■■■■■■■□□
+□□□■□■□□□□□□□■□□<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>实际显示效果如下：</p>
+<p>题图.jpg</p>
+<h2 id="输入样例2">输入样例2</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">福 N Y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h2 id="输出样例2">输出样例2</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">               □□■□□□□□□□□□■□□□
+              □□□■□■■■■■■■■■□□
+             □□□■□□□□□□□□□□□□
+            □□□□□□■■■■■■■□□□
+           ■■■■■□■□□□□□■□□□
+          □□□□■□■□□□□□■□□□
+         □□□■□□■■■■■■■□□□
+        □□■■■□□□□□□□□■□□
+       □■□■□■■■■■■■■■■□
+      ■□□■□■□□□■□□□■□□
+     □□□■□■□□□■□□□■□□
+    □□□■□■■■■■■■■■□□
+   □□□■□■□□□■□□□■□□
+  □□□■□■□□□■□□□■□□
+ □□□■□■■■■■■■■■□□
+□□□■□■□□□□□□□■□□<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>实际显示效果如下：</p>
+<p>题图1.jpg</p>
+<h2 id="输入样例3">输入样例3</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">福 Y N<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h2 id="输出样例3">输出样例3</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">□□□□■■□□□□□□□□□□□□□□□□□□■■□□□□□□
+□□□□□□■■□□■■■■■■■■■■■■■■■■■■□□□□
+□□□□□□■■□□□□□□□□□□□□□□□□□□□□□□□□
+□□□□□□□□□□□□■■■■■■■■■■■■■■□□□□□□
+■■■■■■■■■■□□■■□□□□□□□□□□■■□□□□□□
+□□□□□□□□■■□□■■□□□□□□□□□□■■□□□□□□
+□□□□□□■■□□□□■■■■■■■■■■■■■■□□□□□□
+□□□□■■■■■■□□□□□□□□□□□□□□□□■■□□□□
+□□■■□□■■□□■■■■■■■■■■■■■■■■■■■■□□
+■■□□□□■■□□■■□□□□□□■■□□□□□□■■□□□□
+□□□□□□■■□□■■□□□□□□■■□□□□□□■■□□□□
+□□□□□□■■□□■■■■■■■■■■■■■■■■■■□□□□
+□□□□□□■■□□■■□□□□□□■■□□□□□□■■□□□□
+□□□□□□■■□□■■□□□□□□■■□□□□□□■■□□□□
+□□□□□□■■□□■■■■■■■■■■■■■■■■■■□□□□
+□□□□□□■■□□■■□□□□□□□□□□□□□□■■□□□□<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>实际显示效果如下：</p>
+<p>题图2.jpg</p>
+<h2 id="输入样例4">输入样例4</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">福 Y Y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h2 id="输出样例4">输出样例4</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">               □□□□■■□□□□□□□□□□□□□□□□□□■■□□□□□□
+              □□□□□□■■□□■■■■■■■■■■■■■■■■■■□□□□
+             □□□□□□■■□□□□□□□□□□□□□□□□□□□□□□□□
+            □□□□□□□□□□□□■■■■■■■■■■■■■■□□□□□□
+           ■■■■■■■■■■□□■■□□□□□□□□□□■■□□□□□□
+          □□□□□□□□■■□□■■□□□□□□□□□□■■□□□□□□
+         □□□□□□■■□□□□■■■■■■■■■■■■■■□□□□□□
+        □□□□■■■■■■□□□□□□□□□□□□□□□□■■□□□□
+       □□■■□□■■□□■■■■■■■■■■■■■■■■■■■■□□
+      ■■□□□□■■□□■■□□□□□□■■□□□□□□■■□□□□
+     □□□□□□■■□□■■□□□□□□■■□□□□□□■■□□□□
+    □□□□□□■■□□■■■■■■■■■■■■■■■■■■□□□□
+   □□□□□□■■□□■■□□□□□□■■□□□□□□■■□□□□
+  □□□□□□■■□□■■□□□□□□■■□□□□□□■■□□□□
+ □□□□□□■■□□■■■■■■■■■■■■■■■■■■□□□□
+□□□□□□■■□□■■□□□□□□□□□□□□□□■■□□□□<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>实际显示效果如下：</p>
+<p>题图3.jpg</p>
+<p>注：本题无法自测，请直接提交。</p>
+<h1 id="批量求和">6-2 批量求和(*)</h1>
+<p>请编写函数，从一个文件中读取实数求和，并将结果写入另一个文件。</p>
+<h2 id="函数原型-1">函数原型</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">BatchAdd</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>in<span class="token punctuation">,</span> FILE <span class="token operator">*</span>out<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<p>说明：参数 <code>in</code> 和 <code>out</code>
+为指示两个文件的指针。函数从 <code>in</code>
+所指文件中的读出数据，将结果写入 <code>out</code> 所指的文件中。</p>
+<p>要求：<code>in</code>所指文件中有很多行，每行包含两个实数，以空格间隔。函数求出这两个实数的和，写入
+<code>out</code> 文件中，每行一个结果。</p>
+<p>要求：输出结果保留 2 位小数。</p>
+<h2 id="裁判程序-1">裁判程序</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+
+<span class="token keyword">void</span> <span class="token function">BatchAdd</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>in<span class="token punctuation">,</span> FILE <span class="token operator">*</span>out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    FILE <span class="token operator">*</span>in<span class="token punctuation">,</span> <span class="token operator">*</span>out<span class="token punctuation">;</span>
+
+    in <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"Addition.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    out <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"Sum.txt"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>in <span class="token operator">&amp;&amp;</span> out<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">BatchAdd</span><span class="token punctuation">(</span>in<span class="token punctuation">,</span> out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"文件无法打开!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>in<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">fclose</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>out<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">fclose</span><span class="token punctuation">(</span>out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"文件保存成功!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">/* 你提交的代码将被嵌在这里 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>在程序所在文件夹中创建文本文件<code>“Addition.txt”</code>，复制下面的内容：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Addition.txt
+
+25.9 8.7
+120.9 87.518
+12.8 65.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="输入样例">输入样例</h2>
+<p>(无)</p>
+<h2 id="输出样例">输出样例</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">文件保存成功!<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<p>程序运行结束后，打开“Sum.txt”文件，查看文件内容。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">34.60
+208.42
+78.00<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="code">Code</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">BatchAdd</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>in<span class="token punctuation">,</span> FILE <span class="token operator">*</span>out<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">double</span> a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">fscanf</span><span class="token punctuation">(</span>in<span class="token punctuation">,</span><span class="token string">"%lf%lf"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">fprintf</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span><span class="token string">"%.2lf\n"</span><span class="token punctuation">,</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="有结构文件的读写1">6-3 有结构文件的读写1</h1>
+<p>学生类型：ST的类型定义如下：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">student</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span>id<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> gender<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> scored<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>ST<span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>编写函数，从指定的文件上读入若干字符串，每行字符串是一个学生的信息（姓名，学号，性别，年龄，分数）的字符串表示，数据间以空格分隔，将学生们的信息存储于一个结构体中，并利用<code>output()</code>函数输出到指定文件中。</p>
+<h2 id="函数接口定义">函数接口定义：</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">fun</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>fin<span class="token punctuation">,</span>FILE <span class="token operator">*</span>fout<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<p>其中 <code>fin</code> 和 <code>fout</code> 都是用户传入的参数。
+前者是已正常打开的可读文件，而后者是已正常打开的可写文件。</p>
+<h2 id="裁判测试程序样例">裁判测试程序样例：</h2>
+<p>在这里给出函数被调用进行测试的例子。例如：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">student</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span>id<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> gender<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> scored<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> ST<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">output</span><span class="token punctuation">(</span>ST <span class="token operator">*</span>d<span class="token punctuation">,</span>FILE <span class="token operator">*</span>fout<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//测试程序，输出到文件调用此函数完成</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>d<span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"null\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+    <span class="token function">fprintf</span><span class="token punctuation">(</span>fout<span class="token punctuation">,</span><span class="token string">"%s,%s,%d,%d,%4.2f\n"</span><span class="token punctuation">,</span>d<span class="token operator">-></span>name<span class="token punctuation">,</span>d<span class="token operator">-></span>id<span class="token punctuation">,</span>d<span class="token operator">-></span>gender<span class="token punctuation">,</span>d<span class="token operator">-></span>age<span class="token punctuation">,</span>d<span class="token operator">-></span>scored<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">fun</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>fin<span class="token punctuation">,</span>FILE <span class="token operator">*</span>fout<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&lt;--需要完成的函数（包括读入字符串，转换成对应的结构体，并利用函数（output（））输出到指定文件中，输入输出文件不用考虑</span>
+
+
+<span class="token comment">/* 请在这里填写答案 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="输入样例-1">输入样例：</h2>
+<p>从固定文件中读取：文件内容：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">aaa   123   0 18 88.88
+bbb 456   1 19  99.99
+ccc 789 1 18 66.66
+ddd   356   0 18  67.89<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="输出样例-1">输出样例：</h2>
+<p>输出到指定文件中，文件内容：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">aaa,123,0,18,88.88
+bbb,456,1,19,99.99
+ccc,789,1,18,66.66
+ddd,356,0,18,67.89<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="code-1">Code</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">fun</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>fin<span class="token punctuation">,</span>FILE <span class="token operator">*</span>fout<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    ST st<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">fscanf</span><span class="token punctuation">(</span>fin<span class="token punctuation">,</span><span class="token string">"%s%s%d%d%lf"</span><span class="token punctuation">,</span>st<span class="token punctuation">.</span>name<span class="token punctuation">,</span>st<span class="token punctuation">.</span>id<span class="token punctuation">,</span><span class="token operator">&amp;</span>st<span class="token punctuation">.</span>gender<span class="token punctuation">,</span><span class="token operator">&amp;</span>st<span class="token punctuation">.</span>age<span class="token punctuation">,</span><span class="token operator">&amp;</span>st<span class="token punctuation">.</span>scored<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">output</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>st<span class="token punctuation">,</span>fout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="统计成绩不及格学生信息">6-4 统计成绩不及格学生信息</h1>
+<p>请编写函数，从文件中读取成绩不及格的学生信息，将结果写入另一个文件。</p>
+<h2 id="函数接口定义-1">函数接口定义：</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">FailStudent</span><span class="token punctuation">(</span>FILE<span class="token operator">*</span> in<span class="token punctuation">,</span> FILE<span class="token operator">*</span> out<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<p>说明：</p>
+<ul>
+<li>（1）参数in和out为指示两个文件的指针。函数从in所指文件中读出数据，将结果写入out所指的文件中。</li>
+<li>（2）in所指文件中有很多行(不超过100行)，每行对应一名学生的多个信息，以空格间隔，这些信息包括：学号（12位），姓名（不超过10个字符，且其中不含空格），三科成绩：数学，英语，C语言（均是&lt;=100的非负整数）。</li>
+<li>（3）函数要求，某科成绩不及格（&lt;60）的学生，需要将其“学号 姓名
+该科课程名”三部分内容写入out文件中，每行一个结果。其中，三门课程的课程名分别为："Math"，"English"，"C"。</li>
+</ul>
+<h2 id="裁判测试程序样例-1">裁判测试程序样例：</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAXN</span> <span class="token expression"><span class="token number">100</span></span></span>
+<span class="token keyword">struct</span> <span class="token class-name">student</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span>MAXN<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> score<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">FailStudent</span><span class="token punctuation">(</span>FILE<span class="token operator">*</span> in<span class="token punctuation">,</span> FILE<span class="token operator">*</span> out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    FILE <span class="token operator">*</span>in<span class="token punctuation">,</span> <span class="token operator">*</span>out<span class="token punctuation">;</span>
+
+    in <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"in.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    out <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"out.txt"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>in <span class="token operator">&amp;&amp;</span> out<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">FailStudent</span><span class="token punctuation">(</span>in<span class="token punctuation">,</span> out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"文件无法打开!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>in<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">fclose</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>out<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">fclose</span><span class="token punctuation">(</span>out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"文件保存成功!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">/* 请在这里填写答案 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="输入样例-2">输入样例：</h2>
+<p>“in.txt”文件中保存的数据样例为：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">202018010102 zhangsan 50 50 50
+202026070420 hanmeimei 90 90 90
+202116050331 lilei 50 90 100
+202128060211 wangmazi 70 70 59<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="输出样例-2">输出样例：</h2>
+<p>程序运行结束后，打开“out.txt”文件，查看文件内容。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">202018010102 zhangsan Math
+202018010102 zhangsan English
+202018010102 zhangsan C
+202116050331 lilei Math
+202128060211 wangmazi C<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="code-2">Code</h2>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">FailStudent</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>in<span class="token punctuation">,</span> FILE <span class="token operator">*</span>out<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">student</span> stu<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">"Math"</span><span class="token punctuation">,</span><span class="token string">"English"</span><span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">fscanf</span><span class="token punctuation">(</span>in<span class="token punctuation">,</span><span class="token string">"%lld%s%d%d%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>stu<span class="token punctuation">.</span>id<span class="token punctuation">,</span>stu<span class="token punctuation">.</span>name<span class="token punctuation">,</span>stu<span class="token punctuation">.</span>score<span class="token punctuation">,</span>stu<span class="token punctuation">.</span>score<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>stu<span class="token punctuation">.</span>score<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>stu<span class="token punctuation">.</span>score<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token function">fprintf</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span><span class="token string">"%lld %s %s\n"</span><span class="token punctuation">,</span>stu<span class="token punctuation">.</span>id<span class="token punctuation">,</span>stu<span class="token punctuation">.</span>name<span class="token punctuation">,</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// if(stu.score[0]&lt;60 || stu.score[1]&lt;60 || stu.score[2]&lt;60)&#123;</span>
+        <span class="token comment">//     fprintf(out,"%lld %s",stu.id,stu.name);</span>
+        <span class="token comment">//     if(stu.score[0]&lt;60) fprintf(out," Math");</span>
+        <span class="token comment">//     if(stu.score[1]&lt;60) fprintf(out," English");</span>
+        <span class="token comment">//     if(stu.score[2]&lt;60) fprintf(out," C");</span>
+        <span class="token comment">//     fprintf(out,"\n");</span>
+        <span class="token comment">// &#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>PTA | C文件操作相关题目</div>
+      <div>http://acm.nanyan.cc/posts/ecf5.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>nanyan</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/ef98.html" title="ACM | ACM Test 231228">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ACM | ACM Test 231228</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/42c5.html" title="ACM | Assignments 6">
+                        <span class="hidden-mobile">ACM | Assignments 6</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
