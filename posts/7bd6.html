@@ -24,7 +24,7 @@
 <meta property="og:description" content="L1-064 估值一亿的AI核心代码  分数 20 作者 陈越 单位 浙江大学  以上图片来自新浪微博。 本题要求你实现一个稍微更值钱一点的 AI 英文问答程序，规则是：  无论用户说什么，首先把对方说的话在一行中原样打印出来； 消除原文中多余空格：把相邻单词间的多个空格换成 \(1\) 个空格，把行首尾的空格全部删掉，把标点符号前面的空格删掉； 把原文中所有大写英文字母变成小写，除了 I； 把原">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-17T06:12:39.000Z">
-<meta property="article:modified_time" content="2024-02-02T12:47:00.330Z">
+<meta property="article:modified_time" content="2024-02-05T05:41:22.539Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          31k 字
+          32k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          262 分钟
+          268 分钟
         
       </span>
     
@@ -9035,6 +9035,252 @@ set<span class="token operator">&lt;</span><span class="token keyword">int</span
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="l3-002-特殊堆栈">L3-002 特殊堆栈</h2>
+<blockquote>
+<p>分数 30 作者 陈越 单位 浙江大学</p>
+</blockquote>
+<p>堆栈是一种经典的后进先出的线性结构，相关的操作主要有“入栈”（在堆栈顶插入一个元素）和“出栈”（将栈顶元素返回并从堆栈中删除）。本题要求你实现另一个附加的操作：“取中值”——即返回所有堆栈中元素键值的中值。给定
+<span class="math inline">\(N\)</span> 个元素，如果 <span
+class="math inline">\(N\)</span> 是偶数，则中值定义为第 <span
+class="math inline">\(N/2\)</span> 小元；若是奇数，则为第 <span
+class="math inline">\((N+1)/2\)</span> 小元。</p>
+<h3 id="输入格式-28">输入格式：</h3>
+<p>输入的第一行是正整数 <span
+class="math inline">\(N（≤10^5）\)</span>。随后 <span
+class="math inline">\(N\)</span> 行，每行给出一句指令，为以下 <span
+class="math inline">\(3\)</span> 种之一：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Push key
+Pop
+PeekMedian<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>其中 <code>key</code> 是不超过 <span
+class="math inline">\(10^5\)</span> 的正整数；<code>Push</code>
+表示“入栈”；<code>Pop</code> 表示“出栈”；<code>PeekMedian</code>
+表示“取中值”。</p>
+<h3 id="输出格式-28">输出格式：</h3>
+<p>对每个 <code>Push</code> 操作，将 <code>key</code>
+插入堆栈，无需输出；对每个 <code>Pop</code> 或 <code>PeekMedian</code>
+操作，在一行中输出相应的返回值。若操作非法，则对应输出
+<code>Invalid</code>。</p>
+<h3 id="输入样例-29">输入样例：</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">17
+Pop
+PeekMedian
+Push 3
+PeekMedian
+Push 2
+PeekMedian
+Push 1
+PeekMedian
+Pop
+Pop
+Push 5
+Push 4
+PeekMedian
+Pop
+Pop
+Pop
+Pop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="输出样例-29">输出样例：</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Invalid
+Invalid
+3
+2
+2
+1
+2
+4
+4
+5
+3
+Invalid<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<blockquote>
+<p>代码长度限制 16 KB 时间限制 400 ms 内存限制 64 MB</p>
+</blockquote>
+<h3 id="code1-16">Code1</h3>
+<blockquote>
+<p>240205</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>测试点</th>
+<th>提示</th>
+<th>内存(KB)</th>
+<th>用时(ms)</th>
+<th>结果</th>
+<th>得分</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td></td>
+<td>460</td>
+<td>3</td>
+<td>答案正确</td>
+<td>15 / 15</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td></td>
+<td>496</td>
+<td>400</td>
+<td>运行超时</td>
+<td>0 / 5</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td></td>
+<td>608</td>
+<td>400</td>
+<td>运行超时</td>
+<td>0 / 5</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td></td>
+<td>564</td>
+<td>400</td>
+<td>运行超时</td>
+<td>0 / 3</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td></td>
+<td>464</td>
+<td>3</td>
+<td>答案正确</td>
+<td>2 / 2</td>
+</tr>
+</tbody>
+</table>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> c<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>c<span class="token punctuation">;</span>
+    string op<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> v<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>c<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        cin<span class="token operator">>></span>op<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token string">"Pop"</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>v<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span>v<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            v<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token string">"Push"</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cin<span class="token operator">>></span>num<span class="token punctuation">;</span>
+            v<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token string">"PeekMedian"</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>v<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> temp<span class="token operator">=</span>v<span class="token punctuation">;</span>
+            <span class="token function">sort</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>temp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            cout<span class="token operator">&lt;&lt;</span>temp<span class="token punctuation">[</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"Invalid"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<blockquote>
+<p>From CSDN</p>
+<p>思路：此处是的难点在与查询区间的中第n/2大的数，
+且该区间还要实现删除和增加新元素， 大致有这四种方法实现</p>
+<ol type="1">
+<li><p>构建两个堆，形成双顶堆，
+其中顶堆中的数都大于底堆中的数,且底堆中的size永远比顶堆的size大1；</p></li>
+<li><p>第二种方法，用树状数组加二分查找第n/2大即可</p></li>
+<li><p>第三种就是用vetor插入，每次插入时二分区间找到该插入的位置insert，
+删除时也同样二分并erase(),
+查询mid时直接输出即可效率较高。此处的二分查询可以直接用low_bound</p></li>
+<li><p>第四种便是用线段树查询区间第k打也很简单，</p></li>
+</ol>
+</blockquote>
+<h3 id="code2-18">Code2</h3>
+<blockquote>
+<p>240205</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>测试点</th>
+<th>提示</th>
+<th>内存(KB)</th>
+<th>用时(ms)</th>
+<th>结果</th>
+<th>得分</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td></td>
+<td>452</td>
+<td>3</td>
+<td>答案正确</td>
+<td>15 / 15</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td></td>
+<td>1124</td>
+<td>110</td>
+<td>答案正确</td>
+<td>5 / 5</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td></td>
+<td>1188</td>
+<td>191</td>
+<td>答案正确</td>
+<td>5 / 5</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td></td>
+<td>1252</td>
+<td>153</td>
+<td>答案正确</td>
+<td>3 / 3</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td></td>
+<td>460</td>
+<td>3</td>
+<td>答案正确</td>
+<td>2 / 2</td>
+</tr>
+</tbody>
+</table>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> c<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>c<span class="token punctuation">;</span>
+    string op<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> v<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> v_sort<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>c<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        cin<span class="token operator">>></span>op<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token string">"Pop"</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>v<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span>v<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            <span class="token keyword">auto</span> cur<span class="token operator">=</span><span class="token function">lower_bound</span><span class="token punctuation">(</span>v_sort<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>v_sort<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>v<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            v_sort<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            v<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token string">"Push"</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cin<span class="token operator">>></span>num<span class="token punctuation">;</span>
+            v<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">auto</span> cur<span class="token operator">=</span><span class="token function">lower_bound</span><span class="token punctuation">(</span>v_sort<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>v_sort<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            v_sort<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>cur<span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>op<span class="token operator">==</span><span class="token string">"PeekMedian"</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>v<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span>v_sort<span class="token punctuation">[</span><span class="token punctuation">(</span>v_sort<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"Invalid"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
                 
               </div>
