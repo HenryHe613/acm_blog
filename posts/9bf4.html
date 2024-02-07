@@ -1,0 +1,1099 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="nanyan">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Round 923 (Div. 3)  240206  A. Make it White  time limit per test2 seconds memory limit per test256 megabytes inputstandard input outputstandard output  You have a horizontal strip of \(n\) cells. Eac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round">
+<meta property="og:url" content="http://acm.nanyan.cc/posts/9bf4.html">
+<meta property="og:site_name" content="ACM笔记">
+<meta property="og:description" content="Round 923 (Div. 3)  240206  A. Make it White  time limit per test2 seconds memory limit per test256 megabytes inputstandard input outputstandard output  You have a horizontal strip of \(n\) cells. Eac">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-02-07T04:42:14.000Z">
+<meta property="article:modified_time" content="2024-02-07T04:56:16.983Z">
+<meta property="article:author" content="nanyan">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Codeforces Round - ACM笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"acm.nanyan.cc","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ACM笔记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://pic.imgdb.cn/item/656313adc458853aefa7e147.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Codeforces Round"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-07 12:42" pubdate>
+          2024年2月7日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          870 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          8 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Codeforces Round</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="round-923-div.-3">Round 923 (Div. 3)</h1>
+<blockquote>
+<p>240206</p>
+</blockquote>
+<h2 id="a.-make-it-white">A. Make it White</h2>
+<blockquote>
+<p>time limit per test2 seconds memory limit per test256 megabytes
+inputstandard input outputstandard output</p>
+</blockquote>
+<p>You have a horizontal strip of <span class="math inline">\(n\)</span>
+cells. Each cell is either white or black.</p>
+<p>You can choose a continuous segment of cells once and paint them all
+white. After this action, all the black cells in this segment will
+become white, and the white ones will remain white.</p>
+<p>What is the minimum length of the segment that needs to be painted
+white in order for all <span class="math inline">\(n\)</span> cells to
+become white?</p>
+<h3 id="input">Input</h3>
+<p>The first line of the input contains a single integer <span
+class="math inline">\(t(1≤𝑡≤10^4)\)</span> — the number of test cases.
+The descriptions of the test cases follow.</p>
+<p>The first line of each test case contains a single integer <span
+class="math inline">\(𝑛(1≤𝑛≤10)\)</span> — the length of the strip.</p>
+<p>The second line of each test case contains a string <span
+class="math inline">\(𝑠\)</span>, consisting of <span
+class="math inline">\(𝑛\)</span> characters, each of which is either 'W'
+or 'B'. The symbol 'W' denotes a white cell, and 'B' — a black one. It
+is guaranteed that at least one cell of the given strip is black.</p>
+<h3 id="output">Output</h3>
+<p>For each test case, output a single number — the minimum length of a
+continuous segment of cells that needs to be painted white in order for
+the entire strip to become white.</p>
+<h3 id="example">Example</h3>
+<p>input <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">8
+6
+WBBWBW
+1
+B
+2
+WB
+3
+BBW
+4
+BWWB
+6
+BWBWWB
+6
+WWBBWB
+9
+WBWBWWWBW<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<p>output <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">4
+1
+1
+2
+4
+6
+4
+7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<h3 id="note">Note</h3>
+<p>In the first test case of the example for the strip "WBBWBW", the
+minimum length of the segment to be repainted white is 4. It is
+necessary to repaint to white the segment from the 2-nd to the 5-th cell
+(the cells are numbered from 1 from left to right).</p>
+<h3 id="code">Code</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> c<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>c<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>c<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> len<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>len<span class="token punctuation">;</span>
+        string str<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>str<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> begin<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>begin<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token char">'B'</span><span class="token punctuation">)</span>    begin<span class="token operator">=</span>i<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token char">'B'</span><span class="token punctuation">)</span> end<span class="token operator">=</span>i<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>begin<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> end<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token number">0</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span>end<span class="token operator">-</span>begin<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="b.-following-the-string">B. Following the String</h2>
+<blockquote>
+<p>time limit per test2 seconds memory limit per test256 megabytes
+inputstandard input outputstandard output</p>
+</blockquote>
+<p>Polycarp lost the string 𝑠 of length 𝑛 consisting of lowercase Latin
+letters, but he still has its trace.</p>
+<p>The trace of the string 𝑠 is an array 𝑎 of 𝑛 integers, where 𝑎𝑖 is
+the number of such indices 𝑗 (𝑗&lt;𝑖) that 𝑠𝑖=𝑠𝑗 . For example, the
+trace of the string abracadabra is the array
+[0,0,0,1,0,2,0,3,1,1,4].</p>
+<p>Given a trace of a string, find any string 𝑠 from which it could have
+been obtained. The string 𝑠 should consist only of lowercase Latin
+letters a-z.</p>
+<h3 id="input-1">Input</h3>
+<p>The first line of the input contains a single integer 𝑡 (1≤𝑡≤104) —
+the number of test cases. Then the descriptions of the test cases
+follow.</p>
+<p>The first line of each test case contains a single integer 𝑛
+(1≤𝑛≤2⋅105) — the length of the lost string.</p>
+<p>The second line of each test case contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛
+(0≤𝑎𝑖&lt;𝑛) — the trace of the string. It is guaranteed that for the
+given trace, there exists a suitable string 𝑠.</p>
+<p>It is guaranteed that the sum of 𝑛 over all test cases does not
+exceed 2⋅105.</p>
+<h3 id="output-1">Output</h3>
+<p>For each test case, output a string 𝑠 that corresponds to the given
+trace. If there are multiple such strings 𝑠 , then output any of
+them.</p>
+<p>The string 𝑠 should consist of lowercase Latin letters a-z.</p>
+<p>It is guaranteed that for each test case, a valid answer exists.</p>
+<h3 id="example-1">Example</h3>
+<p>input <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5
+11
+0 0 0 1 0 2 0 3 1 1 4
+10
+0 0 0 0 0 1 0 1 1 0
+1
+0
+8
+0 1 2 3 4 5 6 7
+8
+0 0 0 0 0 0 0 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<p>output <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">abracadabra
+codeforces
+a
+aaaaaaaa
+dijkstra<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<h3 id="code-1">Code</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> c<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>c<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>c<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">v</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cin<span class="token operator">>></span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        map<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> m<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">char</span> ch<span class="token operator">=</span><span class="token char">'a'</span><span class="token punctuation">;</span>ch<span class="token operator">&lt;=</span><span class="token char">'z'</span><span class="token punctuation">;</span>ch<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            m<span class="token punctuation">[</span>ch<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>k<span class="token operator">:</span>m<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token punctuation">.</span>second<span class="token operator">==</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    cout<span class="token operator">&lt;&lt;</span>k<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+                    m<span class="token punctuation">[</span>k<span class="token punctuation">.</span>first<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="c.-choose-the-different-ones">C. Choose the Different Ones!</h2>
+<blockquote>
+<p>time limit per test2 seconds memory limit per test256 megabytes
+inputstandard input outputstandard output</p>
+</blockquote>
+<p>Given an array 𝑎 of 𝑛 integers, an array 𝑏 of 𝑚 integers, and an even
+number 𝑘 .</p>
+<p>Your task is to determine whether it is possible to choose exactly 𝑘2
+elements from both arrays in such a way that among the chosen elements,
+every integer from 1 to 𝑘 is included.</p>
+<p>For example:</p>
+<p>If 𝑎=[2,3,8,5,6,5], 𝑏=[1,3,4,10,5], 𝑘=6, then it is possible to
+choose elements with values 2,3,6 from array 𝑎 and elements with values
+1,4,5 from array 𝑏. In this case, all numbers from 1 to 𝑘=6 will be
+included among the chosen elements.</p>
+<p>If 𝑎=[2,3,4,5,6,5], 𝑏=[1,3,8,10,3], 𝑘=6, then it is not possible to
+choose elements in the required way.</p>
+<p>Note that you are not required to find a way to choose the elements —
+your program should only check whether it is possible to choose the
+elements in the required way.</p>
+<h3 id="input-2">Input</h3>
+<p>The first line of the input contains a single integer 𝑡(1≤𝑡≤104) —
+the number of test cases. The descriptions of the test cases follow.</p>
+<p>The first line of each test case contains three integers 𝑛, 𝑚, and
+𝑘(1≤𝑛,𝑚≤2⋅105, 2≤𝑘≤2⋅min(𝑛,𝑚), 𝑘 is even) — the length of array 𝑎, the
+length of array 𝑏, and the number of elements to be chosen,
+respectively.</p>
+<p>The second line of each test case contains 𝑛 integers
+𝑎1,𝑎2,…,𝑎𝑛(1≤𝑎𝑖≤10^6) — the elements of array 𝑎.</p>
+<p>The third line of each test case contains 𝑚 integers 𝑏1,𝑏2,…,𝑏𝑚
+(1≤𝑏𝑗≤10^6) — the elements of array 𝑏.</p>
+<p>It is guaranteed that the sum of values 𝑛 and 𝑚 over all test cases
+in a test does not exceed 4⋅10^5.</p>
+<h3 id="output-2">Output</h3>
+<p>Output 𝑡 lines, each of which is the answer to the corresponding test
+case. As the answer, output "YES" if it is possible to choose 𝑘2 numbers
+from each array in such a way that among the chosen elements, every
+integer from 1 to 𝑘 is included. Otherwise, output "NO".</p>
+<p>You can output each letter in any case (lowercase or uppercase). For
+example, the strings "yEs", "yes", "Yes", and "YES" will be accepted as
+a positive answer.</p>
+<h3 id="example-2">Example</h3>
+<p>input <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">6
+6 5 6
+2 3 8 5 6 5
+1 3 4 10 5
+6 5 6
+2 3 4 5 6 5
+1 3 8 10 3
+3 3 4
+1 3 5
+2 4 6
+2 5 4
+1 4
+7 3 4 4 2
+1 4 2
+2
+6 4 4 2
+1 5 2
+3
+2 2 1 4 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<p>output <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">YES
+NO
+YES
+YES
+NO
+NO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<h3 id="note-1">Note</h3>
+<p>In the first test case of the example, it is possible to choose
+elements equal to 2, 3, and 6 from array 𝑎 and elements equal to 1, 4,
+and 5 from array 𝑏. Thus, all numbers from 1 to 𝑘=6 are included among
+the chosen elements.</p>
+<p>In the second test case of the example, it can be shown that it is
+not possible to choose exactly three elements from each array in the
+required way.</p>
+<p>In the third test case of the example, it is possible to choose
+elements equal to 1 and 3 from array 𝑎 and elements equal to 2 and 4
+from array 𝑏. Thus, all numbers from 1 to 𝑘=4 are included among the
+chosen elements.</p>
+<h3 id="code-2">Code</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>t<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>k<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>n<span class="token operator">>></span>m<span class="token operator">>></span>k<span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">a</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">b</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// vector&lt;int> c(k+1,0);</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>    cin<span class="token operator">>></span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>    cin<span class="token operator">>></span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>b<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>iterator cur_a<span class="token punctuation">,</span>cur_b<span class="token punctuation">;</span>
+        <span class="token comment">// auto cur_a=upper_bound(a.begin(),a.end(),k);</span>
+        <span class="token comment">// if(cur_a!=a.end())  a.erase(cur_a);</span>
+        <span class="token comment">// auto cur_b=upper_bound(b.begin(),b.end(),k);</span>
+        <span class="token comment">// if(cur_b!=b.end())  b.erase(cur_b);</span>
+        <span class="token keyword">int</span> count_a<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>count_b<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>i<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cur_a<span class="token operator">=</span><span class="token function">lower_bound</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            cur_b<span class="token operator">=</span><span class="token function">lower_bound</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>b<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>cur_a<span class="token operator">==</span>a<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> cur_b<span class="token operator">==</span>b<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>cur_a<span class="token operator">==</span>a<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> cur_b<span class="token operator">!=</span>b<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>cur_b<span class="token operator">==</span>i<span class="token punctuation">)</span> count_b<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token keyword">else</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>cur_a<span class="token operator">!=</span>a<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> cur_b<span class="token operator">==</span>b<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>cur_a<span class="token operator">==</span>i<span class="token punctuation">)</span> count_a<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token keyword">else</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>cur_a<span class="token operator">==</span>i <span class="token operator">&amp;&amp;</span> <span class="token operator">*</span>cur_b<span class="token operator">==</span>i<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">// c[i]=1;</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+                <span class="token comment">// a.erase(cur_a,cur_a+1);</span>
+                <span class="token comment">// b.erase(cur_b,cur_b+1);</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>cur_a<span class="token operator">==</span>i<span class="token punctuation">)</span> count_a<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>cur_b<span class="token operator">==</span>i<span class="token punctuation">)</span> count_b<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">if</span><span class="token punctuation">(</span>count_a<span class="token operator">&lt;=</span>k<span class="token operator">/</span><span class="token number">2</span> <span class="token operator">&amp;&amp;</span> count_b<span class="token operator">&lt;=</span>k<span class="token operator">/</span><span class="token number">2</span> <span class="token operator">&amp;&amp;</span> i<span class="token operator">==</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"YES"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"NO"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="d.-find-the-different-ones">D. Find the Different Ones!</h2>
+<blockquote>
+<p>time limit per test5 seconds memory limit per test256 megabytes
+inputstandard input outputstandard output</p>
+</blockquote>
+<p>You are given an array 𝑎 of 𝑛 integers, and 𝑞 queries.</p>
+<p>Each query is represented by two integers 𝑙 and 𝑟 (1≤𝑙≤𝑟≤𝑛). Your
+task is to find, for each query, two indices 𝑖 and 𝑗 (or determine that
+they do not exist) such that:</p>
+<p>𝑙≤𝑖≤𝑟;𝑙≤𝑗≤𝑟;𝑎𝑖≠𝑎𝑗.</p>
+<p>In other words, for each query, you need to find a pair of different
+elements among 𝑎𝑙,𝑎𝑙+1,…,𝑎𝑟, or report that such a pair does not
+exist.</p>
+<h3 id="input-3">Input</h3>
+<p>The first line of the input contains a single integer 𝑡 (1≤𝑡≤10^4) —
+the number of test cases. The descriptions of the test cases follow.</p>
+<p>The first line of each test case contains a single integer 𝑛
+(2≤𝑛≤2⋅10^5) — the length of the array 𝑎.</p>
+<p>The second line of each test case contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛
+(1≤𝑎𝑖≤10^6) — the elements of the array 𝑎.</p>
+<p>The third line of each test case contains a single integer 𝑞
+(1≤𝑞≤2⋅10^5) — the number of queries.</p>
+<p>The next 𝑞 lines contain two integers each, 𝑙 and 𝑟(1≤𝑙&lt;𝑟≤𝑛) — the
+boundaries of the query.</p>
+<p>It is guaranteed that the sum of the values of 𝑛 across all test
+cases does not exceed 2⋅10^5. Similarly, it is guaranteed that the sum
+of the values of 𝑞 across all test cases does not exceed 2⋅10^5.</p>
+<h3 id="output-3">Output</h3>
+<p>For each query, output two integers separated by space: 𝑖 and
+𝑗(𝑙≤𝑖,𝑗≤𝑟), for which 𝑎𝑖≠𝑎𝑗. If such a pair does not exist, output 𝑖=−1
+and 𝑗=−1.</p>
+<p>You may separate the outputs for the test cases with empty lines.
+This is not a mandatory requirement.</p>
+<h3 id="example-3">Example</h3>
+<p>input <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5
+5
+1 1 2 1 1
+3
+1 5
+1 2
+1 3
+6
+30 20 20 10 10 20
+5
+1 2
+2 3
+2 4
+2 6
+3 5
+4
+5 2 3 4
+4
+1 2
+1 4
+2 3
+2 4
+5
+1 4 3 2 4
+5
+1 5
+2 4
+3 4
+3 5
+4 5
+5
+2 3 1 4 2
+7
+1 2
+1 4
+1 5
+2 4
+2 5
+3 5
+4 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<p>output <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2 3
+-1 -1
+1 3
+
+2 1
+-1 -1
+4 2
+4 6
+5 3
+
+1 2
+1 2
+2 3
+3 2
+
+1 3
+2 4
+3 4
+5 3
+5 4
+
+1 2
+4 2
+1 3
+2 3
+3 2
+5 4
+5 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<h3 id="code-3">Code</h3>
+<p>Time limit exceeded on test 4</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;vector></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;map></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">,</span>n<span class="token punctuation">,</span>q<span class="token punctuation">,</span>l<span class="token punctuation">,</span>r<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>t<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">v</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        cin<span class="token operator">>></span>q<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>q<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>l<span class="token punctuation">,</span><span class="token operator">&amp;</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> m<span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>l<span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>r<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>m<span class="token punctuation">[</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    m<span class="token punctuation">[</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+            vector<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">vp</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>m<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>vp<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">>=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                cout<span class="token operator">&lt;&lt;</span>vp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span>vp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                cout<span class="token operator">&lt;&lt;</span><span class="token string">"-1 -1"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Codeforces Round</div>
+      <div>http://acm.nanyan.cc/posts/9bf4.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>nanyan</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年2月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/b7bd.html" title="ACWing Prime Algorithm">
+                        <span class="hidden-mobile">ACWing Prime Algorithm</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
