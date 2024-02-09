@@ -24,7 +24,7 @@
 <meta property="og:description" content="749 · 约翰的后花园 描述 约翰想在他家后面的空地上建一个后花园，现在有两种砖，一种3 dm的高度，7 dm的高度。约翰想围成x dm的墙。如果约翰能做到，输出YES，否则输出NO。 X是一个整数，取值范围为 [3, 1000]。 样例 样例 1: 输入 : x &#x3D; 10 输出 : &quot;YES&quot; #### 解释： x &#x3D; 3 + 7 : 即需要1匹3 dm高度的砖和1匹7 dm 高度的砖。 ##">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-28T06:54:44.000Z">
-<meta property="article:modified_time" content="2024-02-04T09:13:07.511Z">
+<meta property="article:modified_time" content="2024-02-09T04:57:35.442Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          287 字
+          625 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          3 分钟
+          6 分钟
         
       </span>
     
@@ -311,6 +311,72 @@ dm的砖砌成 5 dm的墙。</p>
             <span class="token keyword">return</span> <span class="token string">"NO"</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="除数博弈">1025. 除数博弈</h2>
+<p>爱丽丝和鲍勃一起玩游戏，他们轮流行动。爱丽丝先手开局。</p>
+<p>最初，黑板上有一个数字 <span class="math inline">\(n\)</span>
+。在每个玩家的回合，玩家需要执行以下操作：</p>
+<ul>
+<li>选出任一 <span class="math inline">\(x\)</span>，满足 <span
+class="math inline">\(0 &lt; x &lt; n\)</span> 且 <span
+class="math inline">\(n % x == 0\)</span> 。</li>
+<li>用 <span class="math inline">\(n - x\)</span> 替换黑板上的数字 <span
+class="math inline">\(n\)</span> 。</li>
+<li>如果玩家无法执行这些操作，就会输掉游戏。</li>
+</ul>
+<p>只有在爱丽丝在游戏中取得胜利时才返回 <code>true</code>
+。假设两个玩家都以最佳状态参与游戏。</p>
+<h3 id="示例-1">示例 1：</h3>
+<p>输入：n = 2</p>
+<p>输出：true</p>
+<p>解释：爱丽丝选择 1，鲍勃无法进行操作。</p>
+<h3 id="示例-2">示例 2：</h3>
+<p>输入：n = 3</p>
+<p>输出：false</p>
+<p>解释：爱丽丝选择 1，鲍勃也选择 1，然后爱丽丝无法进行操作。</p>
+<h3 id="提示">提示：</h3>
+<p><span class="math inline">\(1 &lt;= n &lt;= 1000\)</span></p>
+<h3 id="code">Code</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">isprime</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token function">sqrt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">bool</span> <span class="token function">divisorGame</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">bool</span> dp<span class="token punctuation">[</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">memset</span><span class="token punctuation">(</span>dp<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token boolean">true</span><span class="token punctuation">)</span>    <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> x<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">+</span>x<span class="token operator">&lt;=</span>n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token operator">+</span>x<span class="token punctuation">)</span><span class="token operator">%</span>x<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>  dp<span class="token punctuation">[</span>i<span class="token operator">+</span>x<span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+                x<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// bool flag=false; //true轮到bob操作</span>
+        <span class="token comment">// int alice=n,bob=n;</span>
+        <span class="token comment">// while(n!=1)&#123;</span>
+        <span class="token comment">//     if(isprime(n))&#123;</span>
+        <span class="token comment">//         flag=!flag;</span>
+        <span class="token comment">//         n--;</span>
+        <span class="token comment">//         continue;</span>
+        <span class="token comment">//     &#125;</span>
+        <span class="token comment">//     for(int i=2;i&lt;n;i++)&#123;</span>
+        <span class="token comment">//         if(n%i==0)&#123;</span>
+        <span class="token comment">//             n-=n/i;</span>
+        <span class="token comment">//             flag=!flag;</span>
+        <span class="token comment">//             break;</span>
+        <span class="token comment">//         &#125;</span>
+        <span class="token comment">//     &#125;</span>
+        <span class="token comment">// &#125;</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
                 
               </div>
