@@ -24,7 +24,7 @@
 <meta property="og:description" content="Round 923 (Div. 3)  240206  A. Make it White  time limit per test2 seconds memory limit per test256 megabytes inputstandard input outputstandard output  You have a horizontal strip of \(n\) cells. Eac">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-07T04:42:14.000Z">
-<meta property="article:modified_time" content="2024-02-07T04:56:16.983Z">
+<meta property="article:modified_time" content="2024-02-25T09:25:22.016Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          870 字
+          3.7k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          8 分钟
+          31 分钟
         
       </span>
     
@@ -684,6 +684,797 @@ This is not a mandatory requirement.</p>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="codeforces-round-928-div.-4">Codeforces Round 928 (Div. 4)</h1>
+<h2 id="a.-vlad-and-the-best-of-five">A. Vlad and the Best of Five</h2>
+<blockquote>
+<p>time limit per test: 1 second</p>
+</blockquote>
+<p>memory limit per test: 256 megabytes</p>
+<p>input: standard input</p>
+<p>output: standard output</p>
+<p>Vladislav has a string of length <span
+class="math inline">\(5\)</span>, whose characters are each either <span
+class="math inline">\(\texttt{A}\)</span> or <span
+class="math inline">\(\texttt{B}\)</span>.</p>
+<p>Which letter appears most frequently: <span
+class="math inline">\(\texttt{A}\)</span> or <span
+class="math inline">\(\texttt{B}\)</span>?</p>
+<p><strong>Input</strong></p>
+<p>The first line of the input contains an integer <span
+class="math inline">\(t\)</span> (<span class="math inline">\(1 \leq t
+\leq 32\)</span>) — the number of test cases.</p>
+<p>The only line of each test case contains a string of length <span
+class="math inline">\(5\)</span> consisting of letters <span
+class="math inline">\(\texttt{A}\)</span> and <span
+class="math inline">\(\texttt{B}\)</span>.</p>
+<p>All <span class="math inline">\(t\)</span> strings in a test are
+different (distinct).</p>
+<p><strong>Output</strong></p>
+<p>For each test case, output one letter (<span
+class="math inline">\(\texttt{A}\)</span> or <span
+class="math inline">\(\texttt{B}\)</span>) denoting the character that
+appears most frequently in the string.</p>
+<p><strong>Example</strong></p>
+<p>input</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">8
+ABABB
+ABABA
+BBBAB
+AAAAA
+BBBBB
+BABAA
+AAAAB
+BAAAA<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>output</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">B
+A
+B
+A
+B
+A
+A
+A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="code-4">Code</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>t<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        string s<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>s<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token char">'A'</span><span class="token punctuation">)</span>   a<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> b<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">></span>b<span class="token punctuation">)</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"A"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"B"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="b.-vlad-and-shapes">B. Vlad and Shapes</h2>
+<p>time limit per test: 1 second</p>
+<p>memory limit per test: 256 megabytes</p>
+<p>input: standard input</p>
+<p>output: standard output</p>
+<p>Vladislav has a binary square grid of <span class="math inline">\(n
+\times n\)</span> cells. A triangle or a square is drawn on the grid
+with symbols <span class="math inline">\(\texttt{1}\)</span>. As he is
+too busy being cool, he asks you to tell him which shape is drawn on the
+grid.</p>
+<ul>
+<li>A triangle is a shape consisting of <span
+class="math inline">\(k\)</span> (<span
+class="math inline">\(k&gt;1\)</span>) consecutive rows, where the <span
+class="math inline">\(i\)</span>-th row has <span
+class="math inline">\(2 \cdot i-1\)</span> consecutive characters <span
+class="math inline">\(\texttt{1}\)</span>, and the central 1s are
+located in one column. An upside down triangle is also considered a
+valid triangle (but not rotated by 90 degrees).</li>
+</ul>
+<p><img
+src="https://espresso.codeforces.com/db242fa9b991f493bbca9ab6358c4e076e7cbbf8.png" srcset="/img/loading.gif" lazyload />
+Two left pictures contain examples of triangles: <span
+class="math inline">\(k=4\)</span>, <span
+class="math inline">\(k=3\)</span>. The two right pictures don't contain
+triangles.</p>
+<ul>
+<li>A square is a shape consisting of <span
+class="math inline">\(k\)</span> (<span
+class="math inline">\(k&gt;1\)</span>) consecutive rows, where the <span
+class="math inline">\(i\)</span>-th row has <span
+class="math inline">\(k\)</span> consecutive characters <span
+class="math inline">\(\texttt{1}\)</span>, which are positioned at an
+equal distance from the left edge of the grid.</li>
+</ul>
+<p><img
+src="https://espresso.codeforces.com/c91a4bbd6d4165c4b64471361fe556bda28b2d94.png" srcset="/img/loading.gif" lazyload />
+Examples of two squares: <span class="math inline">\(k=2\)</span>, <span
+class="math inline">\(k=4\)</span>.</p>
+<p>For the given grid, determine the type of shape that is drawn on
+it.</p>
+<p>Vladislav有一个<span class="math inline">\(n\times
+n\)</span>单元格的二进制方格网格。网格上绘制了一个三角形或正方形，符号为<span
+class="math inline">\(\texttt{1}\)</span>。由于他太忙于保持酷，他请你告诉他网格上绘制了哪种形状。</p>
+<ul>
+<li>三角形是由<span class="math inline">\(k\)</span>(<span
+class="math inline">\(k &gt; 1\)</span>)个连续行组成的形状，其中第<span
+class="math inline">\(i\)</span>行有<span class="math inline">\(2\cdot
+i-1\)</span>个连续字符<span
+class="math inline">\(\texttt{1}\)</span>，并且中心的1位于一列中。倒三角形也被视为有效的三角形(但不是顺时针旋转90度)。</li>
+</ul>
+<p><img
+src="https://espresso.codeforces.com/db242fa9b991f493bbca9ab6358c4e076e7cbbf8.png" srcset="/img/loading.gif" lazyload />
+两幅左图是三角形的示例：<span class="math inline">\(k=4\)</span>，<span
+class="math inline">\(k=3\)</span>。右图的两幅图片不包含三角形。</p>
+<ul>
+<li>正方形是由<span class="math inline">\(k\)</span>(<span
+class="math inline">\(k &gt; 1\)</span>)个连续行组成的形状，其中第<span
+class="math inline">\(i\)</span>行有<span
+class="math inline">\(k\)</span>个连续字符<span
+class="math inline">\(\texttt{1}\)</span>，这些字符与网格的左边缘等距。</li>
+</ul>
+<p><img
+src="https://espresso.codeforces.com/c91a4bbd6d4165c4b64471361fe556bda28b2d94.png" srcset="/img/loading.gif" lazyload />
+两个正方形的示例：<span class="math inline">\(k=2\)</span>，<span
+class="math inline">\(k=4\)</span>。</p>
+<p>对于给定的网格，确定绘制在上面的形状类型。</p>
+<p><strong>Input</strong></p>
+<p>The first line contains a single integer <span
+class="math inline">\(t\)</span> (<span class="math inline">\(1 \leq t
+\leq 100\)</span>) — the number of test cases.</p>
+<p>The first line of each test case contains a single integer <span
+class="math inline">\(n\)</span> (<span class="math inline">\(2 \leq n
+\leq 10\)</span>) — the size of the grid.</p>
+<p>The next <span class="math inline">\(n\)</span> lines each contain
+<span class="math inline">\(n\)</span> characters <span
+class="math inline">\(\texttt{0}\)</span> or <span
+class="math inline">\(\texttt{1}\)</span>.</p>
+<p>The grid contains exactly one triangle or exactly one square that
+contains all the <span class="math inline">\(\texttt{1}\)</span>s in the
+grid. It is guaranteed that the size of the triangle or square is
+greater than <span class="math inline">\(1\)</span> (i.e., the shape
+cannot consist of exactly one 1).</p>
+<p><strong>输入</strong></p>
+<p>第一行包含一个整数 <span class="math inline">\(t\)</span> (<span
+class="math inline">\(1 \leq t \leq 100\)</span>) — 测试用例的数量。</p>
+<p>每个测试用例的第一行包含一个整数 <span
+class="math inline">\(n\)</span> (<span class="math inline">\(2 \leq n
+\leq 10\)</span>) — 网格的大小。</p>
+<p>接下来的 <span class="math inline">\(n\)</span> 行每行包含 <span
+class="math inline">\(n\)</span> 个字符 <span
+class="math inline">\(\texttt{0}\)</span> 或 <span
+class="math inline">\(\texttt{1}\)</span>。</p>
+<p>网格中确切地包含一个三角形或一个正方形，其中包含网格中的所有 <span
+class="math inline">\(\texttt{1}\)</span>。保证三角形或正方形的大小大于
+<span class="math inline">\(1\)</span>(即，该形状不能仅由一个 1
+组成)。</p>
+<p><strong>Output</strong></p>
+<p>For each test case, output "SQUARE" if all the <span
+class="math inline">\(\texttt{1}\)</span>s in the grid form a square,
+and "TRIANGLE" otherwise (without quotes).</p>
+<p>对于每个测试用例，如果网格中的所有1形成一个正方形，则输出“SQUARE”，否则输出“TRIANGLE”(不带引号)。</p>
+<p><strong>Example</strong></p>
+<p>input</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">6
+3
+000
+011
+011
+4
+0000
+0000
+0100
+1110
+2
+11
+11
+5
+00111
+00010
+00000
+00000
+00000
+10
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+1111111110
+0111111100
+0011111000
+0001110000
+0000100000
+3
+111
+111
+111<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>output</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">SQUARE
+TRIANGLE
+SQUARE
+TRIANGLE
+TRIANGLE
+SQUARE<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="code-5">Code</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>t<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token function">vs</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cin<span class="token operator">>></span>vs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">int</span> line<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>line<span class="token operator">&lt;</span>n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">bool</span> flag<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>vs<span class="token punctuation">[</span>line<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token char">'1'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    flag<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>    <span class="token keyword">break</span><span class="token punctuation">;</span>
+            line<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">int</span> cnt1<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>cnt2<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>line<span class="token operator">==</span>n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"TRIANGLE"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>vs<span class="token punctuation">[</span>line<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token char">'1'</span><span class="token punctuation">)</span>    cnt1<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>vs<span class="token punctuation">[</span>line<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token char">'1'</span><span class="token punctuation">)</span>  cnt2<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>cnt1<span class="token operator">==</span>cnt2<span class="token punctuation">)</span>  cout<span class="token operator">&lt;&lt;</span><span class="token string">"SQUARE"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"TRIANGLE"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="c.-vlad-and-a-sum-of-sum-of-digits">C. Vlad and a Sum of Sum of
+Digits</h2>
+<p>time limit per test: 0.5 seconds</p>
+<p>memory limit per test: 256 megabytes</p>
+<p>input: standard input</p>
+<p>output: standard output</p>
+<p><strong>Please note that the time limit for this problem is only 0.5
+seconds per test.</strong></p>
+<p>Vladislav wrote the integers from <span
+class="math inline">\(1\)</span> to <span
+class="math inline">\(n\)</span>, inclusive, on the board. Then he
+replaced each integer with the sum of its digits.</p>
+<p>What is the sum of the numbers on the board now?</p>
+<p>For example, if <span class="math inline">\(n=12\)</span> then
+initially the numbers on the board are:</p>
+<p><span class="math display">\[
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12.
+\]</span> Then after the replacement, the numbers become: <span
+class="math display">\[
+1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3.
+\]</span> The sum of these numbers is <span
+class="math inline">\(1+2+3+4+5+6+7+8+9+1+2+3=51\)</span>. Thus, for
+<span class="math inline">\(n=12\)</span> the answer is <span
+class="math inline">\(51\)</span>.</p>
+<p>请注意，此问题的时间限制仅为每个测试0.5秒。</p>
+<p>Vladislav在黑板上写下了从<span
+class="math inline">\(1\)</span>到<span
+class="math inline">\(n\)</span>(包括1和n)的整数。然后，他用其各位数字的总和替换了每个整数。</p>
+<p>现在黑板上的数字之和是多少？</p>
+<p>例如，如果<span
+class="math inline">\(n=12\)</span>，那么最初黑板上的数字是：</p>
+<p><span class="math display">\[
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12.
+\]</span> 然后经过替换后，数字变为： <span class="math display">\[
+1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3.
+\]</span> 这些数字的和是<span
+class="math inline">\(1+2+3+4+5+6+7+8+9+1+2+3=51\)</span>。因此，对于<span
+class="math inline">\(n=12\)</span>，答案是<span
+class="math inline">\(51\)</span>。</p>
+<p><strong>Input</strong></p>
+<p>The first line contains an integer <span
+class="math inline">\(t\)</span> (<span class="math inline">\(1 \leq t
+\leq 10^4\)</span>) — the number of test cases.</p>
+<p>The only line of each test case contains a single integer <span
+class="math inline">\(n\)</span> (<span class="math inline">\(1 \leq n
+\leq 2 \cdot 10^5\)</span>) — the largest number Vladislav writes.</p>
+<p><strong>输入</strong></p>
+<p>第一行包含一个整数 <span class="math inline">\(t\)</span>(<span
+class="math inline">\(1 \leq t \leq
+10^4\)</span>)表示测试用例的数量。</p>
+<p>每个测试用例的唯一一行包含一个整数 <span
+class="math inline">\(n\)</span>(<span class="math inline">\(1 \leq n
+\leq 2 \cdot 10^5\)</span>)表示Vladislav写下的最大数字。</p>
+<p><strong>Output</strong></p>
+<p>For each test case, output a single integer — the sum of the numbers
+at the end of the process.</p>
+<p>对于每个测试用例，输出一个整数 - 过程结束时数字的总和。</p>
+<p><strong>Example</strong></p>
+<p>input</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">7
+12
+1
+2
+3
+1434
+2024
+200000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>output</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">51
+1
+3
+6
+18465
+28170
+4600002<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="code1">Code1</h3>
+<p><strong>RunTime Error</strong></p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment">// int get(int num)&#123;</span>
+<span class="token comment">//     int res=0;</span>
+<span class="token comment">//     while(num)&#123;</span>
+<span class="token comment">//         res+=num%10;</span>
+<span class="token comment">//         res/=10;</span>
+<span class="token comment">//     &#125;</span>
+<span class="token comment">//     return res;</span>
+<span class="token comment">// &#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>t<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">v</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> d<span class="token operator">=</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>d<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                v<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span><span class="token number">10000</span><span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            v<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">int</span> sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        sum<span class="token operator">+=</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>sum<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span>v<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token comment">// int sum=0;</span>
+        <span class="token comment">// for(int i=1;i&lt;=n;i++)&#123;</span>
+        <span class="token comment">//     sum+=get(i);</span>
+        <span class="token comment">// &#125;</span>
+        <span class="token comment">// cout&lt;&lt;sum;</span>
+        <span class="token comment">// for(int i=0;i&lt;1000;i++)&#123;</span>
+        <span class="token comment">//     cout&lt;&lt;" "&lt;&lt;i&lt;&lt;'='&lt;&lt;v[i];</span>
+        <span class="token comment">// &#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="code-6">Code</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>t<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">v</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> d<span class="token operator">=</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>d<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                v<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span><span class="token number">100000</span><span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            v<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// cout&lt;&lt;v.size()&lt;&lt;endl;</span>
+    v<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// for(int i=190244;i&lt;190332;i++)&#123;</span>
+    <span class="token comment">//     cout&lt;&lt;i&lt;&lt;"="&lt;&lt;v[i]&lt;&lt;" ";</span>
+    <span class="token comment">// &#125;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">200000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+=</span>v<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// cout&lt;&lt;"&amp;"&lt;&lt;endl;</span>
+    <span class="token comment">// for(int i=190244;i&lt;190332;i++)&#123;</span>
+    <span class="token comment">//     cout&lt;&lt;i&lt;&lt;"="&lt;&lt;v[i]&lt;&lt;" ";</span>
+    <span class="token comment">// &#125;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span>v<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="d.-vlad-and-division">D. Vlad and Division</h2>
+<p>time limit per test: 2 seconds</p>
+<p>memory limit per test: 256 megabytes</p>
+<p>input: standard input</p>
+<p>output: standard output</p>
+<p>Vladislav has <span class="math inline">\(n\)</span> non-negative
+integers, and he wants to divide <strong>all</strong> of them into
+several groups so that in any group, any pair of numbers does not have
+matching bit values among bits from <span
+class="math inline">\(1\)</span>-st to <span
+class="math inline">\(31\)</span>-st bit (i.e., considering the <span
+class="math inline">\(31\)</span> least significant bits of the binary
+representation).</p>
+<p>For an integer <span class="math inline">\(k\)</span>, let <span
+class="math inline">\(k_2(i)\)</span> denote the <span
+class="math inline">\(i\)</span>-th bit in its binary representation
+(from right to left, indexing from 1). For example, if <span
+class="math inline">\(k=43\)</span>, since <span
+class="math inline">\(43=101011_2\)</span>, then <span
+class="math inline">\(43_2(1)=1\)</span>, <span
+class="math inline">\(43_2(2)=1\)</span>, <span
+class="math inline">\(43_2(3)=0\)</span>, <span
+class="math inline">\(43_2(4)=1\)</span>, <span
+class="math inline">\(43_2(5)=0\)</span>, <span
+class="math inline">\(43_2(6)=1\)</span>, <span
+class="math inline">\(43_2(7)=0\)</span>, <span
+class="math inline">\(43_2(8)=0, \dots, 43_2(31)=0\)</span>.</p>
+<p><strong>Formally, for any two numbers <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span> in the same group, the condition <span
+class="math inline">\(x_2(i) \neq y_2(i)\)</span> must hold for all
+<span class="math inline">\(1 \leq i &lt; 32\)</span>.</strong></p>
+<p>What is the minimum number of groups Vlad needs to achieve his goal?
+Each number must fall into exactly one group.</p>
+<p>Vladislav有<span
+class="math inline">\(n\)</span>个非负整数，他想将它们全部分成若干组，以便在任何一组中，任意一对数字在从第<span
+class="math inline">\(1\)</span>位到第<span
+class="math inline">\(31\)</span>位的比特中没有匹配的比特值(即考虑二进制表示的<span
+class="math inline">\(31\)</span>个最低有效位)。</p>
+<p>对于一个整数<span class="math inline">\(k\)</span>，设<span
+class="math inline">\(k_2(i)\)</span>表示其二进制表示中的第<span
+class="math inline">\(i\)</span>位(从右向左，从1开始索引)。例如，如果<span
+class="math inline">\(k=43\)</span>，因为<span
+class="math inline">\(43=101011_2\)</span>，那么<span
+class="math inline">\(43_2(1)=1\)</span>，<span
+class="math inline">\(43_2(2)=1\)</span>，<span
+class="math inline">\(43_2(3)=0\)</span>，<span
+class="math inline">\(43_2(4)=1\)</span>，<span
+class="math inline">\(43_2(5)=0\)</span>，<span
+class="math inline">\(43_2(6)=1\)</span>，<span
+class="math inline">\(43_2(7)=0\)</span>，<span
+class="math inline">\(43_2(8)=0, \dots, 43_2(31)=0\)</span>。</p>
+<p><strong>形式上，对于同一组中的任意两个数字<span
+class="math inline">\(x\)</span>和<span
+class="math inline">\(y\)</span>，必须满足条件<span
+class="math inline">\(x_2(i) \neq y_2(i)\)</span>，对于所有的<span
+class="math inline">\(1 \leq i &lt; 32\)</span>。</strong></p>
+<p>Vlad需要达到他的目标所需的最小组数是多少？每个数字必须恰好属于一组。</p>
+<p><strong>Input</strong></p>
+<p>The first line contains a single integer <span
+class="math inline">\(t\)</span> (<span class="math inline">\(1 \leq t
+\leq 10^4\)</span>) — the number of test cases.</p>
+<p>The first line of each test case contains a single integer <span
+class="math inline">\(n\)</span> (<span class="math inline">\(1 \leq n
+\leq 2 \cdot 10^5\)</span>) — the total number of integers.</p>
+<p>The second line of each test case contains <span
+class="math inline">\(n\)</span> given integers <span
+class="math inline">\(a_1, \ldots, a_n\)</span> (<span
+class="math inline">\(0 \leq a_j &lt; 2^{31}\)</span>).</p>
+<p>The sum of <span class="math inline">\(n\)</span> over all test cases
+in a test does not exceed <span class="math inline">\(2 \cdot
+10^5\)</span>.</p>
+<p><strong>输入</strong></p>
+<p>第一行包含一个整数 <span class="math inline">\(t\)</span> (<span
+class="math inline">\(1 \leq t \leq 10^4\)</span>) —
+测试用例的数量。</p>
+<p>每个测试用例的第一行包含一个整数 <span
+class="math inline">\(n\)</span> (<span class="math inline">\(1 \leq n
+\leq 2 \cdot 10^5\)</span>) — 整数的总数。</p>
+<p>每个测试用例的第二行包含 <span class="math inline">\(n\)</span>
+个给定的整数 <span class="math inline">\(a_1, \ldots, a_n\)</span>
+(<span class="math inline">\(0 \leq a_j &lt; 2^{31}\)</span>)。</p>
+<p>一个测试中所有测试用例中 <span class="math inline">\(n\)</span>
+的总和不超过 <span class="math inline">\(2 \cdot 10^5\)</span>。</p>
+<p><strong>Output</strong></p>
+<p>For each test case, output a single integer  — the minimum number of
+groups required to satisfy the condition.</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试案例，输出一个整数，即满足条件所需的最小组数。</p>
+<p><strong>Example</strong></p>
+<p>input</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">9
+4
+1 4 3 4
+2
+0 2147483647
+5
+476319172 261956880 2136179468 1671164475 1885526767
+3
+1335890506 811593141 1128223362
+4
+688873446 627404104 1520079543 1458610201
+4
+61545621 2085938026 1269342732 1430258575
+4
+0 0 2147483647 2147483647
+3
+0 0 2147483647
+8
+1858058912 289424735 1858058912 2024818580 1858058912 289424735 122665067 289424735<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>output</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">4
+1
+3
+2
+2
+3
+2
+2
+4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p><strong>Note</strong></p>
+<p>In the first test case, any two numbers have the same last <span
+class="math inline">\(31\)</span> bits, so we need to place each number
+in its own group.</p>
+<p>In the second test case, <span
+class="math inline">\(a_1=0000000000000000000000000000000_2\)</span>,
+<span
+class="math inline">\(a_2=1111111111111111111111111111111_2\)</span> so
+they can be placed in the same group because <span
+class="math inline">\(a_1(i) \ne a_2(i)\)</span> for each <span
+class="math inline">\(i\)</span> between <span
+class="math inline">\(1\)</span> and <span
+class="math inline">\(31\)</span>, inclusive.</p>
+<p><strong>注意</strong></p>
+<p>在第一个测试用例中，任意两个数字的最后31位相同，因此我们需要将每个数字放在自己的组中。</p>
+<p>在第二个测试用例中，<span
+class="math inline">\(a_1=0000000000000000000000000000000_2\)</span>，<span
+class="math inline">\(a_2=1111111111111111111111111111111_2\)</span>，因此它们可以放在同一组中，因为对于每个<span
+class="math inline">\(i\)</span>(<span
+class="math inline">\(1\)</span>到<span
+class="math inline">\(31\)</span>，包括<span
+class="math inline">\(1\)</span>和<span
+class="math inline">\(31\)</span>)，<span class="math inline">\(a_1(i)
+\ne a_2(i)\)</span>。</p>
+<h3 id="code-7">Code</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>t<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> count<span class="token operator">=</span>n<span class="token punctuation">;</span>
+        map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> m<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> temp<span class="token punctuation">;</span>
+            cin<span class="token operator">>></span>temp<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>m<span class="token punctuation">[</span><span class="token number">2147483647</span><span class="token operator">-</span>temp<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//不存在</span>
+                m<span class="token punctuation">[</span>temp<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">[</span><span class="token number">2147483647</span><span class="token operator">-</span>temp<span class="token punctuation">]</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                m<span class="token punctuation">[</span><span class="token number">2147483647</span><span class="token operator">-</span>temp<span class="token punctuation">]</span><span class="token operator">--</span><span class="token punctuation">;</span>
+                count<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token comment">// for(auto &amp;k:m)&#123;</span>
+            <span class="token comment">//     cout&lt;&lt;k.first&lt;&lt;","&lt;&lt;k.second&lt;&lt;endl;</span>
+            <span class="token comment">// &#125;</span>
+        <span class="token punctuation">&#125;</span>
+        cout<span class="token operator">&lt;&lt;</span>count<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="e.-vlad-and-an-odd-ordering">E. Vlad and an Odd Ordering</h2>
+<p>time limit per test: 2 seconds</p>
+<p>memory limit per test: 256 megabytes</p>
+<p>input: standard input</p>
+<p>output: standard output</p>
+<p>Vladislav has <span class="math inline">\(n\)</span> cards numbered
+<span class="math inline">\(1, 2, \dots, n\)</span>. He wants to lay
+them down in a row as follows:</p>
+<ul>
+<li>First, he lays down all the odd-numbered cards from smallest to
+largest.</li>
+<li>Next, he lays down all cards that are twice an odd number from
+smallest to largest (i.e. <span class="math inline">\(2\)</span>
+multiplied by an odd number).</li>
+<li>Next, he lays down all cards that are <span
+class="math inline">\(3\)</span> times an odd number from smallest to
+largest (i.e. <span class="math inline">\(3\)</span> multiplied by an
+odd number).</li>
+<li>Next, he lays down all cards that are <span
+class="math inline">\(4\)</span> times an odd number from smallest to
+largest (i.e. <span class="math inline">\(4\)</span> multiplied by an
+odd number).</li>
+<li>And so on, until all cards are laid down.</li>
+</ul>
+<p>What is the <span class="math inline">\(k\)</span>-th card he lays
+down in this process? Once Vladislav puts a card down, he cannot use
+that card again.</p>
+<p>Vladislav有<span class="math inline">\(n\)</span>张编号为<span
+class="math inline">\(1, 2, \dots,
+n\)</span>的卡片。他想按照以下顺序将它们排成一排：</p>
+<ul>
+<li>首先，他按从小到大的顺序放下所有奇数编号的卡片。</li>
+<li>接下来，他按从小到大的顺序放下所有是奇数的两倍的卡片(即奇数乘以<span
+class="math inline">\(2\)</span>)。</li>
+<li>接下来，他按从小到大的顺序放下所有是奇数的三倍的卡片(即奇数乘以<span
+class="math inline">\(3\)</span>)。</li>
+<li>接下来，他按从小到大的顺序放下所有是奇数的四倍的卡片(即奇数乘以<span
+class="math inline">\(4\)</span>)。</li>
+<li>依此类推，直到所有卡片都被放下。</li>
+</ul>
+<p>在这个过程中，他放下的第<span
+class="math inline">\(k\)</span>张卡片是哪一张？一旦Vladislav放下一张卡片，他就不能再使用那张卡片。</p>
+<p><strong>Input</strong></p>
+<p>The first line contains an integer <span
+class="math inline">\(t\)</span> (<span class="math inline">\(1 \leq t
+\leq 5 \cdot 10^4\)</span>) — the number of test cases.</p>
+<p>The only line of each test case contains two integers <span
+class="math inline">\(n\)</span> and <span
+class="math inline">\(k\)</span> (<span class="math inline">\(1 \leq k
+\leq n \leq 10^9\)</span>) — the number of cards Vlad has, and the
+position of the card you need to output.</p>
+<p><strong>输入</strong></p>
+<p>第一行包含一个整数 <span class="math inline">\(t\)</span> (<span
+class="math inline">\(1 \leq t \leq 5 \cdot 10^4\)</span>) —
+测试用例的数量。</p>
+<p>每个测试用例的唯一一行包含两个整数 <span
+class="math inline">\(n\)</span> 和 <span
+class="math inline">\(k\)</span> (<span class="math inline">\(1 \leq k
+\leq n \leq 10^9\)</span>) —
+弗拉德拥有的卡片数量，以及需要输出的卡片位置。</p>
+<p><strong>Output</strong></p>
+<p>For each test case, output a single integer — the <span
+class="math inline">\(k\)</span>-th card Vladislav lays down.</p>
+<p>对于每个测试用例，输出一个整数 - 弗拉迪斯拉夫放下的第<span
+class="math inline">\(k\)</span>张卡片。</p>
+<p>Example</p>
+<p>input</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">11
+7 1
+7 2
+7 3
+7 4
+7 5
+7 6
+7 7
+1 1
+34 14
+84 19
+1000000000 1000000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>output</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1
+3
+5
+7
+2
+6
+4
+1
+27
+37
+536870912<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p><strong>Note</strong></p>
+<p>In the first seven test cases, <span
+class="math inline">\(n=7\)</span>. Vladislav lays down the cards as
+follows:</p>
+<ul>
+<li>First — all the odd-numbered cards in the order <span
+class="math inline">\(1\)</span>, <span
+class="math inline">\(3\)</span>, <span
+class="math inline">\(5\)</span>, <span
+class="math inline">\(7\)</span>.</li>
+<li>Next — all cards that are twice an odd number in the order <span
+class="math inline">\(2\)</span>, <span
+class="math inline">\(6\)</span>.</li>
+<li>Next, there are no remaining cards that are <span
+class="math inline">\(3\)</span> times an odd number. (Vladislav has
+only one of each card.)</li>
+<li>Next — all cards that are <span class="math inline">\(4\)</span>
+times an odd number, and there is only one such card: <span
+class="math inline">\(4\)</span>.</li>
+<li>There are no more cards left, so Vladislav stops.</li>
+</ul>
+<p>Thus the order of cards is <span class="math inline">\(1\)</span>,
+<span class="math inline">\(3\)</span>, <span
+class="math inline">\(5\)</span>, <span
+class="math inline">\(7\)</span>, <span
+class="math inline">\(2\)</span>, <span
+class="math inline">\(6\)</span>, <span
+class="math inline">\(4\)</span>.</p>
+<p><strong>注意</strong></p>
+<p>在前七个测试案例中，<span
+class="math inline">\(n=7\)</span>。弗拉迪斯拉夫按照以下顺序放置卡片：</p>
+<ul>
+<li>第一张 - 所有奇数编号的卡片，按顺序为 <span
+class="math inline">\(1\)</span>、<span
+class="math inline">\(3\)</span>、<span
+class="math inline">\(5\)</span>、<span
+class="math inline">\(7\)</span>。</li>
+<li>接下来 - 所有是奇数的两倍的卡片，按顺序为 <span
+class="math inline">\(2\)</span>、<span
+class="math inline">\(6\)</span>。</li>
+<li>接下来，没有剩余的卡片是奇数的三倍。(弗拉迪斯拉夫每张卡片只有一张。)</li>
+<li>接下来 - 所有是奇数的四倍的卡片，只有一张这样的卡片：<span
+class="math inline">\(4\)</span>。</li>
+<li>没有更多卡片了，所以弗拉迪斯拉夫停止。</li>
+</ul>
+<p>因此，卡片的顺序是 <span class="math inline">\(1\)</span>、<span
+class="math inline">\(3\)</span>、<span
+class="math inline">\(5\)</span>、<span
+class="math inline">\(7\)</span>、<span
+class="math inline">\(2\)</span>、<span
+class="math inline">\(6\)</span>、<span
+class="math inline">\(4\)</span>。</p>
+<h3 id="code1-1">Code1</h3>
+<p>WA</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>t<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n<span class="token punctuation">,</span>k<span class="token punctuation">,</span>times<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>n<span class="token operator">>></span>k<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">></span>n<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                k<span class="token operator">-=</span>n<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+                n<span class="token operator">-=</span>n<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+                times<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        k<span class="token operator">=</span>k<span class="token operator">*</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        k<span class="token operator">*=</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>times<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">!=</span><span class="token number">1</span><span class="token punctuation">)</span> cout<span class="token operator">&lt;&lt;</span>k<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span>k<span class="token operator">/</span><span class="token number">2</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h3 id="code2">Code2</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>t<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n<span class="token punctuation">,</span>k<span class="token punctuation">,</span>times<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>n<span class="token operator">>></span>k<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">></span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                k<span class="token operator">-=</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+                n<span class="token operator">-=</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+                times<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token comment">// cout&lt;&lt;"n="&lt;&lt;n&lt;&lt;",k="&lt;&lt;k&lt;&lt;endl;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">==</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        k<span class="token operator">=</span>k<span class="token operator">*</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        k<span class="token operator">*=</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>times<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// if(k==1 &amp;&amp; n==1) k/=2;</span>
+        cout<span class="token operator">&lt;&lt;</span>k<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
                 
               </div>
