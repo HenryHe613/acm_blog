@@ -24,7 +24,7 @@
 <meta property="og:description" content="Coding Everyday 2575. 找出字符串的可整除数组 给你一个下标从 0 开始的字符串 word ，长度为 n ，由从 0 到 9 的数字组成。另给你一个正整数 m 。 word 的 可整除数组 div 是一个长度为 n 的整数数组，并满足：  如果 word[0,...,i] 所表示的 数值 能被 m 整除，div[i] &#x3D; 1 否则，div[i] &#x3D; 0  返回 word 的可整">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-08T10:32:31.000Z">
-<meta property="article:modified_time" content="2024-03-11T04:30:07.031Z">
+<meta property="article:modified_time" content="2024-03-16T02:40:08.532Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          2.1k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          14 分钟
+          18 分钟
         
       </span>
     
@@ -546,6 +546,103 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/capitalize-the
         <span class="token keyword">return</span> res<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="矩阵中移动的最大次数"><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-number-of-moves-in-a-grid/">2684.
+矩阵中移动的最大次数</a></h2>
+<p>给你一个下标从 <strong>0</strong> 开始、大小为 <code>m x n</code>
+的矩阵 <code>grid</code> ，矩阵由若干 <strong>正</strong> 整数组成。</p>
+<p>你可以从矩阵第一列中的 <strong>任一</strong>
+单元格出发，按以下方式遍历 <code>grid</code> ：</p>
+<ul>
+<li>从单元格 <code>(row, col)</code> 可以移动到
+<code>(row - 1, col + 1)</code>、<code>(row, col + 1)</code> 和
+<code>(row + 1, col + 1)</code> 三个单元格中任一满足值
+<strong>严格</strong> 大于当前单元格的单元格。</li>
+</ul>
+<p>返回你在矩阵中能够 <strong>移动</strong> 的 <strong>最大</strong>
+次数。</p>
+<p><strong>示例 1：</strong></p>
+<figure>
+<img
+src="https://assets.leetcode.com/uploads/2023/04/11/yetgriddrawio-10.png" srcset="/img/loading.gif" lazyload
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">输入：grid &#x3D; [[2,4,3,5],[5,4,9,3],[3,4,2,11],[10,9,13,15]]
+输出：3
+解释：可以从单元格 (0, 0) 开始并且按下面的路径移动：
+- (0, 0) -&gt; (0, 1).
+- (0, 1) -&gt; (1, 2).
+- (1, 2) -&gt; (2, 3).
+可以证明这是能够移动的最大次数。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p><strong>示例 2：</strong></p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">输入：grid &#x3D; [[3,2,4],[2,1,9],[1,1,7]]
+输出：0
+解释：从第一列的任一单元格开始都无法移动。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>2 &lt;= m, n &lt;= 1000</code></li>
+<li><code>4 &lt;= m * n &lt;= 105</code></li>
+<li><code>1 &lt;= grid[i][j] &lt;= 106</code></li>
+</ul>
+<h3 id="code-3">Code</h3>
+<blockquote>
+<p>240316</p>
+</blockquote>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+
+    <span class="token keyword">int</span> Max<span class="token punctuation">,</span>m<span class="token punctuation">,</span>n<span class="token punctuation">;</span>
+    <span class="token comment">// void bfs(vector&lt;vector&lt;int>>&amp; matrix,int xx)&#123;</span>
+    <span class="token comment">//     queue&lt;pair&lt;int,int>> q;</span>
+    <span class="token comment">//     // vector&lt;vector&lt;int>> vis(m,vector&lt;int>(n,0));</span>
+    <span class="token comment">//     q.push(&#123;xx,0&#125;);</span>
+    <span class="token comment">//     // vis[xx][0]=1;</span>
+    <span class="token comment">//     while(!q.empty())&#123;</span>
+    <span class="token comment">//         int x=q.front().first;</span>
+    <span class="token comment">//         int y=q.front().second;</span>
+    <span class="token comment">//         // cout&lt;&lt;x&lt;&lt;","&lt;&lt;y&lt;&lt;endl;</span>
+    <span class="token comment">//         Max=max(Max,y);</span>
+    <span class="token comment">//         q.pop();</span>
+    <span class="token comment">//         for(int i=-1;i&lt;=1;i++)&#123;</span>
+    <span class="token comment">//             if(x+i>=0 &amp;&amp; x+i&lt;m &amp;&amp; y+1&lt;n &amp;&amp; matrix[x+i][y+1]>matrix[x][y])&#123;</span>
+    <span class="token comment">//                 // vis[x+i][y+1]=1;</span>
+    <span class="token comment">//                 q.push(&#123;x+i,y+1&#125;);</span>
+    <span class="token comment">//             &#125;</span>
+    <span class="token comment">//         &#125;</span>
+    <span class="token comment">//     &#125;</span>
+    <span class="token comment">// &#125;</span>
+    <span class="token keyword">int</span> <span class="token function">maxMoves</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> grid<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        m<span class="token operator">=</span>grid<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n<span class="token operator">=</span>grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Max<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">// for(int i=0;i&lt;m;i++)&#123;</span>
+        <span class="token comment">//     bfs(grid,i);</span>
+        <span class="token comment">// &#125;</span>
+        queue<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">>></span> q<span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">vis</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span><span class="token generic-function"><span class="token function">vector</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span></span></span><span class="token punctuation">(</span>n<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// vis[xx][0]=1;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> x<span class="token operator">=</span>q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+            <span class="token keyword">int</span> y<span class="token operator">=</span>q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>second<span class="token punctuation">;</span>
+            <span class="token comment">// cout&lt;&lt;x&lt;&lt;","&lt;&lt;y&lt;&lt;endl;</span>
+            Max<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>Max<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">+</span>i<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> x<span class="token operator">+</span>i<span class="token operator">&lt;</span>m <span class="token operator">&amp;&amp;</span> y<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span>n <span class="token operator">&amp;&amp;</span> grid<span class="token punctuation">[</span>x<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">></span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>vis<span class="token punctuation">[</span>x<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    vis<span class="token punctuation">[</span>x<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+                    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>x<span class="token operator">+</span>i<span class="token punctuation">,</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> Max<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
                 
               </div>
