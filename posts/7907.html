@@ -252,33 +252,17 @@
             
               <div class="markdown-body">
                 
-                <p>Ignatius has just come back school from the 30th ACM/ICPC. Now he has
-a lot of homework to do. Every teacher gives him a deadline of handing
-in the homework. If Ignatius hands in the homework after the deadline,
-the teacher will reduce his score of the final test. And now we assume
-that doing everyone homework always takes one day. So Ignatius wants you
-to help him to arrange the order of doing homework to minimize the
-reduced score. Ignatius 刚刚从第 30 届 ACM/ICPC 回到学校。
-现在他有很多作业要做。 每个老师都给他规定了交作业的截止日期。 如果
-Ignatius 在截止日期后交作业，老师将降低他期末考试的分数。
-现在我们假设做每个人的作业总是需要一天的时间。 所以 Ignatius
-希望你帮他安排一下做作业的顺序，尽量减少分数的降低。</p>
-<h1 id="输入格式">输入格式:</h1>
-<p>The input contains several test cases. The first line of the input is
-a single integer T that is the number of test cases. T test cases
-follow. Each test case start with a positive integer N(1&lt;=N&lt;=1000)
-which indicate the number of homework.. Then 2 lines follow. The first
-line contains N integers that indicate the deadlines of the subjects,
-and the next line contains N integers that indicate the reduced scores.
-输入包含多个测试用例。 输入的第一行是一个整数 T，它是测试用例的数量。 T
-测试用例如下。 每个测试用例都以正整数 N(1&lt;=N&lt;=1000)
-开头，表示作业的数量。然后是 2 行。 第一行包含 N
-个整数，表示科目的截止日期，下一行包含 N 个整数，表示减少的分数。</p>
-<h1 id="输出格式">输出格式:</h1>
-<p>For each test case, you should output the smallest total reduced
-score, one line per test case.
+                <p>Ignatius has just come back school from the 30th ACM/ICPC. Now he has a lot of homework to do. Every teacher gives him a deadline of handing in the homework. If Ignatius hands in the homework after the deadline, the teacher will reduce his score of the final test. And now we assume that doing everyone homework always takes one day. So Ignatius wants you to help him to arrange the order of doing homework to minimize the reduced score.<br>
+Ignatius 刚刚从第 30 届 ACM/ICPC 回到学校。 现在他有很多作业要做。 每个老师都给他规定了交作业的截止日期。 如果 Ignatius 在截止日期后交作业，老师将降低他期末考试的分数。 现在我们假设做每个人的作业总是需要一天的时间。 所以 Ignatius 希望你帮他安排一下做作业的顺序，尽量减少分数的降低。</p>
+<h1>输入格式:</h1>
+<p>The input contains several test cases. The first line of the input is a single integer T that is the number of test cases. T test cases follow.<br>
+Each test case start with a positive integer N(1&lt;=N&lt;=1000) which indicate the number of homework… Then 2 lines follow. The first line contains N integers that indicate the deadlines of the subjects, and the next line contains N integers that indicate the reduced scores.<br>
+输入包含多个测试用例。 输入的第一行是一个整数 T，它是测试用例的数量。 T 测试用例如下。<br>
+每个测试用例都以正整数 N(1&lt;=N&lt;=1000) 开头，表示作业的数量。然后是 2 行。 第一行包含 N 个整数，表示科目的截止日期，下一行包含 N 个整数，表示减少的分数。</p>
+<h1>输出格式:</h1>
+<p>For each test case, you should output the smallest total reduced score, one line per test case.<br>
 对于每个测试用例，您应该输出最小的总降低分数，每个测试用例一行。</p>
-<h1 id="输入样例">输入样例:</h1>
+<h1>输入样例:</h1>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3
 3
 3 3 3
@@ -289,12 +273,12 @@ score, one line per test case.
 7
 1 4 6 4 2 4 3
 3 2 1 7 6 5 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1 id="输出样例">输出样例:</h1>
+<h1>输出样例:</h1>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">0
 3
 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1 id="解题思路">解题思路：</h1>
-<p>因为要使扣的分数最小，所以需要使延时提交的作业数最少。所以要优先完成时间早的作业。所以我先进行一个排序算法，将所有的作业按照deadline从小到大排序。
+<h1>解题思路：</h1>
+<p>因为要使扣的分数最小，所以需要使延时提交的作业数最少。所以要优先完成时间早的作业。所以我先进行一个排序算法，将所有的作业按照deadline从小到大排序。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">homework</span> <span class="token operator">*</span>homework<span class="token punctuation">,</span><span class="token keyword">int</span> N<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>N<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>N<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -307,13 +291,17 @@ score, one line per test case.
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure> 当然，完全按照deadline也是错误的，例如： <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1 4 6 4 2 4 3
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>当然，完全按照deadline也是错误的，例如：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1 4 6 4 2 4 3
 3 2 1 7 6 5 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-完成排序后变成了： <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1 2 3 4 4 4 6
+<p>完成排序后变成了：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1 2 3 4 4 4 6
 3 6 4 7 5 2 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-此时严格按照deadline排序输出结果是错误的。我们发现如果我们第一天不完成第一个作业，扣的分数反而会更小。所以前面的想法其实不完全正确。</p>
+<p>此时严格按照deadline排序输出结果是错误的。我们发现如果我们第一天不完成第一个作业，扣的分数反而会更小。所以前面的想法其实不完全正确。</p>
 <p>我们需要的是扣的分数最小，所以我们可以优先考虑分数。</p>
-<p>那我们先对分数进行排序，如下所示： <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">homework</span> <span class="token operator">*</span>homework<span class="token punctuation">,</span><span class="token keyword">int</span> N<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<p>那我们先对分数进行排序，如下所示：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">homework</span> <span class="token operator">*</span>homework<span class="token punctuation">,</span><span class="token keyword">int</span> N<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>N<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>N<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>homework<span class="token operator">+</span>j<span class="token punctuation">)</span><span class="token operator">-></span>score<span class="token operator">&lt;</span><span class="token punctuation">(</span>homework<span class="token operator">+</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-></span>score<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -325,12 +313,14 @@ score, one line per test case.
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
-<p>进行如上排序后我们会获得下面的结果： <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token number">4</span> <span class="token number">2</span> <span class="token number">4</span> <span class="token number">3</span> <span class="token number">1</span> <span class="token number">4</span> <span class="token number">6</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>进行如上排序后我们会获得下面的结果：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token number">4</span> <span class="token number">2</span> <span class="token number">4</span> <span class="token number">3</span> <span class="token number">1</span> <span class="token number">4</span> <span class="token number">6</span>
 <span class="token number">7</span> <span class="token number">6</span> <span class="token number">5</span> <span class="token number">4</span> <span class="token number">3</span> <span class="token number">2</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-然后我们根据score的权重，把作业“放入”我们需要完成的日子。</p>
+<p>然后我们根据score的权重，把作业“放入”我们需要完成的日子。</p>
 <p>当遇到分数相同的，根据日期，我在前面排列时把日期大的放在了待处理队列中相同分数的靠前位置，所以会优先处理。如果在处理时发现该日期已经被占用，那么顺应往前面未被占用的日期处移动，这样能保证该作业能一定能完成。</p>
-<p>下面是分步结果：（前面的一列0是用于占位，可以忽略） <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c">
+<p>下面是分步结果：（前面的一列0是用于占位，可以忽略）</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c">
 <span class="token number">0</span> <span class="token number">1</span> <span class="token number">3</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">0</span> 
 <span class="token number">0</span> <span class="token number">6</span> <span class="token number">5</span> <span class="token number">2</span> <span class="token number">7</span> <span class="token number">0</span> 
 
@@ -351,8 +341,8 @@ score, one line per test case.
 
 <span class="token number">0</span> <span class="token number">3</span> <span class="token number">2</span> <span class="token number">4</span> <span class="token number">4</span> <span class="token number">6</span> 
 <span class="token number">0</span> <span class="token number">4</span> <span class="token number">6</span> <span class="token number">5</span> <span class="token number">7</span> <span class="token number">1</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-然后剩余的未完成的作业加起来的分数就是最小的会被扣掉的分数。</p>
-<h1 id="源码实现">源码实现：</h1>
+<p>然后剩余的未完成的作业加起来的分数就是最小的会被扣掉的分数。</p>
+<h1>源码实现：</h1>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">struct</span> <span class="token class-name">homework</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">int</span> deadline<span class="token punctuation">;</span>
@@ -540,7 +530,6 @@ int main(){
 // 6 4 7 5 1 3 2
 
 ``` -->
-
                 
               </div>
             

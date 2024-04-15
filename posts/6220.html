@@ -252,33 +252,19 @@
             
               <div class="markdown-body">
                 
-                <p>Have you ever played quoit in a playground? Quoit is a game in which
-flat rings are pitched at some toys, with all the toys encircled
-awarded. In the field of Cyberground, the position of each toy is fixed,
-and the ring is carefully designed so it can only encircle one toy at a
-time. On the other hand, to make the game look more attractive, the ring
-is designed to have the largest radius. Given a configuration of the
-field, you are supposed to find the radius of such a ring.</p>
-<p>Assume that all the toys are points on a plane. A point is encircled
-by the ring if the distance between the point and the center of the ring
-is strictly less than the radius of the ring. If two toys are placed at
-the same point, the radius of the ring is considered to be 0.</p>
+                <p>Have you ever played quoit in a playground? Quoit is a game in which flat rings are pitched at some toys, with all the toys encircled awarded.<br>
+In the field of Cyberground, the position of each toy is fixed, and the ring is carefully designed so it can only encircle one toy at a time. On the other hand, to make the game look more attractive, the ring is designed to have the largest radius. Given a configuration of the field, you are supposed to find the radius of such a ring.</p>
+<p>Assume that all the toys are points on a plane. A point is encircled by the ring if the distance between the point and the center of the ring is strictly less than the radius of the ring. If two toys are placed at the same point, the radius of the ring is considered to be 0.</p>
 <p>你曾经在操场上玩过掷环游戏吗？掷环是一种游戏，其中扁平的环被投向一些玩具，所有被环围绕的玩具都会被奖励。</p>
 <p>在Cyberground领域中，每个玩具的位置都是固定的，环被精心设计，以便一次只能围绕一个玩具。另一方面，为了使游戏看起来更有吸引力，环被设计成具有最大半径。给定场地的配置，你需要找出这样一个环的半径。</p>
 <p>假设所有的玩具都是平面上的点。如果一个点与环的中心之间的距离严格小于环的半径，则该点被环围绕。如果两个玩具位于同一点上，则环的半径被认为是0。</p>
-<h1 id="输入格式">输入格式:</h1>
-<p>The input consists of several test cases. For each case, the first
-line contains an integer N (2 &lt;= N &lt;= 100,000), the total number
-of toys in the field. Then N lines follow, each contains a pair of (x,
-y) which are the coordinates of a toy. The input is terminated by N = 0.
-输入包含多个测试用例。对于每个案例，第一行包含一个整数N（2 &lt;= N &lt;=
-100,000），表示场地上玩具的总数。然后是N行，每行包含一个玩具的坐标(x,
-y)。输入以N = 0结束。</p>
-<h1 id="输出格式">输出格式:</h1>
-<p>For each test case, print in one line the radius of the ring required
-by the Cyberground manager, accurate up to 2 decimal places.
+<h1>输入格式:</h1>
+<p>The input consists of several test cases. For each case, the first line contains an integer N (2 &lt;= N &lt;= 100,000), the total number of toys in the field. Then N lines follow, each contains a pair of (x, y) which are the coordinates of a toy. The input is terminated by N = 0.<br>
+输入包含多个测试用例。对于每个案例，第一行包含一个整数N（2 &lt;= N &lt;= 100,000），表示场地上玩具的总数。然后是N行，每行包含一个玩具的坐标(x, y)。输入以N = 0结束。</p>
+<h1>输出格式:</h1>
+<p>For each test case, print in one line the radius of the ring required by the Cyberground manager, accurate up to 2 decimal places.<br>
 对于每个测试用例，在一行中打印Cyberground管理员所需的环的半径，精确到小数点后2位。</p>
-<h1 id="输入样例">输入样例:</h1>
+<h1>输入样例:</h1>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2
 0 0
 1 1
@@ -290,13 +276,14 @@ by the Cyberground manager, accurate up to 2 decimal places.
 0 0
 0 1.5
 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1 id="输出样例">输出样例:</h1>
+<h1>输出样例:</h1>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">0.71
 0.00
 0.75<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1 id="代码示例1">代码示例1:</h1>
-<p>把sqrt放到最后减小运算量。但是1000000的数组用暴力还是太大了。
-这个代码会超时。待我优化一番。 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<h1>代码示例1:</h1>
+<p>把sqrt放到最后减小运算量。但是1000000的数组用暴力还是太大了。<br>
+这个代码会超时。待我优化一番。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;math.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">int</span> n<span class="token punctuation">;</span>
@@ -324,8 +311,7 @@ by the Cyberground manager, accurate up to 2 decimal places.
         <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
-
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
                 
               </div>
             
