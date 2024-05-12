@@ -16,12 +16,12 @@
   <meta name="author" content="nanyan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在C++中，读取字符串的方法主要有以下几种： 使用 cin： cin 是C++中最基础的输入方法，常与 &gt;&gt; 操作符一起使用。 示例代码： #include &lt;iostream&gt; using namespace std;  int main() &amp;#123;     string str;     cin &gt;&gt; str;  &#x2F;&#x2F; 读取一个字符">
+    <meta name="description" content="在C++中，读取字符串的方法主要有以下几种： 使用 cin： cin 是C++中最基础的输入方法，常与 &gt;&gt; 操作符一起使用。 ## 示例代码： #include &lt;iostream&gt; using namespace std;  int main() &amp;#123;     string str;     cin &gt;&gt; str;  &#x2F;&#x2F; 读取一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++读取字符串方式汇总">
 <meta property="og:url" content="http://acm.nanyan.cc/posts/8afe.html">
 <meta property="og:site_name" content="ACM笔记">
-<meta property="og:description" content="在C++中，读取字符串的方法主要有以下几种： 使用 cin： cin 是C++中最基础的输入方法，常与 &gt;&gt; 操作符一起使用。 示例代码： #include &lt;iostream&gt; using namespace std;  int main() &amp;#123;     string str;     cin &gt;&gt; str;  &#x2F;&#x2F; 读取一个字符">
+<meta property="og:description" content="在C++中，读取字符串的方法主要有以下几种： 使用 cin： cin 是C++中最基础的输入方法，常与 &gt;&gt; 操作符一起使用。 ## 示例代码： #include &lt;iostream&gt; using namespace std;  int main() &amp;#123;     string str;     cin &gt;&gt; str;  &#x2F;&#x2F; 读取一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-15T11:25:12.000Z">
 <meta property="article:modified_time" content="2024-02-04T09:13:07.509Z">
@@ -253,10 +253,9 @@
               <div class="markdown-body">
                 
                 <p>在C++中，读取字符串的方法主要有以下几种：</p>
-<h1>使用 cin：</h1>
-<p><code>cin</code> 是C++中最基础的输入方法，常与 <code>&gt;&gt;</code> 操作符一起使用。</p>
-<h2 id="示例代码：">示例代码：</h2>
-<figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+<h1 id="使用-cin">使用 cin：</h1>
+<p><code>cin</code> 是C++中最基础的输入方法，常与 <code>&gt;&gt;</code>
+操作符一起使用。 ## 示例代码： <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 using namespace std;
 
 int main() &#123;
@@ -264,11 +263,10 @@ int main() &#123;
     cin &gt;&gt; str;  &#x2F;&#x2F; 读取一个字符串，直到遇到空格
     cout &lt;&lt; str;
     return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>使用 getline() 函数：</h1>
-<p><code>getline()</code> 函数用于读取一行字符串，直到遇到换行符。<br>
-它可以从 <code>cin</code> 或其他输入流中读取。</p>
-<h2 id="示例代码：-2">示例代码：</h2>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<h1 id="使用-getline-函数">使用 getline() 函数：</h1>
+<p><code>getline()</code> 函数用于读取一行字符串，直到遇到换行符。
+它可以从 <code>cin</code> 或其他输入流中读取。 ## 示例代码：
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
@@ -278,10 +276,10 @@ int main() &#123;
     getline(cin, str);  &#x2F;&#x2F; 读取一行字符串
     cout &lt;&lt; str;
     return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>使用 stringstream 类：</h1>
-<p><code>stringstream</code> 类可以从字符串中读取数据，类似于从文件或标准输入中读取。</p>
-<h2 id="示例代码：-3">示例代码：</h2>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<h1 id="使用-stringstream-类">使用 stringstream 类：</h1>
+<p><code>stringstream</code>
+类可以从字符串中读取数据，类似于从文件或标准输入中读取。 ## 示例代码：
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;sstream&gt;
 using namespace std;
@@ -294,11 +292,10 @@ int main() &#123;
         cout &lt;&lt; word &lt;&lt; endl;
     &#125;
     return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>使用文件输入流 (ifstream)：</h1>
-<p>如果字符串来自文件，可以使用 <code>ifstream</code> 读取。</p>
-<h2 id="示例代码：-4">示例代码：</h2>
-<figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<h1 id="使用文件输入流-ifstream">使用文件输入流 (ifstream)：</h1>
+<p>如果字符串来自文件，可以使用 <code>ifstream</code> 读取。 ##
+示例代码： <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;fstream&gt;
 #include &lt;string&gt;
 using namespace std;
@@ -311,8 +308,9 @@ int main() &#123;
     &#125;
     file.close();
     return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<p>这些方法可以根据具体需求和上下文来选择使用。例如，当你需要读取含空格的整行字符串时，<code>getline()</code> 是更好的选择，而 <code>cin</code> 更适合于分段读取或读取单个词汇。</p>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<p>这些方法可以根据具体需求和上下文来选择使用。例如，当你需要读取含空格的整行字符串时，<code>getline()</code>
+是更好的选择，而 <code>cin</code> 更适合于分段读取或读取单个词汇。</p>
 
                 
               </div>

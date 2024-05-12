@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          2.5k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          22 分钟
+          21 分钟
         
       </span>
     
@@ -252,22 +252,22 @@
             
               <div class="markdown-body">
                 
-                <h1>1001 大笨钟</h1>
+                <h1 id="大笨钟">1001 大笨钟</h1>
 <p>微博上有个自称“大笨钟V”的家伙，每天敲钟催促码农们爱惜身体早点睡觉。不过由于笨钟自己作息也不是很规律，所以敲钟并不定时。一般敲钟的点数是根据敲钟时间而定的，如果正好在某个整点敲，那么“当”数就等于那个整点数；如果过了整点，就敲下一个整点数。另外，虽然一天有24小时，钟却是只在后半天敲1~12下。例如在<code>23:00</code>敲钟，就是“当当当当当当当当当当当”，而到了<code>23:01</code>就会是“当当当当当当当当当当当当”。在午夜<code>00:00</code>到中午<code>12:00</code>期间（端点时间包括在内），笨钟是不敲的。</p>
 <p>下面就请你写个程序，根据当前时间替大笨钟敲钟。</p>
-<h2 id="输入格式：">输入格式：</h2>
+<h2 id="输入格式">输入格式：</h2>
 <p>输入第一行按照<code>hh:mm</code>的格式给出当前时间。其中hh是小时，在00到23之间；mm是分钟，在00到59之间。</p>
-<h2 id="输出格式：">输出格式：</h2>
+<h2 id="输出格式">输出格式：</h2>
 <p>根据当前时间替大笨钟敲钟，即在一行中输出相应数量个<code>Dang</code>。如果不是敲钟期，则输出：<code>Only hh:mm.  Too early to Dang.</code>其中<code>hh:mm</code>是输入的时间。</p>
-<h2 id="输入样例1：">输入样例1：</h2>
+<h2 id="输入样例1">输入样例1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">19:05<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="输出样例1：">输出样例1：</h2>
+<h2 id="输出样例1">输出样例1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">DangDangDangDangDangDangDangDang<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="输入样例2：">输入样例2：</h2>
+<h2 id="输入样例2">输入样例2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">07:05<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="输出样例2：">输出样例2：</h2>
+<h2 id="输出样例2">输出样例2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Only 07:05.  Too early to Dang.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="Code">Code</h2>
+<h2 id="code">Code</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -290,20 +290,36 @@
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="1002-宇宙无敌加法器">1002 宇宙无敌加法器</h2>
-<p>地球人习惯使用十进制数，并且默认一个数字的每一位都是十进制的。而在 PAT 星人开挂的世界里，每个数字的每一位都是不同进制的，这种神奇的数字称为“PAT数”。每个 PAT 星人都必须熟记各位数字的进制表，例如“……0527”就表示最低位是 7 进制数、第 2 位是 2 进制数、第 3 位是 5 进制数、第 4 位是 10 进制数，等等。每一位的进制 d 或者是 0（表示十进制）、或者是 [2，9] 区间内的整数。理论上这个进制表应该包含无穷多位数字，但从实际应用出发，PAT 星人通常只需要记住前 20 位就够用了，以后各位默认为 10 进制。</p>
-<p>在这样的数字系统中，即使是简单的加法运算也变得不简单。例如对应进制表“0527”，该如何计算“6203 + 415”呢？我们得首先计算最低位：3 + 5 = 8；因为最低位是 7 进制的，所以我们得到 1 和 1 个进位。第 2 位是：0 + 1 + 1（进位）= 2；因为此位是 2 进制的，所以我们得到 0 和 1 个进位。第 3 位是：2 + 4 + 1（进位）= 7；因为此位是 5 进制的，所以我们得到 2 和 1 个进位。第 4 位是：6 + 1（进位）= 7；因为此位是 10 进制的，所以我们就得到 7。最后我们得到：6203 + 415 = 7201。</p>
-<h2 id="输入格式：-2">输入格式：</h2>
-<p>输入首先在第一行给出一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 位的进制表<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>（</mtext><mn>0</mn><mo>&lt;</mo><mi>N</mi><mo>≤</mo><mn>20</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">（0 &lt; N ≤ 20）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord cjk_fallback">（</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">20</span><span class="mord cjk_fallback">）</span></span></span></span>，以回车结束。 随后两行，每行给出一个不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 位的非负的 PAT 数。</p>
-<h2 id="输出格式：-2">输出格式：</h2>
+<h2 id="宇宙无敌加法器">1002 宇宙无敌加法器</h2>
+<p>地球人习惯使用十进制数，并且默认一个数字的每一位都是十进制的。而在
+PAT
+星人开挂的世界里，每个数字的每一位都是不同进制的，这种神奇的数字称为“PAT数”。每个
+PAT 星人都必须熟记各位数字的进制表，例如“……0527”就表示最低位是 7
+进制数、第 2 位是 2 进制数、第 3 位是 5 进制数、第 4 位是 10
+进制数，等等。每一位的进制 d 或者是 0（表示十进制）、或者是 [2，9]
+区间内的整数。理论上这个进制表应该包含无穷多位数字，但从实际应用出发，PAT
+星人通常只需要记住前 20 位就够用了，以后各位默认为 10 进制。</p>
+<p>在这样的数字系统中，即使是简单的加法运算也变得不简单。例如对应进制表“0527”，该如何计算“6203
++ 415”呢？我们得首先计算最低位：3 + 5 = 8；因为最低位是 7
+进制的，所以我们得到 1 和 1 个进位。第 2 位是：0 + 1 + 1（进位）=
+2；因为此位是 2 进制的，所以我们得到 0 和 1 个进位。第 3 位是：2 + 4 +
+1（进位）= 7；因为此位是 5 进制的，所以我们得到 2 和 1 个进位。第 4
+位是：6 + 1（进位）= 7；因为此位是 10 进制的，所以我们就得到
+7。最后我们得到：6203 + 415 = 7201。</p>
+<h2 id="输入格式-1">输入格式：</h2>
+<p>输入首先在第一行给出一个 <span class="math inline">\(N\)</span>
+位的进制表<span class="math inline">\(（0 &lt; N ≤
+20）\)</span>，以回车结束。 随后两行，每行给出一个不超过 <span
+class="math inline">\(N\)</span> 位的非负的 PAT 数。</p>
+<h2 id="输出格式-1">输出格式：</h2>
 <p>在一行中输出两个 PAT 数之和。</p>
-<h2 id="输入样例：">输入样例：</h2>
+<h2 id="输入样例">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">30527
 06203
 415<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：">输出样例：</h2>
+<h2 id="输出样例">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">7201<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="Code-2">Code</h2>
+<h2 id="code-1">Code</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -380,22 +396,28 @@
     cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="1003-到底是不是太胖了">1003 到底是不是太胖了</h2>
-<p>据说一个人的标准体重应该是其身高（单位：厘米）减去100、再乘以0.9所得到的公斤数。真实体重与标准体重误差在10%以内都是完美身材（即 | 真实体重 − 标准体重 | &lt; 标准体重×10%）。已知市斤是公斤的两倍。现给定一群人的身高和实际体重，请你告诉他们是否太胖或太瘦了。</p>
-<h2 id="输入格式：-3">输入格式：</h2>
-<p>输入第一行给出一个正整数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>20</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤ 20）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">20</span><span class="mord cjk_fallback">）</span></span></span></span>。随后N行，每行给出两个整数，分别是一个人的身高<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mtext>（</mtext><mn>120</mn><mo>&lt;</mo><mi>H</mi><mo>&lt;</mo><mn>200</mn><mtext>；</mtext></mrow><annotation encoding="application/x-tex">H（120 &lt; H &lt; 200；</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord cjk_fallback">（</span><span class="mord">120</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">200</span><span class="mord cjk_fallback">；</span></span></span></span>单位：厘米）和真实体重<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mtext>（</mtext><mn>50</mn><mo>&lt;</mo><mi>W</mi><mo>≤</mo><mn>300</mn><mtext>；</mtext></mrow><annotation encoding="application/x-tex">W（50 &lt; W ≤ 300；</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mord cjk_fallback">（</span><span class="mord">50</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">300</span><span class="mord cjk_fallback">；</span></span></span></span>单位：市斤），其间以空格分隔。</p>
-<h2 id="输出格式：-3">输出格式：</h2>
+<h2 id="到底是不是太胖了">1003 到底是不是太胖了</h2>
+<p>据说一个人的标准体重应该是其身高（单位：厘米）减去100、再乘以0.9所得到的公斤数。真实体重与标准体重误差在10%以内都是完美身材（即
+| 真实体重 − 标准体重 | &lt;
+标准体重×10%）。已知市斤是公斤的两倍。现给定一群人的身高和实际体重，请你告诉他们是否太胖或太瘦了。</p>
+<h2 id="输入格式-2">输入格式：</h2>
+<p>输入第一行给出一个正整数<span class="math inline">\(N（≤
+20）\)</span>。随后N行，每行给出两个整数，分别是一个人的身高<span
+class="math inline">\(H（120 &lt; H &lt;
+200；\)</span>单位：厘米）和真实体重<span class="math inline">\(W（50
+&lt; W ≤ 300；\)</span>单位：市斤），其间以空格分隔。</p>
+<h2 id="输出格式-2">输出格式：</h2>
 <p>为每个人输出一行结论：如果是完美身材，输出<code>You are wan mei!</code>；如果太胖了，输出<code>You are tai pang le!</code>；否则输出<code>You are tai shou le!</code>。</p>
-<h2 id="输入样例：-2">输入样例：</h2>
+<h2 id="输入样例-1">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3
 169 136
 150 81
 178 155<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：-2">输出样例：</h2>
+<h2 id="输出样例-1">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">You are wan mei!
 You are tai shou le!
 You are tai pang le!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code1">Code1</h2>
+<h2 id="code1">Code1</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -415,7 +437,7 @@ You are tai pang le!<span aria-hidden="true" class="line-numbers-rows"><span></s
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code2">Code2</h2>
+<h2 id="code2">Code2</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -435,15 +457,21 @@ You are tai pang le!<span aria-hidden="true" class="line-numbers-rows"><span></s
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="1005-抢红包">1005 抢红包</h2>
-<p>没有人没抢过红包吧…… 这里给出N个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。</p>
-<h2 id="输入格式：-4">输入格式：</h2>
-<p>输入第一行给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤10^4）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mord cjk_fallback">）</span></span></span></span> ，即参与发红包和抢红包的总人数，则这些人从1到N编号。随后N行，第i行给出编号为i的人发红包的记录，格式如下：</p>
+<h2 id="抢红包">1005 抢红包</h2>
+<p>没有人没抢过红包吧……
+这里给出N个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。</p>
+<h2 id="输入格式-3">输入格式：</h2>
+<p>输入第一行给出一个正整数 <span
+class="math inline">\(N（≤10^4）\)</span>
+，即参与发红包和抢红包的总人数，则这些人从1到N编号。随后N行，第i行给出编号为i的人发红包的记录，格式如下：</p>
 <p><code>K N_1 P_1 ⋯ N_K P_K</code></p>
-<p>其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mtext>（</mtext><mn>0</mn><mo>≤</mo><mi>K</mi><mo>≤</mo><mn>20</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">K（0≤K≤20）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mord cjk_fallback">（</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">20</span><span class="mord cjk_fallback">）</span></span></span></span> 是发出去的红包个数，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">N_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是抢到红包的人的编号， <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub><mtext>（</mtext><mo>&gt;</mo><mn>0</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">P_i（&gt;0）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">0</span><span class="mord cjk_fallback">）</span></span></span></span> 是其抢到的红包金额（以分为单位）。注意：对于同一个人发出的红包，每人最多只能抢1次，不能重复抢。</p>
-<h2 id="输出格式：-4">输出格式：</h2>
+<p>其中 <span class="math inline">\(K（0≤K≤20）\)</span>
+是发出去的红包个数，<span class="math inline">\(N_i\)</span>
+是抢到红包的人的编号， <span class="math inline">\(P_i（&gt;0）\)</span>
+是其抢到的红包金额（以分为单位）。注意：对于同一个人发出的红包，每人最多只能抢1次，不能重复抢。</p>
+<h2 id="输出格式-3">输出格式：</h2>
 <p>按照收入金额从高到低的递减顺序输出每个人的编号和收入金额（以元为单位，输出小数点后2位）。每个人的信息占一行，两数字间有1个空格。如果收入金额有并列，则按抢到红包的个数递减输出；如果还有并列，则按个人编号递增输出。</p>
-<h2 id="输入样例：-3">输入样例：</h2>
+<h2 id="输入样例-2">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">10
 3 2 22 10 58 8 125
 5 1 345 3 211 5 233 7 13 8 101
@@ -455,7 +483,7 @@ You are tai pang le!<span aria-hidden="true" class="line-numbers-rows"><span></s
 2 1 23 2 123
 1 8 250
 4 2 121 4 516 7 112 9 10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：-3">输出样例：</h2>
+<h2 id="输出样例-2">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1 11.63
 2 3.63
 8 3.63
@@ -466,7 +494,7 @@ You are tai pang le!<span aria-hidden="true" class="line-numbers-rows"><span></s
 10 -3.26
 5 -3.26
 4 -12.32<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code-3">Code</h2>
+<h2 id="code-2">Code</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
@@ -506,15 +534,24 @@ You are tai pang le!<span aria-hidden="true" class="line-numbers-rows"><span></s
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="1006-社交集群">1006 社交集群</h2>
+<h2 id="社交集群">1006 社交集群</h2>
 <p>当你在社交网络平台注册时，一般总是被要求填写你的个人兴趣爱好，以便找到具有相同兴趣爱好的潜在的朋友。一个“社交集群”是指部分兴趣爱好相同的人的集合。你需要找出所有的社交集群。</p>
-<h2 id="输入格式：-5">输入格式：</h2>
-<p>输入在第一行给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>1000</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤1000）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">1000</span><span class="mord cjk_fallback">）</span></span></span></span>，为社交网络平台注册的所有用户的人数。于是这些人从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 编号。随后 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 行，每行按以下格式给出一个人的兴趣爱好列表：</p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>i</mi></msub><mo>:</mo><msub><mi>h</mi><mi>i</mi></msub><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo><msub><mi>h</mi><mi>i</mi></msub><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><msub><mi>h</mi><mi>i</mi></msub><mo stretchy="false">[</mo><msub><mi>K</mi><mi>i</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">K_i: h_i[1] h_i[2] ... h_i[K_i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord">1</span><span class="mclose">]</span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord">2</span><span class="mclose">]</span><span class="mord">...</span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></p>
-<p>其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mo>&gt;</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">K_i(&gt;0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> 是兴趣爱好的个数，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>i</mi></msub><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">h_i[j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span> 是第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>个兴趣爱好的编号，为区间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mn>1000</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[1, 1000]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1000</span><span class="mclose">]</span></span></span></span> 内的整数。</p>
-<h2 id="输出格式：-5">输出格式：</h2>
+<h2 id="输入格式-4">输入格式：</h2>
+<p>输入在第一行给出一个正整数 <span
+class="math inline">\(N（≤1000）\)</span>，为社交网络平台注册的所有用户的人数。于是这些人从
+<span class="math inline">\(1\)</span> 到 <span
+class="math inline">\(N\)</span> 编号。随后 <span
+class="math inline">\(N\)</span>
+行，每行按以下格式给出一个人的兴趣爱好列表：</p>
+<p><span class="math inline">\(K_i: h_i[1] h_i[2] ...
+h_i[K_i]\)</span></p>
+<p>其中 <span class="math inline">\(K_i(&gt;0)\)</span>
+是兴趣爱好的个数，<span class="math inline">\(h_i[j]\)</span> 是第<span
+class="math inline">\(j\)</span>个兴趣爱好的编号，为区间 <span
+class="math inline">\([1, 1000]\)</span> 内的整数。</p>
+<h2 id="输出格式-4">输出格式：</h2>
 <p>首先在一行中输出不同的社交集群的个数。随后第二行按非增序输出每个集群中的人数。数字间以一个空格分隔，行末不得有多余空格。</p>
-<h2 id="输入样例：-4">输入样例：</h2>
+<h2 id="输入样例-3">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">8
 3: 2 7 10
 1: 4
@@ -524,10 +561,10 @@ You are tai pang le!<span aria-hidden="true" class="line-numbers-rows"><span></s
 1: 4
 4: 6 8 1 5
 1: 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：-4">输出样例：</h2>
+<h2 id="输出样例-3">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3
 4 3 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code-4">Code</h2>
+<h2 id="code-3">Code</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> p<span class="token punctuation">[</span><span class="token number">1009</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token number">1009</span><span class="token punctuation">]</span><span class="token punctuation">,</span> hobby<span class="token punctuation">[</span><span class="token number">1009</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 

@@ -16,12 +16,12 @@
   <meta name="author" content="nanyan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="A Mathematical Curiosity Problem Description Given two integers n and m, count the number of pairs of integers (a,b) such that 0 &lt; a &lt; b &lt; n and (a^2+b^2 +m)&#x2F;(ab) is an integer. This problem">
+    <meta name="description" content="A Mathematical Curiosity Problem Description Given two integers n and m, count the number of pairs of integers (a,b) such that 0 &lt; a &lt; b &lt; n and (a2+b2 +m)&#x2F;(ab) is an integer. This problem co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDUOJ | 1017 A Mathematical Curiosity">
 <meta property="og:url" content="http://acm.nanyan.cc/posts/404f.html">
 <meta property="og:site_name" content="ACM笔记">
-<meta property="og:description" content="A Mathematical Curiosity Problem Description Given two integers n and m, count the number of pairs of integers (a,b) such that 0 &lt; a &lt; b &lt; n and (a^2+b^2 +m)&#x2F;(ab) is an integer. This problem">
+<meta property="og:description" content="A Mathematical Curiosity Problem Description Given two integers n and m, count the number of pairs of integers (a,b) such that 0 &lt; a &lt; b &lt; n and (a2+b2 +m)&#x2F;(ab) is an integer. This problem co">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-14T07:43:36.000Z">
 <meta property="article:modified_time" content="2024-02-04T09:13:07.511Z">
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          184 字
+          182 字
         
       </span>
     
@@ -252,28 +252,39 @@
             
               <div class="markdown-body">
                 
-                <h1>A Mathematical Curiosity</h1>
-<h2 id="Problem-Description">Problem Description</h2>
-<p>Given two integers n and m, count the number of pairs of integers (a,b) such that 0 &lt; a &lt; b &lt; n and (a^2+b^2 +m)/(ab) is an integer.</p>
+                <h1 id="a-mathematical-curiosity">A Mathematical Curiosity</h1>
+<h2 id="problem-description">Problem Description</h2>
+<p>Given two integers n and m, count the number of pairs of integers
+(a,b) such that 0 &lt; a &lt; b &lt; n and (a<sup>2+b</sup>2 +m)/(ab) is
+an integer.</p>
 <p>This problem contains multiple test cases!</p>
-<p>The first line of a multiple input is an integer N, then a blank line followed by N input blocks. Each input block is in the format indicated in the problem description. There is a blank line between input blocks.</p>
-<p>The output format consists of N output blocks. There is a blank line between output blocks.</p>
-<h2 id="Input">Input</h2>
-<p>You will be given a number of cases in the input. Each case is specified by a line containing the integers n and m. The end of input is indicated by a case in which n = m = 0. You may assume that 0 &lt; n &lt;= 100.</p>
-<h2 id="Output">Output</h2>
-<p>For each case, print the case number as well as the number of pairs (a,b) satisfying the given property. Print the output for each case on one line in the format as shown below.</p>
-<h2 id="Sample-Input">Sample Input</h2>
+<p>The first line of a multiple input is an integer N, then a blank line
+followed by N input blocks. Each input block is in the format indicated
+in the problem description. There is a blank line between input
+blocks.</p>
+<p>The output format consists of N output blocks. There is a blank line
+between output blocks.</p>
+<h2 id="input">Input</h2>
+<p>You will be given a number of cases in the input. Each case is
+specified by a line containing the integers n and m. The end of input is
+indicated by a case in which n = m = 0. You may assume that 0 &lt; n
+&lt;= 100.</p>
+<h2 id="output">Output</h2>
+<p>For each case, print the case number as well as the number of pairs
+(a,b) satisfying the given property. Print the output for each case on
+one line in the format as shown below.</p>
+<h2 id="sample-input">Sample Input</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1
 
 10 1
 20 3
 30 4
 0 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Sample-Output">Sample Output</h2>
+<h2 id="sample-output">Sample Output</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Case 1: 2
 Case 2: 4
 Case 3: 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code">Code</h2>
+<h2 id="code">Code</h2>
 <p>这道题的输入输出很阴间</p>
 <p>m==0 &amp;&amp; n==0 是错误的，但是 m==0 || n==0 是正确的</p>
 <p>然后t是控制大循环的输出样例</p>
@@ -306,6 +317,7 @@ Case 3: 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
     
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+
                 
               </div>
             

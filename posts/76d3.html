@@ -252,63 +252,93 @@
             
               <div class="markdown-body">
                 
-                <p>在 C++ 中，<code>string</code> 类型是一种非常灵活的数据类型，用于处理文本。这里是 <code>string</code> 类的一些主要操作方法：</p>
-<h1>构造函数:</h1>
+                <p>在 C++ 中，<code>string</code>
+类型是一种非常灵活的数据类型，用于处理文本。这里是 <code>string</code>
+类的一些主要操作方法：</p>
+<h1 id="构造函数">构造函数:</h1>
 <ul>
 <li><code>string()</code>: 创建一个空字符串。</li>
 <li><code>string(const string&amp; str)</code>: 复制构造函数。</li>
-<li><code>string(const string&amp; str, size_type pos, size_type len = npos)</code>: 从另一个字符串中创建子字符串。</li>
+<li><code>string(const string&amp; str, size_type pos, size_type len = npos)</code>:
+从另一个字符串中创建子字符串。</li>
 <li><code>string(const char* s)</code>: 从 C 风格字符串创建字符串。</li>
-<li><code>string(const char* s, size_type n)</code>: 从 C 风格字符串的前 n 个字符创建字符串。</li>
-<li><code>string(size_type n, char c)</code>: 创建一个重复 n 次字符 c 的字符串。</li>
+<li><code>string(const char* s, size_type n)</code>: 从 C 风格字符串的前
+n 个字符创建字符串。</li>
+<li><code>string(size_type n, char c)</code>: 创建一个重复 n 次字符 c
+的字符串。</li>
 </ul>
-<h1>赋值操作:</h1>
+<h1 id="赋值操作">赋值操作:</h1>
 <ul>
-<li><code>string&amp; operator=(const string&amp; str)</code>: 赋值运算符。</li>
-<li><code>string&amp; operator=(const char* s)</code>: 将 C 风格字符串赋给当前字符串。</li>
-<li><code>string&amp; operator=(char c)</code>: 将字符 c 赋给当前字符串。</li>
+<li><code>string&amp; operator=(const string&amp; str)</code>:
+赋值运算符。</li>
+<li><code>string&amp; operator=(const char* s)</code>: 将 C
+风格字符串赋给当前字符串。</li>
+<li><code>string&amp; operator=(char c)</code>: 将字符 c
+赋给当前字符串。</li>
 </ul>
-<h1>元素访问:</h1>
+<h1 id="元素访问">元素访问:</h1>
 <ul>
-<li><code>char&amp; operator[](size_type pos)</code>: 访问指定位置的字符。</li>
-<li><code>const char&amp; operator[](size_type pos) const</code>: 访问指定位置的字符（const 版本）。</li>
-<li><code>char&amp; at(size_type pos)</code>: 类似于 operator[]，但包含边界检查。</li>
-<li><code>const char&amp; at(size_type pos) const</code>: 边界检查的访问（const 版本）。</li>
+<li><code>char&amp; operator[](size_type pos)</code>:
+访问指定位置的字符。</li>
+<li><code>const char&amp; operator[](size_type pos) const</code>:
+访问指定位置的字符（const 版本）。</li>
+<li><code>char&amp; at(size_type pos)</code>: 类似于
+operator[]，但包含边界检查。</li>
+<li><code>const char&amp; at(size_type pos) const</code>:
+边界检查的访问（const 版本）。</li>
 <li><code>char&amp; back()</code>: 访问最后一个字符。</li>
-<li><code>const char&amp; back() const</code>: 访问最后一个字符（const 版本）。</li>
+<li><code>const char&amp; back() const</code>: 访问最后一个字符（const
+版本）。</li>
 <li><code>char&amp; front()</code>: 访问第一个字符。</li>
-<li><code>const char&amp; front() const</code>: 访问第一个字符（const 版本）。</li>
+<li><code>const char&amp; front() const</code>: 访问第一个字符（const
+版本）。</li>
 </ul>
-<h1>字符串操作:</h1>
+<h1 id="字符串操作">字符串操作:</h1>
 <ul>
-<li><code>string&amp; operator+=(const string&amp; str)</code>: 连接另一个字符串。</li>
-<li><code>string&amp; append(const string&amp; str)</code>: 连接另一个字符串。</li>
-<li><code>string&amp; insert(size_type pos, const string&amp; str)</code>: 在指定位置插入另一个字符串。</li>
-<li><code>string&amp; erase(size_type pos = 0, size_type len = npos)</code>: 从字符串中移除部分字符。</li>
+<li><code>string&amp; operator+=(const string&amp; str)</code>:
+连接另一个字符串。</li>
+<li><code>string&amp; append(const string&amp; str)</code>:
+连接另一个字符串。</li>
+<li><code>string&amp; insert(size_type pos, const string&amp; str)</code>:
+在指定位置插入另一个字符串。</li>
+<li><code>string&amp; erase(size_type pos = 0, size_type len = npos)</code>:
+从字符串中移除部分字符。</li>
 <li><code>void swap(string&amp; str)</code>: 交换两个字符串的内容。</li>
-<li><code>const char* c_str() const</code>: 返回 C 风格的字符串表示。</li>
+<li><code>const char* c_str() const</code>: 返回 C
+风格的字符串表示。</li>
 <li><code>const char* data() const</code>: 返回字符串的数组表示。</li>
-<li><code>size_type find(const string&amp; str, size_type pos = 0) const</code>: 查找子字符串。</li>
+<li><code>size_type find(const string&amp; str, size_type pos = 0) const</code>:
+查找子字符串。</li>
 </ul>
-<h1>大小和容量:</h1>
+<h1 id="大小和容量">大小和容量:</h1>
 <ul>
 <li><code>size_type size() const</code>: 返回字符串的长度。</li>
-<li><code>size_type length() const</code>: 与 size() 类似，返回字符串的长度。</li>
-<li><code>size_type max_size() const</code>: 返回字符串可能的最大长度。</li>
-<li><code>void resize(size_type n, char c)</code>: 调整字符串的长度。</li>
+<li><code>size_type length() const</code>: 与 size()
+类似，返回字符串的长度。</li>
+<li><code>size_type max_size() const</code>:
+返回字符串可能的最大长度。</li>
+<li><code>void resize(size_type n, char c)</code>:
+调整字符串的长度。</li>
 <li><code>size_type capacity() const</code>: 返回字符串当前的容量。</li>
-<li><code>void reserve(size_type n = 0)</code>: 请求改变字符串的容量。</li>
+<li><code>void reserve(size_type n = 0)</code>:
+请求改变字符串的容量。</li>
 <li><code>bool empty() const</code>: 检查字符串是否为空。</li>
 </ul>
-<h1>比较操作:</h1>
+<h1 id="比较操作">比较操作:</h1>
 <ul>
-<li>重载了各种形式的 <code>operator==</code>, <code>operator!=</code>, <code>operator&lt;</code>, <code>operator&lt;=</code>, <code>operator&gt;</code>, <code>operator&gt;=</code>，用于比较字符串。</li>
+<li>重载了各种形式的 <code>operator==</code>, <code>operator!=</code>,
+<code>operator&lt;</code>, <code>operator&lt;=</code>,
+<code>operator&gt;</code>,
+<code>operator&gt;=</code>，用于比较字符串。</li>
 </ul>
-<h1>子串:</h1>
+<h1 id="子串">子串:</h1>
 <ul>
-<li><code>string substr(size_type pos = 0, size_type len = npos) const</code>: 返回一个子字符串。</li>
+<li><code>string substr(size_type pos = 0, size_type len = npos) const</code>:
+返回一个子字符串。</li>
 </ul>
-<p>这些方法提供了对字符串的广泛操作，包括创建、修改、比较和查询。这只是 <code>std::string</code> 类的一个概览，详细信息可以在 C++ 标准库文档中找到。</p>
+<p>这些方法提供了对字符串的广泛操作，包括创建、修改、比较和查询。这只是
+<code>std::string</code> 类的一个概览，详细信息可以在 C++
+标准库文档中找到。</p>
 
                 
               </div>

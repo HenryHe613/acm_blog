@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.1k 字
+          8.9k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          76 分钟
+          75 分钟
         
       </span>
     
@@ -252,8 +252,8 @@
             
               <div class="markdown-body">
                 
-                <h1>L1-6 斯德哥尔摩火车上的题</h1>
-<p>上图是新浪微博上的一则趣闻，是瑞典斯德哥尔摩火车上的一道题，看上去是段伪代码：</p>
+                <h1 id="l1-6-斯德哥尔摩火车上的题">L1-6 斯德哥尔摩火车上的题</h1>
+<p>上图是新浪微博上的一则趣闻，是瑞典斯德哥尔摩火车上的一道题，看上去是段伪代码：
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c">s <span class="token operator">=</span> <span class="token char">''</span>
 a <span class="token operator">=</span> <span class="token char">'1112031584'</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">length</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -261,29 +261,33 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
     s <span class="token operator">+=</span> <span class="token function">max</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token function">goto_url</span><span class="token punctuation">(</span><span class="token char">'www.multisoft.se/'</span> <span class="token operator">+</span> s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<p>其中字符串的 <code>+</code> 操作是连接两个字符串的意思。所以这道题其实是让大家访问网站 <code>www.multisoft.se/112358</code>（注意：比赛中千万不要访问这个网址！！！）。</p>
-<p>当然，能通过上述算法得到 <code>112358</code> 的原始字符串 <code>a</code> 是不唯一的。本题就请你判断，两个给定的原始字符串，能否通过上述算法得到相同的输出？</p>
-<h2 id="输入格式：">输入格式：</h2>
-<p>输入为两行仅由数字组成的非空字符串，长度均不超过 <code>10^4</code>，以回车结束。</p>
-<h2 id="输出格式：">输出格式：</h2>
+<span class="token function">goto_url</span><span class="token punctuation">(</span><span class="token char">'www.multisoft.se/'</span> <span class="token operator">+</span> s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure> 其中字符串的 <code>+</code>
+操作是连接两个字符串的意思。所以这道题其实是让大家访问网站
+<code>www.multisoft.se/112358</code>（注意：比赛中千万不要访问这个网址！！！）。</p>
+<p>当然，能通过上述算法得到 <code>112358</code> 的原始字符串
+<code>a</code>
+是不唯一的。本题就请你判断，两个给定的原始字符串，能否通过上述算法得到相同的输出？</p>
+<h2 id="输入格式">输入格式：</h2>
+<p>输入为两行仅由数字组成的非空字符串，长度均不超过
+<code>10^4</code>，以回车结束。</p>
+<h2 id="输出格式">输出格式：</h2>
 <p>对两个字符串分别采用上述斯德哥尔摩火车上的算法进行处理。如果两个结果是一样的，则在一行中输出那个结果；否则分别输出各自对应的处理结果，每个占一行。题目保证输出结果不为空。</p>
-<h2 id="输入样例-1：">输入样例 1：</h2>
+<h2 id="输入样例-1">输入样例 1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1112031584
 011102315849
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例-1：">输出样例 1：</h2>
+<h2 id="输出样例-1">输出样例 1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">112358
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="输入样例-2：">输入样例 2：</h2>
+<h2 id="输入样例-2">输入样例 2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">111203158412334
 12341112031584
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例-2：">输出样例 2：</h2>
+<h2 id="输出样例-2">输出样例 2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1123583
 112358
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code">Code:</h2>
+<h2 id="code">Code:</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -315,14 +319,21 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>L1-7 机工士姆斯塔迪奥</h1>
-<p>在 MMORPG《最终幻想14》的副本“乐欲之所瓯博讷修道院”里，BOSS 机工士姆斯塔迪奥将会接受玩家的挑战。</p>
-<p>你需要处理这个副本其中的一个机制：N×M 大小的地图被拆分为了 N×M 个 1×1 的格子，BOSS 会选择若干行或/及若干列释放技能，玩家不能站在释放技能的方格上，否则就会被击中而失败。</p>
-<p>给定 BOSS 所有释放技能的行或列信息，请你计算出最后有多少个格子是安全的。</p>
-<h2 id="输入格式">输入格式:</h2>
-<p>输入第一行是三个整数 N,M,Q (1≤N×M≤10^5，0≤Q≤1000)，表示地图为 N 行 M 列大小以及选择的行/列数量。</p>
-<p>接下来 Q 行，每行两个数 Ti,Ci，其中 Ti=0 表示 BOSS 选择的是一整行，Ti=1 表示选择的是一整列，Ci  为选择的行号/列号。行和列的编号均从 1 开始。</p>
-<h2 id="输出格式">输出格式:</h2>
+<h1 id="l1-7-机工士姆斯塔迪奥">L1-7 机工士姆斯塔迪奥</h1>
+<p>在 MMORPG《最终幻想14》的副本“乐欲之所瓯博讷修道院”里，BOSS
+机工士姆斯塔迪奥将会接受玩家的挑战。</p>
+<p>你需要处理这个副本其中的一个机制：N×M 大小的地图被拆分为了 N×M 个 1×1
+的格子，BOSS
+会选择若干行或/及若干列释放技能，玩家不能站在释放技能的方格上，否则就会被击中而失败。</p>
+<p>给定 BOSS
+所有释放技能的行或列信息，请你计算出最后有多少个格子是安全的。</p>
+<h2 id="输入格式-1">输入格式:</h2>
+<p>输入第一行是三个整数 N,M,Q (1≤N×M≤10^5，0≤Q≤1000)，表示地图为 N 行 M
+列大小以及选择的行/列数量。</p>
+<p>接下来 Q 行，每行两个数 Ti,Ci，其中 Ti=0 表示 BOSS
+选择的是一整行，Ti=1 表示选择的是一整列，Ci
+为选择的行号/列号。行和列的编号均从 1 开始。</p>
+<h2 id="输出格式-1">输出格式:</h2>
 <p>输出一个数，表示安全格子的数量。</p>
 <h2 id="输入样例">输入样例:</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5 5 3
@@ -331,7 +342,7 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
 1 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <h2 id="输出样例">输出样例:</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">12<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="Code-2">Code:</h2>
+<h2 id="code-1">Code:</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -359,19 +370,24 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span><span class="token punctuation">(</span>N<span class="token operator">-</span>count_l<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>M<span class="token operator">-</span>count_r<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>L1-8 静静的推荐</h1>
+<h1 id="l1-8-静静的推荐">L1-8 静静的推荐</h1>
 <p>天梯赛结束后，某企业的人力资源部希望组委会能推荐一批优秀的学生，这个整理推荐名单的任务就由静静姐负责。企业接受推荐的流程是这样的：</p>
-<p>只考虑得分不低于 <code>175</code> 分的学生；<br>
-一共接受 <code>K</code> 批次的推荐名单；<br>
-同一批推荐名单上的学生的成绩原则上应严格递增；<br>
-如果有的学生天梯赛成绩虽然与前一个人相同，但其参加过 PAT 考试，且成绩达到了该企业的面试分数线，则也可以接受。<br>
-给定全体参赛学生的成绩和他们的 PAT 考试成绩，请你帮静静姐算一算，她最多能向企业推荐多少学生？</p>
-<h2 id="输入格式：-2">输入格式：</h2>
-<p>输入第一行给出 3 个正整数：<code>N</code>（≤10^5）为参赛学生人数，<code>K</code>（≤5×10^3）为企业接受的推荐批次，<code>S</code>（≤100）为该企业的 PAT 面试分数线。</p>
-<p>随后 <code>N</code> 行，每行给出两个分数，依次为一位学生的天梯赛分数（最高分 290）和 PAT 分数（最高分 100）。</p>
-<h2 id="输出格式：-2">输出格式：</h2>
+<p>只考虑得分不低于 <code>175</code> 分的学生； 一共接受 <code>K</code>
+批次的推荐名单； 同一批推荐名单上的学生的成绩原则上应严格递增；
+如果有的学生天梯赛成绩虽然与前一个人相同，但其参加过 PAT
+考试，且成绩达到了该企业的面试分数线，则也可以接受。
+给定全体参赛学生的成绩和他们的 PAT
+考试成绩，请你帮静静姐算一算，她最多能向企业推荐多少学生？</p>
+<h2 id="输入格式-2">输入格式：</h2>
+<p>输入第一行给出 3
+个正整数：<code>N</code>（≤10<sup>5）为参赛学生人数，<code>K</code>（≤5×10</sup>3）为企业接受的推荐批次，<code>S</code>（≤100）为该企业的
+PAT 面试分数线。</p>
+<p>随后 <code>N</code>
+行，每行给出两个分数，依次为一位学生的天梯赛分数（最高分 290）和 PAT
+分数（最高分 100）。</p>
+<h2 id="输出格式-2">输出格式：</h2>
 <p>在一行中输出静静姐最多能向企业推荐的学生人数。</p>
-<h2 id="输入样例：">输入样例：</h2>
+<h2 id="输入样例-3">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">10 2 90
 203 0
 169 91
@@ -383,11 +399,14 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
 189 95
 189 89
 256 100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：">输出样例：</h2>
+<h2 id="输出样例-3">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">8<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="样例解释：">样例解释：</h2>
-<p>第一批可以选择 175、189、203、256 这四个分数的学生各一名，此外 175 分 PAT 分数达到 90 分的学生和 189 分 PAT 分数达到 95 分的学生可以额外进入名单。第二批就只剩下 175、189 两个分数的学生各一名可以进入名单了。最终一共 8 人进入推荐名单。</p>
-<h2 id="Code未优化">Code未优化</h2>
+<h2 id="样例解释">样例解释：</h2>
+<p>第一批可以选择 175、189、203、256 这四个分数的学生各一名，此外 175 分
+PAT 分数达到 90 分的学生和 189 分 PAT 分数达到 95
+分的学生可以额外进入名单。第二批就只剩下 175、189
+两个分数的学生各一名可以进入名单了。最终一共 8 人进入推荐名单。</p>
+<h2 id="code未优化">Code未优化</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
@@ -501,7 +520,7 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code精简版但超时：">Code精简版但超时：</h2>
+<h2 id="code精简版但超时">Code精简版但超时：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
@@ -557,32 +576,37 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>L2-1 插松枝</h1>
+<h1 id="l2-1-插松枝">L2-1 插松枝</h1>
 <p>人造松枝加工场的工人需要将各种尺寸的塑料松针插到松枝干上，做成大大小小的松枝。他们的工作流程（并不）是这样的：</p>
-<p>每人手边有一只小盒子，初始状态为空。<br>
-每人面前有用不完的松枝干和一个推送器，每次推送一片随机型号的松针片。<br>
-工人首先捡起一根空的松枝干，从小盒子里摸出最上面的一片松针 —— 如果小盒子是空的，就从推送器上取一片松针。将这片松针插到枝干的最下面。<br>
-工人在插后面的松针时，需要保证，每一步插到一根非空松枝干上的松针片，不能比前一步插上的松针片大。如果小盒子中最上面的松针满足要求，就取之插好；否则去推送器上取一片。如果推送器上拿到的仍然不满足要求，就把拿到的这片堆放到小盒子里，继续去推送器上取下一片。注意这里假设小盒子里的松针片是按放入的顺序堆叠起来的，工人每次只能取出最上面（即最后放入）的一片。<br>
-当下列三种情况之一发生时，工人会结束手里的松枝制作，开始做下一个：<br>
+<p>每人手边有一只小盒子，初始状态为空。
+每人面前有用不完的松枝干和一个推送器，每次推送一片随机型号的松针片。
+工人首先捡起一根空的松枝干，从小盒子里摸出最上面的一片松针 ——
+如果小盒子是空的，就从推送器上取一片松针。将这片松针插到枝干的最下面。
+工人在插后面的松针时，需要保证，每一步插到一根非空松枝干上的松针片，不能比前一步插上的松针片大。如果小盒子中最上面的松针满足要求，就取之插好；否则去推送器上取一片。如果推送器上拿到的仍然不满足要求，就把拿到的这片堆放到小盒子里，继续去推送器上取下一片。注意这里假设小盒子里的松针片是按放入的顺序堆叠起来的，工人每次只能取出最上面（即最后放入）的一片。
+当下列三种情况之一发生时，工人会结束手里的松枝制作，开始做下一个：
 （1）小盒子已经满了，但推送器上取到的松针仍然不满足要求。此时将手中的松枝放到成品篮里，推送器上取到的松针压回推送器，开始下一根松枝的制作。</p>
 <p>（2）小盒子中最上面的松针不满足要求，但推送器上已经没有松针了。此时将手中的松枝放到成品篮里，开始下一根松枝的制作。</p>
 <p>（3）手中的松枝干上已经插满了松针，将之放到成品篮里，开始下一根松枝的制作。</p>
-<p>现在给定推送器上顺序传过来的 N 片松针的大小，以及小盒子和松枝的容量，请你编写程序自动列出每根成品松枝的信息。</p>
-<h2 id="输入格式：-3">输入格式：</h2>
-<p>输入在第一行中给出 3 个正整数：<code>N</code>（≤10^3），为推送器上松针片的数量；<code>M</code>（≤20）为小盒子能存放的松针片的最大数量；<code>K</code>（≤5）为一根松枝干上能插的松针片的最大数量。</p>
-<p>随后一行给出 <code>N</code> 个不超过 <code>100</code> 的正整数，为推送器上顺序推出的松针片的大小。</p>
-<h2 id="输出格式：-3">输出格式：</h2>
-<p>每支松枝成品的信息占一行，顺序给出自底向上每片松针的大小。数字间以 1 个空格分隔，行首尾不得有多余空格。</p>
-<h2 id="输入样例：-2">输入样例：</h2>
+<p>现在给定推送器上顺序传过来的 N
+片松针的大小，以及小盒子和松枝的容量，请你编写程序自动列出每根成品松枝的信息。</p>
+<h2 id="输入格式-3">输入格式：</h2>
+<p>输入在第一行中给出 3
+个正整数：<code>N</code>（≤10^3），为推送器上松针片的数量；<code>M</code>（≤20）为小盒子能存放的松针片的最大数量；<code>K</code>（≤5）为一根松枝干上能插的松针片的最大数量。</p>
+<p>随后一行给出 <code>N</code> 个不超过 <code>100</code>
+的正整数，为推送器上顺序推出的松针片的大小。</p>
+<h2 id="输出格式-3">输出格式：</h2>
+<p>每支松枝成品的信息占一行，顺序给出自底向上每片松针的大小。数字间以 1
+个空格分隔，行首尾不得有多余空格。</p>
+<h2 id="输入样例-4">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">8 3 4
 20 25 15 18 20 18 8 5
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：-2">输出样例：</h2>
+<h2 id="输出样例-4">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">20 15
 20 18 18 8
 25 5
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code-3">Code:</h2>
+<h2 id="code-2">Code:</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -719,14 +743,21 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>L2-2 老板的作息表</h1>
-<p>新浪微博上有人发了某老板的作息时间表，表示其每天 4:30 就起床了。但立刻有眼尖的网友问：这时间表不完整啊，早上九点到下午一点干啥了？</p>
+<h1 id="l2-2-老板的作息表">L2-2 老板的作息表</h1>
+<p>新浪微博上有人发了某老板的作息时间表，表示其每天 4:30
+就起床了。但立刻有眼尖的网友问：这时间表不完整啊，早上九点到下午一点干啥了？</p>
 <p>本题就请你编写程序，检查任意一张时间表，找出其中没写出来的时间段。</p>
-<h2 id="输入格式：-4">输入格式：</h2>
-<p>输入第一行给出一个正整数 N，为作息表上列出的时间段的个数。随后 N 行，每行给出一个时间段，格式为：<code>hh:mm:ss - hh:mm:ss</code>其中 <code>hh</code>、<code>mm</code>、<code>ss</code> 分别是两位数表示的小时、分钟、秒。第一个时间是开始时间，第二个是结束时间。题目保证所有时间都在一天之内（即从 <code>00:00:00</code> 到 <code>23:59:59</code>）；每个区间间隔至少 <code>1</code> 秒；并且任意两个给出的时间区间最多只在一个端点有重合，没有区间重叠的情况。</p>
-<h2 id="输出格式：-4">输出格式：</h2>
+<h2 id="输入格式-4">输入格式：</h2>
+<p>输入第一行给出一个正整数 N，为作息表上列出的时间段的个数。随后 N
+行，每行给出一个时间段，格式为：<code>hh:mm:ss - hh:mm:ss</code>其中
+<code>hh</code>、<code>mm</code>、<code>ss</code>
+分别是两位数表示的小时、分钟、秒。第一个时间是开始时间，第二个是结束时间。题目保证所有时间都在一天之内（即从
+<code>00:00:00</code> 到 <code>23:59:59</code>）；每个区间间隔至少
+<code>1</code>
+秒；并且任意两个给出的时间区间最多只在一个端点有重合，没有区间重叠的情况。</p>
+<h2 id="输出格式-4">输出格式：</h2>
 <p>按照时间顺序列出时间表中没有出现的区间，每个区间占一行，格式与输入相同。题目保证至少存在一个区间需要输出。</p>
-<h2 id="输入样例：-3">输入样例：</h2>
+<h2 id="输入样例-5">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">8
 13:00:00 - 18:00:00
 00:00:00 - 01:00:05
@@ -736,12 +767,12 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
 06:30:00 - 07:10:58
 05:30:00 - 06:30:00
 18:00:00 - 19:00:00<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：-3">输出样例：</h2>
+<h2 id="输出样例-5">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">04:30:00 - 05:30:00
 07:10:58 - 07:10:59
 09:00:00 - 13:00:00
 19:00:00 - 23:59:59<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code-4">Code:</h2>
+<h2 id="code-3">Code:</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 <span class="token keyword">int</span> <span class="token function">ttos</span><span class="token punctuation">(</span><span class="token keyword">int</span> h<span class="token punctuation">,</span><span class="token keyword">int</span> m<span class="token punctuation">,</span><span class="token keyword">int</span> s<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -790,32 +821,40 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>L2-3 龙龙送外卖</h1>
-<p>龙龙是“饱了呀”外卖软件的注册骑手，负责送帕特小区的外卖。帕特小区的构造非常特别，都是双向道路且没有构成环 —— 你可以简单地认为小区的路构成了一棵树，根结点是外卖站，树上的结点就是要送餐的地址。</p>
-<p>每到中午 12 点，帕特小区就进入了点餐高峰。一开始，只有一两个地方点外卖，龙龙简单就送好了；但随着大数据的分析，龙龙被派了更多的单子，也就送得越来越累……</p>
+<h1 id="l2-3-龙龙送外卖">L2-3 龙龙送外卖</h1>
+<p>龙龙是“饱了呀”外卖软件的注册骑手，负责送帕特小区的外卖。帕特小区的构造非常特别，都是双向道路且没有构成环
+——
+你可以简单地认为小区的路构成了一棵树，根结点是外卖站，树上的结点就是要送餐的地址。</p>
+<p>每到中午 12
+点，帕特小区就进入了点餐高峰。一开始，只有一两个地方点外卖，龙龙简单就送好了；但随着大数据的分析，龙龙被派了更多的单子，也就送得越来越累……</p>
 <p>看着一大堆订单，龙龙想知道，从外卖站出发，访问所有点了外卖的地方至少一次（这样才能把外卖送到）所需的最短路程的距离到底是多少？每次新增一个点外卖的地址，他就想估算一遍整体工作量，这样他就可以搞明白新增一个地址给他带来了多少负担。</p>
-<h2 id="输入格式-2">输入格式:</h2>
-<p>输入第一行是两个数 <code>N</code> 和 <code>M</code> <code>(2≤N≤10^5, 1≤M≤10^5)</code>，分别对应树上节点的个数（包括外卖站），以及新增的送餐地址的个数。</p>
-<p>接下来首先是一行 <code>N</code> 个数，第 <code>i</code> 个数表示第 <code>i</code> 个点的双亲节点的编号。节点编号从 <code>1</code> 到 <code>N</code>，外卖站的双亲编号定义为 <code>−1</code>。</p>
-<p>接下来有 <code>M</code> 行，每行给出一个新增的送餐地点的编号 <code>Xi</code>。保证送餐地点中不会有外卖站，但地点有可能会重复。</p>
-<p>为了方便计算，我们可以假设龙龙一开始一个地址的外卖都不用送，两个相邻的地点之间的路径长度统一设为 <code>1</code>，且从外卖站出发可以访问到所有地点。</p>
+<h2 id="输入格式-5">输入格式:</h2>
+<p>输入第一行是两个数 <code>N</code> 和 <code>M</code>
+<code>(2≤N≤10^5, 1≤M≤10^5)</code>，分别对应树上节点的个数（包括外卖站），以及新增的送餐地址的个数。</p>
+<p>接下来首先是一行 <code>N</code> 个数，第 <code>i</code> 个数表示第
+<code>i</code> 个点的双亲节点的编号。节点编号从 <code>1</code> 到
+<code>N</code>，外卖站的双亲编号定义为 <code>−1</code>。</p>
+<p>接下来有 <code>M</code> 行，每行给出一个新增的送餐地点的编号
+<code>Xi</code>。保证送餐地点中不会有外卖站，但地点有可能会重复。</p>
+<p>为了方便计算，我们可以假设龙龙一开始一个地址的外卖都不用送，两个相邻的地点之间的路径长度统一设为
+<code>1</code>，且从外卖站出发可以访问到所有地点。</p>
 <p>注意：所有送餐地址可以按任意顺序访问，且完成送餐后无需返回外卖站。</p>
-<h2 id="输出格式-2">输出格式:</h2>
+<h2 id="输出格式-5">输出格式:</h2>
 <p>对于每个新增的地点，在一行内输出题目需要求的最短路程的距离。</p>
-<h2 id="输入样例-2">输入样例:</h2>
+<h2 id="输入样例-6">输入样例:</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">7 4
 -1 1 1 1 2 2 3
 5
 6
 2
 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例-2">输出样例:</h2>
+<h2 id="输出样例-6">输出样例:</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2
 4
 4
 6
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="我的Code：">我的Code：</h2>
+<h2 id="我的code">我的Code：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 <span class="token keyword">int</span> node<span class="token punctuation">[</span><span class="token number">100001</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//记录每个节点的父节点</span>
@@ -907,8 +946,8 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
 
 <span class="token comment">// -1 1 1 1 </span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code：">Code：</h2>
-<p>我思考的方向错误了。应该从子节点的位置去一步步找父节点，从而获得深度。</p>
+<h2 id="code-4">Code：</h2>
+<p>我思考的方向错误了。应该从子节点的位置去一步步找父节点，从而获得深度。
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
 <span class="token keyword">const</span> <span class="token keyword">int</span> N<span class="token operator">=</span><span class="token number">200010</span><span class="token punctuation">;</span>
@@ -935,20 +974,41 @@ a <span class="token operator">=</span> <span class="token char">'1112031584'</s
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>sum<span class="token operator">*</span><span class="token number">2</span><span class="token operator">-</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>L2-4 大众情人</h1>
-<p>人与人之间总有一点距离感。我们假定两个人之间的亲密程度跟他们之间的距离感成反比，并且距离感是单向的。例如小蓝对小红患了单相思，从小蓝的眼中看去，他和小红之间的距离为 1，只差一层窗户纸；但在小红的眼里，她和小蓝之间的距离为 108000，差了十万八千里…… 另外，我们进一步假定，距离感在认识的人之间是可传递的。例如小绿觉得自己跟小蓝之间的距离为 2，则即使小绿并不直接认识小红，我们也默认小绿早晚会认识小红，并且因为跟小蓝很亲近的关系，小绿会觉得自己跟小红之间的距离为 1+2=3。当然这带来一个问题，如果小绿本来也认识小红，或者他通过其他人也能认识小红，但通过不同渠道推导出来的距离感不一样，该怎么算呢？我们在这里做个简单定义，就将小绿对小红的距离感定义为所有推导出来的距离感的最小值。</p>
-<p>一个人的异性缘不是由最喜欢他/她的那个异性决定的，而是由对他/她最无感的那个异性决定的。我们记一个人 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 在一个异性 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 眼中的距离感为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">D_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>；将 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 的“异性缘”定义为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><msub><mrow><mi>max</mi><mo>⁡</mo></mrow><mrow><mi>j</mi><mo>∈</mo><mi>S</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msub><mo stretchy="false">{</mo><msub><mi>D</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false">}</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\max_{j \in S(i)} \{D_{ij}\}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.4487em;vertical-align:-0.6036em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight"><span class="mop mtight"><span class="mtight">m</span><span class="mtight">a</span><span class="mtight">x</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3448em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5357em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">i</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3695em;"><span></span></span></span></span></span></span><span class="mopen mtight">{</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3281em;"><span style="top:-2.357em;margin-left:-0.0278em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2819em;"><span></span></span></span></span></span></span><span class="mclose mtight">}</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6036em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S(i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mclose">)</span></span></span></span> 是相对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 的所有异性的集合。那么“大众情人”就是异性缘最好（值最大）的那个人。</p>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></p>
+<h1 id="l2-4-大众情人">L2-4 大众情人</h1>
+<p>人与人之间总有一点距离感。我们假定两个人之间的亲密程度跟他们之间的距离感成反比，并且距离感是单向的。例如小蓝对小红患了单相思，从小蓝的眼中看去，他和小红之间的距离为
+1，只差一层窗户纸；但在小红的眼里，她和小蓝之间的距离为
+108000，差了十万八千里……
+另外，我们进一步假定，距离感在认识的人之间是可传递的。例如小绿觉得自己跟小蓝之间的距离为
+2，则即使小绿并不直接认识小红，我们也默认小绿早晚会认识小红，并且因为跟小蓝很亲近的关系，小绿会觉得自己跟小红之间的距离为
+1+2=3。当然这带来一个问题，如果小绿本来也认识小红，或者他通过其他人也能认识小红，但通过不同渠道推导出来的距离感不一样，该怎么算呢？我们在这里做个简单定义，就将小绿对小红的距离感定义为所有推导出来的距离感的最小值。</p>
+<p>一个人的异性缘不是由最喜欢他/她的那个异性决定的，而是由对他/她最无感的那个异性决定的。我们记一个人
+<span class="math inline">\(i\)</span> 在一个异性 <span
+class="math inline">\(j\)</span> 眼中的距离感为 <span
+class="math inline">\(D_{ij}\)</span>；将 <span
+class="math inline">\(i\)</span> 的“异性缘”定义为 <span
+class="math inline">\(\frac{1}{\max_{j \in S(i)}
+\{D_{ij}\}}\)</span>，其中 <span class="math inline">\(S(i)\)</span>
+是相对于 <span class="math inline">\(i\)</span>
+的所有异性的集合。那么“大众情人”就是异性缘最好（值最大）的那个人。</p>
 <p>本题就请你从给定的一批人与人之间的距离感中分别找出两个性别中的“大众情人”。</p>
-<h2 id="输入格式：-5">输入格式：</h2>
-<p>输入在第一行中给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>500</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤500）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">500</span><span class="mord cjk_fallback">）</span></span></span></span> ，为总人数。于是我们默认所有人从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 编号。</p>
-<p>随后 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 行，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 行描述了编号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 的人与其他人的关系，格式为：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">性别 K 朋友1:距离1 朋友2:距离2 …… 朋友K:距离K<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<p>其中 <code>性别</code> 是这个人的性别，<code>F</code> 表示女性，<code>M</code> 表示男性；<code>K</code>（ &lt; N 的非负整数）为这个人直接认识的朋友数；随后给出的是这 <code>K</code> 个朋友的编号、以及这个人对该朋友的距离感。距离感是不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span> 的正整数。</p>
+<h2 id="输入格式-6">输入格式：</h2>
+<p>输入在第一行中给出一个正整数 <span
+class="math inline">\(N（≤500）\)</span>
+，为总人数。于是我们默认所有人从 <span class="math inline">\(1\)</span>
+到 <span class="math inline">\(N\)</span> 编号。</p>
+<p>随后 <span class="math inline">\(N\)</span> 行，第 <span
+class="math inline">\(i\)</span> 行描述了编号为 <span
+class="math inline">\(i\)</span> 的人与其他人的关系，格式为：
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">性别 K 朋友1:距离1 朋友2:距离2 …… 朋友K:距离K<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure> 其中 <code>性别</code> 是这个人的性别，<code>F</code>
+表示女性，<code>M</code> 表示男性；<code>K</code>（ &lt; N
+的非负整数）为这个人直接认识的朋友数；随后给出的是这 <code>K</code>
+个朋友的编号、以及这个人对该朋友的距离感。距离感是不超过 <span
+class="math inline">\(10^6\)</span> 的正整数。</p>
 <p>题目保证给出的关系中一定两种性别的人都有，不会出现重复给出的关系，并且每个人的朋友中都不包含自己。</p>
-<h2 id="输出格式：-5">输出格式：</h2>
+<h2 id="输出格式-6">输出格式：</h2>
 <p>第一行给出自身为女性的“大众情人”的编号，第二行给出自身为男性的“大众情人”的编号。如果存在并列，则按编号递增的顺序输出所有。数字间以一个空格分隔，行首尾不得有多余空格。</p>
-<h2 id="输入样例：-4">输入样例：</h2>
+<h2 id="输入样例-7">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">6
 F 1 4:1
 F 2 1:3 4:10
@@ -957,11 +1017,11 @@ M 2 5:1 3:2
 M 2 2:2 6:2
 M 2 3:1 2:5
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：-4">输出样例：</h2>
+<h2 id="输出样例-7">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2 3
 4
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="False-Code：">False Code：</h2>
+<h2 id="false-code">False Code：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
 
@@ -1039,8 +1099,8 @@ M 2 3:1 2:5
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code：-2">Code：</h2>
-<p>这道题真的牛批。我第十行注释掉的初始化方法居然是错误的。<br>
+<h2 id="code-5">Code：</h2>
+<p>这道题真的牛批。我第十行注释掉的初始化方法居然是错误的。
 然后后面有一个min变量，初始化1e6+1也是错误的，2e8也错，要INT_MAX才行。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
@@ -1126,7 +1186,8 @@ M 2 3:1 2:5
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="网上提供的C-代码重写C（ChatGPT4-0）">网上提供的C++代码重写C（ChatGPT4.0）:</h2>
+<h2
+id="网上提供的c代码重写cchatgpt4.0">网上提供的C++代码重写C（ChatGPT4.0）:</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;limits.h></span></span>
@@ -1198,25 +1259,42 @@ M 2 3:1 2:5
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>L3-1 千手观音</h1>
-<p>人类喜欢用 10 进制，大概是因为人类有一双手 10 根手指用于计数。于是在千手观音的世界里，数字都是 10000 进制的，因为每位观音有 1000 双手 ……</p>
-<p>千手观音们的每一根手指都对应一个符号（但是观音世界里的符号太难画了，我们暂且用小写英文字母串来代表），就好像人类用自己的 10 根手指对应 0 到 9 这 10 个数字。同样的，就像人类把这 10 个数字排列起来表示更大的数字一样，ta们也把这些名字排列起来表示更大的数字，并且也遵循左边高位右边低位的规则，相邻名字间用一个点 . 分隔，例如 <a target="_blank" rel="noopener" href="http://pat.pta.cn">pat.pta.cn</a> 表示千手观音世界里的一个 3 位数。</p>
+<h1 id="l3-1-千手观音">L3-1 千手观音</h1>
+<p>人类喜欢用 10 进制，大概是因为人类有一双手 10
+根手指用于计数。于是在千手观音的世界里，数字都是 10000
+进制的，因为每位观音有 1000 双手 ……</p>
+<p>千手观音们的每一根手指都对应一个符号（但是观音世界里的符号太难画了，我们暂且用小写英文字母串来代表），就好像人类用自己的
+10 根手指对应 0 到 9 这 10 个数字。同样的，就像人类把这 10
+个数字排列起来表示更大的数字一样，ta们也把这些名字排列起来表示更大的数字，并且也遵循左边高位右边低位的规则，相邻名字间用一个点
+. 分隔，例如 pat.pta.cn 表示千手观音世界里的一个 3 位数。</p>
 <p>人类不知道这些符号代表的数字的大小。不过幸运的是，人类发现了千手观音们留下的一串数字，并且有理由相信，这串数字是从小到大有序的！于是你的任务来了：请你根据这串有序的数字，推导出千手观音每只手代表的符号的相对顺序。</p>
-<p>注意：有可能无法根据这串数字得到全部的顺序，你只要尽量推出能得到的结果就好了。当若干根手指之间的相对顺序无法确定时，就暂且按它们的英文字典序升序排列。例如给定下面几个数字：</p>
+<p>注意：有可能无法根据这串数字得到全部的顺序，你只要尽量推出能得到的结果就好了。当若干根手指之间的相对顺序无法确定时，就暂且按它们的英文字典序升序排列。例如给定下面几个数字：
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">pat
 cn
 lao.cn
 lao.oms
 pta.lao
 pta.pat
-cn.pat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<p>我们首先可以根据前两个数字推断 <code>pat &lt; cn</code>；根据左边高位的顺序可以推断 <code>lao &lt; pta &lt; cn</code>；再根据高位相等时低位的顺序，可以推断出 <code>cn &lt; oms</code>，<code>lao &lt; pat</code>。综上我们得到两种可能的顺序：<code>lao &lt; pat &lt; pta &lt; cn &lt; oms</code>；或者 <code>lao &lt; pta &lt; pat &lt; cn &lt; oms</code>，即 <code>pat</code> 和 <code>pta</code> 之间的相对顺序无法确定，这时我们按字典序排列，得到 <code>lao &lt; pat &lt; pta &lt; cn &lt; oms</code>。</p>
-<h2 id="输入格式：-6">输入格式：</h2>
-<p>输入第一行给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N (≤10^5)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，为千手观音留下的数字的个数。随后 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 行，每行给出一个千手观音留下的数字，不超过 10 位数，每一位的符号用不超过 3 个小写英文字母表示，相邻两符号之间用 <code>.</code> 分隔。</p>
-<p>我们假设给出的数字顺序在千手观音的世界里是严格递增的。题目保证数字是 10^4进制的，即符号的种类肯定不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span> 种。</p>
-<h2 id="输出格式：-6">输出格式：</h2>
-<p>在一行中按大小递增序输出符号。当若干根手指之间的相对顺序无法确定时，按它们的英文字典序升序排列。符号间仍然用 . 分隔。</p>
-<h2 id="输入样例：-5">输入样例：</h2>
+cn.pat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure> 我们首先可以根据前两个数字推断
+<code>pat &lt; cn</code>；根据左边高位的顺序可以推断
+<code>lao &lt; pta &lt; cn</code>；再根据高位相等时低位的顺序，可以推断出
+<code>cn &lt; oms</code>，<code>lao &lt; pat</code>。综上我们得到两种可能的顺序：<code>lao &lt; pat &lt; pta &lt; cn &lt; oms</code>；或者
+<code>lao &lt; pta &lt; pat &lt; cn &lt; oms</code>，即 <code>pat</code>
+和 <code>pta</code> 之间的相对顺序无法确定，这时我们按字典序排列，得到
+<code>lao &lt; pat &lt; pta &lt; cn &lt; oms</code>。</p>
+<h2 id="输入格式-7">输入格式：</h2>
+<p>输入第一行给出一个正整数 <span class="math inline">\(N
+(≤10^5)\)</span>，为千手观音留下的数字的个数。随后 <span
+class="math inline">\(N\)</span>
+行，每行给出一个千手观音留下的数字，不超过 10 位数，每一位的符号用不超过
+3 个小写英文字母表示，相邻两符号之间用 <code>.</code> 分隔。</p>
+<p>我们假设给出的数字顺序在千手观音的世界里是严格递增的。题目保证数字是
+10^4进制的，即符号的种类肯定不超过 <span
+class="math inline">\(10^4\)</span> 种。</p>
+<h2 id="输出格式-7">输出格式：</h2>
+<p>在一行中按大小递增序输出符号。当若干根手指之间的相对顺序无法确定时，按它们的英文字典序升序排列。符号间仍然用
+. 分隔。</p>
+<h2 id="输入样例-8">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">7
 pat
 cn
@@ -1226,33 +1304,53 @@ pta.lao
 pta.pat
 cn.pat
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：-5">输出样例：</h2>
+<h2 id="输出样例-8">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">lao.pat.pta.cn.oms
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h1>L3-2 关于深度优先搜索和逆序对的题应该不会很难吧这件事</h1>
+<h1 id="l3-2-关于深度优先搜索和逆序对的题应该不会很难吧这件事">L3-2
+关于深度优先搜索和逆序对的题应该不会很难吧这件事</h1>
 <h2 id="背景知识">背景知识</h2>
-<h3 id="深度优先搜索与-DFS-序">深度优先搜索与 DFS 序</h3>
-<p>深度优先搜索算法（DFS）是一种用于遍历或搜索树或图的算法。以下伪代码描述了在树 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span> 上进行深度优先搜索的过程：</p>
+<h3 id="深度优先搜索与-dfs-序">深度优先搜索与 DFS 序</h3>
+<p>深度优先搜索算法（DFS）是一种用于遍历或搜索树或图的算法。以下伪代码描述了在树
+<span class="math inline">\(T\)</span> 上进行深度优先搜索的过程：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">procedure DFS(T, u, L)      &#x2F;&#x2F; T 是被深度优先搜索的树
                             &#x2F;&#x2F; u 是当前搜索的节点
                             &#x2F;&#x2F; L 是一个链表，保存了所有节点被第一次访问的顺序
   append u to L             &#x2F;&#x2F; 将节点 u 添加到链表 L 的末尾
   for v in u.children do    &#x2F;&#x2F; 枚举节点 u 的所有子节点 v
     DFS(T, v)               &#x2F;&#x2F; 递归搜索节点 v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<p>令 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span> 为树 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span> 的根，调用 <code>DFS(T, r, L)</code> 即可完成对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span> 的深度优先搜索，保存在链表 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">L</span></span></span></span> 中的排列被称为 DFS 序。相信聪明的你已经发现了，如果枚举子节点的顺序不同，最终得到的 DFS 序也会不同。</p>
+<p>令 <span class="math inline">\(r\)</span> 为树 <span
+class="math inline">\(T\)</span> 的根，调用 <code>DFS(T, r, L)</code>
+即可完成对 <span class="math inline">\(T\)</span>
+的深度优先搜索，保存在链表 <span class="math inline">\(L\)</span>
+中的排列被称为 DFS
+序。相信聪明的你已经发现了，如果枚举子节点的顺序不同，最终得到的 DFS
+序也会不同。</p>
 <h3 id="逆序对">逆序对</h3>
-<p>给定一个长度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>  的整数序列 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>a</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">a_1, a_2, ⋯, a_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，该序列的逆序对数量是同时满足以下条件的有序数对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i,j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span> 的数量：</p>
-<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>&lt;</mo><mi>j</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">1 \leq i &lt; j \leq n 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6986em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span></p>
-<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>&gt;</mo><msub><mi>a</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">a_i &gt; a_j 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>给定一个长度为 <span class="math inline">\(n\)</span> 的整数序列
+<span class="math inline">\(a_1, a_2, ⋯, a_n\)</span>
+，该序列的逆序对数量是同时满足以下条件的有序数对 <span
+class="math inline">\((i,j)\)</span> 的数量：</p>
+<p><span class="math display">\[ 1 \leq i &lt; j \leq n \]</span> <span
+class="math display">\[ a_i &gt; a_j \]</span></p>
 <h2 id="问题求解">问题求解</h2>
-<p>给定一棵 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个节点的树，其中节点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span> 为根。求该树所有可能的 DFS 序中逆序对数量之和。</p>
-<h2 id="输入格式-3">输入格式</h2>
-<p>第一行输入两个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mtext>，</mtext><mi>r</mi><mtext>（</mtext><mn>2</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>3</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mtext>，</mtext><mn>1</mn><mo>≤</mo><mi>r</mi><mo>≤</mo><mi>n</mi><mtext>）</mtext></mrow><annotation encoding="application/x-tex">n，r（2≤n≤3×10^5，1≤r≤n）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mord cjk_fallback">，</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord cjk_fallback">（</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9501em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">n</span><span class="mord cjk_fallback">）</span></span></span></span> 表示树的大小与根节点。</p>
-<p>对于接下来的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(n−1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 行，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 行输入两个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">u_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub><mtext>（</mtext><mn>1</mn><mo>≤</mo><msub><mi>u</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>i</mi></msub><mo>≤</mo><mi>n</mi><mtext>）</mtext></mrow><annotation encoding="application/x-tex">v_i（1≤u_i,v_i≤n）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">（</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">n</span><span class="mord cjk_fallback">）</span></span></span></span>，表示树上有一条边连接节点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">u_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>  。</p>
-<h2 id="输出格式-3">输出格式</h2>
-<p>输出一行一个整数，表示该树所有可能的 DFS 序中逆序对数量之和。由于答案可能很大，请对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup><mo>+</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">10^9+7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span> 取模后输出。</p>
+<p>给定一棵 <span class="math inline">\(n\)</span> 个节点的树，其中节点
+<span class="math inline">\(r\)</span> 为根。求该树所有可能的 DFS
+序中逆序对数量之和。</p>
+<h2 id="输入格式-8">输入格式</h2>
+<p>第一行输入两个整数 <span
+class="math inline">\(n，r（2≤n≤3×10^5，1≤r≤n）\)</span>
+表示树的大小与根节点。</p>
+<p>对于接下来的 <span class="math inline">\((n−1)\)</span> 行，第 <span
+class="math inline">\(i\)</span> 行输入两个整数 <span
+class="math inline">\(u_i\)</span> 与 <span
+class="math inline">\(v_i（1≤u_i,v_i≤n）\)</span>，表示树上有一条边连接节点
+<span class="math inline">\(u_i\)</span> 与 <span
+class="math inline">\(v_i\)</span> 。</p>
+<h2 id="输出格式-8">输出格式</h2>
+<p>输出一行一个整数，表示该树所有可能的 DFS
+序中逆序对数量之和。由于答案可能很大，请对 <span
+class="math inline">\(10^9+7\)</span> 取模后输出。</p>
 <h2 id="样例输入-1">样例输入 1</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5 3
 1 5
@@ -1274,63 +1372,89 @@ cn.pat
 3 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <h2 id="样例输出-2">样例输出 2</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">516<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="样例解释">样例解释</h2>
+<h2 id="样例解释-1">样例解释</h2>
 <p>下图展示了样例 1 中的树。</p>
 <p>sample.png</p>
 <p>该树共有 4 种可能的 DFS 序：</p>
-<p>{3,4,5,1,2}，有 6 个逆序对；<br>
-{3,4,5,2,1}，有 7 个逆序对；<br>
-{3,5,1,2,4}，有 5 个逆序对；<br>
-{3,5,2,1,4}，有 6 个逆序对。<br>
-因此答案为 6+7+5+6=24。</p>
-<h1>L3-3 教科书般的亵渎</h1>
-<p>九条可怜最近在玩一款卡牌游戏。在每一局游戏中，可怜都要使用抽到的卡牌来消灭一些敌人。每一名敌人都有一个初始血量，而当血量降低到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> 及以下的时候，这名敌人就会立即被消灭并从场上消失。</p>
-<p>现在，可怜面前有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个敌人，其中第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 名敌人的血量是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，而可怜手上只有如下两张手牌：</p>
-<p>如果场上还有敌人，等概率随机选中一个敌人并对它造成一点伤害（即血量减 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> ），重复 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span> 次。</p>
+<p>{3,4,5,1,2}，有 6 个逆序对； {3,4,5,2,1}，有 7 个逆序对；
+{3,5,1,2,4}，有 5 个逆序对； {3,5,2,1,4}，有 6 个逆序对。 因此答案为
+6+7+5+6=24。</p>
+<h1 id="l3-3-教科书般的亵渎">L3-3 教科书般的亵渎</h1>
+<p>九条可怜最近在玩一款卡牌游戏。在每一局游戏中，可怜都要使用抽到的卡牌来消灭一些敌人。每一名敌人都有一个初始血量，而当血量降低到
+<span class="math inline">\(0\)</span>
+及以下的时候，这名敌人就会立即被消灭并从场上消失。</p>
+<p>现在，可怜面前有 <span class="math inline">\(n\)</span>
+个敌人，其中第 <span class="math inline">\(i\)</span> 名敌人的血量是
+<span class="math inline">\(a_i\)</span>
+，而可怜手上只有如下两张手牌：</p>
+<p>如果场上还有敌人，等概率随机选中一个敌人并对它造成一点伤害（即血量减
+<span class="math inline">\(1\)</span> ），重复 <span
+class="math inline">\(K\)</span> 次。</p>
 <p>对所有敌人造成一点伤害，重复该效果直到没有新的敌人被消灭。</p>
 <p>下面是这两张手牌效果的一些示例：</p>
-<p>假设存在两名敌人，他们的血量分别是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>,<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">K=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>。那么在可怜打出第一张手牌后，可能会发生如下情况：<br>
-第一轮中，两名敌人各有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.5</mn></mrow><annotation encoding="application/x-tex">0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.5</span></span></span></span> 的概率被选中。假设第一名敌人被选中，那么它会被造成一点伤害。这时它的血量变成了  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>，因此它被消灭并消失了。<br>
-第二轮中，因为场上只剩下了第二名敌人，所以它一定会被选中并被造成一点伤害。这时它剩下的血量为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>。<br>
-同样假设存在两名敌人且血量分别为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span></span></span></span>。那么在可怜打出第二张手牌后，会发生如下情况：<br>
-第一轮中，所有敌人被造成了一点伤害。这时第一名敌人被消灭了，因此卡牌效果会被重复一遍。<br>
-第二轮中，所有敌人（此时只剩下第二名敌人了）被造成了一点伤害。这时第二名敌人也被消灭了，因此卡牌效果会被再重复一遍。<br>
-第三轮中，所有敌人（此时没有敌人剩下了）被造成了一点伤害。因为没有新的敌人被消灭了，所以卡牌效果结束。<br>
-如果面对的是四名血量分别为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">1,2,2,4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">4</span></span></span></span> 的敌人，那么在可怜打出第二张手牌后，只有第四名敌人还会存活，且它的剩余血量为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>。<br>
+<p>假设存在两名敌人，他们的血量分别是 <span
+class="math inline">\(1\)</span>,<span class="math inline">\(2\)</span>
+且 <span
+class="math inline">\(K=2\)</span>。那么在可怜打出第一张手牌后，可能会发生如下情况：
+第一轮中，两名敌人各有 <span class="math inline">\(0.5\)</span>
+的概率被选中。假设第一名敌人被选中，那么它会被造成一点伤害。这时它的血量变成了
+<span class="math inline">\(0\)</span>，因此它被消灭并消失了。
+第二轮中，因为场上只剩下了第二名敌人，所以它一定会被选中并被造成一点伤害。这时它剩下的血量为
+<span class="math inline">\(1\)</span>。
+同样假设存在两名敌人且血量分别为 <span
+class="math inline">\(1,2\)</span>。那么在可怜打出第二张手牌后，会发生如下情况：
+第一轮中，所有敌人被造成了一点伤害。这时第一名敌人被消灭了，因此卡牌效果会被重复一遍。
+第二轮中，所有敌人（此时只剩下第二名敌人了）被造成了一点伤害。这时第二名敌人也被消灭了，因此卡牌效果会被再重复一遍。
+第三轮中，所有敌人（此时没有敌人剩下了）被造成了一点伤害。因为没有新的敌人被消灭了，所以卡牌效果结束。
+如果面对的是四名血量分别为 <span class="math inline">\(1,2,2,4\)</span>
+的敌人，那么在可怜打出第二张手牌后，只有第四名敌人还会存活，且它的剩余血量为
+<span class="math inline">\(1\)</span>。
 现在，可怜先打出了第一张手牌，再打出了第二张手牌。她发现，在第一张手牌效果结束后，没有任何一名敌人被消灭，但是在第二张手牌的效果结束后，所有敌人都被消灭了。</p>
 <p>可怜想让你计算一下这种情况发生的概率是多少。</p>
-<h2 id="输入格式：-7">输入格式：</h2>
-<p>第一行输入两个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>K</mi><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi>n</mi><mo separator="true">,</mo><mi>K</mi><mo>≤</mo><mn>50</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n,K(1≤n,K≤50)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">50</span><span class="mclose">)</span></span></span></span>，分别表示敌人的数量以及第一张卡牌效果的发动次数。</p>
-<p>第二行输入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个由空格隔开的整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><msub><mi>a</mi><mi>i</mi></msub><mo>≤</mo><mn>50</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">a_i(1≤a_i≤50)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.786em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">50</span><span class="mclose">)</span></span></span></span> ，表示每个敌人的初始血量。</p>
-<h2 id="输出格式：-7">输出格式：</h2>
-<p>在一行中输出一个整数，表示发生概率对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>998244353</mn></mrow><annotation encoding="application/x-tex">998244353</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">998244353</span></span></span></span> 取模后的结果。</p>
-<p>具体来说，如果概率的最简分数表示为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi mathvariant="normal">/</mi><mi>b</mi><mo stretchy="false">(</mo><mi>a</mi><mo>≥</mo><mn>0</mn><mo separator="true">,</mo><mi>b</mi><mo>≥</mo><mn>1</mn><mo separator="true">,</mo><mi>g</mi><mi>c</mi><mi>d</mi><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">a/b(a≥0,b≥1,gcd(a,b)=1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord">/</span><span class="mord mathnormal">b</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">c</span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>，那么你需要输出</p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>×</mo><msup><mi>b</mi><mn>998244351</mn></msup><mi>m</mi><mi>o</mi><mi>d</mi><mn>998244353</mn></mrow><annotation encoding="application/x-tex">a×b^{998244351} mod998244353</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">998244351</span></span></span></span></span></span></span></span></span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">998244353</span></span></span></span>。</p>
-<h2 id="输入样例-1：-2">输入样例 1：</h2>
+<h2 id="输入格式-9">输入格式：</h2>
+<p>第一行输入两个整数 <span
+class="math inline">\(n,K(1≤n,K≤50)\)</span>，分别表示敌人的数量以及第一张卡牌效果的发动次数。</p>
+<p>第二行输入 <span class="math inline">\(n\)</span> 个由空格隔开的整数
+<span class="math inline">\(a_i(1≤a_i≤50)\)</span>
+，表示每个敌人的初始血量。</p>
+<h2 id="输出格式-9">输出格式：</h2>
+<p>在一行中输出一个整数，表示发生概率对 <span
+class="math inline">\(998244353\)</span> 取模后的结果。</p>
+<p>具体来说，如果概率的最简分数表示为 <span
+class="math inline">\(a/b(a≥0,b≥1,gcd(a,b)=1)\)</span>，那么你需要输出</p>
+<p><span class="math inline">\(a×b^{998244351}
+mod998244353\)</span>。</p>
+<h2 id="输入样例-1-1">输入样例 1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3 2
 2 3 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例-1：-2">输出样例 1：</h2>
+<h2 id="输出样例-1-1">输出样例 1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">665496236<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="样例解释-1：">样例解释 1：</h2>
-<p>在第一张手牌的效果结束后，三名敌人的剩余血量只可能在如下几种中：[1,3,2], [1,2,3], [2,1,3] 和 [2,3,1]。前两种发生的概率是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">2/9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2/9</span></span></span></span>，后两种发生的概率是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">1/9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/9</span></span></span></span>。因此答案为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">2/3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2/3</span></span></span></span>，输出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><msup><mn>3</mn><mn>998244351</mn></msup><mi>m</mi><mi>o</mi><mi>d</mi><mn>998244353</mn><mo>=</mo><mn>665496236</mn></mrow><annotation encoding="application/x-tex">2×3 ^{998244351} mod998244353=665496236</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">998244351</span></span></span></span></span></span></span></span></span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">998244353</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">665496236</span></span></span></span> 。</p>
-<h2 id="输入样例-2：-2">输入样例 2：</h2>
+<h2 id="样例解释-1-1">样例解释 1：</h2>
+<p>在第一张手牌的效果结束后，三名敌人的剩余血量只可能在如下几种中：[1,3,2],
+[1,2,3], [2,1,3] 和 [2,3,1]。前两种发生的概率是 <span
+class="math inline">\(2/9\)</span>，后两种发生的概率是 <span
+class="math inline">\(1/9\)</span>。因此答案为 <span
+class="math inline">\(2/3\)</span>，输出 <span class="math inline">\(2×3
+^{998244351} mod998244353=665496236\)</span> 。</p>
+<h2 id="输入样例-2-1">输入样例 2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">3 3
 2 3 3
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例-2：-2">输出样例 2：</h2>
+<h2 id="输出样例-2-1">输出样例 2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">776412275<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <h2 id="样例解释-2">样例解释 2:</h2>
-<p>在第一张手牌的效果结束后，三名敌人的剩余血量只可能在如下几种中：[1,2,2]、[2,1,2] 和 [2,2,1]。第一种发生的概率是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">2/9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2/9</span></span></span></span> ，后两种发生的概率是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">1/9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/9</span></span></span></span>。因此答案为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi mathvariant="normal">/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">4/9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4/9</span></span></span></span>，输出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>×</mo><msup><mn>9</mn><mn>998244351</mn></msup><mi>m</mi><mi>o</mi><mi>d</mi><mn>998244353</mn><mo>=</mo><mn>776412275</mn></mrow><annotation encoding="application/x-tex">4×9^{998244351} mod998244353=776412275</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">9</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">998244351</span></span></span></span></span></span></span></span></span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">998244353</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">776412275</span></span></span></span> 。</p>
-<p>输入样例 3：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5 3
-1 4 4 2 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<p>输出样例 3：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">367353922<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<p>输入样例 4：</p>
+<p>在第一张手牌的效果结束后，三名敌人的剩余血量只可能在如下几种中：[1,2,2]、[2,1,2]
+和 [2,2,1]。第一种发生的概率是 <span class="math inline">\(2/9\)</span>
+，后两种发生的概率是 <span
+class="math inline">\(1/9\)</span>。因此答案为 <span
+class="math inline">\(4/9\)</span>，输出 <span
+class="math inline">\(4×9^{998244351} mod998244353=776412275\)</span>
+。</p>
+<p>输入样例 3： <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">5 3
+1 4 4 2 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure> 输出样例 3： <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">367353922<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure> 输入样例 4：
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">12 12
-1 2 3 4 5 6 7 8 9 10 11 12<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<p>输出样例 4：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">452061016<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+1 2 3 4 5 6 7 8 9 10 11 12<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure> 输出样例 4： <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">452061016<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></p>
+
                 
               </div>
             

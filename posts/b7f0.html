@@ -252,23 +252,28 @@
             
               <div class="markdown-body">
                 
-                <ol>
+                <ol type="1">
 <li>从 App Store 安装 Xcode 应用程序</li>
-<li>转到路径 =<code>/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1</code>要轻松执行此操作，请打开<code>Finder</code>并按 <code>Cmd+Shift+G</code> 并粘贴此路径地址，它应该会打开。</li>
+<li>转到路径
+=<code>/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1</code>要轻松执行此操作，请打开<code>Finder</code>并按
+<code>Cmd+Shift+G</code> 并粘贴此路径地址，它应该会打开。</li>
 <li>创建一个名为<code>bits</code>的文件夹并进入该文件夹。</li>
 <li>在<code>bits</code>文件夹中创建一个名为<code>stdc++.h</code>的文件，并使用任何文本编辑器（例如TextEdit）打开它</li>
-<li>将此存储库中的内容粘贴到 <code>stdc++.h</code> 文件：<code>stdc++.h</code></li>
-<li>现在关闭<code>Sublime Text</code>/<code>VS Code</code>并重新打开它并运行 C++ 文件。<br>
-它应该有效！</li>
+<li>将此存储库中的内容粘贴到 <code>stdc++.h</code>
+文件：<code>stdc++.h</code></li>
+<li>现在关闭<code>Sublime Text</code>/<code>VS Code</code>并重新打开它并运行
+C++ 文件。 它应该有效！</li>
 </ol>
-<p>如果不起作用：<br>
-7. 使用 path = 尝试同样的事情<code>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/</code><br>
-8. 它现在应该可以工作，但它可能会给您带来错误，例如找不到包含或类似的错误。只需从 <code>stdc++.h</code> -------- 文件中删除此包含，然后重试。<br>
-9. 您可能需要删除多个包含内容，它最终应该可以工作（至少它对我有用！）。就我而言，我必须从<code>stdc++.h</code>中删除以下行：</p>
+<p>如果不起作用： 7. 使用 path =
+尝试同样的事情<code>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/</code>
+8.
+它现在应该可以工作，但它可能会给您带来错误，例如找不到包含或类似的错误。只需从
+<code>stdc++.h</code> -------- 文件中删除此包含，然后重试。 9.
+您可能需要删除多个包含内容，它最终应该可以工作（至少它对我有用！）。就我而言，我必须从<code>stdc++.h</code>中删除以下行：
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstdalign></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cuchar></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;memory_resources></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<p>如果仍然不起作用，请尝试使用 path =<code>/usr/local/include</code></p>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;memory_resources></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure> 如果仍然不起作用，请尝试使用 path
+=<code>/usr/local/include</code></p>
 <p>附上<code>stdc++.h</code>文件内容:</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// C++ includes used for precompiling -*- C++ -*-</span>
 
@@ -503,6 +508,7 @@
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
 
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span> <span class="token comment">// HOSTED</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+
                 
               </div>
             

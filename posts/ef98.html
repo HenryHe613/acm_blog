@@ -16,12 +16,12 @@
   <meta name="author" content="nanyan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="A 点赞 微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。本题就要求你写个程序，通过统计一个人点赞的纪录，分析这个人的特性。 输入格式： 输入在第一行给出一个正整数 N（≤1000）N（≤1000）N（≤1000） ，是该用户点赞的博文数量。随后N行，每行给出一篇被其点赞的博文的特性描述，格式为 “KF1,⋯">
+    <meta name="description" content="A 点赞 微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。本题就要求你写个程序，通过统计一个人点赞的纪录，分析这个人的特性。 输入格式： 输入在第一行给出一个正整数 \(N（≤1000）\) ，是该用户点赞的博文数量。随后N行，每行给出一篇被其点赞的博文的特性描述，格式为 \(“K F_1,⋯F_K”\) ，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACM | ACM Test 231228">
 <meta property="og:url" content="http://acm.nanyan.cc/posts/ef98.html">
 <meta property="og:site_name" content="ACM笔记">
-<meta property="og:description" content="A 点赞 微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。本题就要求你写个程序，通过统计一个人点赞的纪录，分析这个人的特性。 输入格式： 输入在第一行给出一个正整数 N（≤1000）N（≤1000）N（≤1000） ，是该用户点赞的博文数量。随后N行，每行给出一篇被其点赞的博文的特性描述，格式为 “KF1,⋯">
+<meta property="og:description" content="A 点赞 微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。本题就要求你写个程序，通过统计一个人点赞的纪录，分析这个人的特性。 输入格式： 输入在第一行给出一个正整数 \(N（≤1000）\) ，是该用户点赞的博文数量。随后N行，每行给出一篇被其点赞的博文的特性描述，格式为 \(“K F_1,⋯F_K”\) ，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-28T08:39:01.000Z">
 <meta property="article:modified_time" content="2024-02-04T09:13:07.493Z">
@@ -199,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          2.3k 字
         
       </span>
     
@@ -210,7 +210,7 @@
         
         
         
-          21 分钟
+          20 分钟
         
       </span>
     
@@ -252,21 +252,29 @@
             
               <div class="markdown-body">
                 
-                <h1>A 点赞</h1>
+                <h1 id="a-点赞">A 点赞</h1>
 <p>微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。本题就要求你写个程序，通过统计一个人点赞的纪录，分析这个人的特性。</p>
-<h2 id="输入格式：">输入格式：</h2>
-<p>输入在第一行给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>1000</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤1000）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">1000</span><span class="mord cjk_fallback">）</span></span></span></span> ，是该用户点赞的博文数量。随后N行，每行给出一篇被其点赞的博文的特性描述，格式为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>“</mtext><mi>K</mi><msub><mi>F</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><msub><mi>F</mi><mi>K</mi></msub><mtext>”</mtext></mrow><annotation encoding="application/x-tex">“K F_1,⋯F_K”</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">“</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">K</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">”</span></span></span></span> ，其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>K</mi><mo>≤</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">1≤K≤10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span> ，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>i</mi></msub><mtext>（</mtext><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>K</mi><mtext>）</mtext></mrow><annotation encoding="application/x-tex">F_i（i=1,⋯,K）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">（</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mord cjk_fallback">）</span></span></span></span> 是特性标签的编号，我们将所有特性标签从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1000</mn></mrow><annotation encoding="application/x-tex">1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span></span></span></span> 编号。数字间以空格分隔。</p>
-<h2 id="输出格式：">输出格式：</h2>
+<h2 id="输入格式">输入格式：</h2>
+<p>输入在第一行给出一个正整数 <span
+class="math inline">\(N（≤1000）\)</span>
+，是该用户点赞的博文数量。随后N行，每行给出一篇被其点赞的博文的特性描述，格式为
+<span class="math inline">\(“K F_1,⋯F_K”\)</span> ，其中 <span
+class="math inline">\(1≤K≤10\)</span> ，<span
+class="math inline">\(F_i（i=1,⋯,K）\)</span>
+是特性标签的编号，我们将所有特性标签从 <span
+class="math inline">\(1\)</span> 到 <span
+class="math inline">\(1000\)</span> 编号。数字间以空格分隔。</p>
+<h2 id="输出格式">输出格式：</h2>
 <p>统计所有被点赞的博文中最常出现的那个特性标签，在一行中输出它的编号和出现次数，数字间隔1个空格。如果有并列，则输出编号最大的那个。</p>
-<h2 id="输入样例：">输入样例：</h2>
+<h2 id="输入样例">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">4
 3 889 233 2
 5 100 3 233 2 73
 4 3 73 889 2
 2 233 123<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：">输出样例：</h2>
+<h2 id="输出样例">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">233 3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="Code">Code</h2>
+<h2 id="code">Code</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
@@ -289,21 +297,25 @@
     cout<span class="token operator">&lt;&lt;</span>max<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span>count<span class="token punctuation">[</span>max<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>B 最佳情侣身高差</h1>
-<p>专家通过多组情侣研究数据发现，最佳的情侣身高差遵循着一个公式：（女方的身高）×1.09 =（男方的身高）。如果符合，你俩的身高差不管是牵手、拥抱、接吻，都是最和谐的差度。</p>
+<h1 id="b-最佳情侣身高差">B 最佳情侣身高差</h1>
+<p>专家通过多组情侣研究数据发现，最佳的情侣身高差遵循着一个公式：（女方的身高）×1.09
+=（男方的身高）。如果符合，你俩的身高差不管是牵手、拥抱、接吻，都是最和谐的差度。</p>
 <p>下面就请你写个程序，为任意一位用户计算他/她的情侣的最佳身高。</p>
-<h2 id="输入格式：-2">输入格式：</h2>
-<p>输入第一行给出正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>10</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤10）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">10</span><span class="mord cjk_fallback">）</span></span></span></span> ，为前来查询的用户数。随后N行，每行按照“性别 身高”的格式给出前来查询的用户的性别和身高，其中“性别”为“F”表示女性、“M”表示男性；“身高”为区间 [1.0, 3.0] 之间的实数。</p>
-<h2 id="输出格式：-2">输出格式：</h2>
+<h2 id="输入格式-1">输入格式：</h2>
+<p>输入第一行给出正整数 <span class="math inline">\(N（≤10）\)</span>
+，为前来查询的用户数。随后N行，每行按照“性别
+身高”的格式给出前来查询的用户的性别和身高，其中“性别”为“F”表示女性、“M”表示男性；“身高”为区间
+[1.0, 3.0] 之间的实数。</p>
+<h2 id="输出格式-1">输出格式：</h2>
 <p>对每一个查询，在一行中为该用户计算出其情侣的最佳身高，保留小数点后2位。</p>
-<h2 id="输入样例：-2">输入样例：</h2>
+<h2 id="输入样例-1">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">2
 M 1.75
 F 1.8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：-2">输出样例：</h2>
+<h2 id="输出样例-1">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1.61
 1.96<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code-2">Code</h2>
+<h2 id="code-1">Code</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
@@ -323,31 +335,35 @@ F 1.8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>C 人以群分</h1>
+<h1 id="c-人以群分">C 人以群分</h1>
 <p>社交网络中我们给每个人定义了一个“活跃度”，现希望根据这个指标把人群分为两大类，即<code>外向型（outgoing，即活跃度高的）</code>和<code>内向型（introverted，即活跃度低的）</code>。要求两类人群的规模尽可能接近，而他们的总活跃度差距尽可能拉开。</p>
-<h2 id="输入格式：-3">输入格式：</h2>
-<p>输入第一行给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mn>2</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（2≤N≤10^5）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mord cjk_fallback">）</span></span></span></span>。随后一行给出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个正整数，分别是每个人的活跃度，其间以空格分隔。题目保证这些数字以及它们的和都不会超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>31</mn></msup></mrow><annotation encoding="application/x-tex">2^{31}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">31</span></span></span></span></span></span></span></span></span></span></span></span> 。</p>
-<h2 id="输出格式：-3">输出格式：</h2>
+<h2 id="输入格式-2">输入格式：</h2>
+<p>输入第一行给出一个正整数 <span
+class="math inline">\(N（2≤N≤10^5）\)</span>。随后一行给出 <span
+class="math inline">\(N\)</span>
+个正整数，分别是每个人的活跃度，其间以空格分隔。题目保证这些数字以及它们的和都不会超过
+<span class="math inline">\(2^{31}\)</span> 。</p>
+<h2 id="输出格式-2">输出格式：</h2>
 <p>按下列格式输出：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Outgoing #: N1
 Introverted #: N2
 Diff &#x3D; N3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
 <p>其中<code>N1</code>是外向型人的个数；<code>N2</code>是内向型人的个数；<code>N3</code>是两群人总活跃度之差的绝对值。</p>
-<h2 id="输入样例1：">输入样例1：</h2>
+<h2 id="输入样例1">输入样例1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">10
 23 8 10 99 46 2333 46 1 666 555<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例1：">输出样例1：</h2>
+<h2 id="输出样例1">输出样例1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Outgoing #: 5
 Introverted #: 5
 Diff &#x3D; 3611<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输入样例2：">输入样例2：</h2>
+<h2 id="输入样例2">输入样例2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">13
 110 79 218 69 3721 100 29 135 2 6 13 5188 85<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例2：">输出样例2：</h2>
+<h2 id="输出样例2">输出样例2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Outgoing #: 7
 Introverted #: 6
 Diff &#x3D; 9359<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="Code-3">Code</h2>
+<h2 id="code-2">Code</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
@@ -386,16 +402,18 @@ Diff &#x3D; 9359<span aria-hidden="true" class="line-numbers-rows"><span></span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>D 悄悄关注</h1>
+<h1 id="d-悄悄关注">D 悄悄关注</h1>
 <p>新浪微博上有个“悄悄关注”，一个用户悄悄关注的人，不出现在这个用户的关注列表上，但系统会推送其悄悄关注的人发表的微博给该用户。现在我们来做一回网络侦探，根据某人的关注列表和其对其他用户的点赞情况，扒出有可能被其悄悄关注的人。</p>
-<h2 id="输入格式：-4">输入格式：</h2>
+<h2 id="输入格式-3">输入格式：</h2>
 <p>输入首先在第一行给出某用户的关注列表，格式如下：</p>
 <p><code>人数N 用户1 用户2 …… 用户N</code></p>
-<p>其中N是不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5000</mn></mrow><annotation encoding="application/x-tex">5000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5000</span></span></span></span> 的正整数，每个用户 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mtext>（</mtext><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mi>N</mi><mtext>）</mtext></mrow><annotation encoding="application/x-tex">i（i=1, ..., N）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">i</span><span class="mord cjk_fallback">（</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">）</span></span></span></span> 是被其关注的用户的ID，是长度为4位的由数字和英文字母组成的字符串，各项间以空格分隔。</p>
+<p>其中N是不超过 <span class="math inline">\(5000\)</span>
+的正整数，每个用户 <span class="math inline">\(i（i=1, ..., N）\)</span>
+是被其关注的用户的ID，是长度为4位的由数字和英文字母组成的字符串，各项间以空格分隔。</p>
 <p>之后给出该用户点赞的信息：首先给出一个不超过10000的正整数M，随后M行，每行给出一个被其点赞的用户ID和对该用户的点赞次数（不超过1000），以空格分隔。注意：用户ID是一个用户的唯一身份标识。题目保证在关注列表中没有重复用户，在点赞信息中也没有重复用户。</p>
-<h2 id="输出格式：-4">输出格式：</h2>
+<h2 id="输出格式-3">输出格式：</h2>
 <p>我们认为被该用户点赞次数大于其点赞平均数、且不在其关注列表上的人，很可能是其悄悄关注的人。根据这个假设，请你按用户ID字母序的升序输出可能是其悄悄关注的人，每行1个ID。如果其实并没有这样的人，则输出<code>“Bing Mei You”</code>。</p>
-<h2 id="输入样例1：-2">输入样例1：</h2>
+<h2 id="输入样例1-1">输入样例1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">10 GAO3 Magi Zha1 Sen1 Quan FaMK LSum Eins FatM LLao
 8
 Magi 50
@@ -406,11 +424,11 @@ Dave 15
 GAO3 31
 Zoro 1
 Cath 60<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例1：-2">输出样例1：</h2>
+<h2 id="输出样例1-1">输出样例1：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Ammy
 Cath
 Pota<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输入样例2：-2">输入样例2：</h2>
+<h2 id="输入样例2-1">输入样例2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">11 GAO3 Magi Zha1 Sen1 Quan FaMK LSum Eins FatM LLao Pota
 7
 Magi 50
@@ -420,9 +438,9 @@ Ammy 3
 Dave 15
 GAO3 31
 Zoro 29<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例2：-2">输出样例2：</h2>
+<h2 id="输出样例2-1">输出样例2：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">Bing Mei You<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="Code-4">Code</h2>
+<h2 id="code-3">Code</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
@@ -471,14 +489,33 @@ Zoro 29<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1>E 功夫传人</h1>
-<p>一门武功能否传承久远并被发扬光大，是要看缘分的。一般来说，师傅传授给徒弟的武功总要打个折扣，于是越往后传，弟子们的功夫就越弱…… 直到某一支的某一代突然出现一个天分特别高的弟子（或者是吃到了灵丹、挖到了特别的秘笈），会将功夫的威力一下子放大N倍 —— 我们称这种弟子为“得道者”。</p>
-<p>这里我们来考察某一位祖师爷门下的徒子徒孙家谱：假设家谱中的每个人只有<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>位师傅（除了祖师爷没有师傅）；每位师傅可以带很多徒弟；并且假设辈分严格有序，即祖师爷这门武功的每个第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>代传人只能在第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>代传人中拜1个师傅。我们假设已知祖师爷的功力值为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span>，每向下传承一代，就会减弱<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>，除非某一代弟子得道。现给出师门谱系关系，要求你算出所有得道者的功力总值。</p>
-<h2 id="输入格式：-5">输入格式：</h2>
-<p>输入在第一行给出3个正整数，分别是：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mtext>（</mtext><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mtext>）</mtext></mrow><annotation encoding="application/x-tex">N（≤10^5）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mord cjk_fallback">）</span></span></span></span>——整个师门的总人数（于是每个人从0到N−1编号，祖师爷的编号为0）；<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span>——祖师爷的功力值（不一定是整数，但起码是正数）；<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span> ——每传一代功夫所打的折扣百分比值（不超过<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">100</span></span></span></span>的正数）。接下来有<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>行，第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>行<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>（</mtext><mi>i</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>N</mi><mo>−</mo><mn>1</mn><mtext>）</mtext></mrow><annotation encoding="application/x-tex">（i=0,⋯,N−1）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">（</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">1</span><span class="mord cjk_fallback">）</span></span></span></span>描述编号为i的人所传的徒弟，格式为：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>i</mi></msub><mi>I</mi><mi>D</mi><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo><mi>I</mi><mi>D</mi><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo><mo>⋯</mo><mi>I</mi><mi>D</mi><mo stretchy="false">[</mo><msub><mi>K</mi><mi>i</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">K_i   ID[1]   ID[2]   ⋯   ID[K_i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mopen">[</span><span class="mord">1</span><span class="mclose">]</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mopen">[</span><span class="mord">2</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span>其中<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">K_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是徒弟的个数，后面跟的是各位徒弟的编号，数字间以空格间隔。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">K_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为零表示这是一位得道者，这时后面跟的一个数字表示其武功被放大的倍数。</p>
-<h2 id="输出格式：-5">输出格式：</h2>
-<p>在一行中输出所有得道者的功力总值，只保留其整数部分。题目保证输入和正确的输出都不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>10</mn></msup></mrow><annotation encoding="application/x-tex">10^{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span></span></span></span></span></span></span></span>。</p>
-<h2 id="输入样例：-3">输入样例：</h2>
+<h1 id="e-功夫传人">E 功夫传人</h1>
+<p>一门武功能否传承久远并被发扬光大，是要看缘分的。一般来说，师傅传授给徒弟的武功总要打个折扣，于是越往后传，弟子们的功夫就越弱……
+直到某一支的某一代突然出现一个天分特别高的弟子（或者是吃到了灵丹、挖到了特别的秘笈），会将功夫的威力一下子放大N倍
+—— 我们称这种弟子为“得道者”。</p>
+<p>这里我们来考察某一位祖师爷门下的徒子徒孙家谱：假设家谱中的每个人只有<span
+class="math inline">\(1\)</span>位师傅（除了祖师爷没有师傅）；每位师傅可以带很多徒弟；并且假设辈分严格有序，即祖师爷这门武功的每个第<span
+class="math inline">\(i\)</span>代传人只能在第<span
+class="math inline">\(i-1\)</span>代传人中拜1个师傅。我们假设已知祖师爷的功力值为
+<span class="math inline">\(Z\)</span>，每向下传承一代，就会减弱<span
+class="math inline">\(r%\)</span>，除非某一代弟子得道。现给出师门谱系关系，要求你算出所有得道者的功力总值。</p>
+<h2 id="输入格式-4">输入格式：</h2>
+<p>输入在第一行给出3个正整数，分别是：<span
+class="math inline">\(N（≤10^5）\)</span>——整个师门的总人数（于是每个人从0到N−1编号，祖师爷的编号为0）；<span
+class="math inline">\(Z\)</span>——祖师爷的功力值（不一定是整数，但起码是正数）；<span
+class="math inline">\(r\)</span>
+——每传一代功夫所打的折扣百分比值（不超过<span
+class="math inline">\(100\)</span>的正数）。接下来有<span
+class="math inline">\(N\)</span>行，第<span
+class="math inline">\(i\)</span>行<span
+class="math inline">\(（i=0,⋯,N−1）\)</span>描述编号为i的人所传的徒弟，格式为：<span
+class="math inline">\(K_i ID[1] ID[2] ⋯ ID[K_i]\)</span>其中<span
+class="math inline">\(K_i\)</span>是徒弟的个数，后面跟的是各位徒弟的编号，数字间以空格间隔。<span
+class="math inline">\(K_i\)</span>为零表示这是一位得道者，这时后面跟的一个数字表示其武功被放大的倍数。</p>
+<h2 id="输出格式-4">输出格式：</h2>
+<p>在一行中输出所有得道者的功力总值，只保留其整数部分。题目保证输入和正确的输出都不超过
+<span class="math inline">\(10^{10}\)</span>。</p>
+<h2 id="输入样例-2">输入样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">10 18.0 1.00
 3 2 3 5
 1 9
@@ -490,9 +527,9 @@ Zoro 29<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 0 9
 0 4
 0 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="输出样例：-3">输出样例：</h2>
+<h2 id="输出样例-2">输出样例：</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">404<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h2 id="Code-5">Code</h2>
+<h2 id="code-4">Code</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
