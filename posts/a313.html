@@ -23,10 +23,12 @@
 <meta property="og:site_name" content="ACM笔记">
 <meta property="og:description" content="C++第一次上机 5-1使用引用作为函数参数 #include&lt;iostream&gt; using namespace std; void exchange(int&amp; x,int&amp; y) &amp;#123;     int temp &#x3D; x;     x &#x3D; y;     y &#x3D; temp; &amp;#125;  int main()&amp;#123;    int a, b;     cin &gt;">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.ptausercontent.com/e489faf8-8b62-44b7-b923-ba399e3a4c63.png">
 <meta property="article:published_time" content="2024-04-01T02:53:25.000Z">
-<meta property="article:modified_time" content="2024-05-28T04:28:08.934Z">
+<meta property="article:modified_time" content="2024-05-28T04:30:41.984Z">
 <meta property="article:author" content="nanyan">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images.ptausercontent.com/e489faf8-8b62-44b7-b923-ba399e3a4c63.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -252,8 +254,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="c第一次上机">C++第一次上机</h1>
-<h2 id="使用引用作为函数参数">5-1使用引用作为函数参数</h2>
+                <h1>C++第一次上机</h1>
+<h2 id="5-1使用引用作为函数参数">5-1使用引用作为函数参数</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">void</span> <span class="token function">exchange</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">&amp;</span> x<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">&amp;</span> y<span class="token punctuation">)</span>
@@ -270,7 +272,7 @@
     cout <span class="token operator">&lt;&lt;</span> <span class="token string">" exchange: "</span> <span class="token operator">&lt;&lt;</span> a <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token operator">&lt;&lt;</span> b <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="the-meaning-of-class">The meaning of Class</h2>
+<h2 id="The-meaning-of-Class">The meaning of Class</h2>
 <p>填空，实现部分类的特征只能读取，部分类的特征可读可写，部分类的属性只能写入</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">```
 
@@ -302,7 +304,7 @@
     cout<span class="token operator">&lt;&lt;</span><span class="token string">"Second Area is "</span><span class="token operator">&lt;&lt;</span>r2<span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="动态对象的创建">5-4动态对象的创建</h2>
+<h2 id="5-4动态对象的创建">5-4动态对象的创建</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">&#123;</span>
@@ -330,7 +332,7 @@
     <span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span> p<span class="token punctuation">;</span><span class="token comment">//删除对象数组指针p</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="静态数据成员">5-5静态数据成员</h2>
+<h2 id="5-5静态数据成员">5-5静态数据成员</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">class</span> <span class="token class-name">Point</span><span class="token punctuation">&#123;</span>
@@ -356,7 +358,7 @@
     p1<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="点类的定义和使用">5-6点类的定义和使用</h2>
+<h2 id="5-6点类的定义和使用">5-6点类的定义和使用</h2>
 <p>已知平面上的一点由其横纵坐标来标识。本题要求按照已给代码和注释完成一个基本的“点”类的定义（坐标均取整型数值）。并通过主函数中的点类对象完成一些简单操作，分析程序运行结果，将答案写在对应的空格中。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -401,7 +403,7 @@
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//主函数的返回语句</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="排队队吃果">5-7排队队吃果</h2>
+<h2 id="5-7排队队吃果">5-7排队队吃果</h2>
 <p>幼稚园阿姨发糖，先到先得。请查询资料，使用队列（queue）容器模拟幼稚园小朋友Jack、Mary、Tom、Angela和Alex依次到达（入队）并依次出队领糖的过程。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;queue></span></span>
@@ -420,7 +422,7 @@
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="newdelete">5-8 new/delete</h2>
+<h2 id="5-8-new-delete">5-8 new/delete</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token comment">// using namespace std;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -432,16 +434,14 @@
     <span class="token keyword">delete</span> pi<span class="token punctuation">;</span><span class="token comment">//释放int对象</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="平面矩形---c编程基础及应用--习题13-4"><strong>6-1 平面矩形 -
-《C++编程基础及应用》- 习题13-4</strong></h2>
+<h2 id="6-1-平面矩形-《C-编程基础及应用》-习题13-4"><strong>6-1 平面矩形 - 《C++编程基础及应用》- 习题13-4</strong></h2>
 <blockquote>
 <p>分数 20</p>
 <p>作者 海洋饼干叔叔</p>
 <p>单位 重庆大学</p>
 </blockquote>
-<p>在一个平面内，由左上角（top left）顶点坐标结合右下角（bottom
-right）顶点坐标即可确定一个平面矩形。请设计Rect和Point类，使其可以被下述代码所利用，并产生期望的输出。</p>
-<h3 id="裁判测试程序样例">裁判测试程序样例：</h3>
+<p>在一个平面内，由左上角（top left）顶点坐标结合右下角（bottom right）顶点坐标即可确定一个平面矩形。请设计Rect和Point类，使其可以被下述代码所利用，并产生期望的输出。</p>
+<h3 id="裁判测试程序样例：">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;Project - Rect
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;
@@ -465,9 +465,9 @@ int main() &#123;
 
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例">输入样例：</h3>
+<h3 id="输入样例：">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例">输出样例：</h3>
+<h3 id="输出样例：">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Vertices of rectangle rt:
 (1,6)-----------------------(7,6)
 (1,8)-----------------------(7,8)
@@ -480,10 +480,9 @@ area - 12    diagonal legnth - 6.32<span aria-hidden="true" class="line-numbers-
 <li>Point bottomLeft()生成并返回矩形左下角顶点的坐标；</li>
 <li>属性Point tl表示左上角顶点坐标, br表示右下角顶点坐标；</li>
 <li>int width(), int height()分别计算并返回矩形的宽，高；</li>
-<li>double
-diagonalLength()计算并返回矩形的对角线长度，使用勾股定理进行计算。</li>
+<li>double diagonalLength()计算并返回矩形的对角线长度，使用勾股定理进行计算。</li>
 </ul>
-<h3 id="code">Code</h3>
+<h3 id="Code">Code</h3>
 <blockquote>
 <p>240401</p>
 </blockquote>
@@ -539,15 +538,14 @@ diagonalLength()计算并返回矩形的对角线长度，使用勾股定理进�
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="类的定义学生类student"><strong>6-2
-类的定义（学生类Student）</strong></h2>
+<h2 id="6-2-类的定义（学生类Student）"><strong>6-2 类的定义（学生类Student）</strong></h2>
 <blockquote>
 <p>分数 10</p>
 <p>作者 刘骥</p>
 <p>单位 重庆大学</p>
 </blockquote>
 <p>本题要求定义一个学生类Student，数据成员包含姓名name和年龄age，类的声明见给出的代码，请给出类的完整实现，并通过测试程序。</p>
-<h3 id="类的声明">类的声明：</h3>
+<h3 id="类的声明：">类的声明：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Student&#123;
     private:
         string name;
@@ -559,7 +557,7 @@ diagonalLength()计算并返回矩形的对角线长度，使用勾股定理进�
         void setName(string name);
         void setAge(int age);
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="测试程序">测试程序：</h3>
+<h3 id="测试程序：">测试程序：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
 #include&lt;string&gt;
 using namespace std;
@@ -587,9 +585,9 @@ int main()&#123;
     cout&lt;&lt;&quot;age&#x3D;&quot;&lt;&lt;a.getAge()&lt;&lt;endl;
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="测试程序的输入">测试程序的输入：</h3>
+<h3 id="测试程序的输入：">测试程序的输入：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="测试程序的输出">测试程序的输出：</h3>
+<h3 id="测试程序的输出：">测试程序的输出：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">name&#x3D;Zhang
 age&#x3D;20
 name&#x3D;Li
@@ -621,7 +619,7 @@ void Student::setAge(int age)
 <p>内存限制</p>
 <p>64 MB</p>
 </blockquote>
-<h3 id="code-1">Code</h3>
+<h3 id="Code-2">Code</h3>
 <blockquote>
 <p>240401</p>
 </blockquote>
@@ -667,14 +665,14 @@ string <span class="token class-name">Student</span><span class="token double-co
     cout<span class="token operator">&lt;&lt;</span><span class="token string">"age="</span><span class="token operator">&lt;&lt;</span>a<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="动态输入排序"><strong>6-3 动态输入排序</strong></h2>
+<h2 id="6-3-动态输入排序"><strong>6-3 动态输入排序</strong></h2>
 <blockquote>
 <p>分数 20</p>
 <p>作者 乔</p>
 <p>单位 湖南工程学院计算机与通信学院</p>
 </blockquote>
 <p>本题要求实现一个函数input，能够输入n个整数。</p>
-<h3 id="裁判测试程序样例-1">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-2">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;* 请在这里填写答案 *&#x2F;
 &#x2F;&#x2F;实现input函数
 
@@ -702,11 +700,11 @@ int main()&#123;
         delete []a; 
     return 0;    
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-1">输入样例：</h3>
+<h3 id="输入样例：-2">输入样例：</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">5
 10 9 8 7 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-1">输出样例：</h3>
+<h3 id="输出样例：-2">输出样例：</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">6 7 8 9 10 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <blockquote>
@@ -717,7 +715,7 @@ int main()&#123;
 <p>内存限制</p>
 <p>64 MB</p>
 </blockquote>
-<h3 id="code-2">Code</h3>
+<h3 id="Code-3">Code</h3>
 <blockquote>
 <p>240401</p>
 </blockquote>
@@ -754,16 +752,16 @@ int main()&#123;
         <span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span>a<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="客户机类"><strong>6-4 客户机类</strong></h2>
+<h2 id="6-4-客户机类"><strong>6-4 客户机类</strong></h2>
 <blockquote>
 <p>分数 10</p>
 <p>作者 杨军</p>
 <p>单位 四川师范大学</p>
 </blockquote>
 <p>实现客户机(Client)类。定义字符型静态数据成员ServerName，保存其服务器名称；整型静态数据成员ClientNum，记录已定义的客户机数量；定义静态函数ChangeServerName()改变服务器名称。完成程序，使得提供的测试程序可以运行并得到要求的结果。</p>
-<h3 id="函数接口定义">函数接口定义：</h3>
+<h3 id="函数接口定义：">函数接口定义：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">根据要求实现类代码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="裁判测试程序样例-2">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-3">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*在这里完成类代码*&#x2F;
 在这里给出函数被调用进行测试的例子。例如：
 int main()&#123;
@@ -773,10 +771,10 @@ int main()&#123;
     Client::changeServerName(&#39;B&#39;);
     Client::show();
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-2">输入样例：</h3>
+<h3 id="输入样例：-3">输入样例：</h3>
 <p>在这里给出一组输入。例如：</p>
 <p>无</p>
-<h3 id="输出样例-2">输出样例：</h3>
+<h3 id="输出样例：-3">输出样例：</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">server name:A
 num of clients:0
@@ -792,7 +790,7 @@ num of clients:1<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <p>内存限制</p>
 <p>64 MB</p>
 </blockquote>
-<h3 id="code-3">Code</h3>
+<h3 id="Code-4">Code</h3>
 <blockquote>
 <p>240401</p>
 </blockquote>
@@ -818,22 +816,21 @@ num of clients:1<span aria-hidden="true" class="line-numbers-rows"><span></span>
 
 <span class="token keyword">int</span> Client<span class="token double-colon punctuation">::</span>ClientNum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token keyword">char</span> Client<span class="token double-colon punctuation">::</span>ServerName<span class="token operator">=</span><span class="token char">'A'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="日复一日---c编程基础及应用--习题13-2"><strong>6-5 日复一日 -
-《C++编程基础及应用》- 习题13-2</strong></h2>
+<h2 id="6-5-日复一日-《C-编程基础及应用》-习题13-2"><strong>6-5 日复一日 - 《C++编程基础及应用》- 习题13-2</strong></h2>
 <blockquote>
 <p>分数 20</p>
 <p>作者 海洋饼干叔叔</p>
 <p>单位 重庆大学</p>
 </blockquote>
 <p>设计符合下述要求的日期类（Date），使得下述代码可以正常运行。</p>
-<ol type="1">
+<ol>
 <li>拥有数据成员year、month和day，分别存储年、月、日；</li>
 <li>构造函数接受年、月、日参数并初始化全部数据成员；</li>
 <li>公有成员函数toText()返回一个string对象，该字符串为该日期对象的文字表达，比如“2022-5-20”；</li>
 <li>公有成员函数nextDay()返回一个Date对象，表示该日期的后一天；</li>
 <li>公有成员函数prevDay()返回一个Date对象，表示该日期的前一天。</li>
 </ol>
-<h3 id="裁判测试程序样例-3">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-4">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;assert.h&gt;
@@ -850,12 +847,13 @@ int main()
          &lt;&lt; &quot;, Prev Day: &quot; &lt;&lt; d.prevDay().toText();
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-3">输入样例：</h3>
+<h3 id="输入样例：-4">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">2000 3 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <p>说明：依次是年-月-日。</p>
-<h3 id="输出样例-3">输出样例：</h3>
+<h3 id="输出样例：-4">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Date: 2000-3-1, Next Day: 2000-3-2, Prev Day: 2000-2-29<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<p>提示：需要注意闰年，闰年2月有29天，平年28天。 闰年判定函数：</p>
+<p>提示：需要注意闰年，闰年2月有29天，平年28天。<br>
+闰年判定函数：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">bool isLeapYear(int year)&#123;
     &#x2F;&#x2F;四年一闰，百年不闰，四百年又闰
     if (year%400&#x3D;&#x3D;0)
@@ -868,7 +866,7 @@ int main()
         return false;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <p>请注意：函数题只需要提交相关代码片段，不要提交完整程序。</p>
-<h3 id="code-4">Code</h3>
+<h3 id="Code-5">Code</h3>
 <blockquote>
 <p>240401</p>
 </blockquote>
@@ -941,8 +939,7 @@ int main()
         <span class="token keyword">return</span> res<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="凸n边形的面积---c编程基础及应用--习题13-5"><strong>6-6
-凸N边形的面积 - 《C++编程基础及应用》- 习题13-5</strong></h2>
+<h2 id="6-6-凸N边形的面积-《C-编程基础及应用》-习题13-5"><strong>6-6 凸N边形的面积 - 《C++编程基础及应用》- 习题13-5</strong></h2>
 <blockquote>
 <p>分数 20</p>
 <p>作者 海洋饼干叔叔</p>
@@ -950,24 +947,18 @@ int main()
 </blockquote>
 <p>请设计符合下述要求的Point及Polygon类，使得程序可以正常运行。</p>
 <p>平面内的N边形可以用N个顶点坐标来表示。请设计Point类表示一个顶点。请设计Polygon类表示一个N边形（N≥3）：</p>
-<ol type="1">
+<ol>
 <li>私有数据成员pts类型为Point*，用于指向多边形的N个动态顶点对象；</li>
 <li>构造函数接受一个整数n作为参数，n为多边形边数/点数；构造函数中需要动态分配顶点对象数组pts；</li>
-<li>setVertice(int i, const Point&amp;
-p)成员函数用于设置第i个顶点的坐标；</li>
+<li>setVertice(int i, const Point&amp; p)成员函数用于设置第i个顶点的坐标；</li>
 <li>getVertice(i)成员函数获取并返回多边形的第i个顶点；</li>
 <li>在析构函数中释放动态顶点对象；</li>
 <li>公有函数getArea()计算并返回该多边形的面积（假设多边形为凸多边形，计算方法参考练习11-5）。</li>
 </ol>
-<p>练习11-5中关于凸六边形面积计算的描述：
+<p>练习11-5中关于凸六边形面积计算的描述：<br>
 如图所示，当六边形为凸六边形时，可以将其拆分成四个三角形，利用海伦-秦九韶公式分别计算三角形的面积并相加，即得凸六边形的面积。</p>
-<figure>
-<img
-src="https://images.ptausercontent.com/e489faf8-8b62-44b7-b923-ba399e3a4c63.png" srcset="/img/loading.gif" lazyload
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure>
-<h3 id="裁判测试程序样例-4">裁判测试程序样例：</h3>
+<p><img src="https://images.ptausercontent.com/e489faf8-8b62-44b7-b923-ba399e3a4c63.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h3 id="裁判测试程序样例：-5">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;cmath&gt;
 #include &lt;stdio.h&gt;
@@ -997,15 +988,15 @@ int main()
     printf(&quot;Area of polygon 2: %.1f\n&quot;,poly2.getArea());
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-4">输入样例：</h3>
+<h3 id="输入样例：-5">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-4">输出样例：</h3>
+<h3 id="输出样例：-5">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Vertex 3 of poly 1: (61.0, -29.1)
 Area of polygon 1: 3609.3
 Vertex 2 of poly 2: (20.3, -22.0)
 Area of polygon 2: 516.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <p>请注意：函数题只需要提交相关代码片段，不要提交完整程序。</p>
-<h3 id="code-5">Code</h3>
+<h3 id="Code-6">Code</h3>
 <blockquote>
 <p>240401</p>
 </blockquote>
@@ -1046,19 +1037,18 @@ Area of polygon 2: 516.2<span aria-hidden="true" class="line-numbers-rows"><span
         <span class="token keyword">return</span> area<span class="token operator">/</span><span class="token number">2.0</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1 id="cpp第二次上机">CPP第二次上机</h1>
-<h2 id="知识点2普通构造函数及初始化">5-1
-知识点2：普通构造函数及初始化</h2>
+<h1>CPP第二次上机</h1>
+<h2 id="5-1-知识点2：普通构造函数及初始化">5-1 知识点2：普通构造函数及初始化</h2>
 <ul>
 <li>对象的<strong>初始化和清理</strong>也是两个非常重要的安全问题</li>
 <li>一个对象或者变量没有初始状态，对其使用后果是未知</li>
 <li>同样的使用完一个对象或变量，没有及时清理，也会造成一定的安全问题</li>
 <li>c++利用了<strong>构造函数</strong>和<strong>析构函数</strong>解决上述问题，这两个函数将会被编译器自动调用，完成对象初始化和清理工作。</li>
 </ul>
-<hr />
+<hr>
 <p><strong>构造函数</strong>：主要作用在于创建对象时为对象的成员属性赋值，构造函数由编译器自动调用，无须手动调用。</p>
 <p><strong>构造函数：</strong><code>类名(输入参数)&#123;函数体&#125;</code></p>
-<ol type="1">
+<ol>
 <li>构造函数，没有返回值也不写void</li>
 <li>函数名称与类名相同</li>
 <li>构造函数可以有参数，因此可以发生重载</li>
@@ -1067,15 +1057,15 @@ Area of polygon 2: 516.2<span aria-hidden="true" class="line-numbers-rows"><span
 </ol>
 <p><strong>成员变量通过构造函数初始化</strong>：</p>
 <ul>
-<li>在实现构造函数时，还可以通过“:”运算符，在构造函数后面初始化成员变量，这种方式称为列表初始化，其格式如下所示：
+<li>在实现构造函数时，还可以通过“:”运算符，在构造函数后面初始化成员变量，这种方式称为列表初始化，其格式如下所示：<br>
 <code>类名（输入参数列表）: 成员变量1(输入参数1), 成员变量的2(输入参数2),…, 成员变量n(输入参数n) &#123; 函数体 &#125;</code></li>
 </ul>
 <p><strong>构造函数的调用顺序</strong>：</p>
-<ol type="1">
+<ol>
 <li>类的成员变量也可以是属于别的类的对象</li>
 <li>当创建对象a中含有属于别的类对象b时，先执行成员对象b的构造函数，再执行a的构造函数</li>
 </ol>
-<h3 id="例">例：</h3>
+<h3 id="例：">例：</h3>
 <p>补全下面两个类，一个<code>Birth</code>，一个<code>Student</code>，后者的成员变量中含有前者的对象</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -1111,18 +1101,17 @@ Area of polygon 2: 516.2<span aria-hidden="true" class="line-numbers-rows"><span
     stu<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//最后输出结果中，先输出“Birth类构造函数”，再输出“Student类构造函数”</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点3拷贝构造函数及构造函数的重载">5-2
-知识点3：拷贝构造函数及构造函数的重载</h2>
+<h2 id="5-2-知识点3：拷贝构造函数及构造函数的重载">5-2 知识点3：拷贝构造函数及构造函数的重载</h2>
 <p><strong>拷贝构造函数：</strong><code>构造函数名称(const 类名 &amp;对象名) &#123; 函数体 &#125;</code></p>
-<ol type="1">
+<ol>
 <li>拷贝构造函数是一种特殊的构造函数，它具有构造函数的所有特性，并且使用本类对象的引用作为形参，其作用是使用一个已经存在的对象初始化该类的另一个对象。</li>
 <li>在定义拷贝构造函数时，为了使引用的对象不被修改，通常使用const修饰引用的对象。</li>
 </ol>
 <p><strong>构造函数重载：</strong><code>类名(不同的输入参数)&#123;函数体&#125;</code></p>
-<ol type="1">
+<ol>
 <li>当定义具有默认参数的重载构造函数时，要防止调用的二义性。</li>
 </ol>
-<h3 id="例-1">例：</h3>
+<h3 id="例：-2">例：</h3>
 <p>补充Birth类与Student类的拷贝构造函数，并对Student类的构造函数重载</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -1175,13 +1164,13 @@ Area of polygon 2: 516.2<span aria-hidden="true" class="line-numbers-rows"><span
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点4析构函数">5-3 知识点4：析构函数</h2>
+<h2 id="5-3-知识点4：析构函数">5-3 知识点4：析构函数</h2>
 <p><strong>析构函数</strong>：主要作用在于对象<strong>销毁前</strong>系统自动调用，执行一些清理工作。</p>
-<hr />
+<hr>
 <p><strong>析构函数语法：</strong> <code>~类名()&#123;&#125;</code></p>
-<ol type="1">
+<ol>
 <li>析构函数，没有返回值也不写void</li>
-<li>函数名称与类名相同,在名称前加上符号 ~</li>
+<li>函数名称与类名相同,在名称前加上符号  ~</li>
 <li>析构函数不可以有参数，因此不可以发生重载</li>
 <li>程序在对象销毁前会自动调用析构，无须手动调用,而且只会调用一次</li>
 <li>析构函数没有返回值，不能在析构函数名称前添加任何返回值类型。在析构函数内部，也不能通过return返回任何值。</li>
@@ -1191,12 +1180,12 @@ Area of polygon 2: 516.2<span aria-hidden="true" class="line-numbers-rows"><span
 <li>析构函数的调用顺序与构造函数的调用顺序是相反的。在构造对象和析构对象时，C++遵循的原则是：先构造的后析构，后构造的先析构。</li>
 </ul>
 <p><strong>什么时候调用析构函数</strong></p>
-<ol type="1">
+<ol>
 <li>在一个函数中定义了一个对象，当函数调用结束时，对象应当被释放，对象释放之前，编译器会调用析构函数释放资源。</li>
 <li>static修饰的对象和全局对象，只有在程序结束时才会调用析构函数。</li>
 <li>new运算符创建的对象，在调用delete释放对象时，编译器会调用析构函数释放资源。</li>
 </ol>
-<hr />
+<hr>
 <p>例：为Student类与Birth类加入析构函数，并观察Birth类与Student类析构函数调用顺序</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -1260,8 +1249,7 @@ Area of polygon 2: 516.2<span aria-hidden="true" class="line-numbers-rows"><span
 <span class="token punctuation">&#125;</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点1const修饰的成员变量与成员函数">5-4
-知识点1：const修饰的成员变量与成员函数</h2>
+<h2 id="5-4-知识点1：const修饰的成员变量与成员函数">5-4 知识点1：const修饰的成员变量与成员函数</h2>
 <p>分数 7</p>
 <p>作者 郑远</p>
 <p>单位 中国民用航空飞行学院</p>
@@ -1338,20 +1326,21 @@ Area of polygon 2: 516.2<span aria-hidden="true" class="line-numbers-rows"><span
 <span class="token comment">//第三行：0</span>
 <span class="token comment">//第四行：重载2</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点2static修饰的成员变量与成员函数">5-5
-知识点2：static修饰的成员变量与成员函数</h2>
-<p>静态成员就是在成员变量和成员函数前加上关键字static，称为静态成员
+<h2 id="5-5-知识点2：static修饰的成员变量与成员函数">5-5 知识点2：static修饰的成员变量与成员函数</h2>
+<p>静态成员就是在成员变量和成员函数前加上关键字static，称为静态成员<br>
 静态成员分为：</p>
 <ul>
-<li>静态成员变量 * 所有对象共享同一份数据 * 在编译阶段分配内存 *
-静态成员变量定义语法 <code>static 变量类型 变量名</code> *
-类内声明，类外初始化，初始化语法为：<code>变量类型 类名::变量名=初始化数（整体位于类定义的外面）</code>
-*
-可以通过对象或类进行调用：<code>对象.静态成员变量名</code>或<code>类名::静态成员变量名</code></li>
-<li>静态成员函数 * 所有对象共享同一个函数 *
-静态成员函数只能访问静态成员变量 *
-静态成员函数定义语法：<code>static 函数名()&#123;&#125;</code> *
-可以通过对象或类进行调用：<code>对象.静态函数名()</code>或<code>类名::静态函数名()</code></li>
+<li>静态成员变量<br>
+*  所有对象共享同一份数据<br>
+*  在编译阶段分配内存<br>
+*  静态成员变量定义语法 <code>static 变量类型 变量名</code><br>
+*  类内声明，类外初始化，初始化语法为：<code>变量类型 类名::变量名=初始化数（整体位于类定义的外面）</code><br>
+*  可以通过对象或类进行调用：<code>对象.静态成员变量名</code>或<code>类名::静态成员变量名</code></li>
+<li>静态成员函数<br>
+*  所有对象共享同一个函数<br>
+*  静态成员函数只能访问静态成员变量<br>
+*  静态成员函数定义语法：<code>static 函数名()&#123;&#125;</code><br>
+*  可以通过对象或类进行调用：<code>对象.静态函数名()</code>或<code>类名::静态函数名()</code></li>
 </ul>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -1399,41 +1388,38 @@ Area of polygon 2: 516.2<span aria-hidden="true" class="line-numbers-rows"><span
     <span class="token comment">//Person::func2(); //私有权限访问不到    </span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2
-id="知识点3friend修饰的成员变量与成员函数">知识点3：friend修饰的成员变量与成员函数</h2>
+<h2 id="知识点3：friend修饰的成员变量与成员函数">知识点3：friend修饰的成员变量与成员函数</h2>
 <p>生活中你的家有客厅(Public)，有你的卧室(Private)；客厅所有来的客人都可以进去，但是你的卧室是私有的，也就是说只有你能进去。但是呢，你也可以允许你的好闺蜜好基友进去。</p>
-<p>在程序里，有些私有属性
-也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术；友元的目的就是让一个函数或者类
-访问另一个类中私有成员</p>
-<p>友元的关键字为 <code>friend</code> 友元的三种实现</p>
+<p>在程序里，有些私有属性 也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术；友元的目的就是让一个函数或者类 访问另一个类中私有成员</p>
+<p>友元的关键字为  <code>friend</code><br>
+友元的三种实现</p>
 <ul>
 <li>类做友元</li>
 <li>成员函数做友元</li>
 <li>全局函数做友元</li>
 </ul>
-<ol type="1">
+<ol>
 <li>friend修饰别的类</li>
 </ol>
 <ul>
 <li>友元类可以声明在类中任意位置。<code>friend class 类名</code></li>
 <li>声明友元类之后，友元类中的所有成员函数都是该类的友元函数，能够访问该类的所有成员。</li>
 </ul>
-<ol start="2" type="1">
+<ol start="2">
 <li>friend修饰成员函数</li>
 </ol>
 <ul>
 <li>友元成员函数声明语法：<code>friend 函数返回值类型 类名::函数名();</code></li>
 <li>注意定义的先后，建议在前面进行声明，后面进行函数的同一定义，防止出现问题。</li>
 </ul>
-<ol start="3" type="1">
+<ol start="3">
 <li>friend修饰类外定义的函数</li>
 </ol>
 <ul>
 <li>将类外部的普通函数作为类的友元函数，在类中使用friend关键字声明该普通函数就可以实现，友元函数可以在类中任意位置声明。</li>
-<li>普通函数作为友元函数的声明形式如下所示：
-<code>friend 函数返回值类型 友元函数名（形参列表）</code></li>
+<li>普通函数作为友元函数的声明形式如下所示： <code>friend 函数返回值类型 友元函数名（形参列表）</code></li>
 </ul>
-<h3 id="code-6">Code</h3>
+<h3 id="Code-7">Code</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">class</span> <span class="token class-name">Building</span><span class="token punctuation">;</span>
@@ -1511,9 +1497,9 @@ goodGayGay<span class="token double-colon punctuation">::</span><span class="tok
     <span class="token function">test03</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//friend修饰类外定义的函数</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="猫和老鼠有多重">6-1 <strong>猫和老鼠有多重</strong></h2>
+<h2 id="6-1-猫和老鼠有多重">6-1 <strong>猫和老鼠有多重</strong></h2>
 <p>定义猫和老鼠：Cat与Mouse两个类，二者都有weight属性，定义二者的一个友元函数totalweight()，计算二者的重量和。</p>
-<h3 id="裁判测试程序样例-5">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-6">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
 using namespace std;
 
@@ -1527,11 +1513,11 @@ int main()
   Mouse jerry(w2);
   cout&lt;&lt;totalWeight(tom,jerry)&lt;&lt;endl;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-5">输入样例：</h3>
+<h3 id="输入样例：-6">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">100 200<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-5">输出样例：</h3>
+<h3 id="输出样例：-6">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">300<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="code-7">Code</h3>
+<h3 id="Code-8">Code</h3>
 <blockquote>
 <p>240415</p>
 </blockquote>
@@ -1558,14 +1544,14 @@ int main()
 <span class="token keyword">int</span> <span class="token function">totalWeight</span><span class="token punctuation">(</span><span class="token keyword">const</span> Cat<span class="token operator">&amp;</span> w1<span class="token punctuation">,</span><span class="token keyword">const</span> Mouse<span class="token operator">&amp;</span> w2<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">return</span> w1<span class="token punctuation">.</span>weight<span class="token operator">+</span>w2<span class="token punctuation">.</span>weight<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="你好拷贝构造函数">6-2 <strong>你好，拷贝构造函数</strong></h2>
+<h2 id="6-2-你好，拷贝构造函数">6-2 <strong>你好，拷贝构造函数</strong></h2>
 <p>定义一个类<code>Point</code>：</p>
 <ul>
 <li>构造函数传入<code>x</code>和<code>y</code>的坐标值（整数），如果不传，默认都为0</li>
 <li>编写复制构造函数</li>
 <li><code>display</code>函数用于输出这个点的<code>x</code>和<code>y</code>坐标，以空格分隔</li>
 </ul>
-<h3 id="裁判测试程序样例-6">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-7">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 using namespace std;
 
@@ -1583,15 +1569,15 @@ int main()
     p3.display();
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-6">输入样例：</h3>
+<h3 id="输入样例：-7">输入样例：</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">3 4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-6">输出样例：</h3>
+<h3 id="输出样例：-7">输出样例：</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">3 4
 0 0
 3 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-8">Code</h3>
+<h3 id="Code-9">Code</h3>
 <blockquote>
 <p>240415</p>
 </blockquote>
@@ -1609,17 +1595,18 @@ int main()
         cout<span class="token operator">&lt;&lt;</span>x<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span>y<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="复数类">6-3 <strong>复数类</strong></h2>
-<ol type="1">
-<li>已知一个名为Complex的复数类，这个类包含：
-（1）私有成员：实部、虚部，且均为int 型
-（2）公有的带默认形参值的构造函数、复制构造函数
-（3）公有成员函数Display，其作用为显示复数 要求：
-（1）实现满足上述属性和行为的Complex类定义；
-（2）设计函数AddComplex，函数AddComplex功能为实现两个复数相加，要求该函数的形参为复数类的常引用；
+<h2 id="6-3-复数类">6-3 <strong>复数类</strong></h2>
+<ol>
+<li>已知一个名为Complex的复数类，这个类包含：<br>
+（1）私有成员：实部、虚部，且均为int 型<br>
+（2）公有的带默认形参值的构造函数、复制构造函数<br>
+（3）公有成员函数Display，其作用为显示复数<br>
+要求：<br>
+（1）实现满足上述属性和行为的Complex类定义；<br>
+（2）设计函数AddComplex，函数AddComplex功能为实现两个复数相加，要求该函数的形参为复数类的常引用；<br>
 （3）保证如下主函数能正确运行。</li>
 </ol>
-<h3 id="裁判测试程序样例-7">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-8">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;* 请在这里填写答案 *&#x2F;
 
 int main()&#123;
@@ -1639,16 +1626,16 @@ int main()&#123;
         c3.Display();    
         return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-7">输入样例：</h3>
+<h3 id="输入样例：-8">输入样例：</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">2 -3 
 3 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-7">输出样例：</h3>
+<h3 id="输出样例：-8">输出样例：</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">c1 is: 2-3i
 c2 is: 3+4i
 c3 is: 5+1i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-9">Code</h3>
+<h3 id="Code-10">Code</h3>
 <blockquote>
 <p>240415</p>
 </blockquote>
@@ -1676,15 +1663,14 @@ Complex <span class="token function">AddComplex</span><span class="token punctua
 Complex <span class="token function">AddComplex</span><span class="token punctuation">(</span><span class="token keyword">const</span> Complex<span class="token operator">&amp;</span> c1<span class="token punctuation">,</span><span class="token keyword">const</span> Complex<span class="token operator">&amp;</span> c2<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">return</span> <span class="token function">Complex</span><span class="token punctuation">(</span>c1<span class="token punctuation">.</span>x<span class="token operator">+</span>c2<span class="token punctuation">.</span>x<span class="token punctuation">,</span>c1<span class="token punctuation">.</span>y<span class="token operator">+</span>c2<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="实现数组类c-拷贝构造函数拷贝函数"><strong>6-4 实现数组类（C++
-拷贝构造函数、拷贝函数）</strong></h2>
+<h2 id="6-4-实现数组类（C-拷贝构造函数、拷贝函数）"><strong>6-4 实现数组类（C++ 拷贝构造函数、拷贝函数）</strong></h2>
 <p>裁判测试程序样例中展示的是一段实现“数组类”的代码，其中缺失了部分代码，请补充完整，以保证测试程序正常运行。</p>
-<h3 id="函数接口定义-1">函数接口定义：</h3>
+<h3 id="函数接口定义：-2">函数接口定义：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">提示：要想程序正确运行，至少需要补充以下函数（可能还需要补充其他函数）：
 1. 带参构造函数
 2. 拷贝构造函数
 3. 拷贝函数（赋值运算符重载）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="裁判测试程序样例-8">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-9">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 using namespace std;
 class ArrayIndexOutOfBoundsException&#123;  &#x2F;&#x2F; 异常类
@@ -1741,15 +1727,15 @@ int main()&#123;
     cout &lt;&lt; a &lt;&lt; endl;
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-8">输入样例：</h3>
+<h3 id="输入样例：-9">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">15 666<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-8">输出样例：</h3>
+<h3 id="输出样例：-9">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 [0,1,2,3,4,5,6,666,8,9,10,11,12,13,14]
 [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 [0,1,2,3,4,5,6,666,8,9,10,11,12,13,14]
 [0,1,2,3,4,5,6,2223,8,9,10,11,12,13,14]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-10">Code</h3>
+<h3 id="Code-11">Code</h3>
 <blockquote>
 <p>240415</p>
 </blockquote>
@@ -1782,31 +1768,32 @@ Array<span class="token operator">&amp;</span> <span class="token keyword">opera
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="队列操作"><strong>7-1 队列操作</strong></h2>
+<h2 id="7-1-队列操作"><strong>7-1 队列操作</strong></h2>
 <p>请实现一个MyQueue类，实现出队，入队，求队列长度</p>
-<p>实现入队函数 void push(int x); 实现出队函数 int pop();
+<p>实现入队函数 void push(int x);<br>
+实现出队函数 int pop();<br>
 实现求队列长度函数 int size();</p>
 <h3 id="输入格式">输入格式:</h3>
-<p>每个输入包含1个测试用例。每个测试用例第一行给出一个正整数 n (n &lt;=
-10^6) ，接下去n行每行一个数字，表示一种操作： 1 x ：
-表示从队尾插入x，0&lt;=x&lt;=2^31-1。 2 ： 表示队首元素出队。 3 ：
-表示求队列长度。</p>
+<p>每个输入包含1个测试用例。每个测试用例第一行给出一个正整数 n (n &lt;= 10^6) ，接下去n行每行一个数字，表示一种操作：<br>
+1 x ： 表示从队尾插入x，0&lt;=x&lt;=2^31-1。<br>
+2 ： 表示队首元素出队。<br>
+3 ： 表示求队列长度。</p>
 <h3 id="输出格式">输出格式:</h3>
-<p>对于操作2,若队列为空，则输出 “Invalid”,否则请输出队首元素。
-对于操作3，请输出队列长度。 每个输出项最后换行。</p>
-<h3 id="输入样例-9">输入样例:</h3>
+<p>对于操作2,若队列为空，则输出 “Invalid”,否则请输出队首元素。 对于操作3，请输出队列长度。<br>
+每个输出项最后换行。</p>
+<h3 id="输入样例">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">5
 3
 2
 1 100
 3
 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-9">输出样例:</h3>
+<h3 id="输出样例">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">0
 Invalid
 1
 100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-11">Code</h3>
+<h3 id="Code-12">Code</h3>
 <blockquote>
 <p>240415</p>
 </blockquote>
@@ -1829,27 +1816,26 @@ Invalid
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="完成队列类的拷贝控制函数"><strong>7-2
-完成队列类的拷贝控制函数</strong></h2>
+<h2 id="7-2-完成队列类的拷贝控制函数"><strong>7-2 完成队列类的拷贝控制函数</strong></h2>
 <p>在队列类中添加拷贝构造函数、移动构造函数、移动赋值函数、重载赋值运算符=。并在主函数中测试：</p>
 <p>调用拷贝构造函数，用已定义的一个队列类对象q构造新定义的对象q1。</p>
 <p>调用赋值运算符，将一个已定义的队列类对象q赋值给另一个对象q2。</p>
 <p>移除q的第一个元素。</p>
-<h3 id="输入格式-1">输入格式:</h3>
+<h3 id="输入格式-2">输入格式:</h3>
 <p>输入一组整数到队列对象中，以ctrl+Z+enter结束输入。</p>
-<h3 id="输出格式-1">输出格式:</h3>
+<h3 id="输出格式-2">输出格式:</h3>
 <p>q中的元素；</p>
 <p>q1中的元素；</p>
 <p>q2中的元素；</p>
-<h3 id="输入样例-10">输入样例:</h3>
+<h3 id="输入样例-2">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">3 9 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-10">输出样例:</h3>
+<h3 id="输出样例-2">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">9 1
 3 9 1
 3 9 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-12">Code</h3>
+<h3 id="Code-13">Code</h3>
 <blockquote>
 <p>240415</p>
 </blockquote>
@@ -1878,21 +1864,20 @@ Invalid
     cout<span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="选做-无符号大数类"><strong>7-3（选做）
-无符号大数类</strong></h2>
+<h2 id="7-3（选做）-无符号大数类"><strong>7-3（选做） 无符号大数类</strong></h2>
 <p>设计并实现一个具有构造、+、-、*、/、%、&gt;、&lt;、&gt;=、&lt;=、!=、==、&lt;&lt;等功能的无符号大数类。（为便于运算，无符号大数内部存放连续十进制位时采用低位在前、高位在后的方式，去除高位多余的0。无符号大数类应支持复制和赋值）</p>
-<h3 id="输入格式-2">输入格式:</h3>
+<h3 id="输入格式-3">输入格式:</h3>
 <p>输入两个无符号大数A、B。</p>
-<h3 id="输出格式-2">输出格式:</h3>
+<h3 id="输出格式-3">输出格式:</h3>
 <p>输出A+B=结果。</p>
-<h3 id="输入样例-11">输入样例:</h3>
+<h3 id="输入样例-3">输入样例:</h3>
 <p>例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">1234567890987654321333888999666
 147655765659657669789687967867<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-11">输出样例:</h3>
+<h3 id="输出样例-3">输出样例:</h3>
 <p>输出结果：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">1234567890987654321333888999666+147655765659657669789687967867&#x3D;1382223656647311991123576967533<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="code-13">Code</h3>
+<h3 id="Code-14">Code</h3>
 <blockquote>
 <p>240415</p>
 </blockquote>
@@ -1933,7 +1918,7 @@ Invalid
     cout<span class="token operator">&lt;&lt;</span>a<span class="token operator">&lt;&lt;</span><span class="token string">"+"</span><span class="token operator">&lt;&lt;</span>b<span class="token operator">&lt;&lt;</span><span class="token string">"="</span><span class="token operator">&lt;&lt;</span>res<span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h1 id="c课后作业-运算符重载-继承">C++课后作业-运算符重载-继承</h1>
+<h1>C++课后作业-运算符重载-继承</h1>
 <h2 id="运算符重载">运算符重载</h2>
 <p>圆类定义如下，重载输入、输出运算符为友元函数，重载算术减法运算符为成员函数，参考给出代码进行填空。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
@@ -2016,7 +2001,7 @@ ostream<span class="token operator">&amp;</span> <span class="token keyword">ope
     cout<span class="token operator">&lt;&lt;</span>c<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="多层派生时的构造函数">5-3 多层派生时的构造函数</h2>
+<h2 id="5-3-多层派生时的构造函数">5-3 多层派生时的构造函数</h2>
 <p>根据所定义的基类，完成派生类的定义。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
@@ -2065,12 +2050,11 @@ ostream<span class="token operator">&amp;</span> <span class="token keyword">ope
     stud<span class="token punctuation">.</span><span class="token function">show_all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="point类的运算"><strong>6-1 Point类的运算</strong></h2>
-<p>定义Point类，有坐标x,y两个私有成员变量;对Point类重载“+”（相加）、“-”（相减）和“==”（相等）运算符，实现对坐标的改变，要求用友元函数和成员函数两种方法实现。对Point类重载&lt;&lt;运算符，以使得代码
-Point p; cout&lt;&lt;p&lt;&lt;endl;可以输出该点对象的坐标。</p>
-<h3 id="函数接口定义-2">函数接口定义：</h3>
+<h2 id="6-1-Point类的运算"><strong>6-1 Point类的运算</strong></h2>
+<p>定义Point类，有坐标x,y两个私有成员变量;对Point类重载“+”（相加）、“-”（相减）和“==”（相等）运算符，实现对坐标的改变，要求用友元函数和成员函数两种方法实现。对Point类重载&lt;&lt;运算符，以使得代码 Point p; cout&lt;&lt;p&lt;&lt;endl;可以输出该点对象的坐标。</p>
+<h3 id="函数接口定义：-3">函数接口定义：</h3>
 <p>实现Point类。</p>
-<h3 id="裁判测试程序样例-9">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-10">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;* 请在这里填写答案 *&#x2F;
 
 
@@ -2090,9 +2074,9 @@ int main(int argc, char const *argv[])
     cout&lt;&lt;(p1&#x3D;&#x3D;p2)&lt;&lt;endl;
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-12">输入样例：</h3>
+<h3 id="输入样例：-10">输入样例：</h3>
 <p>无</p>
-<h3 id="输出样例-12">输出样例：</h3>
+<h3 id="输出样例：-10">输出样例：</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">2,3
 4,5
@@ -2100,7 +2084,7 @@ int main(int argc, char const *argv[])
 2,2
 6,8
 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-14">Code</h3>
+<h3 id="Code-15">Code</h3>
 <blockquote>
 <p>240514</p>
 </blockquote>
@@ -2147,8 +2131,7 @@ int main(int argc, char const *argv[])
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="派生类使用基类的成员函数"><strong>6-2
-派生类使用基类的成员函数</strong></h2>
+<h2 id="6-2-派生类使用基类的成员函数"><strong>6-2 派生类使用基类的成员函数</strong></h2>
 <p>按要求完成下面的程序：</p>
 <p>1、定义一个<code>Animal</code>类，成员包括：</p>
 <p>（1）整数类型的私有数据成员<code>m_nWeightBase</code>，表示<code>Animal</code>的体重；</p>
@@ -2159,12 +2142,10 @@ int main(int argc, char const *argv[])
 <p>2、定义一个<code>Cat</code>类，公有继承自<code>Animal</code>类，其成员包括：</p>
 <p>（1）string类型的私有数据成员<code>m_strName</code>;</p>
 <p>（2）带参数的构造函数，用指定形参对私有数据成员进行初始化；</p>
-<p>（3）公有的成员函数<code>print_age</code>，功能是首先输出成员<code>m_strName</code>的值，然后输出“,
-age =
-”，接着输出基类的数据成员<code>m_nAgeBase</code>的值。具体输出格式参见main函数和样例输出。</p>
-<h3 id="类和函数接口定义">类和函数接口定义：</h3>
+<p>（3）公有的成员函数<code>print_age</code>，功能是首先输出成员<code>m_strName</code>的值，然后输出“, age = ”，接着输出基类的数据成员<code>m_nAgeBase</code>的值。具体输出格式参见main函数和样例输出。</p>
+<h3 id="类和函数接口定义：">类和函数接口定义：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">参见题目描述。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="裁判测试程序样例-10">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-11">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
@@ -2180,12 +2161,12 @@ int main()
     cout &lt;&lt; &quot;cat weight &#x3D; &quot; &lt;&lt; cat.get_weight() &lt;&lt; endl;
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-13">输入样例：</h3>
+<h3 id="输入样例：-11">输入样例：</h3>
 <p>本题无输入。</p>
-<h3 id="输出样例-13">输出样例：</h3>
+<h3 id="输出样例：-11">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Persian, age &#x3D; 5
 cat weight &#x3D; 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-15">Code</h3>
+<h3 id="Code-16">Code</h3>
 <blockquote>
 <p>240514</p>
 </blockquote>
@@ -2215,8 +2196,7 @@ cat weight &#x3D; 6<span aria-hidden="true" class="line-numbers-rows"><span></sp
         cout<span class="token operator">&lt;&lt;</span><span class="token keyword">this</span><span class="token operator">-></span>m_strName<span class="token operator">&lt;&lt;</span><span class="token string">", age = "</span><span class="token operator">&lt;&lt;</span><span class="token keyword">this</span><span class="token operator">-></span>m_nAgeBase<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="私有继承派生类使用基类的成员函数"><strong>6-3
-私有继承派生类使用基类的成员函数</strong></h2>
+<h2 id="6-3-私有继承派生类使用基类的成员函数"><strong>6-3 私有继承派生类使用基类的成员函数</strong></h2>
 <p>按要求完成下面的程序：</p>
 <p>1、定义一个<code>Animal</code>类，成员包括：</p>
 <p>（1）整数类型的私有数据成员<code>m_nWeightBase</code>，表示<code>Animal</code>的体重；</p>
@@ -2227,15 +2207,11 @@ cat weight &#x3D; 6<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <p>2、定义一个<code>Cat</code>类，私有继承自<code>Animal</code>类，其成员包括：</p>
 <p>（1）<code>string</code>类型的私有数据成员<code>m_strName</code>;</p>
 <p>（2）带参数的构造函数，用指定形参对私有数据成员进行初始化；</p>
-<p>（3）公有的成员函数<code>set_print_age</code>，功能是首先调用基类的成员函数<code>set_age</code>设置数据成员<code>m_nAgeBase</code>的值为5，接着输出成员<code>m_strName</code>的值，然后输出“,
-age =
-”，最后输出基类的数据成员<code>m_nAgeBase</code>的值。具体输出格式参见main函数和样例输出。</p>
-<p>（4）公有的成员函数<code>set_print_weight</code>，功能是首先调用基类的成员函数<code>set_weight</code>设置数据成员<code>nWeightBase</code>的值为6，接着输出成员<code>m_strName</code>的值，然后输出“,
-weight =
-”，最后调用基类的成员函数<code>get_weight</code>输出基类的数据成员<code>m_nAgeBase</code>的值。具体输出格式参见main函数和样例输出。</p>
-<h3 id="类和函数接口定义-1">类和函数接口定义：</h3>
+<p>（3）公有的成员函数<code>set_print_age</code>，功能是首先调用基类的成员函数<code>set_age</code>设置数据成员<code>m_nAgeBase</code>的值为5，接着输出成员<code>m_strName</code>的值，然后输出“, age = ”，最后输出基类的数据成员<code>m_nAgeBase</code>的值。具体输出格式参见main函数和样例输出。</p>
+<p>（4）公有的成员函数<code>set_print_weight</code>，功能是首先调用基类的成员函数<code>set_weight</code>设置数据成员<code>nWeightBase</code>的值为6，接着输出成员<code>m_strName</code>的值，然后输出“, weight = ”，最后调用基类的成员函数<code>get_weight</code>输出基类的数据成员<code>m_nAgeBase</code>的值。具体输出格式参见main函数和样例输出。</p>
+<h3 id="类和函数接口定义：-2">类和函数接口定义：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">参见题目描述。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="裁判测试程序样例-11">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-12">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
@@ -2249,12 +2225,12 @@ int main()
     cat.set_print_weight(); &#x2F;&#x2F;派生类对象调用自己的公有函数
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-14">输入样例：</h3>
+<h3 id="输入样例：-12">输入样例：</h3>
 <p>本题无输入。</p>
-<h3 id="输出样例-14">输出样例：</h3>
+<h3 id="输出样例：-12">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Persian, age &#x3D; 5
 Persian, weight &#x3D; 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-16">Code</h3>
+<h3 id="Code-17">Code</h3>
 <blockquote>
 <p>240514</p>
 </blockquote>
@@ -2303,10 +2279,9 @@ Persian, weight &#x3D; 6<span aria-hidden="true" class="line-numbers-rows"><span
     cat<span class="token punctuation">.</span><span class="token function">set_print_weight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//派生类对象调用自己的公有函数</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="多重继承派生类构造函数"><strong>6-4
-多重继承派生类构造函数</strong></h2>
+<h2 id="6-4-多重继承派生类构造函数"><strong>6-4 多重继承派生类构造函数</strong></h2>
 <p>根据所给的基类Student和Teacher，定义Graduate类</p>
-<h3 id="类定义">类定义：</h3>
+<h3 id="类定义：">类定义：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
@@ -2345,20 +2320,20 @@ class Student
  &#125;;
  
  &#x2F;* 请在这里填写答案 *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="裁判测试程序样例-12">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-13">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int main( )
  &#123;Graduate grad1(&quot;Wang-li&quot;,24,&#39;f&#39;,&quot;assistant&quot;,89.5,1234.5);
   grad1.show( );
   return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-15">输出样例：</h3>
+<h3 id="输出样例：-13">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">name:Wang-li
 age:24
 sex:f
 score:89.5
 title:assistant
 wages:1234.5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-17">Code</h3>
+<h3 id="Code-18">Code</h3>
 <blockquote>
 <p>240520</p>
 </blockquote>
@@ -2379,14 +2354,14 @@ wages:1234.5<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <span class="token keyword">private</span><span class="token operator">:</span>
     <span class="token keyword">double</span> wage<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="鸭子也是鸟"><strong>6-5 鸭子也是鸟</strong></h2>
+<h2 id="6-5-鸭子也是鸟"><strong>6-5 鸭子也是鸟</strong></h2>
 <p>按要求完成下面的程序：</p>
 <p>1、定义一个Bird类，包含一个void类型的无参的speak方法，输出“Jiu-Jiu-Jiu”。</p>
 <p>2、定义一个Duck类，公有继承自Bird类，其成员包括：</p>
 <p>（1）私有string类型的成员name;</p>
 <p>（2）带参数的构造函数，用指定形参对私有数据成员进行初始化；</p>
 <p>（3）公有的成员函数printName，无形参，void类型，功能是输出成员name的值，具体输出格式参见main函数和样例输出。</p>
-<h3 id="裁判测试程序样例-13">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-14">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
@@ -2402,13 +2377,13 @@ int main()
     d.speak();    &#x2F;&#x2F;派生类对象使用基类成员函数
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-15">输入样例：</h3>
+<h3 id="输入样例：-13">输入样例：</h3>
 <p>无输入</p>
-<h3 id="输出样例-16">输出样例：</h3>
+<h3 id="输出样例：-14">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Jiu-Jiu-Jiu
 Dird Name:Donald
 Jiu-Jiu-Jiu<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-18">Code</h3>
+<h3 id="Code-19">Code</h3>
 <blockquote>
 <p>240520</p>
 </blockquote>
@@ -2428,17 +2403,16 @@ Jiu-Jiu-Jiu<span aria-hidden="true" class="line-numbers-rows"><span></span><span
     <span class="token keyword">private</span><span class="token operator">:</span>
     string name<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="运算符重载复数类complex"><strong>6-6
-运算符重载（复数类Complex）</strong></h2>
+<h2 id="6-6-运算符重载（复数类Complex）"><strong>6-6 运算符重载（复数类Complex）</strong></h2>
 <p>本题要求定义一个复数类Complex，类的声明见给出的代码，请给出类的完整实现，并通过测试程序。类的声明包括如下内容：</p>
-<ol type="1">
+<ol>
 <li>数据成员，复数类的实部u和虚部v；</li>
 <li>对复数类实部和虚部的访问函数；</li>
 <li>构造函数；</li>
 <li>加号、减号运算符重载（遵守复数的运算规则）；</li>
 <li>输入、输出运算符重载。</li>
 </ol>
-<h3 id="类的声明-1">类的声明：</h3>
+<h3 id="类的声明：-2">类的声明：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Complex&#123;
     private:
         double u;
@@ -2452,7 +2426,7 @@ Jiu-Jiu-Jiu<span aria-hidden="true" class="line-numbers-rows"><span></span><span
         friend ostream&amp;operator&lt;&lt;(ostream&amp;os,const Complex&amp;c);
         friend istream&amp;operator&gt;&gt;(istream&amp;is,Complex&amp;c);
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="测试程序-1">测试程序：</h3>
+<h3 id="测试程序：-2">测试程序：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Complex&#123;
     private:
         double u;
@@ -2487,13 +2461,13 @@ int main()&#123;
     cout&lt;&lt;&quot;复数d为：&quot;&lt;&lt;d&lt;&lt;endl;
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="测试程序的输入-1">测试程序的输入：</h3>
+<h3 id="测试程序的输入：-2">测试程序的输入：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">10 5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="测试程序的输出-1">测试程序的输出：</h3>
+<h3 id="测试程序的输出：-2">测试程序的输出：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">复数a为：u&#x3D;10,v&#x3D;5
 复数c为：u&#x3D;13,v&#x3D;9
 复数d为：u&#x3D;7,v&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="提示-1">提示</h3>
+<h3 id="提示-2">提示</h3>
 <p>下列代码为类实现的骨架代码</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">Complex::Complex(double _u,double _v)&#123;
     &#x2F;&#x2F;代码
@@ -2510,7 +2484,7 @@ ostream&amp;operator&lt;&lt;(ostream&amp;os,const Complex&amp;c)&#123;
 istream&amp;operator&gt;&gt;(istream&amp;is,Complex&amp;c)&#123;
     &#x2F;&#x2F;代码
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-19">Code</h3>
+<h3 id="Code-20">Code</h3>
 <blockquote>
 <p>240520</p>
 </blockquote>
@@ -2566,16 +2540,15 @@ istream<span class="token operator">&amp;</span><span class="token keyword">oper
     cout<span class="token operator">&lt;&lt;</span><span class="token string">"复数d为："</span><span class="token operator">&lt;&lt;</span>d<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="n天以后---c编程基础及应用--习题17-2"><strong>6-7 N天以后 -
-《C++编程基础及应用》- 习题17-2</strong></h2>
+<h2 id="6-7-N天以后-《C-编程基础及应用》-习题17-2"><strong>6-7 N天以后 - 《C++编程基础及应用》- 习题17-2</strong></h2>
 <p>改造练习13-1（日复一日）中的Date类并提交，使其可以与一个整数n相加或相减，得到该日期N天后/前的日期。</p>
 <p>提示：</p>
-<ol type="1">
+<ol>
 <li>请参考题目（日复一日）中的Date类实现；</li>
 <li>注意考虑闰月；</li>
 <li>整数n的取值范围为[1,10000]。</li>
 </ol>
-<h3 id="裁判测试程序样例-14">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-15">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;assert.h&gt;
@@ -2596,15 +2569,15 @@ int main()
     cout &lt;&lt; d1.toText() &lt;&lt; &quot; - &quot; &lt;&lt; n &lt;&lt; &quot; &#x3D; &quot; &lt;&lt; (d1 - n).toText() &lt;&lt; endl;
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-16">输入样例：</h3>
+<h3 id="输入样例：-14">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">2022 8 31
 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 <p>说明：意为求2022年8月31日的后两天和前两天的日期。</p>
-<h3 id="输出样例-17">输出样例：</h3>
+<h3 id="输出样例：-15">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">2022-8-31 + 2 &#x3D; 2022-9-2
 2022-8-31 - 2 &#x3D; 2022-8-29<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 <p>请注意：函数题只需要提交相关代码片段，不要提交完整程序。</p>
-<h3 id="code-20">Code</h3>
+<h3 id="Code-21">Code</h3>
 <blockquote>
 <p>240520</p>
 </blockquote>
@@ -2699,11 +2672,10 @@ int main()
     cout<span class="token operator">&lt;&lt;</span>d1<span class="token punctuation">.</span><span class="token function">toText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span><span class="token string">" - "</span><span class="token operator">&lt;&lt;</span>n<span class="token operator">&lt;&lt;</span><span class="token string">" = "</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>d1<span class="token operator">-</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="复数排序---c编程基础及应用--习题17-4"><strong>6-8 复数排序 -
-《C++编程基础及应用》- 习题17-4</strong></h2>
+<h2 id="6-8-复数排序-《C-编程基础及应用》-习题17-4"><strong>6-8 复数排序 - 《C++编程基础及应用》- 习题17-4</strong></h2>
 <p>设计符合下述要求的Complex复数类，使得下述程序可以正常运行：自定义&gt;操作符函数，使得两个复数对象可以通过&gt;操作符以“模”为基础进行大小比较。</p>
 <p>要求：Complex的实部和虚部成员均使用double类型。</p>
-<h3 id="裁判测试程序样例-15">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-16">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;cmath&gt;
 using namespace std;
@@ -2733,7 +2705,7 @@ int main()
 
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-17">输入样例：</h3>
+<h3 id="输入样例：-15">输入样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">1.1  3.3
 2.3  2.1
 7.4  7.6
@@ -2745,11 +2717,11 @@ int main()
 56.12 78.2
 4.2 2.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <p>说明：依次输入10个复数的实部和虚部</p>
-<h3 id="输出样例-18">输出样例：</h3>
+<h3 id="输出样例：-16">输出样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Sorted array of complexes:
 (0.1,0.2),(2.3,2.1),(1.1,3.3),(4.2,2.1),(6.1,0.1),(4.4,4.4),(5.6,7.8),(7.4,7.6),(10.1,23.2),(56.1,78.2),<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 <p>请注意：函数题只需要提交相关代码片段，不要提交完整程序。</p>
-<h3 id="code-21">Code</h3>
+<h3 id="Code-22">Code</h3>
 <blockquote>
 <p>240520</p>
 </blockquote>
@@ -2763,10 +2735,9 @@ int main()
         <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="你好同名成员成员函数覆盖成员函数重写"><strong>6-9
-你好，同名成员/成员函数覆盖/成员函数重写</strong></h2>
+<h2 id="6-9-你好，同名成员-成员函数覆盖-成员函数重写"><strong>6-9 你好，同名成员/成员函数覆盖/成员函数重写</strong></h2>
 <p>编写一个类<code>MyPerson</code>，继承自<code>Person</code>，并重写函数<code>show</code>，使得程序的输出符合预期。</p>
-<h3 id="裁判测试程序样例-16">裁判测试程序样例：</h3>
+<h3 id="裁判测试程序样例：-17">裁判测试程序样例：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 
 using namespace std;
@@ -2794,95 +2765,62 @@ int main()
     p.show();
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入样例-18">输入样例：</h3>
+<h3 id="输入样例：-16">输入样例：</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">18 1.7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-19">输出样例：</h3>
+<h3 id="输出样例：-17">输出样例：</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Age: 18
 Height: 1.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-22">Code</h3>
+<h3 id="Code-23">Code</h3>
 <blockquote>
 <p>240520</p>
 </blockquote>
-<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">```
-
-<span class="token macro property"><span class="token directive-hash">#</span> <span class="token expression">C<span class="token operator">++</span>第三次上机</span></span>
-
-
-## <span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span>
-
-对象之间的相互作用和通信是通过消息。（ ）不是消息的组成部分。
-
-A<span class="token punctuation">.</span> 接受消息的对象
-
-B<span class="token punctuation">.</span> 要执行的函数的名字
-
-C<span class="token punctuation">.</span> 要执行的函数的内部结构
-
-D<span class="token punctuation">.</span> 函数需要的参数
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-
-## <span class="token number">2</span><span class="token operator">-</span><span class="token number">2</span>
-
-对定义重载函数的下列要求中，（ ）是错误的。
-
-A<span class="token punctuation">.</span> 要求参数的个数不同
-
-B<span class="token punctuation">.</span> 要求参数中至少有一个类型不同
-
-C<span class="token punctuation">.</span> 要求函数的返回值不同
-
-D<span class="token punctuation">.</span> 要求参数个数相同时，参数类型不同
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-
-## <span class="token number">2</span><span class="token operator">-</span><span class="token number">3</span>
-
-下列函数中，（ ）不能重载。
-
-A<span class="token punctuation">.</span> 成员函数
-
-B<span class="token punctuation">.</span> 非成员函数
-
-C<span class="token punctuation">.</span> 析构函数
-
-D<span class="token punctuation">.</span> 构造函数
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-
-## <span class="token number">2</span><span class="token operator">-</span><span class="token number">4</span>
-
-（ ）不是面向对象程序设计的主要特征。
-
-A<span class="token punctuation">.</span> 封装
-
-B<span class="token punctuation">.</span> 继承
-
-C<span class="token punctuation">.</span> 多态
-
-D<span class="token punctuation">.</span> 结构
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-
-## <span class="token number">2</span><span class="token operator">-</span><span class="token number">5</span>
-
-在下面类声明中，关于生成对象不正确的是（ ）。
-```cpp
-<span class="token keyword">class</span> <span class="token class-name">point</span>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h1>C++第三次上机</h1>
+<h2 id="2-1">2-1</h2>
+<p>对象之间的相互作用和通信是通过消息。（ ）不是消息的组成部分。</p>
+<p>A. 接受消息的对象</p>
+<p>B. 要执行的函数的名字</p>
+<p>C. 要执行的函数的内部结构</p>
+<p>D. 函数需要的参数</p>
+<hr>
+<h2 id="2-2">2-2</h2>
+<p>对定义重载函数的下列要求中，（ ）是错误的。</p>
+<p>A. 要求参数的个数不同</p>
+<p>B. 要求参数中至少有一个类型不同</p>
+<p>C. 要求函数的返回值不同</p>
+<p>D. 要求参数个数相同时，参数类型不同</p>
+<hr>
+<h2 id="2-3">2-3</h2>
+<p>下列函数中，（ ）不能重载。</p>
+<p>A. 成员函数</p>
+<p>B. 非成员函数</p>
+<p>C. 析构函数</p>
+<p>D. 构造函数</p>
+<hr>
+<h2 id="2-4">2-4</h2>
+<p>（ ）不是面向对象程序设计的主要特征。</p>
+<p>A. 封装</p>
+<p>B. 继承</p>
+<p>C. 多态</p>
+<p>D. 结构</p>
+<hr>
+<h2 id="2-5">2-5</h2>
+<p>在下面类声明中，关于生成对象不正确的是（ ）。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">point</span>
 <span class="token punctuation">&#123;</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     <span class="token keyword">int</span> x<span class="token punctuation">;</span>
     <span class="token keyword">int</span> y<span class="token punctuation">;</span>
     <span class="token function">point</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>x<span class="token operator">=</span>a<span class="token punctuation">;</span>y<span class="token operator">=</span>b<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <p>A. <code>point p(10,2);</code></p>
 <p>B. <code>point *p=new point(1,2);</code></p>
 <p>C. <code>point *p=new point[2];</code></p>
 <p>D. <code>point *p[2]=&#123;new point(1,2), new point(3,4)&#125;;</code></p>
-<hr />
-<h2 id="section">2-6</h2>
+<hr>
+<h2 id="2-6">2-6</h2>
 <p>执行以下的程序片段，将输出几个数字？</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">for(i&#x3D;0;i&lt;3;i++);
 cout&lt;&lt;i;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
@@ -2890,71 +2828,70 @@ cout&lt;&lt;i;<span aria-hidden="true" class="line-numbers-rows"><span></span><s
 <p>B. 1</p>
 <p>C. 2</p>
 <p>D. 3</p>
-<hr />
-<h2 id="section-1">2-7</h2>
+<hr>
+<h2 id="2-7">2-7</h2>
 <p>下列对变量的引用中错误的是____。</p>
 <p>A. <code>int a; int &amp;p = a;</code></p>
 <p>B. <code>char a; char &amp;p = a;</code></p>
 <p>C. <code>int a; int &amp;p; p=a;</code></p>
 <p>D. <code>float a; float &amp;p = a;</code></p>
-<hr />
-<h2 id="section-2">2-8</h2>
+<hr>
+<h2 id="2-8">2-8</h2>
 <p>多继承是指（）。</p>
 <p>A. 一个派生类同时继承多个基类</p>
 <p>B. 多个派生类同时继承一个基类</p>
 <p>C. 基类本身又是一个更高一级基类的派生类</p>
 <p>D. 派生类本身又是更低一级派生类的基类</p>
-<hr />
-<h2 id="section-3">2-9</h2>
+<hr>
+<h2 id="2-9">2-9</h2>
 <p>下列运算符中，不可以重载的是（ ）。</p>
 <p>A. <code>new</code></p>
 <p>B. <code>++</code></p>
 <p>C. <code>.*</code></p>
 <p>D. <code>[]</code></p>
-<hr />
-<h2 id="section-4">2-10</h2>
+<hr>
+<h2 id="2-10">2-10</h2>
 <p>C++输出流的插入符是( )。</p>
-<ol type="A">
-<li><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
-<li><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">&gt;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
-<li><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">&lt;&lt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
-<li><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">&amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
-</ol>
-<hr />
-<h2 id="section-5">2-11</h2>
+<p>A.</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<p>B.</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">&gt;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<p>C.</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">&lt;&lt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<p>D.</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">&amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<hr>
+<h2 id="2-11">2-11</h2>
 <p>关于信息隐蔽</p>
 <p>信息隐蔽是通过 ▁▁▁▁▁ 实现的。</p>
 <p>A. 抽象性</p>
 <p>B. 封装性</p>
 <p>C. 继承性</p>
 <p>D. 传递性</p>
-<hr />
-<h2 id="section-6">2-12</h2>
+<hr>
+<h2 id="2-12">2-12</h2>
 <p>类与对象的关系</p>
 <p>在面向对象的开发方法中，类与对象的关系是 ▁▁▁▁▁。</p>
 <p>A. 抽象与具体</p>
 <p>B. 具体与抽象</p>
 <p>C. 整体与部分</p>
 <p>D. 部分与整体</p>
-<hr />
-<h2 id="section-7">2-13</h2>
+<hr>
+<h2 id="2-13">2-13</h2>
 <p>下面对派生类的描述中，错误的是( )</p>
 <p>A. 一个派生类可以作为另外一个派生类的基类</p>
 <p>B. 派生类至少有一个基类</p>
 <p>C. 派生类的成员除了它自己的成员外，还包含了它的基类的成员</p>
 <p>D. 派生类中继承的基类成员的访问权限到派生类中保持不变</p>
-<hr />
-<h2 id="section-8">2-14</h2>
+<hr>
+<h2 id="2-14">2-14</h2>
 <p>下列关于派生类构造函数和析构函数的说法中，错误的是（）</p>
 <p>A. 派生类的构造函数会隐含调用基类的构造函数</p>
 <p>B. 如果基类中有默认构造函数，派生类可以不定义构造函数</p>
-<p>C.
-在建立派生类对象时，先调用基类的构造函数，再调用派生类的构造函数</p>
-<p>D.
-在销毁派生类对象时，先调用基类的析构函数，再调用派生类的析构函数</p>
-<hr />
-<h2 id="填写程序中的空白完成指定的功能">5-1
-填写程序中的空白，完成指定的功能。</h2>
+<p>C. 在建立派生类对象时，先调用基类的构造函数，再调用派生类的构造函数</p>
+<p>D. 在销毁派生类对象时，先调用基类的析构函数，再调用派生类的析构函数</p>
+<hr>
+<h2 id="5-1-填写程序中的空白，完成指定的功能。">5-1 填写程序中的空白，完成指定的功能。</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">class</span> <span class="token class-name">R</span><span class="token punctuation">&#123;</span>
@@ -2976,10 +2913,10 @@ cout&lt;&lt;i;<span aria-hidden="true" class="line-numbers-rows"><span></span><s
     cout<span class="token operator">&lt;&lt;</span><span class="token string">"Second Area is "</span><span class="token operator">&lt;&lt;</span>r2<span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出数据如下">输出数据如下：</h3>
+<h3 id="输出数据如下：">输出数据如下：</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">First Area is 10
 Second Area is 18<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h2 id="包含子对象的派生类构造函数">5-2 包含子对象的派生类构造函数</h2>
+<h2 id="5-2-包含子对象的派生类构造函数">5-2 包含子对象的派生类构造函数</h2>
 <p>根据所定义的基类，定义派生类，请填空完成程序的功能</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
@@ -3044,7 +2981,7 @@ address: 115 Beijing Road,Shanghai
 Class monitor is:
 num:10001
 name:Li-sun<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="多层派生时的构造函数-1">5-3 多层派生时的构造函数</h2>
+<h2 id="5-3-多层派生时的构造函数-2">5-3 多层派生时的构造函数</h2>
 <p>根据所定义的基类，完成派生类的定义。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
@@ -3095,21 +3032,20 @@ name:Li-sun<span aria-hidden="true" class="line-numbers-rows"><span></span><span
     stud<span class="token punctuation">.</span><span class="token function">show_all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点1函数重载">5-4 知识点1：函数重载</h2>
-<p><strong>作用：</strong>函数名可以相同，提高复用性
+<h2 id="5-4-知识点1：函数重载">5-4 知识点1：函数重载</h2>
+<p>**作用：**函数名可以相同，提高复用性<br>
 <strong>函数重载满足条件：</strong></p>
 <ul>
 <li>同一个作用域下</li>
 <li>函数名称相同</li>
-<li>函数参数<strong>类型不同</strong> 或者 <strong>个数不同</strong>
-或者 <strong>顺序不同</strong></li>
+<li>函数参数<strong>类型不同</strong> 或者 <strong>个数不同</strong> 或者 <strong>顺序不同</strong></li>
 </ul>
 <p><strong>注意:</strong> 函数的返回值不可以作为函数重载的条件</p>
-<hr />
-<h3 id="例-设计一个函数重载的程序实现以下功能">例：
-设计一个函数重载的程序，实现以下功能</h3>
-<p>输入两个整数，输出它们的和。 输入两个浮点数，输出它们的和。
-输入两个字符串，输出它们的连接结果。
+<hr>
+<h3 id="例：-设计一个函数重载的程序，实现以下功能">例： 设计一个函数重载的程序，实现以下功能</h3>
+<p>输入两个整数，输出它们的和。<br>
+输入两个浮点数，输出它们的和。<br>
+输入两个字符串，输出它们的连接结果。<br>
 输入一个字符和一个整数，输出该字符重复该整数次的结果。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -3142,18 +3078,17 @@ string <span class="token function">add</span><span class="token punctuation">(<
     cout<span class="token operator">&lt;&lt;</span><span class="token string">"g * n = "</span><span class="token operator">&lt;&lt;</span><span class="token function">add</span><span class="token punctuation">(</span>g<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点3拷贝构造函数及构造函数的重载-1">5-4
-知识点3：拷贝构造函数及构造函数的重载</h2>
+<h2 id="5-4-知识点3：拷贝构造函数及构造函数的重载">5-4 知识点3：拷贝构造函数及构造函数的重载</h2>
 <p><strong>拷贝构造函数：</strong><code>构造函数名称(const 类名 &amp;对象名) &#123; 函数体 &#125;</code></p>
-<ol type="1">
+<ol>
 <li>拷贝构造函数是一种特殊的构造函数，它具有构造函数的所有特性，并且使用本类对象的引用作为形参，其作用是使用一个已经存在的对象初始化该类的另一个对象。</li>
 <li>在定义拷贝构造函数时，为了使引用的对象不被修改，通常使用const修饰引用的对象。</li>
 </ol>
 <p><strong>构造函数重载：</strong><code>类名(不同的输入参数)&#123;函数体&#125;</code></p>
-<ol type="1">
+<ol>
 <li>当定义具有默认参数的重载构造函数时，要防止调用的二义性。</li>
 </ol>
-<h3 id="例-2">例：</h3>
+<h3 id="例：-3">例：</h3>
 <p>补充Birth类与Student类的拷贝构造函数，并对Student类的构造函数重载</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -3201,8 +3136,7 @@ string <span class="token function">add</span><span class="token punctuation">(<
     Student <span class="token function">stu3</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点1const修饰的成员变量与成员函数-1">5-6
-知识点1：const修饰的成员变量与成员函数</h2>
+<h2 id="5-6-知识点1：const修饰的成员变量与成员函数">5-6 知识点1：const修饰的成员变量与成员函数</h2>
 <p><strong>常成员变量：</strong></p>
 <ul>
 <li>对于常成员变量，仅仅可以读取第一次初始化的数据，之后是不能修改的。</li>
@@ -3317,20 +3251,21 @@ string <span class="token function">add</span><span class="token punctuation">(<
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2
-id="知识点2static修饰的成员变量与成员函数-1">5-7知识点2：static修饰的成员变量与成员函数</h2>
-<p>静态成员就是在成员变量和成员函数前加上关键字static，称为静态成员
+<h2 id="5-7-知识点2：static修饰的成员变量与成员函数">5-7 知识点2：static修饰的成员变量与成员函数</h2>
+<p>静态成员就是在成员变量和成员函数前加上关键字static，称为静态成员<br>
 静态成员分为：</p>
 <ul>
-<li>静态成员变量 * 所有对象共享同一份数据 * 在编译阶段分配内存 *
-静态成员变量定义语法 <code>static 变量类型 变量名</code> *
-类内声明，类外初始化，初始化语法为：<code>变量类型 类名::变量名=初始化数（整体位于类定义的外面）</code>
-*
-可以通过对象或类进行调用：<code>对象.静态成员变量名</code>或<code>类名::静态成员变量名</code></li>
-<li>静态成员函数 * 所有对象共享同一个函数 *
-静态成员函数只能访问静态成员变量 *
-静态成员函数定义语法：<code>static 函数名()&#123;&#125;</code> *
-可以通过对象或类进行调用：<code>对象.静态函数名()</code>或<code>类名::静态函数名()</code></li>
+<li>静态成员变量<br>
+*  所有对象共享同一份数据<br>
+*  在编译阶段分配内存<br>
+*  静态成员变量定义语法 <code>static 变量类型 变量名</code><br>
+*  类内声明，类外初始化，初始化语法为：<code>变量类型 类名::变量名=初始化数（整体位于类定义的外面）</code><br>
+*  可以通过对象或类进行调用：<code>对象.静态成员变量名</code>或<code>类名::静态成员变量名</code></li>
+<li>静态成员函数<br>
+*  所有对象共享同一个函数<br>
+*  静态成员函数只能访问静态成员变量<br>
+*  静态成员函数定义语法：<code>static 函数名()&#123;&#125;</code><br>
+*  可以通过对象或类进行调用：<code>对象.静态函数名()</code>或<code>类名::静态函数名()</code></li>
 </ul>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -3379,39 +3314,36 @@ id="知识点2static修饰的成员变量与成员函数-1">5-7知识点2：stat
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点3friend修饰的成员变量与成员函数-1">5-8
-知识点3：friend修饰的成员变量与成员函数</h2>
+<h2 id="5-8-知识点3：friend修饰的成员变量与成员函数">5-8 知识点3：friend修饰的成员变量与成员函数</h2>
 <p>生活中你的家有客厅(Public)，有你的卧室(Private)；客厅所有来的客人都可以进去，但是你的卧室是私有的，也就是说只有你能进去。但是呢，你也可以允许你的好闺蜜好基友进去。</p>
-<p>在程序里，有些私有属性
-也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术；友元的目的就是让一个函数或者类
-访问另一个类中私有成员</p>
-<p>友元的关键字为 <code>friend</code> 友元的三种实现</p>
+<p>在程序里，有些私有属性 也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术；友元的目的就是让一个函数或者类 访问另一个类中私有成员</p>
+<p>友元的关键字为  <code>friend</code><br>
+友元的三种实现</p>
 <ul>
 <li>类做友元</li>
 <li>成员函数做友元</li>
 <li>全局函数做友元</li>
 </ul>
-<ol type="1">
+<ol>
 <li>friend修饰别的类</li>
 </ol>
 <ul>
 <li>友元类可以声明在类中任意位置。<code>friend class 类名</code></li>
 <li>声明友元类之后，友元类中的所有成员函数都是该类的友元函数，能够访问该类的所有成员。</li>
 </ul>
-<ol type="1">
+<ol>
 <li>friend修饰成员函数</li>
 </ol>
 <ul>
 <li>友元成员函数声明语法：<code>friend 函数返回值类型 类名::函数名();</code></li>
 <li>注意定义的先后，建议在前面进行声明，后面进行函数的同一定义，防止出现问题。</li>
 </ul>
-<ol type="1">
+<ol>
 <li>friend修饰类外定义的函数</li>
 </ol>
 <ul>
 <li>将类外部的普通函数作为类的友元函数，在类中使用friend关键字声明该普通函数就可以实现，友元函数可以在类中任意位置声明。</li>
-<li>普通函数作为友元函数的声明形式如下所示：
-<code>friend 函数返回值类型 友元函数名（形参列表）</code></li>
+<li>普通函数作为友元函数的声明形式如下所示： <code>friend 函数返回值类型 友元函数名（形参列表）</code></li>
 </ul>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -3490,7 +3422,7 @@ goodGayGay<span class="token double-colon punctuation">::</span><span class="tok
     <span class="token function">test03</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//friend修饰类外定义的函数</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点1加号运算符重载">5-9知识点1：加号运算符重载</h2>
+<h2 id="5-9-知识点1：加号运算符重载">5-9 知识点1：加号运算符重载</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">&#123;</span>
@@ -3530,7 +3462,7 @@ Person <span class="token keyword">operator</span><span class="token operator">+
     <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点2输出运算符的">5-10 知识点2：输出运算符的</h2>
+<h2 id="5-10-知识点2：输出运算符的">5-10 知识点2：输出运算符的</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">&#123;</span>
@@ -3562,7 +3494,7 @@ ostream<span class="token operator">&amp;</span> <span class="token keyword">ope
     <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点3递增运算符重载">知识点3：递增运算符重载</h2>
+<h2 id="5-11-知识点3：递增运算符重载">5-11 知识点3：递增运算符重载</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">class</span> <span class="token class-name">MyInteger</span><span class="token punctuation">&#123;</span>
@@ -3619,7 +3551,7 @@ ostream<span class="token operator">&amp;</span> <span class="token keyword">ope
     <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="知识点4赋值运算符重载">5-12 知识点4：赋值运算符重载</h2>
+<h2 id="5-12-知识点4：赋值运算符重载">5-12 知识点4：赋值运算符重载</h2>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">&#123;</span>
@@ -3681,8 +3613,7 @@ ostream<span class="token operator">&amp;</span> <span class="token keyword">ope
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="日程安排多重继承重载"><strong>7-1
-日程安排（多重继承+重载）</strong></h2>
+<h2 id="7-1-日程安排（多重继承-重载）"><strong>7-1 日程安排（多重继承+重载）</strong></h2>
 <p>已有一个日期类<code>Date</code>，包括三个<code>protected</code>成员数据</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> year<span class="token punctuation">;</span>
 <span class="token keyword">int</span> month<span class="token punctuation">;</span>
@@ -3695,15 +3626,14 @@ ostream<span class="token operator">&amp;</span> <span class="token keyword">ope
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> ID；<span class="token comment">//日程的ID</span>
 <span class="token keyword">bool</span> <span class="token keyword">operator</span> <span class="token operator">&lt;</span> <span class="token punctuation">(</span><span class="token keyword">const</span> Schedule <span class="token operator">&amp;</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//判断当前日程时间是否早于s2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 <p>生成以上类，并编写主函数，根据输入的各项日程信息，建立日程对象，找出需要最早安排的日程，并输出该日程对象的信息。</p>
-<p>输入格式： 测试输入包含若干日程，每个日程占一行（日程编号ID
-日程日期（****/<strong>/*<em>）日程时间（*</em>:</strong>:**））。当读入0时输入结束，相应的结果不要输出。</p>
+<p>输入格式： 测试输入包含若干日程，每个日程占一行（日程编号ID 日程日期（**<em><em>/**/*</em>）日程时间（*</em>:<strong>:</strong>））。当读入0时输入结束，相应的结果不要输出。</p>
 <p>输入样例：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">1 2014&#x2F;06&#x2F;27 08:00:01
 2 2014&#x2F;06&#x2F;28 08:00:01
 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
 <p>输出样例：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">The urgent schedule is No.1: 2014&#x2F;6&#x2F;27 8:0:1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="code-23">Code</h3>
+<h3 id="Code-24">Code</h3>
 <blockquote>
 <p>240527</p>
 </blockquote>
@@ -3822,7 +3752,7 @@ ostream<span class="token operator">&amp;</span> <span class="token keyword">ope
     urgent<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="动物世界"><strong>7-2 动物世界</strong></h2>
+<h2 id="7-2-动物世界"><strong>7-2 动物世界</strong></h2>
 <p>Score 10</p>
 <p>Author 陈晓梅</p>
 <p>Organization 广东外语外贸大学</p>
@@ -3830,16 +3760,10 @@ ostream<span class="token operator">&amp;</span> <span class="token keyword">ope
 <p>1、实现<code>Mammal</code>类的方法</p>
 <p>2、由<code>Mammal</code>类派生出<code>Dog</code>类，在<code>Dog</code>类中增加<code>itsColor</code>成员(<code>COLOR</code>类型)</p>
 <p>3、<code>Dog</code>类中增加以下方法：</p>
-<p><code>constructors</code>:
-<code>Dog()</code>、<code>Dog(int age)</code>、<code>Dog(int age, int weight)</code>、<code>Dog(int age, COLOR color)</code>、
-<code>Dog(int age, int weight, COLOR color)</code>、<code>~Dog()</code></p>
-<p><code>accessors</code>:
-<code>GetColor()</code>、<code>SetColor()</code></p>
-<p><code>Other methods</code>:
-<code>WagTail()</code>、<code>BegForFood()</code> ，并实现以上这些方法
-。</p>
-<p>提示：类似<code>Speak()</code>、<code>WagTail()</code>这些动作，函数体可以是输出一句话。比如：<code>Mammal is spaeking...</code>
-, <code>The Dog is Wagging its tail...</code></p>
+<p><code>constructors</code>: <code>Dog()</code>、<code>Dog(int age)</code>、<code>Dog(int age, int weight)</code>、<code>Dog(int age, COLOR color)</code>、 <code>Dog(int age, int weight, COLOR color)</code>、<code>~Dog()</code></p>
+<p><code>accessors</code>: <code>GetColor()</code>、<code>SetColor()</code></p>
+<p><code>Other methods</code>: <code>WagTail()</code>、<code>BegForFood()</code> ，并实现以上这些方法 。</p>
+<p>提示：类似<code>Speak()</code>、<code>WagTail()</code>这些动作，函数体可以是输出一句话。比如：<code>Mammal is spaeking...</code> , <code>The Dog is Wagging its tail...</code></p>
 <p>4、补充主函数的问号部分，并运行程序，检查输出是否合理。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">enum</span> <span class="token class-name">COLOR</span><span class="token punctuation">&#123;</span> WHITE<span class="token punctuation">,</span> RED<span class="token punctuation">,</span> BROWN<span class="token punctuation">,</span> BLACK<span class="token punctuation">,</span> KHAKI <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
@@ -3878,20 +3802,20 @@ ostream<span class="token operator">&amp;</span> <span class="token keyword">ope
     cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Dobbie    weighs "</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">?</span><span class="token operator">?</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" pounds."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>   
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入格式-3">输入格式:</h3>
+<h3 id="输入格式-4">输入格式:</h3>
 <p>无</p>
-<h3 id="输出格式-3">输出格式:</h3>
+<h3 id="输出格式-4">输出格式:</h3>
 <p>按照程序格式输出。</p>
-<h3 id="输入样例-19">输入样例:</h3>
+<h3 id="输入样例-4">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">无<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-20">输出样例:</h3>
+<h3 id="输出样例-4">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Mammal is speaking...
 The dog is wagging its tail...
 Yorkie is 3 years old.
 Dobbie weighs 20 pounds.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-24">Code</h3>
+<h3 id="Code-25">Code</h3>
 <blockquote>
 <p>240527</p>
 </blockquote>
@@ -3962,29 +3886,32 @@ Dobbie weighs 20 pounds.<span aria-hidden="true" class="line-numbers-rows"><span
     cout<span class="token operator">&lt;&lt;</span><span class="token string">"Dobbie weighs "</span><span class="token operator">&lt;&lt;</span>Dobbie<span class="token punctuation">.</span><span class="token function">GetWeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span><span class="token string">" pounds."</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="打印点圆圆柱信息"><strong>7-3 打印点、圆、圆柱信息</strong></h2>
-<p>定义平面二维点类<code>CPoint</code>，有数据成员<code>x</code>坐标，<code>y</code>坐标，函数成员(构造函数、虚函数求面积<code>GetArea</code>,
-虚函数求体积函数<code>GetVolume</code>、输出点信息函数<code>print</code>)。</p>
+<h2 id="7-3-打印点、圆、圆柱信息"><strong>7-3 打印点、圆、圆柱信息</strong></h2>
+<p>定义平面二维点类<code>CPoint</code>，有数据成员<code>x</code>坐标，<code>y</code>坐标，函数成员(构造函数、虚函数求面积<code>GetArea</code>, 虚函数求体积函数<code>GetVolume</code>、输出点信息函数<code>print</code>)。</p>
 <p>由<code>CPoint</code>类派生出圆类<code>Cirle</code>类（新增数据成员半径<code>radius</code>），函数成员(构造函数、求面积<code>GetArea</code>,虚函数求体积函数<code>GetVolume</code>、输出圆面积信息函数<code>print</code>)。</p>
-<p>再由<code>Ccirle</code>类派生出圆柱体<code>Ccylinder</code>类（新增数据成员高度<code>height</code>），函数成员(构造函数、求表面积<code>GetArea</code>
-,求体积函数<code>GetVolume</code>、输出圆柱体体积信息函数<code>print</code>)。在主函数测试这个这三个类。</p>
+<p>再由<code>Ccirle</code>类派生出圆柱体<code>Ccylinder</code>类（新增数据成员高度<code>height</code>），函数成员(构造函数、求表面积<code>GetArea</code> ,求体积函数<code>GetVolume</code>、输出圆柱体体积信息函数<code>print</code>)。在主函数测试这个这三个类。</p>
 <p>打印数据保留小数点后2位</p>
-<h3 id="输入格式-4">输入格式:</h3>
-<p>点的：x坐标 点的：y坐标 圆半径 圆柱高</p>
-<h3 id="输出格式-4">输出格式:</h3>
-<p>点信息 圆面积 圆柱体积</p>
-<h3 id="输入样例-20">输入样例:</h3>
+<h3 id="输入格式-5">输入格式:</h3>
+<p>点的：x坐标<br>
+点的：y坐标<br>
+圆半径<br>
+圆柱高</p>
+<h3 id="输出格式-5">输出格式:</h3>
+<p>点信息<br>
+圆面积<br>
+圆柱体积</p>
+<h3 id="输入样例-5">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">1
 2
 3
 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-21">输出样例:</h3>
+<h3 id="输出样例-5">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">CPoint:1,2
 CirleArea:28.26
 CcylinderVolume:113.04<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-25">Code</h3>
+<h3 id="Code-26">Code</h3>
 <blockquote>
 <p>240528</p>
 </blockquote>
@@ -4038,13 +3965,10 @@ CcylinderVolume:113.04<span aria-hidden="true" class="line-numbers-rows"><span><
     t<span class="token punctuation">.</span><span class="token function">GetVolume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="单继承中的构造函数与析构函数"><strong>7-4
-单继承中的构造函数与析构函数</strong></h2>
+<h2 id="7-4-单继承中的构造函数与析构函数"><strong>7-4 单继承中的构造函数与析构函数</strong></h2>
 <p>编写代码实现一个表示点的父类<code>Dot</code>和一个表示圆的子类<code>Cir</code>，求圆的面积。</p>
-<p><code>Dot</code>类有两个<code>private</code>数据成员
-<code>float x,y;</code></p>
-<p><code>Cir</code>类新增一个<code>private</code>的数据成员半径<code>float r</code>
-和一个<code>public</code>的求面积的函数<code>getArea( );</code></p>
+<p><code>Dot</code>类有两个<code>private</code>数据成员 <code>float x,y;</code></p>
+<p><code>Cir</code>类新增一个<code>private</code>的数据成员半径<code>float r</code> 和一个<code>public</code>的求面积的函数<code>getArea( );</code></p>
 <p>主函数已经给出，请编写<code>Dot</code>和<code>Cir</code>类。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iomanip></span></span>
@@ -4058,22 +3982,21 @@ CcylinderVolume:113.04<span aria-hidden="true" class="line-numbers-rows"><span><
     cout<span class="token operator">&lt;&lt;</span>fixed<span class="token operator">&lt;&lt;</span><span class="token function">setprecision</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>c<span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输入格式-5">输入格式:</h3>
-<p>输入圆心和半径，<code>x</code> <code>y</code>
-<code>r</code>中间用空格分隔。</p>
-<h3 id="输出格式-5">输出格式:</h3>
+<h3 id="输入格式-6">输入格式:</h3>
+<p>输入圆心和半径，<code>x</code> <code>y</code> <code>r</code>中间用空格分隔。</p>
+<h3 id="输出格式-6">输出格式:</h3>
 <p>输出圆的面积，小数点后保留2位有效数字，注意：<code>const double PI=3.14</code>，面积=<code>PI*r*r</code>。</p>
-<h3 id="输入样例-21">输入样例:</h3>
+<h3 id="输入样例-6">输入样例:</h3>
 <p>在这里给出一组输入。例如圆的中心点为原点<code>（0,0）</code>，半径为3：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">0 0 4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-22">输出样例:</h3>
+<h3 id="输出样例-6">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">Dot constructor called
 Cir constructor called
 50.24
 Cir destructor called
 Dot destructor called<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="code-26">Code</h3>
+<h3 id="Code-27">Code</h3>
 <blockquote>
 <p>240528</p>
 </blockquote>
@@ -4115,22 +4038,25 @@ Dot destructor called<span aria-hidden="true" class="line-numbers-rows"><span></
     cout<span class="token operator">&lt;&lt;</span>t<span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="定义一个time类"><strong>7-5 定义一个Time类</strong></h2>
-<p>定义一个时间类，能够提供和设置由时、分、秒组成的时间，并按照如下的格式输出时间：
-<code>08-09-24</code> <code>12-23-59</code></p>
-<h3 id="输入格式-6">输入格式:</h3>
-<p>请在这里写输入格式。例如： <code>12 8 9</code>
+<h2 id="7-5-定义一个Time类"><strong>7-5 定义一个Time类</strong></h2>
+<p>定义一个时间类，能够提供和设置由时、分、秒组成的时间，并按照如下的格式输出时间：<br>
+<code>08-09-24</code><br>
+<code>12-23-59</code></p>
+<h3 id="输入格式-7">输入格式:</h3>
+<p>请在这里写输入格式。例如：<br>
+<code>12 8 9</code><br>
 <code>8 24 59</code></p>
-<h3 id="输出格式-6">输出格式:</h3>
-<p>请在这里描述输出格式。例如： <code>12-08-09</code>
+<h3 id="输出格式-7">输出格式:</h3>
+<p>请在这里描述输出格式。例如：<br>
+<code>12-08-09</code><br>
 <code>08-24-59</code></p>
-<h3 id="输入样例-22">输入样例:</h3>
+<h3 id="输入样例-7">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">8 9 24<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-23">输出样例:</h3>
+<h3 id="输出样例-7">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">08-09-24<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="code-27">Code</h3>
+<h3 id="Code-28">Code</h3>
 <blockquote>
 <p>240528</p>
 </blockquote>
@@ -4143,32 +4069,30 @@ Dot destructor called<span aria-hidden="true" class="line-numbers-rows"><span></
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="绩点计算---c编程基础及应用--习题3-3"><strong>7-6 绩点计算 -
-《C++编程基础及应用》- 习题3-3</strong></h2>
+<h2 id="7-6-绩点计算-《C-编程基础及应用》-习题3-3"><strong>7-6 绩点计算 - 《C++编程基础及应用》- 习题3-3</strong></h2>
 <p>某大学的GPA(绩点)计算规则如下：</p>
-<p>课程百分制成绩90分对应绩点4.0，超过90分的，按90分计；如不足90分，则课程绩点
-= <code>4.0 * 分数/90</code>。
-学生综合绩点按该生已修的各门课程绩点结合学分加权平均而得。
+<p>课程百分制成绩90分对应绩点4.0，超过90分的，按90分计；如不足90分，则课程绩点 = <code>4.0 * 分数/90</code>。<br>
+学生综合绩点按该生已修的各门课程绩点结合学分加权平均而得。<br>
 现有步步同学入学后的已修课程（共5门）成绩表如下，请编程计算其GPA。</p>
-<h3 id="输入格式-7">输入格式:</h3>
+<h3 id="输入格式-8">输入格式:</h3>
 <p>第1门课程百分制分数 学分</p>
 <p>第2门课程百分制分数 学分</p>
 <p>第3门课程分制分数 学分</p>
 <p>第4门课程百分制分数 学分</p>
 <p>第5门课程百分制分数 学分</p>
 <p>说明：百分制分数和学分均为整数。</p>
-<h3 id="输出格式-7">输出格式:</h3>
+<h3 id="输出格式-8">输出格式:</h3>
 <p>请参考输出样例。其中，GPA值保留两位小数。</p>
-<h3 id="输入样例-23">输入样例:</h3>
+<h3 id="输入样例-8">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">78 3
 91 5
 65 4
 95 3
 60 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-24">输出样例:</h3>
+<h3 id="输出样例-8">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">GPA:3.49<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <p>提示：从键盘读取输入的方法，请参考教材后续章节。</p>
-<h3 id="code-28">Code</h3>
+<h3 id="Code-29">Code</h3>
 <blockquote>
 <p>240528</p>
 </blockquote>
@@ -4189,19 +4113,17 @@ Dot destructor called<span aria-hidden="true" class="line-numbers-rows"><span></
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"GPA:%.2lf\n"</span><span class="token punctuation">,</span>a_sum<span class="token operator">/</span>b_sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<h2 id="菲姐游泳---c编程基础及应用--习题3-5"><strong>7-7 菲姐游泳 -
-《C++编程基础及应用》- 习题3-5</strong></h2>
+<h2 id="7-7-菲姐游泳-《C-编程基础及应用》-习题3-5"><strong>7-7 菲姐游泳 - 《C++编程基础及应用》- 习题3-5</strong></h2>
 <p>游泳奥运冠军菲姐刻苦训练，从早上a时b分开始下水训练，直到当天的c时d分结束。请编程计算：菲姐当天一共训练多少小时多少分钟？</p>
-<h3 id="输入格式-8">输入格式:</h3>
-<p>一行之内输入以空格分隔的4个非负整数，分别对应a,b,c,d。其中，0 ≤a&lt;c
-≤24；b和d均不大于60。</p>
-<h3 id="输出格式-8">输出格式:</h3>
+<h3 id="输入格式-9">输入格式:</h3>
+<p>一行之内输入以空格分隔的4个非负整数，分别对应a,b,c,d。其中，0 ≤a&lt;c ≤24；b和d均不大于60。</p>
+<h3 id="输出格式-9">输出格式:</h3>
 <p>h:m。其中，整数h表示小时数，整数m表示分钟数,m应小于60。</p>
-<h3 id="输入样例-24">输入样例:</h3>
+<h3 id="输入样例-9">输入样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-in" data-language="in"><code class="language-in">6 30 23 20<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="输出样例-25">输出样例:</h3>
+<h3 id="输出样例-9">输出样例:</h3>
 <figure><div class="code-wrapper"><pre class="line-numbers language-out" data-language="out"><code class="language-out">16:50<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h3 id="code-29">Code</h3>
+<h3 id="Code-30">Code</h3>
 <blockquote>
 <p>240528</p>
 </blockquote>
